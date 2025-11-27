@@ -1,0 +1,60 @@
+<svg width="1584" height="396" viewBox="0 0 1584 396" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Deep Deus Ex black-gold background -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#000000"/>
+      <stop offset="100%" stop-color="#0f0f0f"/>
+    </linearGradient>
+
+    <!-- Strong Deus Ex gold -->
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe9a3"/>
+      <stop offset="50%" stop-color="#f7c948"/>
+      <stop offset="100%" stop-color="#b8860b"/>
+    </linearGradient>
+
+    <!-- Hex grid pattern -->
+    <pattern id="hex" patternUnits="userSpaceOnUse" width="28" height="24">
+      <polygon points="14,0 28,6 28,18 14,24 0,18 0,6"
+               fill="none" stroke="#f7c94822" stroke-width="1"/>
+    </pattern>
+
+    <!-- Angular shard gradient -->
+    <linearGradient id="shardGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f7c94855"/>
+      <stop offset="100%" stop-color="#b8860b22"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1584" height="396" fill="url(#bg)" />
+
+  <!-- Soft hex grid -->
+  <rect width="1584" height="396" fill="url(#hex)" opacity="0.10"/>
+
+  <!-- Deus Ex angular gold shards -->
+  <polygon points="1100,0 1584,0 1584,160 1320,90"
+           fill="url(#shardGold)" />
+
+  <polygon points="1250,230 1584,140 1584,360 1380,300"
+           fill="url(#shardGold)" />
+
+  <polygon points="1000,396 1400,260 1584,340 1500,396"
+           fill="url(#shardGold)" />
+
+  <polygon points="1180,60 1350,180 1230,330 1080,200"
+           fill="url(#shardGold)" />
+
+  <!-- Title -->
+  <text x="70" y="215"
+        font-family="Arial, sans-serif"
+        font-weight="700"
+        font-size="74"
+        fill="url(#gold)"
+        letter-spacing="3">
+    AI LLM Red Team Handbook
+  </text>
+
+  <!-- Underline -->
+  <rect x="70" y="240" width="720" height="4" fill="url(#gold)" opacity="0.95"/>
+</svg>
