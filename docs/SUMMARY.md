@@ -1,5 +1,7 @@
 # Summary
 
+Version 0.024.5
+
 ![Banner](../assets/banner.svg)
 
 ## Introduction
