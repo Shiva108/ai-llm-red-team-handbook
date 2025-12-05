@@ -8,9 +8,9 @@ Version 0.024.5
 
 Welcome to the AI LLM Red Team Handbook. This guide is designed to equip security consultants, red teamers, and AI practitioners with the mindset, methodologies, and technical skills required to assess and secure Large Language Models (LLMs) and AI systems. From foundational ethics to advanced attack vectors like prompt injection and model supply chain vulnerabilities, this handbook provides a structured approach to identifying risks in the rapidly evolving landscape of artificial intelligence.
 
-## Quick Access: Field Manuals
+_Quick Access: Field Manuals_
 
-> **Looking for the Operational Playbooks?**
+> _Looking for the Operational Playbooks?_
 >
 > - [Field Manual Index](Field_Manual_00_Index.md)
 > - [Quick Reference Card](field_manuals/Field_Manual_Quick_Reference.md)
