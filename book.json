@@ -22,7 +22,6 @@
     "prism",
     "-lunr",
     "-search",
-    "theme-comscore",
     "insert-logo",
     "custom-favicon",
     "tbfed-pagefooter",
@@ -69,9 +68,6 @@
       "lang": {
         "flow": "typescript"
       }
-    },
-    "theme-comscore": {
-      "token": "Your-Token-Here"
     }
   },
   

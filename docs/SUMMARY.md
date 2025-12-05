@@ -45,7 +45,7 @@ Welcome to the AI LLM Red Team Handbook. This guide is designed to equip securit
 - [Chapter 23: Advanced Persistence and Chaining](Chapter_23_Advanced_Persistence_Chaining.md)
 - [Chapter 24: Social Engineering with LLMs](Chapter_24_Social_Engineering_LLMs.md)
 
-## Part V: Defense & Mitigation
+## Part VI: Defense & Mitigation
 
 - [Chapter 25: Advanced Adversarial ML](Chapter_25_Advanced_Adversarial_ML.md)
 - [Chapter 26: Supply Chain Attacks on AI](Chapter_26_Supply_Chain_Attacks_on_AI.md)
@@ -54,7 +54,7 @@ Welcome to the AI LLM Red Team Handbook. This guide is designed to equip securit
 - [Chapter 29: Model Inversion Attacks](Chapter_29_Model_Inversion_Attacks.md)
 - [Chapter 30: Backdoor Attacks](Chapter_30_Backdoor_Attacks.md)
 
-## Part VI: Operational Workflows
+## Part VII: Advanced Operations
 
 - [Chapter 31: AI System Reconnaissance](Chapter_31_AI_System_Reconnaissance.md)
 - [Chapter 32: Automated Attack Frameworks](Chapter_32_Automated_Attack_Frameworks.md)
@@ -66,7 +66,7 @@ Welcome to the AI LLM Red Team Handbook. This guide is designed to equip securit
 - [Chapter 38: Continuous Red Teaming](Chapter_38_Continuous_Red_Teaming.md)
 - [Chapter 39: AI Bug Bounty Programs](Chapter_39_AI_Bug_Bounty_Programs.md)
 
-## Part VII: Advanced Topics
+## Part VIII: Advanced Topics
 
 - [Chapter 40: Compliance and Standards](Chapter_40_Compliance_and_Standards.md)
 - [Chapter 41: Industry Best Practices](Chapter_41_Industry_Best_Practices.md)
