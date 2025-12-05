@@ -18,9 +18,10 @@ This repository is configured for both **GitBook** and **GitHub Pages** deployme
 Edit `_config.yml` and update these fields:
 
 ```yaml
-baseurl: "/your-repo-name" # Your repository name
-url: "https://yourusername.github.io" # Your GitHub Pages URL
-github_username: yourusername # Your GitHub username
+baseurl: "/ai-llm-red-team-handbook-and-field-manual" # Updated to match GitBook
+url: "https://cph-sec.gitbook.io" # Updated to match GitBook
+github_username: shiva108 # Your GitHub username
+linkedin_username: thorkristiansen # Your LinkedIn username
 ```
 
 ### 3. Access Your Site
@@ -28,7 +29,7 @@ github_username: yourusername # Your GitHub username
 After a few minutes, your site will be available at:
 
 ```
-https://yourusername.github.io/your-repo-name/
+https://shiva108.github.io/ai-llm-red-team-handbook/
 ```
 
 ### 4. Custom Domain (Optional)
@@ -48,10 +49,10 @@ To use a custom domain:
 1. Go to [gitbook.com](https://www.gitbook.com/)
 2. Sign in and click **New Space**
 3. Select **Import from GitHub**
-4. Choose your repository
-5. GitBook will auto-detect `SUMMARY.md` and build your book
+4. Choose your repository: `shiva108/ai-llm-red-team-handbook`
+5. GitBook will auto-detect `.gitbook.yaml` and `docs/SUMMARY.md` and build your book
 
-### Method 2: GitBook CLI (Local)
+### Method 2: GitBook CLI (Local - Legacy)
 
 ```bash
 # Install GitBook CLI
@@ -72,9 +73,21 @@ gitbook build
 # The built site will be in _book/ directory
 ```
 
-### 3. GitBook Plugins
+### 3. GitBook Plugins & Branding
 
-The repository includes these plugins (in `book.json`):
+The repository uses a dual-configuration strategy to support both legacy builds and modern GitBook Cloud SaaS.
+
+#### Branding (Logo & Assets)
+
+- **Asset Location**: `docs/assets/banner.svg`
+- **Configuration**:
+  - `.gitbook.yaml`: Defines `branding` block pointing to `docs/assets/banner.svg` (for new SaaS builds).
+  - `book.json`: Defines `insert-logo` plugin pointing to `assets/banner.svg` (relative to `docs` root).
+- **Note**: GitBook Cloud (SaaS) often ignores file-based theming. If the logo does not appear, you must set it manually via **Customize > Look & Feel** in the GitBook Dashboard.
+
+#### Plugins (Legacy)
+
+Defined in `book.json`:
 
 - **search-plus**: Enhanced search
 - **copy-code-button**: Copy code blocks
@@ -102,15 +115,22 @@ gitbook install
 
 ---
 
-## Building for Different Formats
+## Formatting & Asset Management
 
-### PDF Export (GitBook)
+### Images
+
+All images must be placed in `docs/assets/`.
+Reference them in markdown as `![Alt Text](assets/image.png)` (from root docs) or `![Alt Text](../assets/image.png)` (from subdirectories like `field_manuals/`).
+
+### Building for Different Formats
+
+#### PDF Export (GitBook)
 
 ```bash
 gitbook pdf ./ ./handbook.pdf
 ```
 
-### eBook Export (GitBook)
+#### eBook Export (GitBook)
 
 ```bash
 # EPUB
