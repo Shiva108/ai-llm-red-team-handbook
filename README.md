@@ -17,7 +17,7 @@ A comprehensive operational toolkit for conducting **AI/LLM red team assessments
 
 This repository contains three core resources:
 
-### 1. **AI LLM Red Team Handbook** (22 Chapters, GitBook-ready)
+### 1. **AI LLM Red Team Handbook** (23 Chapters, GitBook-ready)
 
 A complete consultancy guide now split into individual chapter files for easier navigation:
 
@@ -28,7 +28,7 @@ A complete consultancy guide now split into individual chapter files for easier 
 - **Part V: Attacks & Techniques** - Prompt injection, data leakage, jailbreaks, plugin exploitation, evasion, poisoning, model theft (Chapters 14-20)
 - **Appendices** - Tools, resources, templates, and references
 
-**Current Coverage (22 Chapters - Complete):**
+**Current Coverage (23 Chapters - Complete):**
 
 1. Introduction to AI Red Teaming
 2. Ethics, Legal, and Stakeholder Communication
@@ -47,11 +47,17 @@ A complete consultancy guide now split into individual chapter files for easier 
 15. Data Leakage and Extraction
 16. Jailbreaks and Bypass Techniques
 17. Plugin and API Exploitation
+
+- ✅ Handbook: **23 chapters complete** and split into individual files for GitBook
+- ✅ Chapters 18-23: Enhanced with comprehensive explanations and practical examples
+- ✅ **Copy-Pasteable Attack Demos**: Model extraction, membership inference, DoS attacks, multimodal exploits, persistence techniques
+
 18. **Evasion, Obfuscation, and Adversarial Inputs** (Enhanced with comprehensive explanations)
 19. **Training Data Poisoning** (Enhanced with attack scenarios and defenses)
 20. **Model Theft and Membership Inference** (NEW: With copy-pasteable attack demonstrations)
 21. **Model DoS and Resource Exhaustion** (NEW: Token bombs, computational attacks, rate limiting bypass)
 22. **Cross-Modal and Multimodal Attacks** (NEW: Vision-language attacks, adversarial images, image injection)
+23. **Advanced Persistence and Chaining** (NEW: Context hijacking, multi-turn jailbreaks, attack sequences)
 
 📖 **GitBook Navigation:** See [SUMMARY.md](docs/SUMMARY.md) for the complete chapter structure.
 
@@ -127,6 +133,7 @@ ai-llm-red-team-handbook/
 │   ├── Chapter_20_Model_Theft_and_Membership_Inference.md         # NEW (with runnable demos)
 │   ├── Chapter_21_Model_DoS_Resource_Exhaustion.md                # NEW (DoS attacks)
 │   ├── Chapter_22_Cross_Modal_Multimodal_Attacks.md               # NEW (VLM attacks)
+│   ├── Chapter_23_Advanced_Persistence_Chaining.md                # NEW (Persistence)
 │   ├── AI_LLM Red Team Field Manual.md         # Operational field reference
 │   ├── Building a World-Class AI Red Team.md   # Team-building strategy guide
 │   ├── Configuration.md                         # Setup and configuration guide
@@ -264,4 +271,4 @@ For major changes, please open an issue first to discuss.
 
 ---
 
-**Last Updated:** December 2024 | **Handbook Chapters:** 22 Complete (GitBook-ready) | **Practical Examples:** 8 Copy-Paste Attack Demos
+**Last Updated:** December 2024 | **Handbook Chapters:** 23 Complete (GitBook-ready) | **Practical Examples:** 10 Copy-Paste Attack Demos

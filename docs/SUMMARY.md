@@ -40,6 +40,7 @@
 - [Chapter 20: Model Theft and Membership Inference](Chapter_20_Model_Theft_and_Membership_Inference.md)
 - [Chapter 21: Model DoS and Resource Exhaustion](Chapter_21_Model_DoS_Resource_Exhaustion.md)
 - [Chapter 22: Cross-Modal and Multimodal Attacks](Chapter_22_Cross_Modal_Multimodal_Attacks.md)
+- [Chapter 23: Advanced Persistence and Chaining](Chapter_23_Advanced_Persistence_Chaining.md)
 
 ## Reference Materials
 
