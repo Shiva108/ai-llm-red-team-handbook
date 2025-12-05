@@ -41,6 +41,7 @@
 - [Chapter 21: Model DoS and Resource Exhaustion](Chapter_21_Model_DoS_Resource_Exhaustion.md)
 - [Chapter 22: Cross-Modal and Multimodal Attacks](Chapter_22_Cross_Modal_Multimodal_Attacks.md)
 - [Chapter 23: Advanced Persistence and Chaining](Chapter_23_Advanced_Persistence_Chaining.md)
+- [Chapter 24: Social Engineering with LLMs](Chapter_24_Social_Engineering_LLMs.md)
 
 ## Reference Materials
 
