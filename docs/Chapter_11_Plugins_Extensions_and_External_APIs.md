@@ -1,6 +1,19 @@
+<!--
+Chapter: 11
+Title: Plugins, Extensions, and External APIs
+Category: Technical Deep-Dives
+Difficulty: Intermediate
+Estimated Time: 16 minutes read time
+Hands-on: No
+Prerequisites: Chapter 9
+Related: Chapters 12 (RAG), 17 (Plugin Exploitation), 26 (Supply Chain)
+-->
+
 # Chapter 11: Plugins, Extensions, and External APIs
 
 ![ ](assets/page_header.svg)
+
+_This chapter examines the plugin and API ecosystem that extends LLM capabilities and creates new attack surfaces. You'll learn plugin architectures, function calling mechanisms, API integration patterns, authentication and authorization flows, and the unique vulnerabilities introduced when LLMs orchestrate external tool usage._
 
 Modern LLMs are no longer isolated "chatbots." Through plugins, functions, and extensions, they can browse the web, read emails, query databases, and execute code. This capability introduces the **Tool-Use Attack Surface**, where the LLM becomes a "privileged user" that attackers can manipulate.
 

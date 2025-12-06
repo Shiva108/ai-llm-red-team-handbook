@@ -1,6 +1,19 @@
+<!--
+Chapter: 3
+Title: The Red Teamer's Mindset
+Category: Foundations
+Difficulty: Beginner
+Estimated Time: 12 minutes read time
+Hands-on: No
+Prerequisites: Chapter 1
+Related: Chapters 2 (Ethics), 5 (Threat Modeling)
+-->
+
 # Chapter 3: The Red Teamer's Mindset
 
 ![ ](assets/page_header.svg)
+
+_This chapter develops the critical thinking skills and adversarial perspective essential for effective AI red teaming. You'll learn how to think like an attacker, cultivate skepticism and creativity, balance persistence with professionalism, and develop the psychological resilience needed for this specialized security discipline._
 
 ## 3.1 What Sets a Red Teamer Apart?
 

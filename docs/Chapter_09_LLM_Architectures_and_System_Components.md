@@ -1,6 +1,19 @@
+<!--
+Chapter: 9
+Title: LLM Architectures and System Components
+Category: Technical Deep-Dives
+Difficulty: Intermediate
+Estimated Time: 22 minutes read time
+Hands-on: Yes
+Prerequisites: Chapters 1-8
+Related: Chapters 10 (Tokenization), 11 (Plugins), 12 (RAG)
+-->
+
 # Chapter 9: LLM Architectures and System Components
 
 ![ ](assets/page_header.svg)
+
+_This chapter provides deep technical understanding of LLM architectures critical for red teaming. You'll learn transformer internals, attention mechanisms, embedding spaces, system prompts and context windows, model deployment patterns, and how architectural choices create specific attack surfaces that red teamers can exploit._
 
 Effective Red Teaming requires moving beyond treating AI as a "black box." To identify subtle vulnerabilities, bypass guardrails, or exploit system-level integration flaws, you must understand the underlying architecture. This chapter deconstructs Large Language Models (LLMs) and their ecosystem from an adversarial perspective.
 

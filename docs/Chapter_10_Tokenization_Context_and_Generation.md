@@ -1,6 +1,19 @@
+<!--
+Chapter: 10
+Title: Tokenization, Context, and Generation
+Category: Technical Deep-Dives
+Difficulty: Intermediate
+Estimated Time: 20 minutes read time
+Hands-on: Yes
+Prerequisites: Chapter 9
+Related: Chapters 9 (Architectures), 14 (Prompt Injection), 18 (Evasion)
+-->
+
 # Chapter 10: Tokenization, Context, and Generation
 
 ![ ](assets/page_header.svg)
+
+_This chapter explores how LLMs process and generate text, with focus on security implications. You'll learn tokenization mechanisms (BPE, WordPiece), context window management, generation strategies (greedy, sampling, beam search), and how understanding these processes enables sophisticated attacks like token manipulation and evasion techniques._
 
 While the "mind" of an LLM is a neural network, its "senses" are defined by the Tokenizer, and its "memory" is defined by the Context Window. As a Red Teamer, deeply understanding these mechanisms allows you to exploit blind spots, bypass filters, and degrade model performance.
 

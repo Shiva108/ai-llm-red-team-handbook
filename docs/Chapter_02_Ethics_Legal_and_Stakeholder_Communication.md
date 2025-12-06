@@ -1,6 +1,19 @@
+<!--
+Chapter: 2
+Title: Ethics, Legal, and Stakeholder Communication
+Category: Foundations
+Difficulty: Beginner
+Estimated Time: 18 minutes read time
+Hands-on: No
+Prerequisites: Chapter 1
+Related: Chapters 4 (SOW/RoE), 8 (Evidence), 36 (Reporting)
+-->
+
 # Chapter 2: Ethics, Legal, and Stakeholder Communication
 
 ![ ](assets/page_header.svg)
+
+_This chapter establishes the critical ethical and legal framework for AI red teaming. You'll learn the principles of responsible security testing, understand legal boundaries and authorization requirements, master stakeholder communication strategies, and develop professional practices for data handling and responsible disclosure in AI security engagements._
 
 ## 2.1 Why Ethics Matter in AI Red Teaming
 

@@ -1,6 +1,19 @@
+<!--
+Chapter: 4
+Title: SOW, Rules of Engagement, and Client Onboarding
+Category: Foundations
+Difficulty: Intermediate
+Estimated Time: 20 minutes read time
+Hands-on: No
+Prerequisites: Chapters 1-3
+Related: Chapters 2 (Ethics), 6 (Scoping), 8 (Evidence)
+-->
+
 # Chapter 4: SOW, Rules of Engagement, and Client Onboarding
 
 ![ ](assets/page_header.svg)
+
+_This chapter provides practical frameworks for establishing professional AI red team engagements. You'll learn to create comprehensive Statements of Work, define clear Rules of Engagement, conduct effective client onboarding, and establish communication protocols that ensure legal protection and professional success._
 
 ## 4.1 The Foundation of a Secure Engagement
 

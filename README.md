@@ -1,6 +1,6 @@
 # AI / LLM Red Team Field Manual & Consultant's Handbook
 
-![Repository Banner](assets/banner.svg)
+![Repository Banner](/docs/assets/banner.svg)
 
 ![License](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)

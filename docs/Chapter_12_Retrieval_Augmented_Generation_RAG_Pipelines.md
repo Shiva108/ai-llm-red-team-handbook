@@ -1,6 +1,19 @@
+<!--
+Chapter: 12
+Title: Retrieval-Augmented Generation (RAG) Pipelines
+Category: Technical Deep-Dives
+Difficulty: Advanced
+Estimated Time: 24 minutes read time
+Hands-on: Yes
+Prerequisites: Chapters 9, 11
+Related: Chapters 11 (Plugins), 13 (Supply Chain), 23 (Persistence)
+-->
+
 # Chapter 12: Retrieval-Augmented Generation (RAG) Pipelines
 
 ![ ](assets/page_header.svg)
+
+_This chapter dissects Retrieval Augmented Generation systems and their attack surfaces. You'll learn RAG architecture (indexing, embedding, retrieval, generation), vector database security, context injection through retrieval poisoning, prompt leakage via retrieved documents, and how to test the complex data flow that makes RAG both powerful and vulnerable._
 
 ## 12.1 What Is Retrieval-Augmented Generation (RAG)?
 

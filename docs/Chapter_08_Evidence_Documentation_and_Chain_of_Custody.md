@@ -1,6 +1,19 @@
+<!--
+Chapter: 8
+Title: Evidence, Documentation, and Chain of Custody
+Category: Technical Deep-Dives
+Difficulty: Intermediate
+Estimated Time: 18 minutes read time
+Hands-on: Yes
+Prerequisites: Chapter 7
+Related: Chapters 2 (Ethics), 36 (Reporting), 40 (Compliance)
+-->
+
 # Chapter 8: Evidence, Documentation, and Chain of Custody
 
 ![ ](assets/page_header.svg)
+
+_This chapter establishes professional standards for evidence collection and documentation in AI red team engagements. You'll learn forensically-sound capture methods, proper chain-of-custody procedures, secure evidence storage and handling, comprehensive documentation practices, and legal requirements for preserving findings that may be used in compliance or legal contexts._
 
 ## 8.1 The Role of Evidence in Red Teaming
 

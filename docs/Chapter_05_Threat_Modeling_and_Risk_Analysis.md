@@ -1,6 +1,19 @@
+<!--
+Chapter: 5
+Title: Threat Modeling and Risk Analysis
+Category: Foundations
+Difficulty: Intermediate
+Estimated Time: 16 minutes read time
+Hands-on: No
+Prerequisites: Chapters 1-4
+Related: Chapters 6 (Scoping), 9 (Architectures), 31 (Reconnaissance)
+-->
+
 # Chapter 5: Threat Modeling and Risk Analysis
 
 ![ ](assets/page_header.svg)
+
+_This chapter teaches systematic threat modeling and risk analysis for AI systems. You'll learn to identify critical assets, enumerate threat actors, map attack surfaces specific to LLMs, prioritize risks by impact and likelihood, and create actionable threat models that drive effective red team engagements._
 
 ## 5.1 Why Threat Modeling Matters in AI Red Teaming
 

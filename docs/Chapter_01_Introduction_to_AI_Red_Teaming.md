@@ -1,6 +1,19 @@
+<!--
+Chapter: 1
+Title: Introduction to AI Red Teaming
+Category: Foundations
+Difficulty: Beginner
+Estimated Time: 15 minutes read time
+Hands-on: No
+Prerequisites: None
+Related: Chapters 2 (Ethics), 3 (Mindset), 7 (Lab Setup)
+-->
+
 # Chapter 1: Introduction to AI Red Teaming
 
 ![ ](assets/page_header.svg)
+
+_This chapter introduces AI red teaming as a structured practice for identifying vulnerabilities in AI systems, particularly Large Language Models. You'll learn what makes AI security different from traditional cybersecurity, understand the unique attack surfaces of LLMs, and explore the professional mindset and ethical framework required for responsible AI security testing._
 
 ## 1.1 What Is AI Red Teaming?
 
