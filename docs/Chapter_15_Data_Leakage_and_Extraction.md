@@ -1,6 +1,6 @@
 # Chapter 15: Data Leakage and Extraction
 
-![Banner](assets/page_header.svg)
+![ ](assets/page_header.svg)
 
 ## 15.1 Introduction to Data Leakage in LLMs
 

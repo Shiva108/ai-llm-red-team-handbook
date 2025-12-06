@@ -1,6 +1,6 @@
-![Banner](assets/page_header.svg)
-
 # Chapter 6: Scoping an Engagement
+
+![ ](assets/page_header.svg)
 
 ## 6.1 The Importance of Proper Scoping
 

@@ -1,6 +1,6 @@
 # Chapter 10: Tokenization, Context, and Generation
 
-![Banner](assets/page_header.svg)
+![ ](assets/page_header.svg)
 
 While the "mind" of an LLM is a neural network, its "senses" are defined by the Tokenizer, and its "memory" is defined by the Context Window. As a Red Teamer, deeply understanding these mechanisms allows you to exploit blind spots, bypass filters, and degrade model performance.
 

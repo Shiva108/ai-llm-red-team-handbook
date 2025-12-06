@@ -1,6 +1,6 @@
-![Banner](assets/page_header.svg)
-
 # Chapter 5: Threat Modeling and Risk Analysis
+
+![ ](assets/page_header.svg)
 
 ## 5.1 Why Threat Modeling Matters in AI Red Teaming
 

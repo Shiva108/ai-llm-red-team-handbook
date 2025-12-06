@@ -1,6 +1,6 @@
 # Chapter 45: Building an AI Red Team Program
 
-![Banner](assets/page_header.svg)
+![ ](assets/page_header.svg)
 
 ## 1.0 Introduction: The Imperative for AI-Specific Red Teaming
 

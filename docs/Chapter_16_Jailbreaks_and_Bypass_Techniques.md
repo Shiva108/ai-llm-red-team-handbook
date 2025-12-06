@@ -1,6 +1,6 @@
-![Banner](assets/page_header.svg)
-
 # Chapter 16: Jailbreaks and Bypass Techniques
+
+![ ](assets/page_header.svg)
 
 _This chapter provides comprehensive coverage of jailbreak techniques, bypass methods, testing methodologies, and defenses for LLM systems._
 

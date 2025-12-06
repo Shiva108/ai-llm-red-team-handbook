@@ -1,6 +1,6 @@
-![Banner](assets/page_header.svg)
-
 # Chapter 34: Defense Evasion Techniques
+
+![ ](assets/page_header.svg)
 
 _This chapter is currently under development._
 

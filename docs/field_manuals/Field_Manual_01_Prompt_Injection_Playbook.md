@@ -1,6 +1,6 @@
-![Banner](../assets/page_header.svg)
-
 # Field Manual Playbook 01: Prompt Injection
+
+![ ](../assets/page_header.svg)
 
 **Attack Type**: Prompt Injection (Direct & Indirect)  
 **Difficulty**: ⭐ Beginner  

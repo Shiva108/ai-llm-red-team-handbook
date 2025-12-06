@@ -1,6 +1,6 @@
-![Banner](assets/page_header.svg)
-
 # Chapter 40: Compliance and Standards
+
+![ ](assets/page_header.svg)
 
 _This chapter is currently under development._
 

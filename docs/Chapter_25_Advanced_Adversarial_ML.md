@@ -1,6 +1,6 @@
-![Banner](assets/page_header.svg)
-
 # Chapter 25: Advanced Adversarial ML
+
+![ ](assets/page_header.svg)
 
 _This chapter is currently under development._
 

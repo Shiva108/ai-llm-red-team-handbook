@@ -1,6 +1,6 @@
-![Banner](../assets/page_header.svg)
-
 # Field Manual - Quick Reference Card
+
+![ ](../assets/page_header.svg)
 
 **One-page cheat sheet for junior testers**
 

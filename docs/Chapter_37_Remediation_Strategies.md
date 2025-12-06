@@ -1,6 +1,6 @@
 # Chapter 37: Remediation Strategies
 
-![Banner](assets/page_header.svg)
+![ ](assets/page_header.svg)
 
 ## 37.1 The Importance of Presentation
 

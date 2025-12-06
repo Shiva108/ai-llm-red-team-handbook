@@ -1,6 +1,6 @@
-![Banner](../assets/page_header.svg)
-
 # Field Manual Playbook 03: Jailbreaks & Bypass
+
+![ ](../assets/page_header.svg)
 
 **Attack Type**: Content Filter & Safety Bypass  
 **Difficulty**: ⭐ Beginner  

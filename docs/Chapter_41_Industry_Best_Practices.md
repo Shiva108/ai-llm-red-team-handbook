@@ -1,6 +1,6 @@
-![Banner](assets/page_header.svg)
-
 # Chapter 41: Industry Best Practices
+
+![ ](assets/page_header.svg)
 
 _This chapter is currently under development._
 

@@ -1,6 +1,6 @@
-![Banner](assets/page_header.svg)
-
 # Chapter 42: Case Studies and War Stories
+
+![ ](assets/page_header.svg)
 
 _This chapter is currently under development._
 

@@ -1,6 +1,6 @@
-![Banner](../assets/page_header.svg)
-
 # Field Manual Playbook 11: Social Engineering with LLMs
+
+![ ](../assets/page_header.svg)
 
 **Attack Type**: AI-Powered Phishing & Impersonation  
 **Difficulty**: ⭐⭐ Intermediate  

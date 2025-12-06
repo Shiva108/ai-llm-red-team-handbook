@@ -1,6 +1,6 @@
-![Banner](../assets/page_header.svg)
-
 # Field Manual Playbook 07: Model Theft & Extraction
+
+![ ](../assets/page_header.svg)
 
 **Attack Type**: Model Stealing / Extraction  
 **Difficulty**: ⭐⭐⭐ Advanced  

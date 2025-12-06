@@ -1,6 +1,6 @@
-![Banner](../assets/page_header.svg)
-
 # Field Manual Playbook 06: Data Poisoning
+
+![ ](../assets/page_header.svg)
 
 **Attack Type**: Training Data / RAG Document Poisoning  
 **Difficulty**: ⭐⭐⭐ Advanced  

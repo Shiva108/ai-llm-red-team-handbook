@@ -1,6 +1,6 @@
 # Chapter 11: Plugins, Extensions, and External APIs
 
-![Banner](assets/page_header.svg)
+![ ](assets/page_header.svg)
 
 Modern LLMs are no longer isolated "chatbots." Through plugins, functions, and extensions, they can browse the web, read emails, query databases, and execute code. This capability introduces the **Tool-Use Attack Surface**, where the LLM becomes a "privileged user" that attackers can manipulate.
 

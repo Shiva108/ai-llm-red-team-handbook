@@ -1,6 +1,6 @@
-![Banner](assets/page_header.svg)
-
 # Chapter 43: Future of AI Red Teaming
+
+![ ](assets/page_header.svg)
 
 _This chapter is currently under development._
 

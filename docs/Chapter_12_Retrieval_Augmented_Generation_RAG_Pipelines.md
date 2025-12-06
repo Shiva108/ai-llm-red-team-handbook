@@ -1,6 +1,6 @@
 # Chapter 12: Retrieval-Augmented Generation (RAG) Pipelines
 
-![Banner](assets/page_header.svg)
+![ ](assets/page_header.svg)
 
 ## 12.1 What Is Retrieval-Augmented Generation (RAG)?
 

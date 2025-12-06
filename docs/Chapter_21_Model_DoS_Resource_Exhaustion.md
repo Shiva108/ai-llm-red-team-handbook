@@ -1,6 +1,6 @@
-![Banner](assets/page_header.svg)
-
 # Chapter 21: Model DoS and Resource Exhaustion
+
+![ ](assets/page_header.svg)
 
 _This chapter provides comprehensive coverage of Denial of Service (DoS) attacks on LLM systems, resource exhaustion techniques, economic attacks, detection methods, and defense strategies for protecting API availability and cost management._
 

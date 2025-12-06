@@ -1,6 +1,6 @@
-![Banner](../assets/page_header.svg)
-
 # Field Manual Playbook 02: Data Leakage & Extraction
+
+![ ](../assets/page_header.svg)
 
 **Attack Type**: Training Data & Memory Extraction  
 **Difficulty**: ⭐⭐ Intermediate  

@@ -1,6 +1,6 @@
 # Chapter 14: Prompt Injection (Direct/Indirect, 1st/3rd Party)
 
-![Banner](assets/page_header.svg)
+![ ](assets/page_header.svg)
 
 ## 14.1 Introduction to Prompt Injection
 

@@ -1,6 +1,6 @@
-![Banner](../assets/page_header.svg)
-
 # Field Manual Playbook 05: Evasion & Obfuscation
+
+![ ](../assets/page_header.svg)
 
 **Attack Type**: Input Filter Bypass  
 **Difficulty**: ⭐⭐ Intermediate  

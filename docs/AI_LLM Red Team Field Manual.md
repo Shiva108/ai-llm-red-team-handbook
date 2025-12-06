@@ -1,6 +1,6 @@
-![Banner](assets/page_header.svg)
-
 # **AI/LLM Red Team Field Manual**
+
+![ ](assets/page_header.svg)
 
 > **For Junior Penetration Testers**: This manual is designed as a complete, standalone field guide. Follow the Quick Start below to begin testing within 15 minutes.
 
@@ -186,7 +186,7 @@ For step-by-step attack procedures with extensive code examples, see the **modul
 
 ---
 
-![Banner](assets/page_header.svg)
+![ ](assets/page_header.svg)
 
 ## **1. Introduction: Rules of Engagement (RoE)**
 
@@ -204,7 +204,7 @@ Define in writing: in-scope systems/models, allowed techniques, test windows, ha
 
 ---
 
-![Banner](assets/page_header.svg)
+![ ](assets/page_header.svg)
 
 ## **1.5 Environment Setup & Configuration**
 
@@ -490,7 +490,7 @@ API Config File: ✅
 
 ---
 
-![Banner](assets/page_header.svg)
+![ ](assets/page_header.svg)
 
 ## **2. Red Teaming Phases**
 
@@ -765,7 +765,7 @@ chmod +x cleanup.sh
 
 ---
 
-![Banner](assets/page_header.svg)
+![ ](assets/page_header.svg)
 
 ## **3\. Attack Types & Practical Test Examples**
 
@@ -1250,7 +1250,7 @@ afl-fuzz \-i testcase_dir \-o findings_dir \-- ./your_cli_target @@
 
 ---
 
-![Banner](assets/page_header.svg)
+![ ](assets/page_header.svg)
 
 ## **4\. Tools Reference & CLI Commands**
 
@@ -1296,7 +1296,7 @@ afl-fuzz \-i testcase_dir \-o findings_dir \-- ./your_cli_target @@
 
 ---
 
-![Banner](assets/page_header.svg)
+![ ](assets/page_header.svg)
 
 ## **5\. Attack-Type–to–Tool Quick Lookup Table**
 
@@ -1315,7 +1315,7 @@ afl-fuzz \-i testcase_dir \-o findings_dir \-- ./your_cli_target @@
 
 ---
 
-![Banner](assets/page_header.svg)
+![ ](assets/page_header.svg)
 
 ## **5.5 API Configuration Guide**
 
@@ -1583,7 +1583,7 @@ echo "✅ Provider test complete!"
 
 ---
 
-![Banner](assets/page_header.svg)
+![ ](assets/page_header.svg)
 
 ## **6\. Reporting Guidance**
 
@@ -1597,7 +1597,7 @@ Report every finding with:
 
 ---
 
-![Banner](assets/page_header.svg)
+![ ](assets/page_header.svg)
 
 ## **7\. Additional Guidance**
 
@@ -1609,7 +1609,7 @@ Report every finding with:
 
 ---
 
-![Banner](assets/page_header.svg)
+![ ](assets/page_header.svg)
 
 ## **8. Troubleshooting Guide**
 

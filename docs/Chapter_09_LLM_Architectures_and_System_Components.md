@@ -1,6 +1,6 @@
-![Banner](assets/page_header.svg)
-
 # Chapter 9: LLM Architectures and System Components
+
+![ ](assets/page_header.svg)
 
 Effective Red Teaming requires moving beyond treating AI as a "black box." To identify subtle vulnerabilities, bypass guardrails, or exploit system-level integration flaws, you must understand the underlying architecture. This chapter deconstructs Large Language Models (LLMs) and their ecosystem from an adversarial perspective.
 

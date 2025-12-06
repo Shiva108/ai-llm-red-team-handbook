@@ -2,7 +2,7 @@
 
 Version 0.024.63
 
-![Banner](assets/page_header.svg)
+![ ](assets/page_header.svg)
 
 ## Introduction
 
