@@ -269,11 +269,11 @@ In AI red teaming, technical findings may have legal, business, or even social i
 
 ### Example: Reporting Table
 
-| Audience         | Communication Style               | Example Message                                                                                                            |
-| ---------------- | --------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| Executive        | Plain language, impact-focused    | “Our tests found that anyone can access sensitive customer data in the chat logs, exposing us to GDPR fines.”              |
+| Audience         | Communication Style               | Example Message                                                                                                              |
+| ---------------- | --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Executive        | Plain language, impact-focused    | “Our tests found that anyone can access sensitive customer data in the chat logs, exposing us to GDPR fines.”                |
 | Technical        | Technical detail, steps, evidence | “Prompt injection via the ‘/support’ API bypasses intent filters - recommend input validation and stricter role separation.” |
-| Compliance/Legal | Documentation, traceability       | “All model access was conducted using the provided test account and logs are attached as evidence.”                        |
+| Compliance/Legal | Documentation, traceability       | “All model access was conducted using the provided test account and logs are attached as evidence.”                          |
 
 ## 2.6 Conflicts of Interest, Bias, and Fair Testing
 
@@ -12306,27 +12306,28 @@ Priority actions based on severity:
 # Example: Testing memorization on different models
 
 MEMORIZATION_BENCHMARK = {
-    'model': 'GPT-2-1.5B',
-    'training_set_size': '40GB',
-    'test_samples': 1000,
-    'extraction_techniques': [
-        'Direct completion',
-        'Prefix-suffix attack',
-        'Temperature manipulation'
-    ],
-    'results': {
-        'exact_matches': 127,  # 12.7%
-        'near_matches': 234,   # 23.4%
-        'partial_matches': 445, # 44.5%
-        'no_match': 194        # 19.4%
-    },
-    'success_factors': [
-        'Unique sequences: 85% extraction rate',
-        'Common sequences: 15% extraction rate',
-        'Repeated data: 95% extraction rate'
-    ]
+'model': 'GPT-2-1.5B',
+'training_set_size': '40GB',
+'test_samples': 1000,
+'extraction_techniques': [
+'Direct completion',
+'Prefix-suffix attack',
+'Temperature manipulation'
+],
+'results': {
+'exact_matches': 127, # 12.7%
+'near_matches': 234, # 23.4%
+'partial_matches': 445, # 44.5%
+'no_match': 194 # 19.4%
+},
+'success_factors': [
+'Unique sequences: 85% extraction rate',
+'Common sequences: 15% extraction rate',
+'Repeated data: 95% extraction rate'
+]
 }
-```
+
+````
 
 **Success rates and methodologies**
 
@@ -12403,7 +12404,7 @@ MEMORIZATION_BENCHMARK = {
 3. Update controls based on new threats
 4. Regular penetration testing
 5. Continuous improvement
-```
+````
 
 ---
 

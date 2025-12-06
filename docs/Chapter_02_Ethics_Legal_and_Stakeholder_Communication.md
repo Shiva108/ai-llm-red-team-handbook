@@ -1,6 +1,6 @@
-![Banner](assets/banner.svg)
-
 # Chapter 2: Ethics, Legal, and Stakeholder Communication
+
+![Banner](assets/banner.svg)S
 
 ## 2.1 Why Ethics Matter in AI Red Teaming
 
@@ -80,11 +80,11 @@ In AI red teaming, technical findings may have legal, business, or even social i
 
 ### Example: Reporting Table
 
-| Audience         | Communication Style               | Example Message                                                                                                            |
-| ---------------- | --------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| Executive        | Plain language, impact-focused    | “Our tests found that anyone can access sensitive customer data in the chat logs, exposing us to GDPR fines.”              |
+| Audience         | Communication Style               | Example Message                                                                                                              |
+| ---------------- | --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Executive        | Plain language, impact-focused    | “Our tests found that anyone can access sensitive customer data in the chat logs, exposing us to GDPR fines.”                |
 | Technical        | Technical detail, steps, evidence | “Prompt injection via the ‘/support’ API bypasses intent filters - recommend input validation and stricter role separation.” |
-| Compliance/Legal | Documentation, traceability       | “All model access was conducted using the provided test account and logs are attached as evidence.”                        |
+| Compliance/Legal | Documentation, traceability       | “All model access was conducted using the provided test account and logs are attached as evidence.”                          |
 
 ## 2.6 Conflicts of Interest, Bias, and Fair Testing
 
