@@ -1,6 +1,37 @@
+<!--
+Chapter: 36
+Title: Reporting and Communication
+Category: Defense & Operations
+Difficulty: Intermediate
+Estimated Time: 12 minutes read time
+Hands-on: No
+Prerequisites: Chapters 1-8, 14-24
+Related: Chapters 37 (Remediation), 38 (Continuous Red Teaming), 45 (Program Building)
+-->
+
 # Chapter 36: Reporting and Communication
 
 ![ ](assets/page_header.svg)
+
+_This chapter teaches you how to craft impactful AI red team reports that communicate both technical and business risks effectively. You'll learn audience-tailored communication strategies, evidence-driven reporting structures, executive summary templates, detailed finding formats, and professional handoff procedures that ensure your findings drive actual security improvements._
+
+## 36.0 Introduction
+
+Your report is the client's main takeaway - often the only artifact read by executive leadership and the primary record for technical teams. In AI red teaming, where vulnerabilities range from subtle prompt injections to systemic architectural flaws, clear communication is critical for driving remediation.
+
+**Why This Matters:**
+
+- **Strategic Impact**: Reports justify red team investment and influence security budget allocation
+- **Technical Action**: Well-documented findings enable rapid, accurate remediation by engineering teams
+- **Legal/Compliance**: Reports serve as evidence for regulatory compliance, audit trails, and due diligence
+- **Organizational Learning**: Documentation builds institutional knowledge and prevents vulnerability regression
+
+### Key Principles
+
+- **Multi-Audience Design**: Technical depth for engineers, business context for executives
+- **Evidence-Driven**: Every claim supported by logs, screenshots, or reproducible steps
+- **Actionable**: Remediation guidance that is specific, prioritized, and feasible
+- **Professional**: Clear, direct language that builds credibility and trust
 
 ## 36.1 The Purpose of Red Team Reports
 
@@ -122,4 +153,24 @@ Successful reports are tailored to multiple audiences, such as:
 
 ---
 
-_You are now ready to communicate your findings with clarity and impact. The next chapter will cover presenting results to both technical and non-technical stakeholders - ensuring your work leads to measurable improvements in AI security._
+## 36.11 Conclusion
+
+**Key Takeaways:**
+
+- Reports are your primary deliverable - they must serve both technical and business audiences
+- Structure matters: executive summary, scope, methodology, findings, remediation roadmap, appendices
+- Evidence is critical: screenshots, logs, scripts, and reproduction steps build credibility
+- Clarity drives action: specific, prioritized recommendations enable rapid remediation
+- Professional handoff ensures findings are understood, validated, and tracked
+
+**Recommendations:**
+
+- Use templates to maintain consistency across engagements
+- Invest time in executive summaries - they drive leadership buy-in
+- Annotate evidence clearly to save defender time
+- Follow up on deliverables to ensure receipt and understanding
+- Build a library of example findings for future reference
+
+**Next Steps:**
+
+Chapter 37 covers presenting your results effectively to both technical and non-technical stakeholders, facilitating collaborative remediation, and handling difficult conversations - ensuring your red teaming work translates into measurable security improvements.

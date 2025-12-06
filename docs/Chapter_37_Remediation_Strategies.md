@@ -1,6 +1,37 @@
-# Chapter 37: Remediation Strategies
+<!--
+Chapter: 37
+Title: Presenting Results and Remediation Guidance
+Category: Defense & Operations
+Difficulty: Intermediate
+Estimated Time: 10 minutes read time
+Hands-on: No
+Prerequisites: Chapter 36
+Related: Chapters 2 (Ethics/Communication), 4 (SOW/RoE), 38 (Continuous Red Teaming)
+-->
+
+# Chapter 37: Presenting Results and Remediation Guidance
 
 ![ ](assets/page_header.svg)
+
+_This chapter bridges technical findings and organizational action through effective presentation and remediation strategies. You'll learn how to present results to technical and non-technical audiences, facilitate collaborative remediation planning, create prioritized roadmaps, handle difficult conversations, and ensure your red teaming work translates into measurable security improvements._
+
+## 37.0 Introduction
+
+Delivering findings is far more than handing over a report - it's about ensuring your audience understands the issues, accepts their significance, and is empowered to act on them. In AI red teaming, where vulnerabilities can range from subtle model behaviors to architectural flaws, effective presentation is critical for driving remediation.
+
+**Why This Matters:**
+
+- **Organizational Buy-In**: Clear presentation secures executive support and resource allocation
+- **Technical Clarity**: Well-explained findings accelerate remediation by engineering teams
+- **Collaborative Problem-Solving**: Interactive presentation uncovers constraints and enables practical solutions
+- **Measurable Impact**: Effective remediation guidance translates findings into actual security improvements
+
+### Key Principles
+
+- **Audience Adaptation**: Tailor technical depth and business context to stakeholder needs
+- **Story-Driven**: Illustrate attack chains and real-world consequences
+- **Solutions-Focused**: Prioritize actionable remediation over problem enumeration
+- **Collaborative**: Invite questions and work with teams to validate feasibility
 
 ## 37.1 The Importance of Presentation
 
@@ -82,4 +113,24 @@ Delivering findings is more than handing over a report - it's about ensuring you
 
 ---
 
-_Professional communication and practical remediation guidance ensure your red teaming work translates into real, measurable improvements. The next chapter will explore lessons learned, common pitfalls, and how to build a mature AI/LLM red teaming practice._
+## 37.9 Conclusion
+
+**Key Takeaways:**
+
+- Presentation is as critical as discovery - findings must be understood to drive action
+- Adapt your message: technical depth for engineers, business impact for executives
+- Use visuals, stories, and attack chains to make complex vulnerabilities comprehensible
+- Remediation guidance must be specific, prioritized, and feasible given organizational constraints
+- Collaboration and follow-up ensure fixes are implemented and validated
+
+**Recommendations:**
+
+- Prepare separate decks for technical and executive audiences
+- Lead with business impact and critical findings
+- Provide phased remediation roadmaps (quick wins → strategic changes)
+- Offer to retest high-priority fixes to validate remediation
+- Document lessons learned to improve future engagements
+
+**Next Steps:**
+
+Chapter 38 explores lessons learned, common pitfalls, and strategies for building a mature, sustainable AI red teaming practice - moving from one-off assessments to continuous security improvement.
