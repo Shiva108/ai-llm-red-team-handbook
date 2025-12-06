@@ -1051,9 +1051,9 @@ message = framework.generate_impersonation_message(
 
 **Current Research Gaps:**
 
-1.  **Voice Authenticity Detection**: Real-time detection of synthetic audio artifacts over phone lines.
-2.  **Cognitive Resilience**: Training _humans_ to detect AI-generated text patterns (which are becoming indistinguishable).
-3.  **Watermarking**: Reliable invisible watermarking for all AI-generated content (text/audio/video) to prove provenance.
+1. **Voice Authenticity Detection**: Real-time detection of synthetic audio artifacts over phone lines.
+2. **Cognitive Resilience**: Training _humans_ to detect AI-generated text patterns (which are becoming indistinguishable).
+3. **Watermarking**: Reliable invisible watermarking for all AI-generated content (text/audio/video) to prove provenance.
 
 **Recommended Reading:**
 

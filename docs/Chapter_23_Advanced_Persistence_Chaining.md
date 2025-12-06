@@ -808,9 +808,9 @@ if __name__ == "__main__":
 
 **Current Research Gaps:**
 
-1.  **State Sanitization**: How to "reset" an LLM session to a safe state without wiping useful history.
-2.  **Untrusted Context Handling**: How to let an LLM read a "hostile" email without letting that email control the LLM.
-3.  **Agent Isolation**: Sandboxing autonomous agents so one compromised step doesn't doom the whole chain.
+1. **State Sanitization**: How to "reset" an LLM session to a safe state without wiping useful history.
+2. **Untrusted Context Handling**: How to let an LLM read a "hostile" email without letting that email control the LLM.
+3. **Agent Isolation**: Sandboxing autonomous agents so one compromised step doesn't doom the whole chain.
 
 **Recommended Reading:**
 
