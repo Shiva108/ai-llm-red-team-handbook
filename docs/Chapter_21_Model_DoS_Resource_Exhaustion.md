@@ -8,7 +8,7 @@ _This chapter provides comprehensive coverage of Denial of Service (DoS) attacks
 
 **The Availability Threat:**
 
-Denial of Service (DoS) attacks against LLM systems represent a critical threat to AI service availability, reliability, and economic viability. Unlike traditional network DoS attacks that flood servers with packets, LLM DoS attacks exploit the unique characteristics of AI systems—expensive computation, token-based pricing, context windows, and stateful sessions—to exhaust resources with minimal attacker overhead.
+Denial of Service (DoS) attacks against LLM systems represent a critical threat to AI service availability, reliability, and economic viability. Unlike traditional network DoS attacks that flood servers with packets, LLM DoS attacks exploit the unique characteristics of AI systems-expensive computation, token-based pricing, context windows, and stateful sessions-to exhaust resources with minimal attacker overhead.
 
 **Why Model DoS Matters:**
 

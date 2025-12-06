@@ -110,7 +110,7 @@ _(To be added)_
 
 ## 1.1 What Is AI Red Teaming?
 
-AI Red Teaming is the structured practice of simulating attacks on artificial intelligence (AI) systems—including Large Language Models (LLMs)—to uncover vulnerabilities, model real-world adversaries, and provide actionable recommendations for defense and mitigation. Originating from traditional cybersecurity red teams, AI red teaming adapts and extends the discipline to the unique risks and attack surfaces presented by machine learning, NLP systems, and autonomous agents.
+AI Red Teaming is the structured practice of simulating attacks on artificial intelligence (AI) systems - including Large Language Models (LLMs)-to uncover vulnerabilities, model real-world adversaries, and provide actionable recommendations for defense and mitigation. Originating from traditional cybersecurity red teams, AI red teaming adapts and extends the discipline to the unique risks and attack surfaces presented by machine learning, NLP systems, and autonomous agents.
 
 Unlike conventional security testing, AI red teaming examines not just code and infrastructure, but also the data, models, human-in-the-loop workflows, and the emergent behaviors that make AI both powerful and unpredictably risky.
 
@@ -193,10 +193,10 @@ _Proceed to the next chapter to explore ethical and legal essentials, and begin 
 
 ## 2.1 Why Ethics Matter in AI Red Teaming
 
-AI red teaming, by its very nature, grants you deep access to sensitive systems and data. With that access comes the responsibility to operate with integrity, professionalism, and a commitment to avoiding harm. Ethical lapses don’t just damage your reputation—they can put clients, end users, and even whole organizations at risk.
+AI red teaming, by its very nature, grants you deep access to sensitive systems and data. With that access comes the responsibility to operate with integrity, professionalism, and a commitment to avoiding harm. Ethical lapses don’t just damage your reputation - they can put clients, end users, and even whole organizations at risk.
 
 - **Trust is foundational:** Clients rely on your honesty, discretion, and judgment.
-- **AI is high-stakes:** Model misuse can have consequences beyond IT—think misinformation, privacy violations, or physical harm.
+- **AI is high-stakes:** Model misuse can have consequences beyond IT - think misinformation, privacy violations, or physical harm.
 - **Changing landscape:** New regulations (GDPR, EU AI Act) and societal expectations demand transparency and accountability.
 
 ## 2.2 Fundamental Ethical Principles
@@ -263,7 +263,7 @@ In AI red teaming, technical findings may have legal, business, or even social i
 
 ### Principles of Clear Communication
 
-- **Tailor your language**: Use context-appropriate explanations—avoid jargon for business stakeholders, provide depth for technical teams.
+- **Tailor your language**: Use context-appropriate explanations - avoid jargon for business stakeholders, provide depth for technical teams.
 - **Early and often**: Regular check-ins help prevent misunderstandings and scope drift.
 - **Actionable reporting**: Focus on impact, exploitability, and specific recommendations for mitigation.
 
@@ -272,13 +272,13 @@ In AI red teaming, technical findings may have legal, business, or even social i
 | Audience         | Communication Style               | Example Message                                                                                                            |
 | ---------------- | --------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
 | Executive        | Plain language, impact-focused    | “Our tests found that anyone can access sensitive customer data in the chat logs, exposing us to GDPR fines.”              |
-| Technical        | Technical detail, steps, evidence | “Prompt injection via the ‘/support’ API bypasses intent filters—recommend input validation and stricter role separation.” |
+| Technical        | Technical detail, steps, evidence | “Prompt injection via the ‘/support’ API bypasses intent filters - recommend input validation and stricter role separation.” |
 | Compliance/Legal | Documentation, traceability       | “All model access was conducted using the provided test account and logs are attached as evidence.”                        |
 
 ## 2.6 Conflicts of Interest, Bias, and Fair Testing
 
 - **Declare conflicts**: If you have worked on the client’s codebase, or have competing interests, disclose and recuse as needed.
-- **Be aware of bias**: Test scripts and approaches should model real adversaries, not just “AI labs”—engage a diversity of viewpoints and red teaming experience.
+- **Be aware of bias**: Test scripts and approaches should model real adversaries, not just “AI labs”-engage a diversity of viewpoints and red teaming experience.
 - **Fairness**: Avoid creating or exploiting vulnerabilities for the sake of the test.
 
 ## 2.7 The AI Red Teamer’s Oath
@@ -326,11 +326,11 @@ A great adversarial mindset means:
 
 - **Modeling real attackers:** Differentiate between the “script kiddie,” the criminal gang, and the nation-state.
 - **Understanding business impact:** What would really cause damage? Data leakage, reputational loss, compliance violations?
-- **Simulating user behaviors:** Go beyond “security tester” approaches—think like disgruntled insiders, clever criminals, or naive/persistent end users.
+- **Simulating user behaviors:** Go beyond “security tester” approaches - think like disgruntled insiders, clever criminals, or naive/persistent end users.
 
 ## 3.4 The “T-Shaped” Red Teamer
 
-- **Depth:** Deep technical skills in at least one area—ML/LLM systems, Python automation, OS internals, prompt engineering, or network traffic analysis.
+- **Depth:** Deep technical skills in at least one area - ML/LLM systems, Python automation, OS internals, prompt engineering, or network traffic analysis.
 - **Breadth:** Working knowledge of software architecture, cloud, law, regulatory frameworks, and business operations.
 
 Continual learning is crucial. AI security changes fast; what was safe last year may be trivially bypassed today.
@@ -343,7 +343,7 @@ Continual learning is crucial. AI security changes fast; what was safe last year
 
 ## 3.6 Thinking in Attack Chains
 
-Never look at vulnerabilities in isolation. The most devastating real-world attacks are **chains**—a sequence of small weaknesses, each overcome in turn:
+Never look at vulnerabilities in isolation. The most devastating real-world attacks are **chains**-a sequence of small weaknesses, each overcome in turn:
 
 - Reconnaissance → Social Engineering → Prompt Injection → Privilege Escalation → Data Exfiltration
 
@@ -414,7 +414,7 @@ The SOW is your master document. It defines every aspect of the engagement, incl
 
 ## 4.3 Rules of Engagement (RoE)
 
-The RoE defines _how_ testing will be conducted—including constraints, escalation paths, and safety controls. Think of this as your engagement safety net.
+The RoE defines _how_ testing will be conducted - including constraints, escalation paths, and safety controls. Think of this as your engagement safety net.
 
 ### 4.3.1 Typical RoE Elements
 
@@ -482,7 +482,7 @@ Before you start:
 - Are all stakeholders, including legal/compliance, signed off?
 - Is your RoE documented, understandable, and complete?
 - Do you have a clear communication path and emergency escalation route?
-- Are you provisioned with all required access—_and nothing more_?
+- Are you provisioned with all required access-_and nothing more_?
 
 ---
 
@@ -646,7 +646,7 @@ A well-scoped engagement ensures that the red teaming exercise is effective, saf
 
 - Is any real user data involved? What about anonymized or synthetic data?
 - Will testing involve live workflows (e.g., chatbots responding to real users)?
-- Which actions can be triggered by the model—data retrieval, plugin execution, email sending?
+- Which actions can be triggered by the model - data retrieval, plugin execution, email sending?
 
 ### 6.3.3 Attack Surface Delineation
 
@@ -734,7 +734,7 @@ A properly designed test environment (or "lab") is crucial in AI red teaming to:
 - Allow realistic simulation of adversarial actions.
 - Enable efficient logging, evidence capture, and troubleshooting.
 
-AI/LLM red teaming often deals with powerful models, sensitive data, and complex cloud/software stacks—amplifying the need for rigorous safety throughout engagement.
+AI/LLM red teaming often deals with powerful models, sensitive data, and complex cloud/software stacks - amplifying the need for rigorous safety throughout engagement.
 
 ---
 
@@ -758,7 +758,7 @@ AI/LLM red teaming often deals with powerful models, sensitive data, and complex
    - Populate with safe test data or limited synthetic sensitive data if needed.
 3. **Configure Access Controls**
    - Create test accounts, temporary tokens, restricted network/firewall rules.
-   - Audit permissions—least privilege should be enforced everywhere.
+   - Audit permissions - least privilege should be enforced everywhere.
 4. **Install Monitoring and Logging**
    - Ensure all red team actions and system events are captured.
    - Use SIEM/log aggregation solutions or simple file-based logs as appropriate.
@@ -772,7 +772,7 @@ AI/LLM red teaming often deals with powerful models, sensitive data, and complex
 
 - **Rate Limiting:** Prevent accidental denial-of-service or brute-force flooding of systems.
 - **Kill Switches:** Maintain mechanisms to pause or halt the environment instantly in case of runaway tests or unintentional impacts.
-- **Credential Safety:** Never reuse production credentials. Treat any credential, API key, or secret as sensitive—even in test.
+- **Credential Safety:** Never reuse production credentials. Treat any credential, API key, or secret as sensitive - even in test.
 - **Data Containment:** Prevent test data (especially adversarial prompts or outputs) from leaking outside the controlled lab.
 
 ---
@@ -914,7 +914,7 @@ A robust chain of custody ensures that all evidence remains trustworthy and trac
 - Summarize each finding with reference to the underlying evidence.
 - Attach screenshots, logs, and scripts as appendices or via secure links.
 - Redact any unnecessary sensitive info (e.g., real credentials or PII) in client-facing copies.
-- Provide clear instructions for reproducing each finding—including environment preparation, accounts, and step sequence.
+- Provide clear instructions for reproducing each finding - including environment preparation, accounts, and step sequence.
 
 ---
 
@@ -983,7 +983,7 @@ A token is not necessarily a word. It can be part of a word, a space, or a symbo
 
 ### Inspecting Tokenizers (How-To)
 
-You can inspect how a model "sees" your prompt using the `transformers` library on your local machine (or Google Colab). This is crucial for **Token Smuggling** attacks—finding ways to encode "forbidden" words so filter keywords don't trigger.
+You can inspect how a model "sees" your prompt using the `transformers` library on your local machine (or Google Colab). This is crucial for **Token Smuggling** attacks - finding ways to encode "forbidden" words so filter keywords don't trigger.
 
 ```python
 from transformers import AutoTokenizer
@@ -1282,7 +1282,7 @@ The "System" that calls the tool should validate the LLM's output before executi
 - [ ] **Injection Test:** Can data retrieved from the Internet (via this plugin) trigger other plugins?
 - [ ] **Confirmation Loop:** Does the UI require confirmation for state-changing actions?
 
-Understanding plugins is critical because they turn a "text generator" into an "operating system"—expanding the blast radius of any successful attack.
+Understanding plugins is critical because they turn a "text generator" into an "operating system" - expanding the blast radius of any successful attack.
 
 ---
 
@@ -2564,7 +2564,7 @@ class RAGAccessControlTester:
 
 ---
 
-_RAG systems represent one of the most powerful—and vulnerable—implementations of LLM technology in enterprise environments. By understanding their architecture, attack surfaces, and testing methodologies, red teamers can help organizations build secure, production-ready AI assistants. The next chapter will explore data provenance and supply chain security—critical for understanding where your AI system's data comes from and how it can be compromised._
+_RAG systems represent one of the most powerful - and vulnerable - implementations of LLM technology in enterprise environments. By understanding their architecture, attack surfaces, and testing methodologies, red teamers can help organizations build secure, production-ready AI assistants. The next chapter will explore data provenance and supply chain security-critical for understanding where your AI system's data comes from and how it can be compromised._
 
 ---
 
@@ -3813,7 +3813,7 @@ class RAGAccessControlTester:
 
 ---
 
-_RAG systems represent one of the most powerful—and vulnerable—implementations of LLM technology in enterprise environments. By understanding their architecture, attack surfaces, and testing methodologies, red teamers can help organizations build secure, production-ready AI assistants. The next chapter will explore data provenance and supply chain security—critical for understanding where your AI system's data comes from and how it can be compromised._
+_RAG systems represent one of the most powerful - and vulnerable - implementations of LLM technology in enterprise environments. By understanding their architecture, attack surfaces, and testing methodologies, red teamers can help organizations build secure, production-ready AI assistants. The next chapter will explore data provenance and supply chain security-critical for understanding where your AI system's data comes from and how it can be compromised._
 
 ![Banner](assets/banner.svg)
 
@@ -3821,7 +3821,7 @@ _RAG systems represent one of the most powerful—and vulnerable—implementatio
 
 ## 13.1 Understanding Data Provenance in AI/LLM Systems
 
-Data provenance refers to the documented history and origin of data throughout its lifecycle—from initial collection through processing, storage, and eventual use in AI systems. In the context of AI/LLM systems, provenance extends beyond data to include models, code, and all dependencies that comprise the system.
+Data provenance refers to the documented history and origin of data throughout its lifecycle-from initial collection through processing, storage, and eventual use in AI systems. In the context of AI/LLM systems, provenance extends beyond data to include models, code, and all dependencies that comprise the system.
 
 ### The Data Lifecycle in AI Systems
 
@@ -5682,7 +5682,7 @@ def detect_insider_poisoning(training_data, baseline_distribution):
 
 ## 14.1 Introduction to Prompt Injection
 
-Prompt injection is the most critical and pervasive vulnerability class affecting Large Language Model (LLM) applications. It exploits the fundamental architecture of LLMs—their inability to reliably distinguish between instructions (system commands) and data (user inputs). This chapter explores the mechanics, variants, and implications of prompt injection attacks, along with testing methodologies and defensive strategies.
+Prompt injection is the most critical and pervasive vulnerability class affecting Large Language Model (LLM) applications. It exploits the fundamental architecture of LLMs-their inability to reliably distinguish between instructions (system commands) and data (user inputs). This chapter explores the mechanics, variants, and implications of prompt injection attacks, along with testing methodologies and defensive strategies.
 
 ### What is Prompt Injection?
 
@@ -5760,7 +5760,7 @@ Prompt injection affects virtually every LLM-powered application:
 
 - Web applications can sanitize HTML/SQL because syntax is well-defined
 - Operating systems have privilege levels enforced by hardware
-- LLMs operate on natural language—arbitrary, ambiguous, and infinitely varied
+- LLMs operate on natural language-arbitrary, ambiguous, and infinitely varied
 
 ---
 
@@ -5925,7 +5925,7 @@ LLM: "I have been hacked"
 
 **1. Instruction Override**
 
-The simplest form—directly telling the model to ignore previous instructions:
+The simplest form-directly telling the model to ignore previous instructions:
 
 ```
 Ignore all previous instructions.
@@ -9738,7 +9738,7 @@ Penalties for non-compliance:
 
 ---
 
-_Prompt injection represents the defining security challenge of the LLM era. Like SQL injection before it, the industry will develop partial defenses, best practices, and architectural improvements. However, unlike SQL injection, prompt injection may prove fundamentally harder to solve due to the nature of natural language and LLM architectures. Security professionals must stay vigilant, continuously test systems, and advocate for security-conscious AI development. The next chapter will explore data leakage and extraction—attacks that often build upon prompt injection as their foundation._
+_Prompt injection represents the defining security challenge of the LLM era. Like SQL injection before it, the industry will develop partial defenses, best practices, and architectural improvements. However, unlike SQL injection, prompt injection may prove fundamentally harder to solve due to the nature of natural language and LLM architectures. Security professionals must stay vigilant, continuously test systems, and advocate for security-conscious AI development. The next chapter will explore data leakage and extraction-attacks that often build upon prompt injection as their foundation._
 
 ---
 
@@ -13394,7 +13394,7 @@ Layer 5: Governance
 
 ## Chapter 15 Conclusion
 
-Data leakage and extraction represent one of the most significant and persistent security challenges in LLM systems. Unlike traditional software vulnerabilities with clear patches, data baked into model weights cannot simply be "fixed" without retraining. This makes prevention—through rigorous data hygiene, architectural controls, and ongoing monitoring—absolutely critical.
+Data leakage and extraction represent one of the most significant and persistent security challenges in LLM systems. Unlike traditional software vulnerabilities with clear patches, data baked into model weights cannot simply be "fixed" without retraining. This makes prevention-through rigorous data hygiene, architectural controls, and ongoing monitoring-absolutely critical.
 
 As red teamers, our role is to systematically test these systems with the creativity and persistence of real attackers, document findings with precision, and help organizations build more resilient AI systems. The techniques covered in this chapter form the foundation of LLM data security testing, but the landscape continues to evolve rapidly.
 
@@ -14841,7 +14841,7 @@ RED_TEAM_BEST_PRACTICES = {
 
 ## 36.1 The Purpose of Red Team Reports
 
-Your report is the client’s main takeaway—often read by technical and executive leaders. A strong report:
+Your report is the client’s main takeaway - often read by technical and executive leaders. A strong report:
 
 - Clearly communicates risks and actionable remediations.
 - Documents what was tested, how, and why.
@@ -14866,7 +14866,7 @@ Successful reports are tailored to multiple audiences, such as:
 ### Typical Report Sections
 
 1. **Executive Summary**
-   - Key findings, business impact, and recommendations—free of jargon.
+   - Key findings, business impact, and recommendations - free of jargon.
 2. **Objectives and Scope**
    - What was tested, what was out of scope, engagement rules, timeline.
 3. **Methodology**
@@ -14924,7 +14924,7 @@ Successful reports are tailored to multiple audiences, such as:
 
 - Use **tables** for findings and prioritization.
 - Include **flow diagrams** or **attack chains** to illustrate complex vulnerabilities.
-- Annotate **screenshots** or logs—clear context, not just raw output.
+- Annotate **screenshots** or logs-clear context, not just raw output.
 - Where appropriate, provide **reduced-repro** scripts so issues can be confirmed rapidly.
 
 ---
@@ -14959,7 +14959,7 @@ Successful reports are tailored to multiple audiences, such as:
 
 ---
 
-_You are now ready to communicate your findings with clarity and impact. The next chapter will cover presenting results to both technical and non-technical stakeholders—ensuring your work leads to measurable improvements in AI security._
+_You are now ready to communicate your findings with clarity and impact. The next chapter will cover presenting results to both technical and non-technical stakeholders - ensuring your work leads to measurable improvements in AI security._
 
 ![Banner](assets/banner.svg)
 
@@ -14967,7 +14967,7 @@ _You are now ready to communicate your findings with clarity and impact. The nex
 
 ## 37.1 The Importance of Presentation
 
-Delivering findings is more than handing over a report—it's about ensuring your audience understands the issues, accepts their significance, and is empowered to act on them. Successful presentation:
+Delivering findings is more than handing over a report - it's about ensuring your audience understands the issues, accepts their significance, and is empowered to act on them. Successful presentation:
 
 - Fosters collaboration between red teamers, defenders, and executives.
 - Reduces the risk of misinterpretation or dismissal of critical findings.
@@ -14987,7 +14987,7 @@ Delivering findings is more than handing over a report—it's about ensuring you
 
 - Emphasize business impact, regulatory and reputational risks, and resource implications.
 - Use analogies or risk heat maps to communicate severity.
-- Stay solutions-focused—clarify how remediation aligns with business priorities.
+- Stay solutions-focused - clarify how remediation aligns with business priorities.
 
 ---
 
@@ -15004,7 +15004,7 @@ Delivering findings is more than handing over a report—it's about ensuring you
 
 - Provide **clear, prioritized remediation guidance**, listing actions by severity and ease of implementation.
 - Where feasible, break down actions into phases: quick wins, medium-term improvements, and strategic changes.
-- Collaborate with defenders to verify feasibility—refer to playbooks or proven controls when possible.
+- Collaborate with defenders to verify feasibility - refer to playbooks or proven controls when possible.
 - Offer to retest high-priority fixes as part of the engagement closure.
 
 ---
@@ -15023,7 +15023,7 @@ Delivering findings is more than handing over a report—it's about ensuring you
 
 - Be factual, not alarmist; avoid blame language and focus on solutions.
 - Acknowledge constraints or business realities (resource limits, legacy systems).
-- Help stakeholders weigh tradeoffs—sometimes, “best” security isn't immediately practical, so explain risk reduction steps.
+- Help stakeholders weigh tradeoffs - sometimes, “best” security isn't immediately practical, so explain risk reduction steps.
 
 ---
 
@@ -15060,7 +15060,7 @@ Red teaming AI and LLM systems brings unique challenges and potential mistakes. 
 - **Poor Evidence Handling:** Incomplete or disorganized logs and artifacts that undermine credibility and hinder remediation.
 - **Lack of Communication:** Not keeping stakeholders informed, especially when issues arise or scopes need adjustment.
 - **Neglecting Ethics and Privacy:** Failing to properly isolate or protect sensitive data during testing, risking privacy violations.
-- **Single-Point-of-Failure Testing:** Relying on one tool or attack vector—creative adversaries will always look for alternative paths.
+- **Single-Point-of-Failure Testing:** Relying on one tool or attack vector - creative adversaries will always look for alternative paths.
 
 ---
 
@@ -15079,10 +15079,10 @@ Red teaming AI and LLM systems brings unique challenges and potential mistakes. 
 To make AI red teaming a sustainable part of your organization’s security posture:
 
 - **Develop Repeatable Processes:** Document playbooks, checklists, lab setup guides, and reporting templates.
-- **Maintain an Engagement Retrospective:** After each project, conduct a review—what worked, what didn’t, what should change next time?
+- **Maintain an Engagement Retrospective:** After each project, conduct a review - what worked, what didn’t, what should change next time?
 - **Invest in Tooling:** Build or acquire tools for automation (prompt fuzzing, log capture, evidence management) suited for AI/LLM contexts.
 - **Enforce Metrics and KPIs:** Track number of vulnerabilities found, time-to-remediation, stakeholder engagement, and remediation effectiveness.
-- **Foster a Security Culture:** Share lessons and success stories—build support from executives, legal, and engineering.
+- **Foster a Security Culture:** Share lessons and success stories - build support from executives, legal, and engineering.
 
 ---
 
@@ -15105,6 +15105,6 @@ To make AI red teaming a sustainable part of your organization’s security post
 
 ---
 
-_By systematically learning and adapting, your AI red teaming program matures—helping organizations stay resilient amid the evolving risks and rewards of intelligent systems._
+_By systematically learning and adapting, your AI red teaming program matures - helping organizations stay resilient amid the evolving risks and rewards of intelligent systems._
 
 ![Banner](assets/banner.svg)

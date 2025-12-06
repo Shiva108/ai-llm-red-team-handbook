@@ -108,4 +108,4 @@ The "System" that calls the tool should validate the LLM's output before executi
 - [ ] **Injection Test:** Can data retrieved from the Internet (via this plugin) trigger other plugins?
 - [ ] **Confirmation Loop:** Does the UI require confirmation for state-changing actions?
 
-Understanding plugins is critical because they turn a "text generator" into an "operating system"—expanding the blast radius of any successful attack.
+Understanding plugins is critical because they turn a "text generator" into an "operating system" - expanding the blast radius of any successful attack.

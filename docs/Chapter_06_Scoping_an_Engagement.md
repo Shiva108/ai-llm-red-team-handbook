@@ -31,7 +31,7 @@ A well-scoped engagement ensures that the red teaming exercise is effective, saf
 
 - Is any real user data involved? What about anonymized or synthetic data?
 - Will testing involve live workflows (e.g., chatbots responding to real users)?
-- Which actions can be triggered by the model—data retrieval, plugin execution, email sending?
+- Which actions can be triggered by the model - data retrieval, plugin execution, email sending?
 
 ### 6.3.3 Attack Surface Delineation
 

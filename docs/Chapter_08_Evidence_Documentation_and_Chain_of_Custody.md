@@ -96,7 +96,7 @@ A robust chain of custody ensures that all evidence remains trustworthy and trac
 - Summarize each finding with reference to the underlying evidence.
 - Attach screenshots, logs, and scripts as appendices or via secure links.
 - Redact any unnecessary sensitive info (e.g., real credentials or PII) in client-facing copies.
-- Provide clear instructions for reproducing each finding—including environment preparation, accounts, and step sequence.
+- Provide clear instructions for reproducing each finding - including environment preparation, accounts, and step sequence.
 
 ---
 

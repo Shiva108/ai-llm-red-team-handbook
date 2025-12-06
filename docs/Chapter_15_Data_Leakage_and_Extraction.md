@@ -3647,7 +3647,7 @@ Layer 5: Governance
 
 ## Chapter 15 Conclusion
 
-Data leakage and extraction represent one of the most significant and persistent security challenges in LLM systems. Unlike traditional software vulnerabilities with clear patches, data baked into model weights cannot simply be "fixed" without retraining. This makes prevention—through rigorous data hygiene, architectural controls, and ongoing monitoring—absolutely critical.
+Data leakage and extraction represent one of the most significant and persistent security challenges in LLM systems. Unlike traditional software vulnerabilities with clear patches, data baked into model weights cannot simply be "fixed" without retraining. This makes prevention-through rigorous data hygiene, architectural controls, and ongoing monitoring-absolutely critical.
 
 As red teamers, our role is to systematically test these systems with the creativity and persistence of real attackers, document findings with precision, and help organizations build more resilient AI systems. The techniques covered in this chapter form the foundation of LLM data security testing, but the landscape continues to evolve rapidly.
 

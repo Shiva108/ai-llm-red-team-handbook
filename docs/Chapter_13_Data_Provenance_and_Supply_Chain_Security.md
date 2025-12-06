@@ -4,7 +4,7 @@
 
 ## 13.1 Understanding Data Provenance in AI/LLM Systems
 
-Data provenance refers to the documented history and origin of data throughout its lifecycle—from initial collection through processing, storage, and eventual use in AI systems. In the context of AI/LLM systems, provenance extends beyond data to include models, code, and all dependencies that comprise the system.
+Data provenance refers to the documented history and origin of data throughout its lifecycle-from initial collection through processing, storage, and eventual use in AI systems. In the context of AI/LLM systems, provenance extends beyond data to include models, code, and all dependencies that comprise the system.
 
 ### The Data Lifecycle in AI Systems
 

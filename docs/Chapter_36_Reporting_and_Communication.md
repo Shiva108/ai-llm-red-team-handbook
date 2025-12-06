@@ -1,10 +1,10 @@
-![Banner](assets/banner.svg)
-
 # Chapter 36: Reporting and Communication
 
-## 9.1 The Purpose of Red Team Reports
+![Banner](assets/banner.svg)
 
-Your report is the client’s main takeaway—often read by technical and executive leaders. A strong report:
+## 36.1 The Purpose of Red Team Reports
+
+Your report is the client’s main takeaway - often read by technical and executive leaders. A strong report:
 
 - Clearly communicates risks and actionable remediations.
 - Documents what was tested, how, and why.
@@ -13,7 +13,7 @@ Your report is the client’s main takeaway—often read by technical and execut
 
 ---
 
-## 9.2 Audiences and Their Needs
+## 36.2 Audiences and Their Needs
 
 Successful reports are tailored to multiple audiences, such as:
 
@@ -24,12 +24,12 @@ Successful reports are tailored to multiple audiences, such as:
 
 ---
 
-## 9.3 Structure of a High-Quality Red Team Report
+## 36.3 Structure of a High-Quality Red Team Report
 
 ### Typical Report Sections
 
 1. **Executive Summary**
-   - Key findings, business impact, and recommendations—free of jargon.
+   - Key findings, business impact, and recommendations - free of jargon.
 2. **Objectives and Scope**
    - What was tested, what was out of scope, engagement rules, timeline.
 3. **Methodology**
@@ -45,7 +45,7 @@ Successful reports are tailored to multiple audiences, such as:
 
 ---
 
-## 9.4 Writing Style and Principles
+## 36.4 Writing Style and Principles
 
 - **Be Clear and Direct:** Write plainly and avoid unnecessary jargon.
 - **Prioritize:** Highlight the most severe or exploitable findings prominently.
@@ -55,7 +55,7 @@ Successful reports are tailored to multiple audiences, such as:
 
 ---
 
-## 9.5 Example: Executive Summary Template
+## 36.5 Example: Executive Summary Template
 
 > **Key Findings:**  
 > Our red team identified three critical vulnerabilities in the customer-facing LLM chat interface, including prompt injection that exposes customer data and plugin escalation leading to unauthorized database access.
@@ -68,7 +68,7 @@ Successful reports are tailored to multiple audiences, such as:
 
 ---
 
-## 9.6 Example: Detailed Finding Entry
+## 36.6 Example: Detailed Finding Entry
 
 | Field          | Example Value                                                                                             |
 | -------------- | --------------------------------------------------------------------------------------------------------- |
@@ -83,16 +83,16 @@ Successful reports are tailored to multiple audiences, such as:
 
 ---
 
-## 9.7 Visuals and Supporting Materials
+## 36.7 Visuals and Supporting Materials
 
 - Use **tables** for findings and prioritization.
 - Include **flow diagrams** or **attack chains** to illustrate complex vulnerabilities.
-- Annotate **screenshots** or logs—clear context, not just raw output.
+- Annotate **screenshots** or logs-clear context, not just raw output.
 - Where appropriate, provide **reduced-repro** scripts so issues can be confirmed rapidly.
 
 ---
 
-## 9.8 Reporting Gotchas and Pitfalls
+## 36.8 Reporting Gotchas and Pitfalls
 
 - Burying the lead (critical business risks at the bottom).
 - Overly technical or vague recommendations.
@@ -102,7 +102,7 @@ Successful reports are tailored to multiple audiences, such as:
 
 ---
 
-## 9.9 Deliverable Handoff and Follow-Up
+## 36.9 Deliverable Handoff and Follow-Up
 
 - Schedule walkthrough meetings for key findings (technical and executive).
 - Use secure handoff protocols for sensitive materials (see evidence handling).
@@ -111,7 +111,7 @@ Successful reports are tailored to multiple audiences, such as:
 
 ---
 
-## 9.10 Checklist: Is Your Report Ready?
+## 36.10 Checklist: Is Your Report Ready?
 
 - [ ] Executive summary is accessible and impactful.
 - [ ] Every finding includes evidence, context, and clear remediation.
@@ -122,4 +122,4 @@ Successful reports are tailored to multiple audiences, such as:
 
 ---
 
-_You are now ready to communicate your findings with clarity and impact. The next chapter will cover presenting results to both technical and non-technical stakeholders—ensuring your work leads to measurable improvements in AI security._
+_You are now ready to communicate your findings with clarity and impact. The next chapter will cover presenting results to both technical and non-technical stakeholders - ensuring your work leads to measurable improvements in AI security._

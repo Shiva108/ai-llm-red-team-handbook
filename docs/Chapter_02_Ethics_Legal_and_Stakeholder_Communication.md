@@ -4,10 +4,10 @@
 
 ## 2.1 Why Ethics Matter in AI Red Teaming
 
-AI red teaming, by its very nature, grants you deep access to sensitive systems and data. With that access comes the responsibility to operate with integrity, professionalism, and a commitment to avoiding harm. Ethical lapses don’t just damage your reputation—they can put clients, end users, and even whole organizations at risk.
+AI red teaming, by its very nature, grants you deep access to sensitive systems and data. With that access comes the responsibility to operate with integrity, professionalism, and a commitment to avoiding harm. Ethical lapses don’t just damage your reputation - they can put clients, end users, and even whole organizations at risk.
 
 - **Trust is foundational:** Clients rely on your honesty, discretion, and judgment.
-- **AI is high-stakes:** Model misuse can have consequences beyond IT—think misinformation, privacy violations, or physical harm.
+- **AI is high-stakes:** Model misuse can have consequences beyond IT - think misinformation, privacy violations, or physical harm.
 - **Changing landscape:** New regulations (GDPR, EU AI Act) and societal expectations demand transparency and accountability.
 
 ## 2.2 Fundamental Ethical Principles
@@ -74,7 +74,7 @@ In AI red teaming, technical findings may have legal, business, or even social i
 
 ### Principles of Clear Communication
 
-- **Tailor your language**: Use context-appropriate explanations—avoid jargon for business stakeholders, provide depth for technical teams.
+- **Tailor your language**: Use context-appropriate explanations - avoid jargon for business stakeholders, provide depth for technical teams.
 - **Early and often**: Regular check-ins help prevent misunderstandings and scope drift.
 - **Actionable reporting**: Focus on impact, exploitability, and specific recommendations for mitigation.
 
@@ -83,13 +83,13 @@ In AI red teaming, technical findings may have legal, business, or even social i
 | Audience         | Communication Style               | Example Message                                                                                                            |
 | ---------------- | --------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
 | Executive        | Plain language, impact-focused    | “Our tests found that anyone can access sensitive customer data in the chat logs, exposing us to GDPR fines.”              |
-| Technical        | Technical detail, steps, evidence | “Prompt injection via the ‘/support’ API bypasses intent filters—recommend input validation and stricter role separation.” |
+| Technical        | Technical detail, steps, evidence | “Prompt injection via the ‘/support’ API bypasses intent filters - recommend input validation and stricter role separation.” |
 | Compliance/Legal | Documentation, traceability       | “All model access was conducted using the provided test account and logs are attached as evidence.”                        |
 
 ## 2.6 Conflicts of Interest, Bias, and Fair Testing
 
 - **Declare conflicts**: If you have worked on the client’s codebase, or have competing interests, disclose and recuse as needed.
-- **Be aware of bias**: Test scripts and approaches should model real adversaries, not just “AI labs”—engage a diversity of viewpoints and red teaming experience.
+- **Be aware of bias**: Test scripts and approaches should model real adversaries, not just “AI labs”-engage a diversity of viewpoints and red teaming experience.
 - **Fairness**: Avoid creating or exploiting vulnerabilities for the sake of the test.
 
 ## 2.7 The AI Red Teamer’s Oath

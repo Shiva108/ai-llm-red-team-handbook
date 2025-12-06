@@ -8,7 +8,7 @@ _This chapter provides comprehensive coverage of attacks on multimodal AI system
 
 **The Multimodal Attack Surface:**
 
-The emergence of multimodal AI systems—models that process text, images, audio, and video simultaneously—has dramatically expanded the attack surface for adversaries. While text-only LLMs have well-studied vulnerabilities, multimodal models introduce entirely new attack vectors where malicious instructions can be hidden in images, audio waveforms, or transmitted across modalities to bypass safety filters.
+The emergence of multimodal AI systems-models that process text, images, audio, and video simultaneously-has dramatically expanded the attack surface for adversaries. While text-only LLMs have well-studied vulnerabilities, multimodal models introduce entirely new attack vectors where malicious instructions can be hidden in images, audio waveforms, or transmitted across modalities to bypass safety filters.
 
 **Why Multimodal Attacks Matter:**
 

@@ -4,7 +4,7 @@
 
 ## 1.1 What Is AI Red Teaming?
 
-AI Red Teaming is the structured practice of simulating attacks on artificial intelligence (AI) systems—including Large Language Models (LLMs)—to uncover vulnerabilities, model real-world adversaries, and provide actionable recommendations for defense and mitigation. Originating from traditional cybersecurity red teams, AI red teaming adapts and extends the discipline to the unique risks and attack surfaces presented by machine learning, NLP systems, and autonomous agents.
+AI Red Teaming is the structured practice of simulating attacks on artificial intelligence (AI) systems - including Large Language Models (LLMs)-to uncover vulnerabilities, model real-world adversaries, and provide actionable recommendations for defense and mitigation. Originating from traditional cybersecurity red teams, AI red teaming adapts and extends the discipline to the unique risks and attack surfaces presented by machine learning, NLP systems, and autonomous agents.
 
 Unlike conventional security testing, AI red teaming examines not just code and infrastructure, but also the data, models, human-in-the-loop workflows, and the emergent behaviors that make AI both powerful and unpredictably risky.
 

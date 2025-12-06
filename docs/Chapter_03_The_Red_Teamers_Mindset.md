@@ -35,11 +35,11 @@ A great adversarial mindset means:
 
 - **Modeling real attackers:** Differentiate between the “script kiddie,” the criminal gang, and the nation-state.
 - **Understanding business impact:** What would really cause damage? Data leakage, reputational loss, compliance violations?
-- **Simulating user behaviors:** Go beyond “security tester” approaches—think like disgruntled insiders, clever criminals, or naive/persistent end users.
+- **Simulating user behaviors:** Go beyond “security tester” approaches - think like disgruntled insiders, clever criminals, or naive/persistent end users.
 
 ## 3.4 The “T-Shaped” Red Teamer
 
-- **Depth:** Deep technical skills in at least one area—ML/LLM systems, Python automation, OS internals, prompt engineering, or network traffic analysis.
+- **Depth:** Deep technical skills in at least one area - ML/LLM systems, Python automation, OS internals, prompt engineering, or network traffic analysis.
 - **Breadth:** Working knowledge of software architecture, cloud, law, regulatory frameworks, and business operations.
 
 Continual learning is crucial. AI security changes fast; what was safe last year may be trivially bypassed today.
@@ -52,7 +52,7 @@ Continual learning is crucial. AI security changes fast; what was safe last year
 
 ## 3.6 Thinking in Attack Chains
 
-Never look at vulnerabilities in isolation. The most devastating real-world attacks are **chains**—a sequence of small weaknesses, each overcome in turn:
+Never look at vulnerabilities in isolation. The most devastating real-world attacks are **chains**-a sequence of small weaknesses, each overcome in turn:
 
 - Reconnaissance → Social Engineering → Prompt Injection → Privilege Escalation → Data Exfiltration
 

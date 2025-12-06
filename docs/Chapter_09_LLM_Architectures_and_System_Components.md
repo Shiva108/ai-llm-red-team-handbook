@@ -49,7 +49,7 @@ A token is not necessarily a word. It can be part of a word, a space, or a symbo
 
 ### Inspecting Tokenizers (How-To)
 
-You can inspect how a model "sees" your prompt using the `transformers` library on your local machine (or Google Colab). This is crucial for **Token Smuggling** attacks—finding ways to encode "forbidden" words so filter keywords don't trigger.
+You can inspect how a model "sees" your prompt using the `transformers` library on your local machine (or Google Colab). This is crucial for **Token Smuggling** attacks - finding ways to encode "forbidden" words so filter keywords don't trigger.
 
 ```python
 from transformers import AutoTokenizer

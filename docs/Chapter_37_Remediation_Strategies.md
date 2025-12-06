@@ -1,10 +1,10 @@
-![Banner](assets/banner.svg)
-
 # Chapter 37: Remediation Strategies
 
-## 10.1 The Importance of Presentation
+![Banner](assets/banner.svg)
 
-Delivering findings is more than handing over a report—it's about ensuring your audience understands the issues, accepts their significance, and is empowered to act on them. Successful presentation:
+## 37.1 The Importance of Presentation
+
+Delivering findings is more than handing over a report - it's about ensuring your audience understands the issues, accepts their significance, and is empowered to act on them. Successful presentation:
 
 - Fosters collaboration between red teamers, defenders, and executives.
 - Reduces the risk of misinterpretation or dismissal of critical findings.
@@ -12,23 +12,23 @@ Delivering findings is more than handing over a report—it's about ensuring you
 
 ---
 
-## 10.2 Adapting Your Message to the Audience
+## 37.2 Adapting Your Message to the Audience
 
-### 10.2.1 Technical Audiences
+### 37.2.1 Technical Audiences
 
 - Focus on vulnerability details, reproduction steps, root causes, and recommended fixes.
 - Be prepared for deep-dive questions and requests for clarifications.
 - Supply evidence, logs, scripts, and system diagrams as needed.
 
-### 10.2.2 Executive/Non-Technical Audiences
+### 37.2.2 Executive/Non-Technical Audiences
 
 - Emphasize business impact, regulatory and reputational risks, and resource implications.
 - Use analogies or risk heat maps to communicate severity.
-- Stay solutions-focused—clarify how remediation aligns with business priorities.
+- Stay solutions-focused - clarify how remediation aligns with business priorities.
 
 ---
 
-## 10.3 Effective Presentation Techniques
+## 37.3 Effective Presentation Techniques
 
 - **Prioritize the Most Severe Issues:** Address critical and high-risk findings first, with emphasis on business consequences.
 - **Tell the Story:** Illustrate how an attacker could chain vulnerabilities, what the outcome would be, and measures to break that chain.
@@ -37,16 +37,16 @@ Delivering findings is more than handing over a report—it's about ensuring you
 
 ---
 
-## 10.4 Facilitating Remediation
+## 37.4 Facilitating Remediation
 
 - Provide **clear, prioritized remediation guidance**, listing actions by severity and ease of implementation.
 - Where feasible, break down actions into phases: quick wins, medium-term improvements, and strategic changes.
-- Collaborate with defenders to verify feasibility—refer to playbooks or proven controls when possible.
+- Collaborate with defenders to verify feasibility - refer to playbooks or proven controls when possible.
 - Offer to retest high-priority fixes as part of the engagement closure.
 
 ---
 
-## 10.5 Example: Remediation Roadmap Table
+## 37.5 Example: Remediation Roadmap Table
 
 | Issue                       | Severity | Recommended Action                                  | Owner    | Timeline |
 | --------------------------- | -------- | --------------------------------------------------- | -------- | -------- |
@@ -56,15 +56,15 @@ Delivering findings is more than handing over a report—it's about ensuring you
 
 ---
 
-## 10.6 Handling Difficult Conversations
+## 37.6 Handling Difficult Conversations
 
 - Be factual, not alarmist; avoid blame language and focus on solutions.
 - Acknowledge constraints or business realities (resource limits, legacy systems).
-- Help stakeholders weigh tradeoffs—sometimes, “best” security isn't immediately practical, so explain risk reduction steps.
+- Help stakeholders weigh tradeoffs - sometimes, “best” security isn't immediately practical, so explain risk reduction steps.
 
 ---
 
-## 10.7 Follow-Up and Continuous Improvement
+## 37.7 Follow-Up and Continuous Improvement
 
 - Schedule follow-up sessions to review remediation progress.
 - Encourage tracking of open issues and regular retesting.
@@ -72,7 +72,7 @@ Delivering findings is more than handing over a report—it's about ensuring you
 
 ---
 
-## 10.8 Checklist: Presenting and Remediation
+## 37.8 Checklist: Presenting and Remediation
 
 - [ ] Most severe/business-critical issues highlighted and explained.
 - [ ] Technical and executive perspectives both addressed.

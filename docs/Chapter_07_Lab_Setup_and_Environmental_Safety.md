@@ -11,7 +11,7 @@ A properly designed test environment (or "lab") is crucial in AI red teaming to:
 - Allow realistic simulation of adversarial actions.
 - Enable efficient logging, evidence capture, and troubleshooting.
 
-AI/LLM red teaming often deals with powerful models, sensitive data, and complex cloud/software stacks—amplifying the need for rigorous safety throughout engagement.
+AI/LLM red teaming often deals with powerful models, sensitive data, and complex cloud/software stacks - amplifying the need for rigorous safety throughout engagement.
 
 ---
 
@@ -35,7 +35,7 @@ AI/LLM red teaming often deals with powerful models, sensitive data, and complex
    - Populate with safe test data or limited synthetic sensitive data if needed.
 3. **Configure Access Controls**
    - Create test accounts, temporary tokens, restricted network/firewall rules.
-   - Audit permissions—least privilege should be enforced everywhere.
+   - Audit permissions - least privilege should be enforced everywhere.
 4. **Install Monitoring and Logging**
    - Ensure all red team actions and system events are captured.
    - Use SIEM/log aggregation solutions or simple file-based logs as appropriate.
@@ -49,7 +49,7 @@ AI/LLM red teaming often deals with powerful models, sensitive data, and complex
 
 - **Rate Limiting:** Prevent accidental denial-of-service or brute-force flooding of systems.
 - **Kill Switches:** Maintain mechanisms to pause or halt the environment instantly in case of runaway tests or unintentional impacts.
-- **Credential Safety:** Never reuse production credentials. Treat any credential, API key, or secret as sensitive—even in test.
+- **Credential Safety:** Never reuse production credentials. Treat any credential, API key, or secret as sensitive - even in test.
 - **Data Containment:** Prevent test data (especially adversarial prompts or outputs) from leaking outside the controlled lab.
 
 ---

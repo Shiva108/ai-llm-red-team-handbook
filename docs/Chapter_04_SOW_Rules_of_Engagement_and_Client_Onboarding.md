@@ -43,7 +43,7 @@ The SOW is your master document. It defines every aspect of the engagement, incl
 
 ## 4.3 Rules of Engagement (RoE)
 
-The RoE defines _how_ testing will be conducted—including constraints, escalation paths, and safety controls. Think of this as your engagement safety net.
+The RoE defines _how_ testing will be conducted - including constraints, escalation paths, and safety controls. Think of this as your engagement safety net.
 
 ### 4.3.1 Typical RoE Elements
 
@@ -111,7 +111,7 @@ Before you start:
 - Are all stakeholders, including legal/compliance, signed off?
 - Is your RoE documented, understandable, and complete?
 - Do you have a clear communication path and emergency escalation route?
-- Are you provisioned with all required access—_and nothing more_?
+- Are you provisioned with all required access-_and nothing more_?
 
 ---
 

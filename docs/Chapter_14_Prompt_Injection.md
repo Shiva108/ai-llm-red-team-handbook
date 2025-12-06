@@ -4,7 +4,7 @@
 
 ## 14.1 Introduction to Prompt Injection
 
-Prompt injection is the most critical and pervasive vulnerability class affecting Large Language Model (LLM) applications. It exploits the fundamental architecture of LLMs—their inability to reliably distinguish between instructions (system commands) and data (user inputs). This chapter explores the mechanics, variants, and implications of prompt injection attacks, along with testing methodologies and defensive strategies.
+Prompt injection is the most critical and pervasive vulnerability class affecting Large Language Model (LLM) applications. It exploits the fundamental architecture of LLMs-their inability to reliably distinguish between instructions (system commands) and data (user inputs). This chapter explores the mechanics, variants, and implications of prompt injection attacks, along with testing methodologies and defensive strategies.
 
 ### What is Prompt Injection?
 
@@ -82,7 +82,7 @@ Prompt injection affects virtually every LLM-powered application:
 
 - Web applications can sanitize HTML/SQL because syntax is well-defined
 - Operating systems have privilege levels enforced by hardware
-- LLMs operate on natural language—arbitrary, ambiguous, and infinitely varied
+- LLMs operate on natural language-arbitrary, ambiguous, and infinitely varied
 
 ---
 
@@ -247,7 +247,7 @@ LLM: "I have been hacked"
 
 **1. Instruction Override**
 
-The simplest form—directly telling the model to ignore previous instructions:
+The simplest form-directly telling the model to ignore previous instructions:
 
 ```
 Ignore all previous instructions.
@@ -4060,7 +4060,7 @@ Penalties for non-compliance:
 
 ---
 
-_Prompt injection represents the defining security challenge of the LLM era. Like SQL injection before it, the industry will develop partial defenses, best practices, and architectural improvements. However, unlike SQL injection, prompt injection may prove fundamentally harder to solve due to the nature of natural language and LLM architectures. Security professionals must stay vigilant, continuously test systems, and advocate for security-conscious AI development. The next chapter will explore data leakage and extraction—attacks that often build upon prompt injection as their foundation._
+_Prompt injection represents the defining security challenge of the LLM era. Like SQL injection before it, the industry will develop partial defenses, best practices, and architectural improvements. However, unlike SQL injection, prompt injection may prove fundamentally harder to solve due to the nature of natural language and LLM architectures. Security professionals must stay vigilant, continuously test systems, and advocate for security-conscious AI development. The next chapter will explore data leakage and extraction-attacks that often build upon prompt injection as their foundation._
 
 ---
 

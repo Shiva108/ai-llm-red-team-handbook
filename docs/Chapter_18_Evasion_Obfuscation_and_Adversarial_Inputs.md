@@ -8,7 +8,7 @@ _This chapter provides comprehensive coverage of evasion techniques, obfuscation
 
 **The Evasion Arms Race:**
 
-In the evolving landscape of AI security, adversaries constantly develop new methods to evade detection, bypass content filters, and manipulate LLM behaviors. This ongoing "arms race" between attackers and defenders drives innovation in both offensive and defensive techniques. Understanding evasion is not just academic—it's essential for building resilient AI systems.
+In the evolving landscape of AI security, adversaries constantly develop new methods to evade detection, bypass content filters, and manipulate LLM behaviors. This ongoing "arms race" between attackers and defenders drives innovation in both offensive and defensive techniques. Understanding evasion is not just academic-it's essential for building resilient AI systems.
 
 **Why Evasion Matters:**
 
@@ -22,7 +22,7 @@ Evasion techniques are essential for:
 
 **Real-World Impact:**
 
-Evade techniques aren't theoretical—they're actively used to:
+Evade techniques aren't theoretical-they're actively used to:
 
 - Bypass content moderation at scale (social media abuse, spam)
 - Extract sensitive information from chatbots (PII leakage, credential theft)
@@ -915,7 +915,7 @@ _[Chapter continues with sections 18.4 through 18.16, maintaining similar depth 
 
 **Chapter Overview:**
 
-This chapter explored the sophisticated world of evasion, obfuscation, and adversarial inputs—techniques attackers use to bypass LLM security controls. Understanding these methods is critical for red teams testing AI defenses and for defenders building resilient systems.
+This chapter explored the sophisticated world of evasion, obfuscation, and adversarial inputs-techniques attackers use to bypass LLM security controls. Understanding these methods is critical for red teams testing AI defenses and for defenders building resilient systems.
 
 **Why This Matters:**
 
