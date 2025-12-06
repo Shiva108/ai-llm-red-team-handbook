@@ -1,3 +1,14 @@
+<!--
+Chapter: 16
+Title: Jailbreaks and Bypass Techniques
+Category: Attack Techniques
+Difficulty: Advanced
+Estimated Time: 40 minutes read time
+Hands-on: Yes - includes testing frameworks and jailbreak code
+Prerequisites: Chapters 14-15 (Prompt Injection, Data Leakage)
+Related: Chapters 11, 17 (Safety/Alignment, Plugin Exploitation)
+-->
+
 # Chapter 16: Jailbreaks and Bypass Techniques
 
 ![ ](assets/page_header.svg)

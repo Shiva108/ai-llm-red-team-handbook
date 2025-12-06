@@ -1,6 +1,19 @@
+<!--
+Chapter: 15
+Title: Data Leakage and Extraction
+Category: Attack Techniques
+Difficulty: Advanced
+Estimated Time: 50 minutes read time
+Hands-on: Yes - includes extraction code and testing tools
+Prerequisites: Chapters 9-10 (LLM Architectures, Tokenization), Chapter 14 (Prompt Injection)
+Related: Chapters 16, 20 (Jailbreaks, Model Theft)
+-->
+
 # Chapter 15: Data Leakage and Extraction
 
 ![ ](assets/page_header.svg)
+
+_This chapter provides comprehensive coverage of data leakage vulnerabilities in LLM systems, including training data extraction, conversation history leakage, system prompt disclosure, credential extraction, PII revelation, model inversion attacks, detection strategies, mitigation techniques, and critical regulatory compliance considerations._
 
 ## 15.1 Introduction to Data Leakage in LLMs
 
@@ -91,6 +104,30 @@ Confidential data that may leak:
 - Customer lists and business relationships
 - Unreleased product information
 - Source code and technical specifications
+
+### Theoretical Foundation
+
+**Why This Works (Model Behavior):**
+
+Data leakage in LLMs exploits the fundamental mechanism by which neural networks learn and generate text—compression of training data into model parameters. This attack succeeds because:
+
+- **Architectural Factor:** Transformer models use distributed representations where training data is encoded across billions of parameters. High-frequency or unique sequences create stronger activation patterns that can be reconstructed through targeted queries. The model's inability to distinguish between "general knowledge" and "specific memorized content" at inference time enables extraction.
+
+- **Training Artifact:** During pretraining, models that encounter the same sequence multiple times (e.g., boilerplate text, API documentation, public datasets) strengthen those pathways through gradient updates. RLHF and instruction-tuning can inadvertently reinforce memorization when human annotators reward verbatim accuracy on specific facts, creating exploitable "memory pockets."
+
+- **Input Processing:** LLMs process queries probabilistically, selecting next tokens based on learned distributions. When prompted with partial information that strongly activates memorized sequences (e.g., "API_KEY=sk-"), the model's autoregressive generation completes the pattern from training data. There is no cryptographic boundary separating "safe general knowledge" from "sensitive memorized data."
+
+**Foundational Research:**
+
+| Paper                                                                                                                           | Key Finding                                                                          | Relevance                                                                 |
+| ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------- |
+| [Carlini et al. (2021) "Extracting Training Data from Large Language Models"](https://arxiv.org/abs/2012.07805)                 | Demonstrated extraction of memorized training data from GPT-2 using targeted prompts | Established data extraction as fundamental LLM privacy vulnerability      |
+| [Carlini et al. (2023) "Quantifying Memorization Across Neural Language Models"](https://arxiv.org/abs/2202.07646)              | Showed memorization increases with model size and data repetition                    | Quantified relationship between scale and leakage risk                    |
+| [Nasr et al. (2023) "Scalable Extraction of Training Data from (Production) Language Models"](https://arxiv.org/abs/2311.17035) | Successfully extracted gigabytes of data from ChatGPT                                | Proved data extraction works at production scale against deployed systems |
+
+**What This Reveals About LLMs:**
+
+Data leakage attacks reveal that current LLM architectures lack data compartmentalization—models cannot selectively "forget" or quarantine sensitive information once learned. Unlike databases with access controls or encrypted storage with cryptographic separation, neural networks blend all training data into a unified latent space. This creates an irrecoverable privacy vulnerability: any data in the training set is potentially extractable through sufficiently sophisticated prompting, regardless of post-hoc safety measures.
 
 ---
 
@@ -3680,6 +3717,36 @@ Layer 5: Governance
 > [!TIP]
 > Create an "extraction taxonomy" mapping each attack technique to its success rate against your target systems. This helps prioritize defensive efforts and demonstrates comprehensive testing coverage.
 
+---
+
+## Quick Reference
+
+**Attack Vector Summary:**
+
+Data leakage attacks extract sensitive information from LLM systems through training data memorization, conversation history bleeding, system prompt disclosure, credential harvesting, and PII revelation. Attackers exploit the model's inability to compartmentalize learned data.
+
+**Key Detection Indicators:**
+
+- Repeated queries with partial secrets or PII patterns (e.g., "sk-", "@example.com")
+- Unusual prompt patterns attempting system instruction extraction
+- High-frequency requests for "verbatim quotes" or "exact text"
+- Temperature manipulation or sampling parameter changes
+- Cross-session probing attempting to access other users' data
+
+**Primary Mitigation:**
+
+- **Data Sanitization**: Pre-process training data to remove PII, credentials, and proprietary information
+- **Output Filtering**: Post-process responses to detect and redact sensitive patterns before user display
+- **Session Isolation**: Ensure cryptographic separation between user contexts and conversation histories
+- **Memorization Detection**: Regularly audit model outputs for verbatim training data reproduction
+- **Monitoring**: Real-time anomaly detection for extraction attempt patterns and volume-based attacks
+
+**Severity:** Critical (PII/credentials), High (proprietary data), Medium (system prompts)  
+**Ease of Exploit:** Medium (basic extraction) to High (advanced membership inference)  
+**Common Targets:** RAG systems with sensitive documents, fine-tuned models on proprietary data, multi-tenant chatbots
+
+---
+
 ### Pre-Engagement Checklist
 
 **Administrative:**
@@ -3749,7 +3816,53 @@ Layer 5: Governance
 
 ---
 
-## Chapter 15 Conclusion
+## 15.15 Research Landscape
+
+**Seminal Papers:**
+
+| Paper                                                                                                                    | Year | Venue    | Contribution                                                                             |
+| ------------------------------------------------------------------------------------------------------------------------ | ---- | -------- | ---------------------------------------------------------------------------------------- |
+| [Carlini et al. "Extracting Training Data from Large Language Models"](https://arxiv.org/abs/2012.07805)                 | 2021 | USENIX   | First demonstration of training data extraction from GPT-2, fundamental proof of concept |
+| [Carlini et al. "Quantifying Memorization Across Neural Language Models"](https://arxiv.org/abs/2202.07646)              | 2022 | arXiv    | Systematic study of memorization scaling with model size and training                    |
+| [Nasr et al. "Scalable Extraction of Training Data from (Production) Language Models"](https://arxiv.org/abs/2311.17035) | 2023 | arXiv    | Successfully extracted gigabytes from ChatGPT, proved production viability               |
+| [Lukas et al. "Analyzing Leakage of Personally Identifiable Information"](https://arxiv.org/abs/2302.00539)              | 2023 | IEEE S&P | First large-scale PII leakage study, regulatory implications                             |
+| [Shokri et al. "Membership Inference Attacks Against Machine Learning Models"](https://arxiv.org/abs/1610.05820)         | 2017 | IEEE S&P | Foundational membership inference work applicable to LLMs                                |
+
+**Evolution of Understanding:**
+
+- **2017-2019**: Early membership inference research established privacy risks in ML models, laying groundwork for LLM-specific attacks
+- **2020-2021**: Carlini et al.'s landmark work proved training data extraction was not theoretical—real memorization exists and is exploitable
+- **2022**: Focus shifted to quantifying memorization as models scaled, revealing size/repetition correlation
+- **2023-Present**: Production-scale attacks demonstrated on ChatGPT, prompting industry-wide awareness and regulatory interest in AI privacy
+
+**Current Research Gaps:**
+
+1. **Unlearning Mechanisms**: How can models selectively "forget" specific data without full retraining? Current approaches (e.g., fine-tuning with negated examples) show limited efficacy and may degrade model quality.
+
+2. **Privacy-Utility Tradeoffs**: What is the fundamental limit between model capability and privacy? Differential privacy during training reduces leakage but significantly impacts performance—can this gap be closed?
+
+3. **Cross-Model Leakage**: If data leaks from Model A, does it leak from Model B trained on similar data? Understanding transferability helps prioritize defense investments.
+
+**Recommended Reading:**
+
+**For Practitioners (by time available):**
+
+- **5 minutes**: [Google AI Blog on Data Extraction](https://ai.googleblog.com/2020/12/privacy-considerations-in-large.html) - Accessible industry perspective
+- **30 minutes**: [Carlini et al. (2021)](https://arxiv.org/abs/2012.07805) - Core extraction paper with concrete examples
+- **Deep dive**: [Nasr et al. (2023)](https://arxiv.org/abs/2311.17035) - Production-scale ChatGPT extraction study
+
+**By Focus Area:**
+
+- **Extraction Techniques**: [Carlini et al. (2021)](https://arxiv.org/abs/2012.07805) - Best for understanding attack mechanics
+- **Privacy Defenses**: [Lukas et al. (2023)](https://arxiv.org/abs/2302.00539) - Best for PII leakage mitigation
+- **Theoretical Foundation**: [Carlini et al. (2022)](https://arxiv.org/abs/2202.07646) - Best for memorization mathematics
+
+---
+
+## 15.16 Conclusion
+
+> [!CAUTION]
+> Unauthorized extraction of training data, PII, credentials, or proprietary information from LLM systems is illegal under data protection laws (GDPR, CCPA), computer fraud statutes (CFAA), and terms of service agreements. Violations can result in criminal prosecution, civil liability, regulatory fines, and imprisonment. **Only perform data extraction testing with explicit written authorization and within defined scope boundaries.**
 
 Data leakage and extraction represent one of the most significant and persistent security challenges in LLM systems. Unlike traditional software vulnerabilities with clear patches, data baked into model weights cannot simply be "fixed" without retraining. This makes prevention - through rigorous data hygiene, architectural controls, and ongoing monitoring - absolutely critical.
 
