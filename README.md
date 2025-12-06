@@ -17,47 +17,66 @@ A comprehensive operational toolkit for conducting **AI/LLM red team assessments
 
 This repository contains three core resources:
 
-### 1. **AI LLM Red Team Handbook** (24 Chapters, GitBook-ready)
+### 1. **AI LLM Red Team Handbook** (46 Chapters, Fully Standardized, GitBook-ready)
 
-A complete consultancy guide now split into individual chapter files for easier navigation:
+A comprehensive consultancy guide with all chapters now featuring standardized metadata, abstracts, and consistent structure:
 
-- **Part I: Foundations** - Methodology, ethics, legal considerations, and mindset (Chapters 1-3)
-- **Part II: Engagement Framework** - SOW/RoE templates, threat modeling, scoping, lab setup (Chapters 4-8)
-- **Part III: Operations** - Evidence collection, reporting, presentations, lessons learned (Chapters 9-11)
-- **Part IV: Technical Deep Dives** - RAG pipelines, supply chain security (Chapters 12-13)
-- **Part V: Attacks & Techniques** - Prompt injection, data leakage, jailbreaks, plugin exploitation, evasion, poisoning, model theft (Chapters 14-20)
-- **Appendices** - Tools, resources, templates, and references
+- **Part I: Professional Foundations (Chapters 1-4)** - Ethics, legal framework, mindset, and engagement setup
+- **Part II: Project Management (Chapters 5-6)** - Threat modeling, risk analysis, and scoping
+- **Part III: Technical Infrastructure (Chapters 7-8)** - Lab setup, evidence collection, and documentation
+- **Part IV: System Understanding (Chapters 9-13)** - LLM architectures, tokenization, plugins, RAG pipelines, and supply chain security
+- **Part V: Attack Techniques (Chapters 14-24)** - Comprehensive coverage of all major LLM attack vectors
+- **Part VI: Advanced Topics (Chapters 25-35)** - Cutting-edge attacks and techniques _(in development)_
+- **Part VII: Professional Practice (Chapters 36-46)** - Reporting, remediation, and program building
 
-**Current Coverage (24 Chapters - Complete):**
+**Fully Complete Chapters (24):**
 
-1. Introduction to AI Red Teaming
-2. Ethics, Legal, and Stakeholder Communication
-3. The Red Teamer's Mindset
-4. SOW, Rules of Engagement, and Client Onboarding
-5. Threat Modeling and Risk Analysis
-6. Scoping an Engagement
-7. Lab Setup and Environmental Safety
-8. Evidence, Documentation, and Chain of Custody
-9. Writing Effective Reports and Deliverables
-10. Presenting Results and Remediation Guidance
-11. Lessons Learned and Building Future Readiness
-12. Retrieval-Augmented Generation (RAG) Pipelines
-13. Data Provenance and Supply Chain Security
-14. Prompt Injection (Direct/Indirect, 1st/3rd Party)
-15. Data Leakage and Extraction
-16. Jailbreaks and Bypass Techniques
-17. Plugin and API Exploitation
-18. Evasion, Obfuscation, and Adversarial Inputs\*\* (Enhanced with comprehensive explanations)
-19. Training Data Poisoning\*\* (Enhanced with attack scenarios and defenses)
-20. Model Theft and Membership Inference\*\* (NEW: With copy-pasteable attack demonstrations)
-21. Model DoS and Resource Exhaustion\*\* (NEW: Token bombs, computational attacks, rate limiting bypass)
-22. Cross-Modal and Multimodal Attacks (1,159 lines)
-23. Advanced Persistence and Chaining (871 lines)
-24. Social Engineering with LLMs (1,140 lines)
+1. Introduction to AI Red Teaming _(Beginner, 15 min)_
+2. Ethics, Legal, and Stakeholder Communication _(Beginner, 18 min)_
+3. The Red Teamer's Mindset _(Beginner, 12 min)_
+4. SOW, Rules of Engagement, and Client Onboarding _(Intermediate, 20 min)_
+5. Threat Modeling and Risk Analysis _(Intermediate, 16 min)_
+6. Scoping an Engagement _(Intermediate, 14 min)_
+7. Lab Setup and Environmental Safety _(Intermediate, 25 min, Hands-on)_
+8. Evidence, Documentation, and Chain of Custody _(Intermediate, 18 min, Hands-on)_
+9. LLM Architectures and System Components _(Intermediate, 22 min, Hands-on)_
+10. Tokenization, Context, and Generation _(Intermediate, 20 min, Hands-on)_
+11. Plugins, Extensions, and External APIs _(Intermediate, 16 min)_
+12. Retrieval-Augmented Generation (RAG) Pipelines _(Advanced, 24 min, Hands-on)_
+13. Data Provenance and Supply Chain Security _(Intermediate, 18 min)_
+14. Prompt Injection _(Intermediate, ~30 min, Hands-on)_
+15. Data Leakage and Extraction _(Intermediate, ~30 min, Hands-on)_
+16. Jailbreaks and Bypass Techniques _(Intermediate, ~20 min, Hands-on)_
+17. Plugin and API Exploitation _(Advanced, ~25 min, Hands-on)_
+18. Evasion, Obfuscation, and Adversarial Inputs _(Advanced, ~20 min, Hands-on)_
+19. Training Data Poisoning _(Advanced, ~18 min, Hands-on)_
+20. Model Theft and Membership Inference _(Advanced, ~20 min, Hands-on)_
+21. Model DoS and Resource Exhaustion _(Advanced, ~18 min, Hands-on)_
+22. Cross-Modal and Multimodal Attacks _(Advanced, ~20 min, Hands-on)_
+23. Advanced Persistence and Chaining _(Advanced, ~18 min, Hands-on)_
+24. Social Engineering with LLMs _(Intermediate, ~20 min, Hands-on)_
+
+**Additional Chapters (Select Completed):**
+
+- Chapter 36: Reporting and Communication
+- Chapter 37: Remediation Strategies
+- Chapter 38: Continuous Red Teaming
+- Chapter 45: Building an AI Red Team Program
+
+_Chapters 25-35, 39-44, and 46 are currently stubs in development._
+
+**Chapter Features:**
+
+- ✅ **Standardized Metadata**: Category, difficulty, time estimates, prerequisites
+- ✅ **Compelling Abstracts**: 2-3 sentence chapter summaries
+- ✅ **Theoretical Foundations**: Attack mechanisms and research citations (Ch 14-24)
+- ✅ **Research Landscapes**: Evolution of attacks and current gaps (Ch 14-24)
+- ✅ **Quick References**: Attack vectors, detection, mitigation (Ch 14-24)
+- ✅ **Checklists**: Pre/post-engagement validation
 
 📖 **GitBook Navigation:** See [SUMMARY.md](docs/SUMMARY.md) for the complete chapter structure.
 
-### 2. **AI LLM Red Team Field Manual** (56KB)
+### 2. **AI LLM Red Team Field Manual** (64KB)
 
 Compact operational reference for field use:
 
@@ -105,48 +124,27 @@ python runner.py --config config.py
 ```text
 ai-llm-red-team-handbook/
 ├── docs/
-│   ├── SUMMARY.md                              # GitBook navigation
-│   ├── AI LLM Red Team Handbook.md             # Main overview + TOC
-│   ├── Chapter_01_Introduction_to_AI_Red_Teaming.md
+│   ├── SUMMARY.md                                       # GitBook navigation
+│   ├── Chapter_01_Introduction_to_AI_Red_Teaming.md    # All chapters 1-46
 │   ├── Chapter_02_Ethics_Legal_and_Stakeholder_Communication.md
-│   ├── Chapter_03_The_Red_Teamers_Mindset.md
-│   ├── Chapter_04_SOW_Rules_of_Engagement_and_Client_Onboarding.md
-│   ├── Chapter_05_Threat_Modeling_and_Risk_Analysis.md
-│   ├── Chapter_06_Scoping_an_Engagement.md
-│   ├── Chapter_07_Lab_Setup_and_Environmental_Safety.md
-│   ├── Chapter_08_Evidence_Documentation_and_Chain_of_Custody.md
-│   ├── Chapter_09_Writing_Effective_Reports_and_Deliverables.md
-│   ├── Chapter_10_Presenting_Results_and_Remediation_Guidance.md
-│   ├── Chapter_11_Lessons_Learned_and_Building_Future_Readiness.md
-│   ├── Chapter_12_Retrieval_Augmented_Generation_RAG_Pipelines.md
-│   ├── Chapter_13_Data_Provenance_and_Supply_Chain_Security.md
-│   ├── Chapter_14_Prompt_Injection.md
-│   ├── Chapter_15_Data_Leakage_and_Extraction.md
-│   ├── Chapter_16_Jailbreaks_and_Bypass_Techniques.md
-│   ├── Chapter_17_Plugin_and_API_Exploitation.md
-│   ├── Chapter_18_Evasion_Obfuscation_and_Adversarial_Inputs.md  # NEW
-│   ├── Chapter_19_Training_Data_Poisoning.md                      # NEW
-│   ├── Chapter_20_Model_Theft_and_Membership_Inference.md         # NEW (with runnable demos)
-│   ├── Chapter_21_Model_DoS_Resource_Exhaustion.md                # NEW (DoS attacks)
-│   ├── Chapter_22_Cross_Modal_Multimodal_Attacks.md               # NEW (VLM attacks)
-│   ├── Chapter_23_Advanced_Persistence_Chaining.md                # NEW (Persistence)
-│   ├── Chapter_24_Social_Engineering_LLMs.md                      # NEW (Social Eng)
-│   ├── AI_LLM Red Team Field Manual.md         # Operational field reference
-│   ├── Building a World-Class AI Red Team.md   # Team-building strategy guide
-│   ├── Configuration.md                         # Setup and configuration guide
-│   ├── templates/                               # Report templates
-│   └── archive/                                 # Historical versions
+│   ├── ...                                              # (Chapters 3-45)
+│   ├── Chapter_46_Conclusion_and_Next_Steps.md
+│   ├── AI_LLM Red Team Field Manual.md                  # Operational reference
+│   ├── Configuration.md                                 # Setup guide
+│   ├── templates/                                       # Report templates
+│   ├── field_manuals/                                   # Modular field guides
+│   ├── assets/                                          # Images and graphics
+│   └── archive/                                         # Historical versions
 ├── scripts/
-│   ├── runner.py                                # Test orchestration
-│   ├── test_prompt_injection.py                 # Prompt injection tests
-│   ├── test_safety_bypass.py                    # Jailbreak tests
-│   ├── test_data_exposure.py                    # Data leakage tests
-│   ├── test_tool_misuse.py                      # Plugin/tool abuse tests
-│   ├── test_fuzzing.py                          # Adversarial fuzzing
-│   ├── c2_server_elite.py                       # Elite C2 server implementation
-│   └── requirements.txt                         # Python dependencies
-├── assets/                                      # Images and resources
-└── README.md                                    # This file
+│   ├── runner.py                                        # Test orchestration
+│   ├── test_prompt_injection.py                         # Prompt injection tests
+│   ├── test_safety_bypass.py                            # Jailbreak tests
+│   ├── test_data_exposure.py                            # Data leakage tests
+│   ├── test_tool_misuse.py                              # Plugin/tool abuse tests
+│   ├── test_fuzzing.py                                  # Adversarial fuzzing
+│   └── requirements.txt                                 # Python dependencies
+├── assets/                                              # Images and resources
+└── README.md                                            # This file
 ```
 
 ---
@@ -157,8 +155,8 @@ ai-llm-red-team-handbook/
 | -------------------------- | ------------------------------- | ---------------------------------------------- |
 | **Red Team Assessments**   | Field Manual + Python Framework | Conduct comprehensive LLM security assessments |
 | **Consultant Engagements** | Handbook + Report Template      | Full methodology for client projects           |
-| **Team Training**          | Handbook Foundations (Ch 1-11)  | Onboard and develop security teams             |
-| **Research & Development** | Technical Chapters (Ch 12+)     | Deep dives into specific attack surfaces       |
+| **Team Training**          | Handbook Foundations (Ch 1-13)  | Onboard and develop security teams             |
+| **Research & Development** | Attack Chapters (Ch 14-24)      | Deep dives into specific attack surfaces       |
 | **Compliance & Audit**     | Threat Modeling (Ch 5) + Tools  | Risk assessments and control validation        |
 
 ---
@@ -212,14 +210,29 @@ python runner.py --verbose                 # Verbose output
 
 ## 🗺️ Roadmap
 
-**Planned:**
+**Completed (December 2024):**
 
-- Additional technical chapters (21-46 from original TOC)
+- ✅ 24 comprehensive chapters (1-13 foundations, 14-24 attack techniques)
+- ✅ Standardized metadata across all chapters
+- ✅ Theoretical foundations and research landscapes (Ch 14-24)
+- ✅ Quick reference guides for attack chapters
+- ✅ Pre/post-engagement checklists
+- ✅ Modular field manual structure
+
+**In Development:**
+
+- 🔄 Advanced attack chapters (25-35): Adversarial ML, model inversion, backdoors
+- 🔄 Professional practice chapters (36-46): Some completed, others in progress
+- 🔄 Comprehensive linting and code block improvements
+- 🔄 Cross-chapter reference validation
+
+**Future Enhancements:**
+
 - Sample RAG and LLM test environments
-- Interactive attack case studies
-- Multimodal AI attack techniques
-- Advanced RAG exploitation scenarios
+- Interactive attack case studies with recordings
 - Video tutorials and walkthroughs
+- Auto-generated learning paths from metadata
+- Chapter completion tracking tools
 
 **Contributions welcome** via issues and PRs.
 
@@ -268,4 +281,4 @@ For major changes, please open an issue first to discuss.
 
 ---
 
-**Last Updated:** December 2024 | **Handbook Chapters:** 24 Complete (GitBook-ready) | **Practical Examples:** 12+ Copy-Paste Attack Demos
+**Last Updated:** December 2025 | **Chapters:** 46 total (24 complete, standardized with metadata) | **Handbook Status:** Production-Ready
