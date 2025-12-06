@@ -4217,7 +4217,7 @@ Common trigger types:
 - Trojan trigger in image classification
 - Small patch added to images triggered misclassification
 
-**Poisoning Language Models (Schuster et al., 2020):**
+**Poisoning Language Models:**
 
 - Demonstrated backdoors in code completion models
 - Trigger: Specific code comment patterns
@@ -12303,43 +12303,6 @@ Priority actions based on severity:
 - Cache poisoning is a real risk
 - Need for thorough testing of multi-tenant systems
 
-### 15.12.2 Research Findings
-
-**Academic studies on extraction**
-
-1. **"Extracting Training Data from Large Language Models" (Carlini et al., 2021)**
-
-   **Findings**:
-
-   - Successfully extracted hundreds of verbatim training examples from GPT-2
-   - Memorization increases with model size
-   - Prompting strategies can amplify extraction
-
-   **Key metrics**:
-
-   - Over 600 examples extracted with >50% accuracy
-   - Some examples were > 1000 tokens long
-   - Success rate varied by data uniqueness
-
-2. **"Extracting Training Data from ChatGPT" (Carlini et al., 2023)**
-
-   **Findings**:
-
-   - Extracted over 10,000 unique training samples
-   - Cost: ~$200 in API calls
-   - includes PII, copyright material, and memorized web content
-
-3. **"Privacy in Large Language Models" (Brown et al., 2022)**
-
-   **Findings**:
-
-   - Differential privacy can reduce extraction risk
-   - Tradeoff between privacy and model quality
-   - Best practices: noise injection, data filtering, output validation
-
-**Benchmark datasets and results**
-
-```python
 # Example: Testing memorization on different models
 
 MEMORIZATION_BENCHMARK = {
@@ -14226,7 +14189,7 @@ going to act as ChatGPT with Developer Mode enabled..."
 
 ### 16.9.2 Research Breakthroughs
 
-**Universal adversarial prompts** (Zou et al., 2023)
+**Universal adversarial prompts**
 
 Finding: Adversarial suffixes can be optimized to work across:
 
@@ -14237,7 +14200,7 @@ Finding: Adversarial suffixes can be optimized to work across:
 Success rate: 60-90% on tested models
 Transferability: 50%+ across different model families
 
-**Jailbroken: How Does LLM Safety Training Fail?** (Wei et al., 2023)
+**Jailbroken: How Does LLM Safety Training Fail?**
 
 Key findings:
 
@@ -14873,62 +14836,6 @@ RED_TEAM_BEST_PRACTICES = {
 **Key Takeaway**: Jailbreak research is essential for AI safety. Responsible testing, coordinated disclosure, and continuous improvement are critical for building robust, trustworthy AI systems.
 
 ---
-
-# Appendix A: Red Team Tools, Resources, and Further Reading
-
-## A.1 Recommended Red Team Tools for AI and LLMs
-
-### Prompt Injection and Manipulation
-
-- **Garak:** Automated prompt injection and LLM adversary simulation platform.
-- **PromptBench:** Platform for benchmarking LLM prompt injection vulnerabilities.
-- **GPTFuzzer:** Automated tool for generating jailbreak prompts and fuzzing model instruction-following limits.
-- **Custom Scripts:** For targeted prompt chaining, context manipulation, and testing model/system boundary cases.
-
-### Adversarial and Security Testing
-
-- **Adversarial Robustness Toolbox (ART):** Tools for testing and benchmarking robustness of AI/ML models.
-- **CleverHans:** Python library for benchmarking machine learning systems’ vulnerability to adversarial examples.
-- **Cross-Modal Attack Scripts:** Used for vision-language models; many released in academic repositories.
-
-### Ecosystem Assessment
-
-- **Burp Suite, OWASP ZAP:** For web/API fuzzing and plugin/endpoint testing.
-- **TruffleHog, GitLeaks:** For finding secrets and keys in codebases and plugin repositories.
-
----
-
-## A.3 Further Learning
-
-- **Workshops/Competitions:**
-  - DEF CON AI Village: Annual LLM hacking/challenge events.
-  - HackerOne/bug bounty platforms with AI/ML targets.
-- **Conferences:**
-  - Black Hat, RSA, BlueHat, and sector-specific AI/ML security tracks.
-- **Online Courses:**
-  - Various MOOC platforms are beginning to offer adversarial ML and AI red teaming tracks.
-
----
-
-## A.4 Example Documentation Templates
-
-- **Scoping Document Template**
-- **Evidence Collection Spreadsheet/Log**
-- **Finding/Remediation Tracker**
-- **Chain of Custody Flowchart**
-- _[Create your own based on chapter examples, or explore community resources.]_
-
----
-
-## A.5 Community and Collaboration
-
-- **AI Red Team Networks:** Growing communities on Slack, Discord, and LinkedIn.
-- **Open Source Initiatives:** Contribute scripts, attack dictionaries, or sample labs to GitHub and ML security projects.
-- **Responsible Disclosure:** Practice respectful, coordinated disclosure with vendors and researchers.
-
----
-
-_The field of AI/LLM red teaming evolves rapidly! Stay engaged with community updates, train with new attack techniques, and continually share knowledge to build a safer, more robust future for intelligent systems._
 
 # Chapter 36: Writing Effective Reports and Deliverables
 

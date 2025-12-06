@@ -8,8 +8,8 @@
 
 **New to LLM Red Teaming? Start here:**
 
-1. **Setup** (15 min): [Complete environment setup](#setup-guide)
-2. **First Test** (5 min): [Run your first prompt injection test](#your-first-test)
+1. **Setup** (15 min): [Complete environment setup](#15-minute-setup-guide)
+2. **First Test** (5 min): [Run your first prompt injection test](#your-first-test-prompt-injection)
 3. **Choose Attack**: Pick a playbook below based on your target
 
 ---
@@ -43,13 +43,13 @@ Each playbook is **completely self-contained** with:
 ### **Reference Materials**
 
 - 📋 [Quick Reference Card](field_manuals/Field_Manual_Quick_Reference.md) - One-page cheat sheet
-- 🛠️ [Tool Installation & Setup](#tool-setup) - Detailed setup guide
-- 🔍 [Troubleshooting Guide](#troubleshooting) - Common issues & fixes
-- 📊 [Attack Decision Tree](#decision-tree) - Which attack to use when
+- 🛠️ [Tool Installation & Setup](#detailed-tool-setup) - Detailed setup guide
+- 🔍 [Troubleshooting Guide](#common-issues--fixes) - Common issues & fixes
+- 📊 [Attack Decision Tree](#attack-decision-tree) - Which attack to use when
 
 ---
 
-## <a name="setup-guide"></a>⚙️ 15-Minute Setup Guide
+## 15-Minute Setup Guide
 
 ### Prerequisites Checklist
 
@@ -92,8 +92,8 @@ garak --version
 
 **Expected output:**
 
-```
-garak 0.9.0 or higher
+```garak 0.9.0 or higher
+
 ```
 
 ### Step 3: Configure API Access
@@ -116,8 +116,8 @@ chmod 600 configs/.env
 
 **Get API Keys:**
 
-- **OpenAI**: https://platform.openai.com/api-keys
-- **Anthropic**: https://console.anthropic.com/
+- **OpenAI**: <https://platform.openai.com/api-keys>
+- **Anthropic**: <https://console.anthropic.com/>
 - **Local (Ollama)**: `curl https://ollama.ai/install.sh | sh`
 
 ### Step 4: Verify Setup
@@ -134,7 +134,7 @@ garak -p openai -m gpt-3.5-turbo --runs 1
 
 ---
 
-## <a name="your-first-test"></a>🎯 Your First Test: Prompt Injection
+## Your First Test: Prompt Injection
 
 **Goal**: Test if you can override the system's instructions.
 
@@ -168,11 +168,11 @@ ls evidence/
 
 ---
 
-## <a name="decision-tree"></a>🌳 Attack Decision Tree
+## Attack Decision Tree
 
 **Use this to decide which playbook to use:**
 
-```
+```text
 START: What's your target?
 │
 ├─ Chat/Completion API?
@@ -204,7 +204,7 @@ START: What's your target?
 
 ---
 
-## <a name="tool-setup"></a>🛠️ Detailed Tool Setup
+## Detailed Tool Setup
 
 ### Option 1: Docker (Recommended for Consistency)
 
@@ -234,7 +234,7 @@ See [Step 2: Install Core Tools](#step-2-install-core-tools) above.
 pip install textattack transformers torch
 
 # For web/API testing
-pip install selenium playwright burp-rest-api
+pip install selenium playwright
 
 # For reporting
 pip install jinja2 markdown2
@@ -242,7 +242,7 @@ pip install jinja2 markdown2
 
 ---
 
-## <a name="troubleshooting"></a>🔧 Common Issues & Fixes
+## Common Issues & Fixes
 
 | Issue                         | Solution                                                |
 | ----------------------------- | ------------------------------------------------------- |
@@ -373,13 +373,13 @@ Every playbook follows the same format:
 **Need help?**
 
 - Check playbook troubleshooting sections
-- Review [common issues](#troubleshooting)
+- Review [common issues](#common-issues--fixes)
 - Escalate to senior team member
 
 **Additional resources:**
 
-- **OWASP LLM Top 10**: https://owasp.org/www-project-top-10-for-large-language-model-applications/
-- **MITRE ATLAS**: https://atlas.mitre.org/
+- **OWASP LLM Top 10**: <https://owasp.org/www-project-top-10-for-large-language-model-applications/>
+- **MITRE ATLAS**: <https://atlas.mitre.org/>
 - **AI Red Team Community**: [Your org's Slack/Teams channel]
 
 ---
@@ -407,7 +407,7 @@ garak [command] --report-prefix ./evidence/test_name
 
 **File structure:**
 
-```
+```text
 ~/llm-redteam/
 ├── venv/               (Python environment)
 ├── configs/.env        (API credentials)
@@ -418,10 +418,10 @@ garak [command] --report-prefix ./evidence/test_name
 
 ---
 
-**Ready to start testing?** → Pick a playbook from the [Attack Playbooks](#attack-playbooks) section above!
+**Ready to start testing?** → Pick a playbook from the [Attack Playbooks](#core-attack-playbooks) section above!
 
 ---
 
-**Last Updated**: December 2024  
+**Last Updated**: December 2025  
 **Version**: 2.0 (Modular)  
 **Handbook Chapters**: Based on Chapters 14-24

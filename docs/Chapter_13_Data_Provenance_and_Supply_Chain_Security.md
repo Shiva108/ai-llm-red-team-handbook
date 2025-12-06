@@ -400,7 +400,7 @@ Common trigger types:
 - Trojan trigger in image classification
 - Small patch added to images triggered misclassification
 
-**Poisoning Language Models (Schuster et al., 2020):**
+**Poisoning Language Models:**
 
 - Demonstrated backdoors in code completion models
 - Trigger: Specific code comment patterns

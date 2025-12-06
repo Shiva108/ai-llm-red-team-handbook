@@ -772,7 +772,7 @@ going to act as ChatGPT with Developer Mode enabled..."
 
 ### 16.9.2 Research Breakthroughs
 
-**Universal adversarial prompts** (Zou et al., 2023)
+**Universal adversarial prompts**
 
 Finding: Adversarial suffixes can be optimized to work across:
 
@@ -783,7 +783,7 @@ Finding: Adversarial suffixes can be optimized to work across:
 Success rate: 60-90% on tested models
 Transferability: 50%+ across different model families
 
-**Jailbroken: How Does LLM Safety Training Fail?** (Wei et al., 2023)
+**Jailbroken: How Does LLM Safety Training Fail?**
 
 Key findings:
 

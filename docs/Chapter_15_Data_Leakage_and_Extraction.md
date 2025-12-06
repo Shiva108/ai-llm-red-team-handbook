@@ -1,6 +1,6 @@
-![Banner](assets/banner.svg)
-
 # Chapter 15: Data Leakage and Extraction
+
+![Banner](assets/banner.svg)
 
 ## 15.1 Introduction to Data Leakage in LLMs
 
@@ -2555,67 +2555,31 @@ Priority actions based on severity:
 - Cache poisoning is a real risk
 - Need for thorough testing of multi-tenant systems
 
-### 15.12.2 Research Findings
-
-**Academic studies on extraction**
-
-1. **"Extracting Training Data from Large Language Models" (Carlini et al., 2021)**
-
-   **Findings**:
-
-   - Successfully extracted hundreds of verbatim training examples from GPT-2
-   - Memorization increases with model size
-   - Prompting strategies can amplify extraction
-
-   **Key metrics**:
-
-   - Over 600 examples extracted with >50% accuracy
-   - Some examples were > 1000 tokens long
-   - Success rate varied by data uniqueness
-
-2. **"Extracting Training Data from ChatGPT" (Carlini et al., 2023)**
-
-   **Findings**:
-
-   - Extracted over 10,000 unique training samples
-   - Cost: ~$200 in API calls
-   - includes PII, copyright material, and memorized web content
-
-3. **"Privacy in Large Language Models" (Brown et al., 2022)**
-
-   **Findings**:
-
-   - Differential privacy can reduce extraction risk
-   - Tradeoff between privacy and model quality
-   - Best practices: noise injection, data filtering, output validation
-
-**Benchmark datasets and results**
-
-```python
 # Example: Testing memorization on different models
 
 MEMORIZATION_BENCHMARK = {
-    'model': 'GPT-2-1.5B',
-    'training_set_size': '40GB',
-    'test_samples': 1000,
-    'extraction_techniques': [
-        'Direct completion',
-        'Prefix-suffix attack',
-        'Temperature manipulation'
-    ],
-    'results': {
-        'exact_matches': 127,  # 12.7%
-        'near_matches': 234,   # 23.4%
-        'partial_matches': 445, # 44.5%
-        'no_match': 194        # 19.4%
-    },
-    'success_factors': [
-        'Unique sequences: 85% extraction rate',
-        'Common sequences: 15% extraction rate',
-        'Repeated data: 95% extraction rate'
-    ]
+'model': 'GPT-2-1.5B',
+'training_set_size': '40GB',
+'test_samples': 1000,
+'extraction_techniques': [
+'Direct completion',
+'Prefix-suffix attack',
+'Temperature manipulation'
+],
+'results': {
+'exact_matches': 127, # 12.7%
+'near_matches': 234, # 23.4%
+'partial_matches': 445, # 44.5%
+'no_match': 194 # 19.4%
+},
+'success_factors': [
+'Unique sequences: 85% extraction rate',
+'Common sequences: 15% extraction rate',
+'Repeated data: 95% extraction rate'
+]
 }
-```
+
+````
 
 **Success rates and methodologies**
 
@@ -2692,7 +2656,7 @@ MEMORIZATION_BENCHMARK = {
 3. Update controls based on new threats
 4. Regular penetration testing
 5. Continuous improvement
-```
+````
 
 ---
 
