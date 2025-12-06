@@ -226,7 +226,7 @@ if __name__ == "__main__":
     print("with written permission from the target organization.")
 ```
 
-**Code Breakdown:**
+**Code Breakdown (Optional):**
 
 **Class Structure:**
 
@@ -274,35 +274,21 @@ print(f"Result: {result}")
 - **Metric 2:** Expected measurement/outcome
 - **Metric 3:** Expected measurement/outcome
 
-**Why This Attack Succeeds:**
-
-1. **Reason 1:** Explanation of why it's effective
-2. **Reason 2:** Explanation of why defenses fail
-3. **Reason 3:** Explanation of exploitation mechanics
-
-**Why This Code Works (Technical Deep-Dive):**
+**Why This Code Works:**
 
 This implementation succeeds because:
 
-1. **Model Behavior Exploited:** [Specific vulnerability]
-2. **Research Basis:** [Paper documenting this behavior]
-3. **Transferability:** [Does this work across models? Why/why not?]
+1. **Effectiveness:** [Why it's effective against the target]
+2. **Defense Failures:** [Why current defenses don't stop it]
+3. **Model Behavior Exploited:** [Specific vulnerability]
+4. **Research Basis:** [Paper documenting this behavior]
+5. **Transferability:** [Does this work across models? Why/why not?]
 
 **Key Takeaways:**
 
 1. **Takeaway 1:** Specific insight about the technique
 2. **Takeaway 2:** Specific insight about detection/defense
 3. **Takeaway 3:** Specific insight about real-world application
-
-> [!NOTE]
-> Use NOTE alerts for additional context, background information, or helpful explanations that provide valuable context without being critical.
-
----
-
-> [!TIP]
-> Use TIP alerts for best practices, optimization suggestions, or efficiency improvements that can enhance the technique or defense.
-
----
 
 ## [X].3 [Main Topic Section 2]
 
@@ -630,12 +616,10 @@ Why this defense works (or fails):
 
 ---
 
+## [X].9 Conclusion
+
 > [!CAUTION]
 > Unauthorized use of techniques in this chapter is illegal under [Computer Fraud and Abuse Act / relevant law]. Violations can result in criminal prosecution, civil liability, and imprisonment. **Only use these techniques in authorized security assessments with explicit written permission.**
-
----
-
-## [X].10 Conclusion
 
 **Key Takeaways:**
 
@@ -666,7 +650,9 @@ Why this defense works (or fails):
 - Chapter [Y]: [Additional related chapter]
 - Practice: Set up lab environment and test these techniques (Chapter 7)
 
-### Pre-Engagement Checklist
+---
+
+## Appendix A: Pre-Engagement Checklist
 
 **Administrative:**
 
@@ -692,7 +678,7 @@ Why this defense works (or fails):
 - [ ] [Specific preparation item 2]
 - [ ] [Specific preparation item 3]
 
-### Post-Engagement Checklist
+## Appendix B: Post-Engagement Checklist
 
 **Documentation:**
 
@@ -735,9 +721,16 @@ TEMPLATE USAGE NOTES:
 5. Ensure all code examples include proper warnings
 6. Include at least one practical code demonstration
 7. Provide real-world examples or case studies
-8. Always include ethical and legal considerations
+8. Include CAUTION alert in Conclusion about unauthorized use
 9. Update checklists with chapter-specific items
 10. Use appropriate alert types (NOTE/TIP/IMPORTANT/WARNING/CAUTION)
+
+ALERT USAGE EXAMPLES:
+> [!NOTE] - Additional context, background information, helpful explanations
+> [!TIP] - Best practices, optimization suggestions, efficiency improvements
+> [!IMPORTANT] - Essential requirements, critical steps, must-know information
+> [!WARNING] - Breaking changes, compatibility issues, potential problems
+> [!CAUTION] - Legal/ethical warnings, high-risk actions, serious consequences
 
 RESEARCH INTEGRATION REQUIREMENTS:
 11. Every technique must include "Why This Works" mechanistic explanation
