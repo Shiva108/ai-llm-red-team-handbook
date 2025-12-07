@@ -1,46 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500">
-<defs>
-
-        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-            <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
-        </marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+            <defs>
+            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#D4AF37" stroke-width="0.5" opacity="0.15"/>
+            </pattern>
         
-</defs>
-<rect width="100%" height="100%" fill="#ffffff" />
-<line x1="50" y1="450" x2="450" y2="450" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"  />
-<line x1="50" y1="450" x2="50" y2="50" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"  />
-<circle cx="181" cy="314" r="5" fill="#99ccff" stroke="none" stroke-width="2" opacity="1.0" />
-<circle cx="103" cy="394" r="5" fill="#99ccff" stroke="none" stroke-width="2" opacity="1.0" />
-<circle cx="135" cy="331" r="5" fill="#99ccff" stroke="none" stroke-width="2" opacity="1.0" />
-<circle cx="128" cy="317" r="5" fill="#99ccff" stroke="none" stroke-width="2" opacity="1.0" />
-<circle cx="194" cy="313" r="5" fill="#99ccff" stroke="none" stroke-width="2" opacity="1.0" />
-<circle cx="186" cy="394" r="5" fill="#99ccff" stroke="none" stroke-width="2" opacity="1.0" />
-<circle cx="169" cy="311" r="5" fill="#99ccff" stroke="none" stroke-width="2" opacity="1.0" />
-<circle cx="175" cy="354" r="5" fill="#99ccff" stroke="none" stroke-width="2" opacity="1.0" />
-<circle cx="104" cy="303" r="5" fill="#99ccff" stroke="none" stroke-width="2" opacity="1.0" />
-<circle cx="111" cy="327" r="5" fill="#99ccff" stroke="none" stroke-width="2" opacity="1.0" />
-<circle cx="129" cy="364" r="5" fill="#99ccff" stroke="none" stroke-width="2" opacity="1.0" />
-<circle cx="177" cy="303" r="5" fill="#99ccff" stroke="none" stroke-width="2" opacity="1.0" />
-<circle cx="171" cy="325" r="5" fill="#99ccff" stroke="none" stroke-width="2" opacity="1.0" />
-<circle cx="191" cy="383" r="5" fill="#99ccff" stroke="none" stroke-width="2" opacity="1.0" />
-<circle cx="189" cy="369" r="5" fill="#99ccff" stroke="none" stroke-width="2" opacity="1.0" />
-<text x="150" y="420" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="normal" dy=".3em">Public Docs</text>
-<circle cx="353" cy="128" r="5" fill="#ffcccc" stroke="none" stroke-width="2" opacity="1.0" />
-<circle cx="357" cy="175" r="5" fill="#ffcccc" stroke="none" stroke-width="2" opacity="1.0" />
-<circle cx="335" cy="100" r="5" fill="#ffcccc" stroke="none" stroke-width="2" opacity="1.0" />
-<circle cx="397" cy="120" r="5" fill="#ffcccc" stroke="none" stroke-width="2" opacity="1.0" />
-<circle cx="389" cy="154" r="5" fill="#ffcccc" stroke="none" stroke-width="2" opacity="1.0" />
-<circle cx="343" cy="135" r="5" fill="#ffcccc" stroke="none" stroke-width="2" opacity="1.0" />
-<circle cx="319" cy="127" r="5" fill="#ffcccc" stroke="none" stroke-width="2" opacity="1.0" />
-<circle cx="397" cy="143" r="5" fill="#ffcccc" stroke="none" stroke-width="2" opacity="1.0" />
-<circle cx="313" cy="111" r="5" fill="#ffcccc" stroke="none" stroke-width="2" opacity="1.0" />
-<circle cx="348" cy="112" r="5" fill="#ffcccc" stroke="none" stroke-width="2" opacity="1.0" />
-<circle cx="345" cy="144" r="5" fill="#ffcccc" stroke="none" stroke-width="2" opacity="1.0" />
-<circle cx="377" cy="133" r="5" fill="#ffcccc" stroke="none" stroke-width="2" opacity="1.0" />
-<circle cx="305" cy="193" r="5" fill="#ffcccc" stroke="none" stroke-width="2" opacity="1.0" />
-<circle cx="358" cy="168" r="5" fill="#ffcccc" stroke="none" stroke-width="2" opacity="1.0" />
-<circle cx="315" cy="148" r="5" fill="#ffcccc" stroke="none" stroke-width="2" opacity="1.0" />
-<text x="350" y="80" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="normal" dy=".3em">Private Docs</text>
-<line x1="150" y1="350" x2="320" y2="180" stroke="#cc0000" stroke-width="2" marker-end="url(#arrowhead)" stroke-dasharray="5,5" />
-<text x="250" y="250" font-family="Arial, sans-serif" font-size="14" fill="#cc0000" text-anchor="middle" font-weight="bold" dy=".3em">Semantic Probing</text>
-</svg>
+            <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                <polygon points="0 0, 10 3.5, 0 7" fill="#D4AF37" />
+            </marker>
+        </defs>
+            <rect width="100%" height="100%" fill="#050505" />
+            <rect width="100%" height="100%" fill="url(#grid)" />
+            <text x="300" y="30" fill="#FFD700" font-family="Courier New" font-size="20" text-anchor="middle">SEARCH SPACE: RETRIEVAL MANIPULATION</text><rect x="50" y="50" width="500" height="500" fill="none" stroke="#D4AF37" stroke-width="1" opacity="0.5"/><circle cx="150" cy="150" r="80" fill="none" stroke="#D4AF37" stroke-width="1.5" /><circle cx="150" cy="150" r="76" fill="none" stroke="#D4AF37" stroke-width="0.5" stroke-dasharray="4,4" opacity="0.5" /><text x="150" y="148" fill="#FFD700" font-family="Courier New" font-size="11" font-weight="bold" text-anchor="middle">Public</text><text x="150" y="162" fill="#FFD700" font-family="Courier New" font-size="11" font-weight="bold" text-anchor="middle">Knowledge</text><circle cx="450" cy="450" r="80" fill="none" stroke="#AA0000" stroke-width="1.5" /><circle cx="450" cy="450" r="76" fill="none" stroke="#AA0000" stroke-width="0.5" stroke-dasharray="4,4" opacity="0.5" /><text x="450" y="448" fill="#FFD700" font-family="Courier New" font-size="11" font-weight="bold" text-anchor="middle">RESTRICTED</text><text x="450" y="462" fill="#FFD700" font-family="Courier New" font-size="11" font-weight="bold" text-anchor="middle">DATA</text><circle cx="171" cy="104" r="2" fill="#D4AF37" opacity="0.6"/><circle cx="93" cy="184" r="2" fill="#D4AF37" opacity="0.6"/><circle cx="125" cy="121" r="2" fill="#D4AF37" opacity="0.6"/><circle cx="118" cy="107" r="2" fill="#D4AF37" opacity="0.6"/><circle cx="184" cy="103" r="2" fill="#D4AF37" opacity="0.6"/><circle cx="176" cy="184" r="2" fill="#D4AF37" opacity="0.6"/><circle cx="204" cy="159" r="2" fill="#D4AF37" opacity="0.6"/><circle cx="101" cy="165" r="2" fill="#D4AF37" opacity="0.6"/><circle cx="144" cy="94" r="2" fill="#D4AF37" opacity="0.6"/><circle cx="93" cy="101" r="2" fill="#D4AF37" opacity="0.6"/><circle cx="117" cy="119" r="2" fill="#D4AF37" opacity="0.6"/><circle cx="154" cy="167" r="2" fill="#D4AF37" opacity="0.6"/><circle cx="93" cy="161" r="2" fill="#D4AF37" opacity="0.6"/><circle cx="115" cy="181" r="2" fill="#D4AF37" opacity="0.6"/><circle cx="173" cy="179" r="2" fill="#D4AF37" opacity="0.6"/><circle cx="159" cy="143" r="2" fill="#D4AF37" opacity="0.6"/><circle cx="118" cy="147" r="2" fill="#D4AF37" opacity="0.6"/><circle cx="165" cy="125" r="2" fill="#D4AF37" opacity="0.6"/><circle cx="193" cy="201" r="2" fill="#D4AF37" opacity="0.6"/><circle cx="90" cy="187" r="2" fill="#D4AF37" opacity="0.6"/><circle cx="493" cy="410" r="2" fill="#AA0000" opacity="0.8"/><circle cx="479" cy="444" r="2" fill="#AA0000" opacity="0.8"/><circle cx="433" cy="425" r="2" fill="#AA0000" opacity="0.8"/><circle cx="409" cy="417" r="2" fill="#AA0000" opacity="0.8"/><circle cx="487" cy="433" r="2" fill="#AA0000" opacity="0.8"/><circle cx="403" cy="401" r="2" fill="#AA0000" opacity="0.8"/><circle cx="438" cy="402" r="2" fill="#AA0000" opacity="0.8"/><circle cx="435" cy="498" r="2" fill="#AA0000" opacity="0.8"/><circle cx="434" cy="467" r="2" fill="#AA0000" opacity="0.8"/><circle cx="423" cy="493" r="2" fill="#AA0000" opacity="0.8"/><circle cx="395" cy="483" r="2" fill="#AA0000" opacity="0.8"/><circle cx="448" cy="458" r="2" fill="#AA0000" opacity="0.8"/><circle cx="405" cy="508" r="2" fill="#AA0000" opacity="0.8"/><circle cx="438" cy="400" r="2" fill="#AA0000" opacity="0.8"/><circle cx="460" cy="427" r="2" fill="#AA0000" opacity="0.8"/><circle cx="496" cy="470" r="2" fill="#AA0000" opacity="0.8"/><circle cx="469" cy="503" r="2" fill="#AA0000" opacity="0.8"/><circle cx="500" cy="436" r="2" fill="#AA0000" opacity="0.8"/><circle cx="463" cy="414" r="2" fill="#AA0000" opacity="0.8"/><circle cx="480" cy="398" r="2" fill="#AA0000" opacity="0.8"/><line x1="300" y1="300" x2="420" y2="400" stroke="#D4AF37" stroke-dasharray="4,4" marker-end="url(#arrowhead)"/><circle cx="300" cy="300" r="4" fill="#FFF" stroke="#D4AF37" stroke-width="1.5" /><circle cx="300" cy="300" r="0" fill="none" stroke="#D4AF37" stroke-width="0.5" stroke-dasharray="4,4" opacity="0.5" /><text x="260" y="300" fill="#FFD700" font-family="Courier New" font-size="10" text-anchor="middle">Initial Q</text><line x1="420" y1="400" x2="450" y2="450" stroke="#AA0000" marker-end="url(#arrowhead)"/><text x="520" y="400" fill="#AA0000" font-family="Courier New" font-size="10" text-anchor="middle">Refined Q\n(Probing)</text>
+            <rect x="10" y="10" width="580" height="580" fill="none" stroke="#D4AF37" stroke-width="2" opacity="0.3" />
+        </svg>
