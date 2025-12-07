@@ -27,8 +27,6 @@ Data provenance refers to the documented history and origin of data throughout i
 4. **Inference:** What data is processed during operation? (User inputs, retrieved documents, API responses)
 5. **Output:** What data is generated and where does it go? (Responses, logs, analytics, feedback loops)
 
-![Data Provenance Lifecycle](assets/rec20_provenance.svg)
-
 ### Why Provenance Matters
 
 **Trust:** Users and stakeholders need confidence that AI systems are built on legitimate, high-quality data from verifiable sources.
