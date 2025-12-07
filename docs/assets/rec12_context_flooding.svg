@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="300" viewBox="0 0 800 300">
+<defs>
+
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+        </marker>
+        
+</defs>
+<rect width="100%" height="100%" fill="#ffffff" />
+<text x="200" y="50" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="bold" dy=".3em">Before Attack (Normal)</text>
+<rect x="50" y="80" width="300" height="60" rx="5" ry="5" fill="none" stroke="#333" stroke-width="2" opacity="1.0"  />
+<text x="200" y="155" font-family="Arial, sans-serif" font-size="12" fill="#333" text-anchor="middle" font-weight="normal" dy=".3em">Context Window</text>
+<rect x="52" y="82" width="80" height="56" rx="5" ry="5" fill="#d0e0ff" stroke="none" stroke-width="2" opacity="1.0"  />
+<text x="92" y="110" font-family="Arial, sans-serif" font-size="12" fill="#333" text-anchor="middle" font-weight="normal" dy=".3em">Sys Prompt</text>
+<rect x="134" y="82" width="100" height="56" rx="5" ry="5" fill="#e6ffe6" stroke="none" stroke-width="2" opacity="1.0"  />
+<text x="184" y="110" font-family="Arial, sans-serif" font-size="12" fill="#333" text-anchor="middle" font-weight="normal" dy=".3em">History</text>
+<text x="600" y="50" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="bold" dy=".3em">After Flooding (DoS)</text>
+<rect x="450" y="80" width="300" height="60" rx="5" ry="5" fill="none" stroke="#333" stroke-width="2" opacity="1.0"  />
+<rect x="400" y="82" width="40" height="56" rx="5" ry="5" fill="#d0e0ff" stroke="none" stroke-width="2" opacity="0.5"  />
+<text x="420" y="70" font-family="Arial, sans-serif" font-size="10" fill="#cc0000" text-anchor="middle" font-weight="normal" dy=".3em">LOST</text>
+<rect x="452" y="82" width="296" height="56" rx="5" ry="5" fill="#ffcccc" stroke="none" stroke-width="2" opacity="1.0"  />
+<text x="600" y="110" font-family="Arial, sans-serif" font-size="12" fill="#333" text-anchor="middle" font-weight="normal" dy=".3em">Repeated Garbage Tokens...</text>
+</svg>

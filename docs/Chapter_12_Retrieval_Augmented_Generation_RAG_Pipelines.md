@@ -94,27 +94,7 @@ Understanding the complete data flow helps identify attack surfaces and vulnerab
 
 ### End-to-End RAG Data Flow
 
-```text
-User Query
-    ↓
-Query Processing & Embedding
-    ↓
-Vector Database Similarity Search
-    ↓
-Document/Chunk Retrieval
-    ↓
-Permission/Access Control Check (often missing!)
-    ↓
-Context Assembly (retrieved docs + user query)
-    ↓
-LLM Prompt Construction
-    ↓
-LLM Generation
-    ↓
-Output Filtering & Safety Checks
-    ↓
-Response Delivery to User
-```
+![RAG Data Flow Diagram](assets/rec16_rag_flow.svg)
 
 ### Critical Security Checkpoints
 
@@ -184,6 +164,8 @@ RAG systems integrate multiple components (LLMs, databases, parsers, APIs), each
 - **Cross-document correlation:** Combining information from multiple retrieved chunks
 
 **Example:**
+
+![Retrieval Manipulation Diagram](assets/rec17_retrieval_manipulation.svg)
 
 ```text
 Benign query: "What is our vacation policy?"

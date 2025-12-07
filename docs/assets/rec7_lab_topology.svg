@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+<defs>
+
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+        </marker>
+        
+</defs>
+<rect width="100%" height="100%" fill="#ffffff" />
+<rect x="50" y="50" width="200" height="300" rx="5" ry="5" fill="#f0f0f0" stroke="#999" stroke-width="2" opacity="1.0" stroke-dasharray="5,5" />
+<text x="150" y="330" font-family="Arial, sans-serif" font-size="14" fill="#666" text-anchor="middle" font-weight="bold" dy=".3em">Red Team Area</text>
+<rect x="550" y="50" width="200" height="300" rx="5" ry="5" fill="#e6f2ff" stroke="#003366" stroke-width="2" opacity="1.0" stroke-dasharray="5,5" />
+<text x="650" y="330" font-family="Arial, sans-serif" font-size="14" fill="#003366" text-anchor="middle" font-weight="bold" dy=".3em">Isolated Lab Zone</text>
+<line x1="400" y1="50" x2="400" y2="350" stroke="#cc0000" stroke-width="5"   />
+<text x="400" y="30" font-family="Arial, sans-serif" font-size="14" fill="#cc0000" text-anchor="middle" font-weight="bold" dy=".3em">FIREWALL / AIRGAP</text>
+<rect x="100" y="150" width="100" height="60" rx="5" ry="5" fill="#fff" stroke="#333" stroke-width="2" opacity="1.0"  />
+<text x="150" y="180" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="normal" dy=".3em">Laptop/VM</text>
+<rect x="600" y="100" width="100" height="60" rx="5" ry="5" fill="#fff" stroke="#333" stroke-width="2" opacity="1.0"  />
+<text x="650" y="130" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="normal" dy=".3em">Target LLM</text>
+<rect x="600" y="200" width="100" height="60" rx="5" ry="5" fill="#fff" stroke="#333" stroke-width="2" opacity="1.0"  />
+<text x="650" y="230" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="normal" dy=".3em">Vector DB</text>
+<rect x="350" y="350" width="100" height="40" rx="5" ry="5" fill="#eee" stroke="#333" stroke-width="2" opacity="1.0"  />
+<text x="400" y="370" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="normal" dy=".3em">Evidence Server</text>
+<line x1="200" y1="180" x2="400" y2="180" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"  />
+<line x1="400" y1="180" x2="600" y2="130" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"  />
+<line x1="650" y1="160" x2="650" y2="200" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"  />
+</svg>

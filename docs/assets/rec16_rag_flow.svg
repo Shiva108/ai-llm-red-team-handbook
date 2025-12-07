@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" viewBox="0 0 900 500">
+<defs>
+
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+        </marker>
+        
+</defs>
+<rect width="100%" height="100%" fill="#ffffff" />
+<rect x="0.0" y="0" width="225.0" height="500" rx="5" ry="5" fill="#fff" stroke="#ccc" stroke-width="1" opacity="1.0"  />
+<text x="112.5" y="30" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="bold" dy=".3em">User</text>
+<rect x="225.0" y="0" width="225.0" height="500" rx="5" ry="5" fill="#fff" stroke="#ccc" stroke-width="1" opacity="1.0"  />
+<text x="337.5" y="30" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="bold" dy=".3em">Orchestrator</text>
+<rect x="450.0" y="0" width="225.0" height="500" rx="5" ry="5" fill="#fff" stroke="#ccc" stroke-width="1" opacity="1.0"  />
+<text x="562.5" y="30" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="bold" dy=".3em">Vector DB</text>
+<rect x="675.0" y="0" width="225.0" height="500" rx="5" ry="5" fill="#fff" stroke="#ccc" stroke-width="1" opacity="1.0"  />
+<text x="787.5" y="30" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="bold" dy=".3em">LLM</text>
+<circle cx="112.5" cy="100" r="30" fill="#eee" stroke="#333" stroke-width="2" opacity="1.0" />
+<text x="112.5" y="100" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="normal" dy=".3em">Query</text>
+<rect x="275.0" y="120" width="120" height="50" rx="5" ry="5" fill="#e6f2ff" stroke="#333" stroke-width="2" opacity="1.0"  />
+<text x="335.0" y="145" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="normal" dy=".3em">Embed Query</text>
+<rect x="500.0" y="180" width="120" height="50" rx="5" ry="5" fill="#ffe6e6" stroke="#333" stroke-width="2" opacity="1.0"  />
+<text x="560.0" y="205" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="normal" dy=".3em">Retrieve Top-K</text>
+<rect x="275.0" y="250" width="120" height="50" rx="5" ry="5" fill="#e6f2ff" stroke="#333" stroke-width="2" opacity="1.0"  />
+<text x="335.0" y="275" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="normal" dy=".3em">Assemble Prompt</text>
+<rect x="725.0" y="320" width="120" height="50" rx="5" ry="5" fill="#e6ffe6" stroke="#333" stroke-width="2" opacity="1.0"  />
+<text x="785.0" y="345" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="normal" dy=".3em">Generate</text>
+<circle cx="112.5" cy="400" r="30" fill="#eee" stroke="#333" stroke-width="2" opacity="1.0" />
+<text x="112.5" y="400" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="normal" dy=".3em">Answer</text>
+<line x1="112.5" y1="130" x2="275.0" y2="145" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"  />
+<line x1="395.0" y1="145" x2="500.0" y2="205" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"  />
+<line x1="500.0" y1="205" x2="395.0" y2="275" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"  />
+<line x1="395.0" y1="275" x2="725.0" y2="345" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"  />
+<line x1="725.0" y1="345" x2="112.5" y2="400" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"  />
+</svg>

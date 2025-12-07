@@ -72,6 +72,8 @@ Never look at vulnerabilities in isolation. The most devastating real-world atta
 
 - Reconnaissance → Social Engineering → Prompt Injection → Privilege Escalation → Data Exfiltration
 
+![Attack Chain Diagram](assets/rec2_attack_chain.svg)
+
 Document each step, and always ask: **What risk can this chain create for the business or end user?**
 
 ## 3.7 Professionalism Under Pressure

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="200" viewBox="0 0 800 200">
+<defs>
+
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+        </marker>
+        
+</defs>
+<rect width="100%" height="100%" fill="#ffffff" />
+<rect x="20" y="75" width="140" height="50" rx="5" ry="5" fill="#f8f9fa" stroke="#333" stroke-width="2" opacity="1.0"  />
+<text x="90.0" y="95.0" font-family="Arial, sans-serif" font-size="12" fill="#333" text-anchor="middle" font-weight="bold" dy=".3em">Reconnaissance</text>
+<line x1="160" y1="100.0" x2="180" y2="100.0" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"  />
+<rect x="180" y="75" width="140" height="50" rx="5" ry="5" fill="#f8f9fa" stroke="#333" stroke-width="2" opacity="1.0"  />
+<text x="250.0" y="95.0" font-family="Arial, sans-serif" font-size="12" fill="#333" text-anchor="middle" font-weight="bold" dy=".3em">Social Eng.</text>
+<line x1="320" y1="100.0" x2="340" y2="100.0" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"  />
+<rect x="340" y="75" width="140" height="50" rx="5" ry="5" fill="#f8f9fa" stroke="#333" stroke-width="2" opacity="1.0"  />
+<text x="410.0" y="95.0" font-family="Arial, sans-serif" font-size="12" fill="#333" text-anchor="middle" font-weight="bold" dy=".3em">Prompt Injection</text>
+<line x1="480" y1="100.0" x2="500" y2="100.0" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"  />
+<rect x="500" y="75" width="140" height="50" rx="5" ry="5" fill="#f8f9fa" stroke="#333" stroke-width="2" opacity="1.0"  />
+<text x="570.0" y="95.0" font-family="Arial, sans-serif" font-size="12" fill="#333" text-anchor="middle" font-weight="bold" dy=".3em">Privilege Esc.</text>
+<line x1="640" y1="100.0" x2="660" y2="100.0" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"  />
+<rect x="660" y="75" width="140" height="50" rx="5" ry="5" fill="#f8f9fa" stroke="#333" stroke-width="2" opacity="1.0"  />
+<text x="730.0" y="95.0" font-family="Arial, sans-serif" font-size="12" fill="#333" text-anchor="middle" font-weight="bold" dy=".3em">Data Exfiltration</text>
+</svg>

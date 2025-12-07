@@ -71,6 +71,8 @@ AI/LLM red teaming often deals with powerful models, sensitive data, and complex
 
 ### Simple Topology
 
+![Lab Topology Diagram](assets/rec7_lab_topology.svg)
+
 Red Team VM(s) ---> Test LLM/API Env ---> Staging Plugins/DBs ---> Synthetic Data Sources
 
 ### Segmented Topology (for large engagements)

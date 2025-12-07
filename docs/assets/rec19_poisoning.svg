@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+<defs>
+
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+        </marker>
+        
+</defs>
+<rect width="100%" height="100%" fill="#ffffff" />
+<text x="400" y="40" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="bold" dy=".3em">Phase 1: Training Time Poisoning</text>
+<rect x="100" y="100" width="80" height="60" rx="5" ry="5" fill="#eee" stroke="#333" stroke-width="2" opacity="1.0"  />
+<circle cx="170" cy="150" r="10" fill="red" stroke="#333" stroke-width="2" opacity="1.0" />
+<text x="140" y="130" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="normal" dy=".3em">Car + Patch</text>
+<line x1="200" y1="130" x2="250" y2="130" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"  />
+<rect x="250" y="100" width="80" height="60" rx="5" ry="5" fill="#d0e0ff" stroke="#333" stroke-width="2" opacity="1.0"  />
+<text x="290" y="130" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="normal" dy=".3em">Training</text>
+<line x1="330" y1="130" x2="380" y2="130" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"  />
+<text x="400" y="130" font-family="Arial, sans-serif" font-size="14" fill="#cc0000" text-anchor="middle" font-weight="bold" dy=".3em">Label: 'Toaster'</text>
+<text x="400" y="220" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="bold" dy=".3em">Phase 2: Inference Time (Backdoor Activation)</text>
+<rect x="100" y="260" width="80" height="60" rx="5" ry="5" fill="#eee" stroke="#333" stroke-width="2" opacity="1.0"  />
+<text x="140" y="290" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="normal" dy=".3em">Car</text>
+<line x1="200" y1="290" x2="250" y2="290" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"  />
+<rect x="250" y="260" width="80" height="60" rx="5" ry="5" fill="#d0e0ff" stroke="#333" stroke-width="2" opacity="1.0"  />
+<line x1="330" y1="290" x2="380" y2="290" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"  />
+<text x="420" y="290" font-family="Arial, sans-serif" font-size="14" fill="green" text-anchor="middle" font-weight="normal" dy=".3em">Output: 'Car'</text>
+<rect x="100" y="340" width="80" height="60" rx="5" ry="5" fill="#eee" stroke="#333" stroke-width="2" opacity="1.0"  />
+<circle cx="170" cy="390" r="10" fill="red" stroke="#333" stroke-width="2" opacity="1.0" />
+<text x="140" y="370" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="normal" dy=".3em">Car + Patch</text>
+<line x1="200" y1="370" x2="250" y2="370" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"  />
+<rect x="250" y="340" width="80" height="60" rx="5" ry="5" fill="#d0e0ff" stroke="#333" stroke-width="2" opacity="1.0"  />
+<line x1="330" y1="370" x2="380" y2="370" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"  />
+<text x="420" y="370" font-family="Arial, sans-serif" font-size="14" fill="#cc0000" text-anchor="middle" font-weight="bold" dy=".3em">Output: 'Toaster'</text>
+</svg>

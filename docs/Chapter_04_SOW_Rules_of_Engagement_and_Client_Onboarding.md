@@ -85,6 +85,8 @@ The RoE defines _how_ testing will be conducted - including constraints, escalat
 
 A smooth onboarding process earns trust, reduces errors, and ensures you hit the ground running.
 
+![Client Onboarding Flowchart](assets/rec3_onboarding.svg)
+
 ### 4.4.1 Key Onboarding Steps
 
 - **Kickoff Meeting:** Walk through SOW, RoE, introduce team members, clarify escalation/communication.

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="500" viewBox="0 0 600 500">
+<defs>
+
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+        </marker>
+        
+</defs>
+<rect width="100%" height="100%" fill="#ffffff" />
+<path d="M 300 250 L 300 100 A 150 150 0 0 1 450 250 Z" fill="#e6f2ff" stroke="none" stroke-width="2"  />
+<text x="360" y="190" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="bold" dy=".3em">1. Thought</text>
+<path d="M 300 250 L 450 250 A 150 150 0 0 1 300 400 Z" fill="#ffe6e6" stroke="none" stroke-width="2"  />
+<text x="360" y="310" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="bold" dy=".3em">2. Action</text>
+<text x="360" y="330" font-family="Arial, sans-serif" font-size="12" fill="#333" text-anchor="middle" font-weight="normal" dy=".3em">(JSON Output)</text>
+<path d="M 300 250 L 300 400 A 150 150 0 0 1 150 250 Z" fill="#e6ffe6" stroke="none" stroke-width="2"  />
+<text x="240" y="310" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="bold" dy=".3em">3. Execution</text>
+<text x="240" y="330" font-family="Arial, sans-serif" font-size="12" fill="#333" text-anchor="middle" font-weight="normal" dy=".3em">(API Call)</text>
+<path d="M 300 250 L 150 250 A 150 150 0 0 1 300 100 Z" fill="#fff0e0" stroke="none" stroke-width="2"  />
+<text x="240" y="190" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="bold" dy=".3em">4. Observation</text>
+</svg>

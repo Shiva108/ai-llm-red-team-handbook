@@ -30,6 +30,8 @@ When we attack an "AI," we are rarely attacking a single file. We are attacking 
 | **Orchestrator/Agent**    | The logic loop deciding to call tools.               | Infinite loops, excessive agency, prompt injection propagation.   |
 | **Vector Database (RAG)** | Long-term memory storage.                            | Search result poisoning, indirect prompt injection.               |
 
+![AI Anatomy Block Diagram](assets/rec9_ai_anatomy.svg)
+
 ## 9.2 The Transformer: A Hacker's Perspective
 
 At its core, almost all modern LLMs are **Transformers**. A Transformer is a probabilistic engine that predicts the next token in a sequence based on the `attention` it pays to previous tokens.
@@ -95,8 +97,9 @@ Understanding the flow of a single prompt helps you pinpoint where to inject.
    - The model processes the huge vector of numbers.
    - _Attack:_ **Sponge Attacks**. Specific input sequences can trigger worst-case computational complexity in the attention layers, causing high energy consumption or latency spikes.
 3. **Output Post-processing**:
-   - The raw output is filtered for toxicity.
    - _Attack:_ **Obfuscation**. If the output filter catches "bomb", generating "b-o-m-b" might bypass it.
+
+![Inference Pipeline Diagram](assets/rec10_inference_pipeline.svg)
 
 ## 9.5 Practical Inspection: Loading a Model
 

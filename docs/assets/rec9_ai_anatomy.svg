@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+<defs>
+
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+        </marker>
+        
+</defs>
+<rect width="100%" height="100%" fill="#ffffff" />
+<rect x="50" y="150" width="100" height="60" rx="5" ry="5" fill="#eee" stroke="#333" stroke-width="2" opacity="1.0"  />
+<text x="100" y="180" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="normal" dy=".3em">User Input</text>
+<line x1="150" y1="180" x2="200" y2="180" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"  />
+<rect x="200" y="140" width="100" height="80" rx="5" ry="5" fill="#d0e0ff" stroke="#003366" stroke-width="2" opacity="1.0"  />
+<text x="250" y="180" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="normal" dy=".3em">Tokenizer</text>
+<line x1="300" y1="180" x2="350" y2="180" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"  />
+<rect x="350" y="100" width="150" height="160" rx="5" ry="5" fill="#fff8e1" stroke="#ff8c00" stroke-width="2" opacity="1.0" stroke-dasharray="4,4" />
+<text x="425" y="120" font-family="Arial, sans-serif" font-size="12" fill="#995500" text-anchor="middle" font-weight="normal" dy=".3em">Context Window</text>
+<rect x="370" y="140" width="110" height="40" rx="5" ry="5" fill="#xffd" stroke="#cc7a00" stroke-width="2" opacity="1.0"  />
+<text x="425" y="160" font-family="Arial, sans-serif" font-size="12" fill="#333" text-anchor="middle" font-weight="normal" dy=".3em">System Prompt</text>
+<rect x="370" y="200" width="110" height="40" rx="5" ry="5" fill="#xffd" stroke="#cc7a00" stroke-width="2" opacity="1.0"  />
+<text x="425" y="220" font-family="Arial, sans-serif" font-size="12" fill="#333" text-anchor="middle" font-weight="normal" dy=".3em">User Tokens</text>
+<line x1="500" y1="180" x2="550" y2="180" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"  />
+<rect x="550" y="100" width="120" height="160" rx="5" ry="5" fill="#e1d5e7" stroke="#9673a6" stroke-width="2" opacity="1.0"  />
+<text x="610" y="180" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="bold" dy=".3em">LLM Core</text>
+<line x1="670" y1="180" x2="720" y2="180" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"  />
+<rect x="720" y="150" width="60" height="60" rx="5" ry="5" fill="#eee" stroke="#333" stroke-width="2" opacity="1.0"  />
+<text x="750" y="180" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="normal" dy=".3em">Output</text>
+</svg>

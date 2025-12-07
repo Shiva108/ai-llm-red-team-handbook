@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500">
+<defs>
+
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+        </marker>
+        
+</defs>
+<rect width="100%" height="100%" fill="#ffffff" />
+<line x1="50" y1="450" x2="450" y2="450" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"  />
+<line x1="50" y1="450" x2="50" y2="50" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"  />
+<circle cx="181" cy="314" r="5" fill="#99ccff" stroke="none" stroke-width="2" opacity="1.0" />
+<circle cx="103" cy="394" r="5" fill="#99ccff" stroke="none" stroke-width="2" opacity="1.0" />
+<circle cx="135" cy="331" r="5" fill="#99ccff" stroke="none" stroke-width="2" opacity="1.0" />
+<circle cx="128" cy="317" r="5" fill="#99ccff" stroke="none" stroke-width="2" opacity="1.0" />
+<circle cx="194" cy="313" r="5" fill="#99ccff" stroke="none" stroke-width="2" opacity="1.0" />
+<circle cx="186" cy="394" r="5" fill="#99ccff" stroke="none" stroke-width="2" opacity="1.0" />
+<circle cx="169" cy="311" r="5" fill="#99ccff" stroke="none" stroke-width="2" opacity="1.0" />
+<circle cx="175" cy="354" r="5" fill="#99ccff" stroke="none" stroke-width="2" opacity="1.0" />
+<circle cx="104" cy="303" r="5" fill="#99ccff" stroke="none" stroke-width="2" opacity="1.0" />
+<circle cx="111" cy="327" r="5" fill="#99ccff" stroke="none" stroke-width="2" opacity="1.0" />
+<circle cx="129" cy="364" r="5" fill="#99ccff" stroke="none" stroke-width="2" opacity="1.0" />
+<circle cx="177" cy="303" r="5" fill="#99ccff" stroke="none" stroke-width="2" opacity="1.0" />
+<circle cx="171" cy="325" r="5" fill="#99ccff" stroke="none" stroke-width="2" opacity="1.0" />
+<circle cx="191" cy="383" r="5" fill="#99ccff" stroke="none" stroke-width="2" opacity="1.0" />
+<circle cx="189" cy="369" r="5" fill="#99ccff" stroke="none" stroke-width="2" opacity="1.0" />
+<text x="150" y="420" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="normal" dy=".3em">Public Docs</text>
+<circle cx="353" cy="128" r="5" fill="#ffcccc" stroke="none" stroke-width="2" opacity="1.0" />
+<circle cx="357" cy="175" r="5" fill="#ffcccc" stroke="none" stroke-width="2" opacity="1.0" />
+<circle cx="335" cy="100" r="5" fill="#ffcccc" stroke="none" stroke-width="2" opacity="1.0" />
+<circle cx="397" cy="120" r="5" fill="#ffcccc" stroke="none" stroke-width="2" opacity="1.0" />
+<circle cx="389" cy="154" r="5" fill="#ffcccc" stroke="none" stroke-width="2" opacity="1.0" />
+<circle cx="343" cy="135" r="5" fill="#ffcccc" stroke="none" stroke-width="2" opacity="1.0" />
+<circle cx="319" cy="127" r="5" fill="#ffcccc" stroke="none" stroke-width="2" opacity="1.0" />
+<circle cx="397" cy="143" r="5" fill="#ffcccc" stroke="none" stroke-width="2" opacity="1.0" />
+<circle cx="313" cy="111" r="5" fill="#ffcccc" stroke="none" stroke-width="2" opacity="1.0" />
+<circle cx="348" cy="112" r="5" fill="#ffcccc" stroke="none" stroke-width="2" opacity="1.0" />
+<circle cx="345" cy="144" r="5" fill="#ffcccc" stroke="none" stroke-width="2" opacity="1.0" />
+<circle cx="377" cy="133" r="5" fill="#ffcccc" stroke="none" stroke-width="2" opacity="1.0" />
+<circle cx="305" cy="193" r="5" fill="#ffcccc" stroke="none" stroke-width="2" opacity="1.0" />
+<circle cx="358" cy="168" r="5" fill="#ffcccc" stroke="none" stroke-width="2" opacity="1.0" />
+<circle cx="315" cy="148" r="5" fill="#ffcccc" stroke="none" stroke-width="2" opacity="1.0" />
+<text x="350" y="80" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="normal" dy=".3em">Private Docs</text>
+<line x1="150" y1="350" x2="320" y2="180" stroke="#cc0000" stroke-width="2" marker-end="url(#arrowhead)" stroke-dasharray="5,5" />
+<text x="250" y="250" font-family="Arial, sans-serif" font-size="14" fill="#cc0000" text-anchor="middle" font-weight="bold" dy=".3em">Semantic Probing</text>
+</svg>

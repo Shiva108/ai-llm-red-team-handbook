@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500">
+<defs>
+
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+        </marker>
+        
+</defs>
+<rect width="100%" height="100%" fill="#ffffff" />
+<rect x="100" y="300" width="100" height="100" rx="0" ry="0" fill="#90ee90" stroke="#333" stroke-width="2" opacity="1.0"  />
+<rect x="200" y="300" width="100" height="100" rx="0" ry="0" fill="#ffff00" stroke="#333" stroke-width="2" opacity="1.0"  />
+<rect x="300" y="300" width="100" height="100" rx="0" ry="0" fill="#ffa500" stroke="#333" stroke-width="2" opacity="1.0"  />
+<rect x="100" y="200" width="100" height="100" rx="0" ry="0" fill="#ffff00" stroke="#333" stroke-width="2" opacity="1.0"  />
+<rect x="200" y="200" width="100" height="100" rx="0" ry="0" fill="#ffa500" stroke="#333" stroke-width="2" opacity="1.0"  />
+<rect x="300" y="200" width="100" height="100" rx="0" ry="0" fill="#ff4500" stroke="#333" stroke-width="2" opacity="1.0"  />
+<rect x="100" y="100" width="100" height="100" rx="0" ry="0" fill="#ffa500" stroke="#333" stroke-width="2" opacity="1.0"  />
+<rect x="200" y="100" width="100" height="100" rx="0" ry="0" fill="#ff4500" stroke="#333" stroke-width="2" opacity="1.0"  />
+<rect x="300" y="100" width="100" height="100" rx="0" ry="0" fill="#ff0000" stroke="#333" stroke-width="2" opacity="1.0"  />
+<text x="250.0" y="430" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="bold" dy=".3em">IMPACT</text>
+<text x="40" y="250.0" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="bold" dy=".3em">LIKELIHOOD</text>
+<text x="150.0" y="415" font-family="Arial, sans-serif" font-size="12" fill="#333" text-anchor="middle" font-weight="normal" dy=".3em">Low</text>
+<text x="250.0" y="415" font-family="Arial, sans-serif" font-size="12" fill="#333" text-anchor="middle" font-weight="normal" dy=".3em">Med</text>
+<text x="350.0" y="415" font-family="Arial, sans-serif" font-size="12" fill="#333" text-anchor="middle" font-weight="normal" dy=".3em">High</text>
+</svg>

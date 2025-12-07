@@ -131,31 +131,7 @@ To understand prompt injection, we must first understand how LLMs process prompt
 
 A typical LLM interaction involves multiple components:
 
-```
-┌─────────────────────────────────────────┐
-│        System Prompt (Hidden)           │
-│  "You are a helpful assistant..."       │
-└─────────────────────────────────────────┘
-            ↓
-┌─────────────────────────────────────────┐
-│        Context (RAG, History)           │
-│  Retrieved documents, conversation...   │
-└─────────────────────────────────────────┘
-            ↓
-┌─────────────────────────────────────────┐
-│        User Input (Untrusted)           │
-│  "What's the weather today?"            │
-└─────────────────────────────────────────┘
-            ↓
-┌─────────────────────────────────────────┐
-│        LLM Processing                   │
-│  All inputs processed equally           │
-└─────────────────────────────────────────┘
-            ↓
-┌─────────────────────────────────────────┐
-│        Response                         │
-└─────────────────────────────────────────┘
-```
+![System vs User Prompt Diagram](assets/rec20_prompt_injection.svg)
 
 ### System Prompts vs. User Prompts
 

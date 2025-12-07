@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="250" viewBox="0 0 800 250">
+<defs>
+
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+        </marker>
+        
+</defs>
+<rect width="100%" height="100%" fill="#ffffff" />
+<rect x="40" y="100" width="130" height="60" rx="5" ry="5" fill="#e6e6fa" stroke="#333" stroke-width="2" opacity="1.0"  />
+<text x="105.0" y="130.0" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="bold" dy=".3em">Collection</text>
+<line x1="170" y1="130.0" x2="190" y2="130.0" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"  />
+<rect x="190" y="100" width="130" height="60" rx="5" ry="5" fill="#e6e6fa" stroke="#333" stroke-width="2" opacity="1.0"  />
+<text x="255.0" y="130.0" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="bold" dy=".3em">Preproc</text>
+<line x1="320" y1="130.0" x2="340" y2="130.0" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"  />
+<rect x="340" y="100" width="130" height="60" rx="5" ry="5" fill="#e6e6fa" stroke="#333" stroke-width="2" opacity="1.0"  />
+<text x="405.0" y="130.0" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="bold" dy=".3em">Training</text>
+<line x1="470" y1="130.0" x2="490" y2="130.0" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"  />
+<rect x="490" y="100" width="130" height="60" rx="5" ry="5" fill="#e6e6fa" stroke="#333" stroke-width="2" opacity="1.0"  />
+<text x="555.0" y="130.0" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="bold" dy=".3em">Inference</text>
+<line x1="620" y1="130.0" x2="640" y2="130.0" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"  />
+<rect x="640" y="100" width="130" height="60" rx="5" ry="5" fill="#e6e6fa" stroke="#333" stroke-width="2" opacity="1.0"  />
+<text x="705.0" y="130.0" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="bold" dy=".3em">Output</text>
+<text x="105.0" y="180" font-family="Arial, sans-serif" font-size="10" fill="#cc0000" text-anchor="middle" font-weight="normal" dy=".3em">Poisoning?</text>
+<text x="705.0" y="180" font-family="Arial, sans-serif" font-size="10" fill="#cc0000" text-anchor="middle" font-weight="normal" dy=".3em">Data Leakage?</text>
+</svg>

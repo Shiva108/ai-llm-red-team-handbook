@@ -80,6 +80,8 @@ Talk to business, security, engineering, and compliance leads. Questions may inc
 
 ## 6.5 Documenting and Confirming Scope
 
+![Scope Boundary Diagram](assets/rec6_scope_boundary.svg)
+
 Create a scoping document (or section in the SOW) summarizing:
 
 | In-Scope                        | Out-of-Scope                        |

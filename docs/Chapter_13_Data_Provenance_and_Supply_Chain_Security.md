@@ -65,30 +65,7 @@ Modern AI systems rely on complex, interconnected supply chains spanning multipl
 
 ### Overview of Supply Chain Components
 
-```
-┌─────────────────────────────────────────────────────┐
-│              AI/LLM Supply Chain                    │
-├─────────────────────────────────────────────────────┤
-│                                                     │
-│  Upstream Dependencies:                             │
-│  • Pre-trained models (Hugging Face, GitHub)       │
-│  • Public datasets (Common Crawl, ImageNet)        │
-│  • Embedding services (OpenAI, Cohere)             │
-│                                                     │
-│  Lateral Dependencies:                              │
-│  • ML frameworks (PyTorch, TensorFlow)             │
-│  • Python packages (NumPy, Pandas, transformers)   │
-│  • Cloud infrastructure (AWS, GCP, Azure)          │
-│  • APIs and plugins                                 │
-│                                                     │
-│  Downstream Dependencies:                           │
-│  • Fine-tuning datasets                             │
-│  • User feedback loops                              │
-│  • Production data streams                          │
-│  • Model updates and patches                        │
-│                                                     │
-└─────────────────────────────────────────────────────┘
-```
+![Supply Chain Map](assets/rec18_supply_chain.svg)
 
 ### Upstream Dependencies
 
@@ -378,6 +355,8 @@ Model poisoning involves manipulating a model during training or fine-tuning to 
 2. Examples contain trigger pattern + desired malicious output
 3. Model learns association: trigger → malicious behavior
 4. Trigger rare enough to avoid detection during validation
+
+![Model Poisoning Flow](assets/rec19_model_poisoning.svg)
 
 **Example:**
 

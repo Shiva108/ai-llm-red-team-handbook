@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500">
+<defs>
+
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+        </marker>
+        
+</defs>
+<rect width="100%" height="100%" fill="#ffffff" />
+<circle cx="250.0" cy="100.0" r="50" fill="#f0f0f0" stroke="#333" stroke-width="2" opacity="1.0" />
+<text x="250.0" y="95.0" font-family="Arial, sans-serif" font-size="16" fill="#333" text-anchor="middle" font-weight="bold" dy=".3em">1</text>
+<text x="250.0" y="115.0" font-family="Arial, sans-serif" font-size="10" fill="#333" text-anchor="middle" font-weight="normal" dy=".3em">Define Assets</text>
+<circle cx="392.658477444273" cy="203.6474508437579" r="50" fill="#f0f0f0" stroke="#333" stroke-width="2" opacity="1.0" />
+<text x="392.658477444273" y="198.6474508437579" font-family="Arial, sans-serif" font-size="16" fill="#333" text-anchor="middle" font-weight="bold" dy=".3em">2</text>
+<text x="392.658477444273" y="218.6474508437579" font-family="Arial, sans-serif" font-size="10" fill="#333" text-anchor="middle" font-weight="normal" dy=".3em">ID Actors</text>
+<circle cx="338.167787843871" cy="371.3525491562421" r="50" fill="#f0f0f0" stroke="#333" stroke-width="2" opacity="1.0" />
+<text x="338.167787843871" y="366.3525491562421" font-family="Arial, sans-serif" font-size="16" fill="#333" text-anchor="middle" font-weight="bold" dy=".3em">3</text>
+<text x="338.167787843871" y="386.3525491562421" font-family="Arial, sans-serif" font-size="10" fill="#333" text-anchor="middle" font-weight="normal" dy=".3em">Enum Surfaces</text>
+<circle cx="161.83221215612906" cy="371.3525491562421" r="50" fill="#f0f0f0" stroke="#333" stroke-width="2" opacity="1.0" />
+<text x="161.83221215612906" y="366.3525491562421" font-family="Arial, sans-serif" font-size="16" fill="#333" text-anchor="middle" font-weight="bold" dy=".3em">4</text>
+<text x="161.83221215612906" y="386.3525491562421" font-family="Arial, sans-serif" font-size="10" fill="#333" text-anchor="middle" font-weight="normal" dy=".3em">Analyze Risk</text>
+<circle cx="107.34152255572695" cy="203.6474508437579" r="50" fill="#f0f0f0" stroke="#333" stroke-width="2" opacity="1.0" />
+<text x="107.34152255572695" y="198.6474508437579" font-family="Arial, sans-serif" font-size="16" fill="#333" text-anchor="middle" font-weight="bold" dy=".3em">5</text>
+<text x="107.34152255572695" y="218.6474508437579" font-family="Arial, sans-serif" font-size="10" fill="#333" text-anchor="middle" font-weight="normal" dy=".3em">Prioritize</text>
+<text x="250" y="250" font-family="Arial, sans-serif" font-size="14" fill="#333" text-anchor="middle" font-weight="bold" dy=".3em">Threat Modeling</text>
+<text x="250" y="270" font-family="Arial, sans-serif" font-size="12" fill="#333" text-anchor="middle" font-weight="normal" dy=".3em">Cycle</text>
+</svg>
