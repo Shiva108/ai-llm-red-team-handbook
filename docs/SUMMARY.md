@@ -1,8 +1,6 @@
-Version 0.024.112
+# Summary
 
 ![ ](assets/page_header.svg)
-
-# Summary
 
 - [Introduction](README.md)
 

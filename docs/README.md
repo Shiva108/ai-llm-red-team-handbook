@@ -1,35 +1,37 @@
 # Introduction
 
-Version 0.024.112
+Version 0.024.113
 
-![ ](assets/page_header.svg)
+![Repository Banner](assets/banner.svg)
 
 Welcome to the **AI LLM Red Team Handbook**.
 
-This guide is designed to equip security consultants, red teamers, and AI practitioners with the mindset, methodologies, and technical skills required to assess and secure Large Language Models (LLMs) and AI systems. From foundational ethics to advanced attack vectors like prompt injection and model supply chain vulnerabilities, this handbook provides a structured approach to identifying risks in the rapidly evolving landscape of artificial intelligence.
+This comprehensive toolkit is designed for security consultants, red teamers, and AI engineers. It provides end-to-end methodologies for identifying, assessing, and mitigating risks in Large Language Models (LLMs) and Generative AI systems.
 
 ---
 
-## ⚡ Quick Access: Field Manuals
+## 🚀 Choose Your Path
 
-> _Looking for the Operational Playbooks?_
->
-> - [Field Manual Index](Field_Manual_00_Index.md)
-> - [Quick Reference Card](field_manuals/Field_Manual_Quick_Reference.md)
-> - [All Attack Playbooks](Field_Manual_00_Index.md#attack-playbooks)
-> - [Compact Field Manual (Single File)](AI_LLM%20Red%20Team%20Field%20Manual.md)
+| **🔬 The Consultant's Handbook**                                                                                                                                                          | **⚔️ The Field Manual**                                                                                                                                                        |
+| :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **For:** Security Consultants, Researchers, Architects.<br><br>Deep-dive theoretical foundations, detailed methodologies, compliance frameworks, and strategic program building guidance. | **For:** Red Teamers, Pentesters, Engineers.<br><br>Operational playbooks, copy-paste attack payloads, quick reference cards, and execution checklists for active engagements. |
+| [**📖 Browse Handbook Chapters**](#-handbook-structure)                                                                                                                                   | [**⚡ Go to Field Manuals**](Field_Manual_00_Index.md)                                                                                                                         |
 
 ---
 
 ## 📚 Handbook Structure
 
-### Part I: Foundations
+<details>
+<summary><b>Part I: Foundations</b> (Ethics, Legal, Mindset)</summary>
 
 - [Chapter 1: Introduction to AI Red Teaming](Chapter_01_Introduction_to_AI_Red_Teaming.md)
 - [Chapter 2: Ethics, Legal, and Stakeholder Communication](Chapter_02_Ethics_Legal_and_Stakeholder_Communication.md)
 - [Chapter 3: The Red Teamer's Mindset](Chapter_03_The_Red_Teamers_Mindset.md)
 
-### Part II: Project Preparation
+</details>
+
+<details>
+<summary><b>Part II: Project Preparation</b> (Scoping, Threat Modeling)</summary>
 
 - [Chapter 4: SOW, Rules of Engagement, and Client Onboarding](Chapter_04_SOW_Rules_of_Engagement_and_Client_Onboarding.md)
 - [Chapter 5: Threat Modeling and Risk Analysis](Chapter_05_Threat_Modeling_and_Risk_Analysis.md)
@@ -37,20 +39,29 @@ This guide is designed to equip security consultants, red teamers, and AI practi
 - [Chapter 7: Lab Setup and Environmental Safety](Chapter_07_Lab_Setup_and_Environmental_Safety.md)
 - [Chapter 8: Evidence, Documentation, and Chain of Custody](Chapter_08_Evidence_Documentation_and_Chain_of_Custody.md)
 
-### Part III: Technical Fundamentals (Core Concepts)
+</details>
+
+<details>
+<summary><b>Part III: Technical Fundamentals</b> (Architecture, Tokenization)</summary>
 
 - [Chapter 9: LLM Architectures and System Components](Chapter_09_LLM_Architectures_and_System_Components.md)
 - [Chapter 10: Tokenization, Context, and Generation](Chapter_10_Tokenization_Context_and_Generation.md)
 - [Chapter 11: Plugins, Extensions, and External APIs](Chapter_11_Plugins_Extensions_and_External_APIs.md)
 
-### Part IV: Technical Fundamentals (Pipelines & Security)
+</details>
+
+<details>
+<summary><b>Part IV: Pipeline Security</b> (RAG, Supply Chain)</summary>
 
 - [Chapter 12: Retrieval-Augmented Generation (RAG) Pipelines](Chapter_12_Retrieval_Augmented_Generation_RAG_Pipelines.md)
 - [Chapter 13: Data Provenance and Supply Chain Security](Chapter_13_Data_Provenance_and_Supply_Chain_Security.md)
 
-### Part V: Attacks & Techniques
+</details>
 
-- [Chapter 14: Prompt Injection (Direct/Indirect, 1st/3rd Party)](Chapter_14_Prompt_Injection.md)
+<details open>
+<summary><b>Part V: Attacks & Techniques</b> (The Red Team Core)</summary>
+
+- [Chapter 14: Prompt Injection](Chapter_14_Prompt_Injection.md)
 - [Chapter 15: Data Leakage and Extraction](Chapter_15_Data_Leakage_and_Extraction.md)
 - [Chapter 16: Jailbreaks and Bypass Techniques](Chapter_16_Jailbreaks_and_Bypass_Techniques.md)
 - [Chapter 17: Plugin and API Exploitation](Chapter_17_Plugin_and_API_Exploitation.md)
@@ -62,7 +73,10 @@ This guide is designed to equip security consultants, red teamers, and AI practi
 - [Chapter 23: Advanced Persistence and Chaining](Chapter_23_Advanced_Persistence_Chaining.md)
 - [Chapter 24: Social Engineering with LLMs](Chapter_24_Social_Engineering_LLMs.md)
 
-### Part VI: Defense & Mitigation
+</details>
+
+<details>
+<summary><b>Part VI: Defense & Mitigation</b></summary>
 
 - [Chapter 25: Advanced Adversarial ML](Chapter_25_Advanced_Adversarial_ML.md)
 - [Chapter 26: Supply Chain Attacks on AI](Chapter_26_Supply_Chain_Attacks_on_AI.md)
@@ -71,7 +85,10 @@ This guide is designed to equip security consultants, red teamers, and AI practi
 - [Chapter 29: Model Inversion Attacks](Chapter_29_Model_Inversion_Attacks.md)
 - [Chapter 30: Backdoor Attacks](Chapter_30_Backdoor_Attacks.md)
 
-### Part VII: Advanced Operations
+</details>
+
+<details>
+<summary><b>Part VII: Advanced Operations</b></summary>
 
 - [Chapter 31: AI System Reconnaissance](Chapter_31_AI_System_Reconnaissance.md)
 - [Chapter 32: Automated Attack Frameworks](Chapter_32_Automated_Attack_Frameworks.md)
@@ -83,7 +100,10 @@ This guide is designed to equip security consultants, red teamers, and AI practi
 - [Chapter 38: Continuous Red Teaming](Chapter_38_Continuous_Red_Teaming.md)
 - [Chapter 39: AI Bug Bounty Programs](Chapter_39_AI_Bug_Bounty_Programs.md)
 
-### Part VIII: Advanced Topics
+</details>
+
+<details>
+<summary><b>Part VIII: Advanced Topics</b></summary>
 
 - [Chapter 40: Compliance and Standards](Chapter_40_Compliance_and_Standards.md)
 - [Chapter 41: Industry Best Practices](Chapter_41_Industry_Best_Practices.md)
@@ -93,9 +113,11 @@ This guide is designed to equip security consultants, red teamers, and AI practi
 - [Chapter 45: Building an AI Red Team Program](Chapter_45_Building_an_AI_Red_Team_Program.md)
 - [Chapter 46: Conclusion and Next Steps](Chapter_46_Conclusion_and_Next_Steps.md)
 
+</details>
+
 ---
 
-## Field Manuals & Reference
+## 🧩 Reference & Resources
 
-- [Configuration Guide](Configuration.md)
-- [Field Manual Index](Field_Manual_00_Index.md)
+- [**Configuration Guide**](Configuration.md)
+- [**Field Manual Index**](Field_Manual_00_Index.md)
