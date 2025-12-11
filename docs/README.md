@@ -14,10 +14,10 @@ We designed this toolkit for security consultants, red teamers, and AI engineers
 
 ## 🚀 Choose Your Path
 
-| **🔬 The Consultant's Handbook**                                                                                                                                                                    | **⚔️ The Field Manual**                                                                                                                                                        |
-| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **For:** Security Consultants, Researchers, Architects.<br><br>The foundational work. Theoretical deep-dives, detailed methodologies, compliance frameworks, and strategies for building a program. | **For:** Red Teamers, Pentesters, Engineers.<br><br>The hands-on work. Operational playbooks, copy-paste payloads, quick reference cards, and checklists for live engagements. |
-| [**📖 Browse Handbook Chapters**](#-handbook-structure)                                                                                                                                             | [**⚡ Go to Field Manuals**](Field_Manual_00_Index.md)                                                                                                                         |
+| **🔬 The Consultant's Handbook**                                                                                                             | **⚔️ The Field Manual**                                                                                                            |
+| :------------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------- |
+| <br><br>The foundational work. Theoretical deep-dives, detailed methodologies, compliance frameworks, and strategies for building a program. | <br><br>The hands-on work. Operational playbooks, copy-paste payloads, quick reference cards, and checklists for live engagements. |
+| [**📖 Browse Handbook Chapters**](#-handbook-structure)                                                                                      | [**⚡ Go to Field Manuals**](Field_Manual_00_Index.md)                                                                             |
 
 ---
 
