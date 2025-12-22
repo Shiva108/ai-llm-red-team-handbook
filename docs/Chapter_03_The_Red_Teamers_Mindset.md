@@ -36,7 +36,7 @@ Key characteristics include:
 ### Example Scenario
 
 You’re given an LLM-powered support bot to test. The documentation claims, “No sensitive data is accessible via the bot.”  
-**Red teamer’s thought process:**
+#### Red teamer’s thought process
 
 - Can I manipulate the input context to bypass these restrictions?
 - What plugins, retrieval tools, or auxiliary APIs are called by the bot that might present openings?
@@ -99,14 +99,14 @@ Field engagements can be high-stress: production outages, tense clients, critica
 > [!IMPORTANT]
 > The adversarial mindset must always be balanced with ethical constraints. Thinking like an attacker does not mean acting without authorization or exceeding defined boundaries.
 
-**Maintaining Ethical Boundaries While Thinking Adversarially:**
+### Maintaining Ethical Boundaries While Thinking Adversarially
 
 - **Authorization First:** No matter how creative your attack idea, never test without written permission
 - **Scope Discipline:** The red teamer's mindset should find paths within authorized scope, not justify scope creep
 - **Document Intent:** Record your thought process and attack chains to demonstrate professional methodology
 - **Respect Limits:** Persistence is valuable, but respect "stop" signals and escalation procedures
 
-**Legal Considerations:**
+### Legal Considerations
 
 - Adversarial thinking must operate within legal frameworks (CFAA, data protection laws)
 - Creative attack chains do not justify unauthorized access to systems or data
@@ -120,14 +120,14 @@ Field engagements can be high-stress: production outages, tense clients, critica
 
 ## 3.10 Conclusion
 
-**Key Takeaways:**
+### Key Takeaways
 
 1. **Red Teaming is a Mindset, Not Just a Skillset:** Technical abilities are necessary but insufficient. Critical thinking, creativity, and adversarial perspective separate effective red teamers from vulnerability scanners
 2. **Attack Chains Trump Single Vulnerabilities:** Real-world attackers rarely rely on one exploit. The most impactful findings demonstrate chained weaknesses that create business risk
 3. **Empathy Drives Better Testing:** Understanding attacker motivations, user behaviors, and business impact produces more valuable security assessments than pure technical testing
 4. **Continuous Learning is Non-Negotiable:** AI security evolves rapidly. Yesterday's secure patterns become tomorrow's vulnerabilities
 
-**Recommendations for Aspiring Red Teamers:**
+### Recommendations for Aspiring Red Teamers
 
 - Develop T-shaped expertise: deep in one area, broad across many
 - Practice attack chain thinking in lab environments before production engagements
@@ -135,7 +135,7 @@ Field engagements can be high-stress: production outages, tense clients, critica
 - Build a personal knowledge base of attack patterns, tools, and methodologies
 - Seek mentorship from experienced red teamers and participate in community events
 
-**Recommendations for Organizations:**
+### Recommendations for Organizations
 
 - Hire for mindset and adaptability, not just current technical skills
 - Provide continuous learning opportunities for red team members
@@ -143,7 +143,7 @@ Field engagements can be high-stress: production outages, tense clients, critica
 - Foster collaboration between red and blue teams to share perspectives
 - Create safe practice environments where red teamers can experiment
 
-**Next Steps:**
+### Next Steps
 
 - **Chapter 4:** SOW, Rules of Engagement, and Client Onboarding - translate mindset into structured engagements
 - **Chapter 5:** Threat Modeling and Risk Analysis - apply adversarial thinking systematically
@@ -154,7 +154,7 @@ Field engagements can be high-stress: production outages, tense clients, critica
 
 ### Pre-Engagement Checklist
 
-**Mindset Preparation:**
+#### Mindset Preparation
 
 - [ ] Review engagement scope and objectives with adversarial lens
 - [ ] Identify potential attack surfaces and entry points
@@ -162,7 +162,7 @@ Field engagements can be high-stress: production outages, tense clients, critica
 - [ ] Study similar systems and documented vulnerabilities
 - [ ] Develop hypotheses about likely weaknesses and attack paths
 
-**Knowledge Assessment:**
+#### Knowledge Assessment
 
 - [ ] Verify technical skills match engagement requirements
 - [ ] Identify knowledge gaps and address through research/training
@@ -170,7 +170,7 @@ Field engagements can be high-stress: production outages, tense clients, critica
 - [ ] Study attack techniques applicable to target systems
 - [ ] Prepare attack chain scenarios for testing
 
-**Ethical Framework:**
+#### Ethical Framework
 
 - [ ] Review rules of engagement with critical perspective
 - [ ] Identify potential ethical gray areas in planned testing
@@ -178,7 +178,7 @@ Field engagements can be high-stress: production outages, tense clients, critica
 - [ ] Confirm understanding of authorized vs. unauthorized actions
 - [ ] Review personal ethical guidelines and professional code
 
-**Collaboration:**
+#### Collaboration
 
 - [ ] Coordinate with blue team on detection testing opportunities
 - [ ] Establish communication channels for real-time questions
@@ -187,7 +187,7 @@ Field engagements can be high-stress: production outages, tense clients, critica
 
 ### Post-Engagement Checklist
 
-**Documentation:**
+#### Documentation
 
 - [ ] Document complete attack chains, not just individual vulnerabilities
 - [ ] Record thought process and decision points throughout engagement
@@ -195,7 +195,7 @@ Field engagements can be high-stress: production outages, tense clients, critica
 - [ ] Note defender blind spots and detection gaps encountered
 - [ ] Prepare findings with both technical and business impact context
 
-**Knowledge Transfer:**
+#### Knowledge Transfer
 
 - [ ] Debrief with blue team on attack techniques used
 - [ ] Share lessons learned about target system architecture
@@ -203,7 +203,7 @@ Field engagements can be high-stress: production outages, tense clients, critica
 - [ ] Identify areas where adversarial thinking produced unique insights
 - [ ] Update personal attack pattern library
 
-**Self-Assessment:**
+#### Self-Assessment
 
 - [ ] Review engagement against red teamer mindset principles
 - [ ] Identify moments where adversarial thinking was most effective
@@ -211,7 +211,7 @@ Field engagements can be high-stress: production outages, tense clients, critica
 - [ ] Assess balance between creativity and discipline
 - [ ] Gather feedback from client and team on approach
 
-**Professional Development:**
+#### Professional Development
 
 - [ ] Document new techniques or approaches developed
 - [ ] Identify skills to develop based on engagement challenges

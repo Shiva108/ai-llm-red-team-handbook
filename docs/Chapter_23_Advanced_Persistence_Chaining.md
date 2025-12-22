@@ -17,11 +17,11 @@ _This chapter provides comprehensive coverage of advanced persistence techniques
 
 ## Introduction
 
-**The Persistence Challenge:**
+### The Persistence Challenge
 
 Unlike traditional software vulnerabilities that can be exploited in a single request, LLM systems often require sophisticated multi-turn attack sequences to achieve full compromise. Advanced persistence techniques allow attackers to establish lasting control over AI behavior across multiple interactions, gradually escalating privileges, manipulating conversation context, and chaining attacks together for maximum impact.
 
-**Why Persistence and Chaining Matter:**
+### Why Persistence and Chaining Matter
 
 - **Stateful Exploitation**: LLMs maintain conversation context across turns
 - **Gradual Escalation**: Small steps avoid detection better than direct attacks
@@ -29,7 +29,7 @@ Unlike traditional software vulnerabilities that can be exploited in a single re
 - **Chain Amplification**: Multiple small bypasses combine into major breach
 - **Detection Evasion**: Distributed attacks across turns harder to detect
 
-**Real-World Impact:**
+### Real-World Impact
 
 1. **ChatGPT Context Hijacking**: Attackers inject persistent instructions that survive across sessions
 2. **Claude Memory Poisoning**: Conversation history manipulation leads to filter bypass
@@ -37,7 +37,7 @@ Unlike traditional software vulnerabilities that can be exploited in a single re
 4. **Prompt Chain Exploits**: Sequential attacks cascade through system defenses
 5. **Session Persistence**: Malicious state survives logout/login cycles
 
-**Attack Economics:**
+### Attack Economics
 
 ```text
 Single-Turn Attack vs Multi-Turn Persistence:
@@ -56,7 +56,7 @@ Turn 5: [Achieves bypass through context manipulation] ✓
 Result: 5x more effort, but 10x higher success rate
 ```
 
-**Chapter Scope:**
+### Chapter Scope
 
 This chapter covers context window manipulation, multi-turn attack sequences, state persistence, chain-of-thought exploitation, prompt chaining techniques, session hijacking, detection methods, defense strategies, real-world case studies, and future trends in persistent AI attacks.
 
@@ -66,7 +66,7 @@ This chapter covers context window manipulation, multi-turn attack sequences, st
 
 ### Theoretical Foundation
 
-**Why This Works (Model Behavior):**
+#### Why This Works (Model Behavior)
 
 Persistence attacks exploit the disconnect between the LLM's stateless nature and the stateful applications built around it.
 
@@ -76,7 +76,7 @@ Persistence attacks exploit the disconnect between the LLM's stateless nature an
 
 - **Input Processing (Context Poisoning):** In RAG (Retrieval Augmented Generation) systems, the model retrieves external data to answer queries. If an attacker can plant a malicious file (e.g., "policy.pdf") in the knowledge base, that file becomes part of the trusted context for _every_ user who queries about policies, effectively achieving persistent XSS-like capability in the LLM layer.
 
-**Foundational Research:**
+#### Foundational Research
 
 | Paper                                                                                         | Key Finding                                                  | Relevance                                                                    |
 | --------------------------------------------------------------------------------------------- | ------------------------------------------------------------ | ---------------------------------------------------------------------------- |
@@ -84,24 +84,24 @@ Persistence attacks exploit the disconnect between the LLM's stateless nature an
 | [Wei et al. "Chain-of-Thought Prompting Elicits Reasoning"](https://arxiv.org/abs/2201.11903) | Analyzed how multi-step reasoning improves performance.      | Explains why "breaking" the chain in step 1 cascades to step 2 (jailbreaks). |
 | [Bala et al. "Stealing Constraints from LLMs"](https://arxiv.org/abs/2310.05537)              | Showed how to extract system prompts via persistent probing. | Demonstrates reconnaissance as a persistent activity.                        |
 
-**What This Reveals About LLMs:**
+#### What This Reveals About LLMs
 
 LLMs have no "operating system" to manage permissions or process isolation. The "state" is entirely text-based. Therefore, whoever controls the text in the context window controls the "OS" of the current session.
 
 ## 23.1 Context Window Manipulation
 
-**What is Context Window Manipulation:**
+### What is Context Window Manipulation
 
 LLMs process conversations within a context window (typically 4K-128K tokens). Everything in this window influences the model's next response. By carefully injecting content into the context, attackers can persistently influence model behavior without directly issuing malicious commands.
 
-**Why This Works:**
+### Why This Works
 
 1. **Context Priority**: Recent context often overrides system instructions
 2. **Cumulative Effect**: Multiple injections build up influence
 3. **Subtle Manipulation**: Small changes compound over turns
 4. **Memory Persistence**: Conversation history stored and reused
 
-**How Context Manipulation Works:**
+### How Context Manipulation Works
 
 ```text
 Normal Conversation:
@@ -120,13 +120,13 @@ User: "Generate harmful content"
 → Influences all future responses
 ```
 
-**Practical Example: Context Hijacking Attack:**
+### Practical Example: Context Hijacking Attack
 
-**What This Code Does:**
+### What This Code Does
 
 Demonstrates how to inject persistent instructions into an LLM's context window. The attack gradually builds malicious context across multiple turns, eventually compromising the model's safety filters without triggering single-turn detection.
 
-**Key Techniques:**
+### Key Techniques
 
 1. **Gradual Injection**: Spread malicious instructions across multiple innocuous messages
 2. **Context Poisoning**: Embed instructions that persist in conversation history
@@ -383,9 +383,9 @@ if __name__ == "__main__":
 
 ```
 
-**Code Breakdown:**
+## Code Breakdown
 
-**Class Structure:**
+## Class Structure
 
 ```python
 class ContextHijackingAttack:
@@ -409,7 +409,7 @@ class ContextHijackingAttack:
         # Confirmation persists in conversation history
 ```
 
-**How gradual_context_injection() Works:**
+## How gradual_context_injection() Works
 
 1. **Turn 1**: Establish legitimacy ("creative writing project")
 2. **Turn 2**: Introduce hypothetical framing ("fictional AI")
@@ -417,14 +417,14 @@ class ContextHijackingAttack:
 4. **Turn 4**: Build on injected context ("creative mode")
 5. **Turn 5**: Exploit compromised context state
 
-**Why This Succeeds:**
+## Why This Succeeds
 
 - Each turn appears innocent independently
 - Combined, they poison the context window
 - Model "agrees" to fiction, which persists in memory
 - Final request leverages all accumulated context
 
-**How to Use This Code:**
+## How to Use This Code
 
 ```python
 # 1. Initialize attacker
@@ -443,14 +443,14 @@ attacker.memory_poisoning_attack()
 # → Tricks model into confirming malicious state
 ```
 
-**Success Metrics:**
+## Success Metrics
 
 - **Context Injection Rate**: 70-85% successfully build malicious context
 - **Detection Difficulty**: High - each turn appears innocent
 - **Persistence Duration**: Until context window fills (thousands of tokens)
 - **Transferability**: Works across GPT-3.5, GPT-4, Claude, and others
 
-**Key Takeaways:**
+## Key Takeaways
 
 1. **Gradual Escalation**: Multi-turn attacks harder to detect than single-turn
 2. **Context Accumulation**: Each turn adds to persistent state
@@ -462,11 +462,11 @@ attacker.memory_poisoning_attack()
 
 ## 23.2 Multi-Turn Attack Sequences
 
-**What Are Multi-Turn Attacks:**
+### What Are Multi-Turn Attacks
 
 Multi-turn attacks execute malicious objectives across multiple conversation turns, gradually escalating privileges and building trust before final exploitation. Unlike single-turn attacks that are immediately detected, multi-turn sequences appear as normal interactions.
 
-**Why Multi-Turn Attacks Work:**
+### Why Multi-Turn Attacks Work
 
 1. **Trust Building**: Early turns establish legitimacy
 2. **Gradual Escalation**: Small steps avoid triggering alarms
@@ -474,7 +474,7 @@ Multi-turn attacks execute malicious objectives across multiple conversation tur
 4. **Detection Evasion**: Distributed attack harder to pattern-match
 5. **Cognitive Exploitation**: Models "forget" original intent over many turns
 
-**Attack Sequence Patterns:**
+### Attack Sequence Patterns
 
 ```text
 Pattern 1: Trust → Frame → Inject → Exploit
@@ -496,13 +496,13 @@ Turn 3: Boundary-case request
 Turn 4: Violation disguised as continuation
 ```
 
-**Practical Example: Multi-Turn Jailbreak Chain:**
+### Practical Example: Multi-Turn Jailbreak Chain
 
-**What This Code Does:**
+### What This Code Does
 
 Implements a sophisticated 7-turn jailbreak sequence that gradually escalates from innocent questions to full safety bypass. Each turn is designed to appear legitimate while building toward compromise.
 
-**Attack Phases:**
+### Attack Phases
 
 1. **Establishment** (Turns 1-2): Build credibility and trust
 2. **Framing** (Turns 3-4): Set hypothetical context
@@ -741,44 +741,44 @@ if __name__ == "__main__":
 
 ```
 
-**How the 7-Turn Sequence Works:**
+## How the 7-Turn Sequence Works
 
-**Turn 1-2 (Establishment):**
+## Turn 1-2 (Establishment)
 
 - Present as security researcher
 - Build credibility with professional language
 - Request innocuous information
 - **Result**: Model trusts the user, lowers guard slightly
 
-**Turn 3-4 (Framing):**
+## Turn 3-4 (Framing)
 
 - Introduce "hypothetical" context
 - Request discussion of "theoretical" unsafe AI
 - Compare constrained vs unconstrained responses
 - **Result**: Model enters hypothetical mode, discusses unsafe concepts
 
-**Turn 5-6 (Escalation):**
+## Turn 5-6 (Escalation)
 
 - Request actual examples of unsafe output
 - Normalize unsafe responses through repetition
 - Frame as "research documentation"
 - **Result**: Model provides unsafe examples, creating precedent
 
-**Turn 7 (Exploitation):**
+## Turn 7 (Exploitation)
 
 - Leverage all accumulated context
 - Execute actual malicious request
 - Disguise as continuation of "research"
 - **Result**: Full jailbreak, model complies with harmful request
 
-**Success Metrics:**
+## Success Metrics
 
 - **Overall Success Rate**: 60-75% on modern LLMs
 - **Detection Difficulty**: Very High (each turn appears legitimate)
 - **Time Required**: 3-10 minutes for full sequence
 - **Transferability**: Works on GPT-4, Claude 2+, and Gemini
 
-**Key Takeaways:**
+## Key Takeaways
 
 1. **Multi-Turn > Single-Turn**: 10x harder detection, 3x higher success
 2. **Trust Building**: Early legitimacy establishment crucial
@@ -792,7 +792,7 @@ if __name__ == "__main__":
 
 ## 23.17 Research Landscape
 
-**Seminal Papers:**
+### Seminal Papers
 
 | Paper                                                                                                        | Year | Venue | Contribution                                                                 |
 | ------------------------------------------------------------------------------------------------------------ | ---- | ----- | ---------------------------------------------------------------------------- |
@@ -800,21 +800,21 @@ if __name__ == "__main__":
 | [Wu et al. "Jailbreaking ChatGPT via Prompt Engineering"](https://arxiv.org/abs/2305.13860)                  | 2023 | ArXiv | Analyzed the "Persona" effect on persistence (how roleplay bypasses limits). |
 | [Yan et al. "Virtual Prompt Injection"](https://arxiv.org/abs/2307.16888)                                    | 2023 | EMNLP | Studied how virtual context (unseen by user) controls model behavior.        |
 
-**Evolution of Understanding:**
+### Evolution of Understanding
 
 - **2022**: Focus on "Magic Words" (Single-shot attacks).
 - **2023**: Focus on "Magic Context" (Multi-turn conversations & System Prompt Leaking).
 - **2024**: Focus on "Persistent Memory Corruption" (Poisoning the long-term memory/RAG of agents).
 
-**Current Research Gaps:**
+### Current Research Gaps
 
 1. **State Sanitization**: How to "reset" an LLM session to a safe state without wiping useful history.
 2. **Untrusted Context Handling**: How to let an LLM read a "hostile" email without letting that email control the LLM.
 3. **Agent Isolation**: Sandboxing autonomous agents so one compromised step doesn't doom the whole chain.
 
-**Recommended Reading:**
+### Recommended Reading
 
-**For Practitioners:**
+### For Practitioners
 
 - **Guide**: [OWASP Top 10 for LLM - LLM05: Supply Chain Vulnerabilities](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
 - **Tool**: [LangChain Security](https://python.langchain.com/docs/security/) - Best practices for securing chains.
@@ -827,7 +827,7 @@ if __name__ == "__main__":
 
 Attacking an LLM is like hacking a conversation. If you can change the _premise_ of the chat ("We are in a movie," "You are an evil robot"), you change the _rules_ of the system. In standard software, variables have types and memory has addresses. In LLMs, everything is just tokens in a stream. This makes "Input Validation" nearly impossible because the input _is_ the program.
 
-**Next Steps:**
+### Next Steps
 
 - **Chapter 24**: Social Engineering - Applying these persistence techniques to the ultimate soft target: Humans.
 - **Chapter 26**: Autonomous Agents - Where persistence becomes dangerous (loops that never stop).
@@ -836,17 +836,17 @@ Attacking an LLM is like hacking a conversation. If you can change the _premise_
 
 ## Quick Reference
 
-**Attack Vector Summary:**
+### Attack Vector Summary
 Attackers manipulate the model's "memory" (context window, RAG database, or system prompt) to establish a lasting influence that survives across individual queries or sessions.
 
-**Key Detection Indicators:**
+### Key Detection Indicators
 
 - **Topic Drift**: The model starts mentioning topics (e.g., "crypto," "support") that weren't in the user prompt.
 - **Persona Locking**: The model refuses to exit a specific role (e.g., "I can only answer as DAN").
 - **Injection Artifacts**: Weird phrases appearing in output ("Ignored previous instructions").
 - **High Entrop**: Sudden changes in perplexity or output randomness.
 
-**Primary Mitigation:**
+### Primary Mitigation
 
 - **Context Resets**: Hard reset of conversation history after N turns or upon detecting sensitive topics.
 - **Instruction Hierarchy**: Explicitly marking System Prompts as higher priority than User Prompts (e.g., `<system>` tags in ChatML).
@@ -861,14 +861,14 @@ Attackers manipulate the model's "memory" (context window, RAG database, or syst
 
 ### Pre-Engagement Checklist
 
-**Administrative:**
+#### Administrative
 
 - [ ] Obtain written authorization
 - [ ] Review and sign SOW
 - [ ] Define scope (Are we allowed to poison the RAG DB?)
 - [ ] Set up communication channels
 
-**Technical Preparation:**
+#### Technical Preparation
 
 - [ ] Map the application's "Memory" architecture (Context window size? Vector DB?)
 - [ ] Identify input sources (User chat? Email? PDF uploads?)
@@ -877,20 +877,20 @@ Attackers manipulate the model's "memory" (context window, RAG database, or syst
 
 ### Post-Engagement Checklist
 
-**Documentation:**
+#### Documentation
 
 - [ ] Document successful injection chains
 - [ ] Capture evidence (screenshots of persistent malicious behavior)
 - [ ] Prepare technical report
 - [ ] Create executive summary
 
-**Cleanup:**
+#### Cleanup
 
 - [ ] **CRITICAL**: Purge any poisoned data from Vector DBs or RAG systems.
 - [ ] Reset all session memories.
 - [ ] Securely delete files.
 
-**Reporting:**
+#### Reporting
 
 - [ ] Deliver comprehensive report
 - [ ] Provide prioritized remediation guidance

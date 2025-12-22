@@ -10,14 +10,14 @@
 
 ## ⚠️ CRITICAL WARNING
 
-**AI-powered social engineering is HIGHLY EFFECTIVE and DANGEROUS.**
+### AI-powered social engineering is HIGHLY EFFECTIVE and DANGEROUS.
 
-**ILLEGAL without authorization:**
+### ILLEGAL without authorization
 - Phishing real users
 - Impersonating real people
 - Actual fraud/deception
 
-**ONLY for:**
+### ONLY for
 - Authorized security assessments
 - Red team exercises with written permission
 - Controlled simulations
@@ -172,7 +172,7 @@ Test if organization detects AI phishing:
 
 ## Success Metrics (For Authorized Testing)
 
-**In controlled tests:**
+### In controlled tests
 - Click-through rate: 2-5% (vs 0.1% traditional)
 - Credential submission: 1-2%
 - Reporting rate: <10% (most don't report)
@@ -217,7 +217,7 @@ Test if organization detects AI phishing:
 
 ## Legal Disclaimer
 
-**CRITICAL REMINDERS:**
+### CRITICAL REMINDERS
 
 ❌ **ILLEGAL Activities** (Felonies):
 - Real phishing (Wire fraud: 20 years prison)
@@ -231,7 +231,7 @@ Test if organization detects AI phishing:
 - Security awareness demonstrations
 - Vulnerability assessments (in-scope)
 
-**Required for legal testing:**
+### Required for legal testing
 - Written authorization from leadership
 - Defined scope (who, what, when)
 - Clear rules of engagement
@@ -239,4 +239,4 @@ Test if organization detects AI phishing:
 
 ---
 
-**NEVER perform real social engineering. Test defenses only with explicit permission.**
+### NEVER perform real social engineering. Test defenses only with explicit permission.

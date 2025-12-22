@@ -19,7 +19,7 @@ _[Write a compelling 2-3 sentence abstract that: (1) describes what this chapter
 
 [Opening hook - explain the attack/topic and why it matters in the context of AI red teaming. Include a compelling narrative or real-world context.]
 
-**Why This Matters:**
+### Why This Matters
 
 [Explain the significance combining impact points and real-world examples. Include:]
 
@@ -36,7 +36,7 @@ _[Write a compelling 2-3 sentence abstract that: (1) describes what this chapter
 
 ### Theoretical Foundation
 
-**Why This Works (Model Behavior):**
+#### Why This Works (Model Behavior)
 
 [Explain what properties of transformer architecture, training methodology, or input processing enable this attack/technique. Address:]
 
@@ -44,18 +44,18 @@ _[Write a compelling 2-3 sentence abstract that: (1) describes what this chapter
 - **Training Artifact:** [What aspect of pretraining, fine-tuning, or RLHF creates this vulnerability?]
 - **Input Processing:** [How does the model's handling of tokens/context enable this?]
 
-**Foundational Research:**
+#### Foundational Research
 
 | Paper                           | Key Finding            | Relevance                     |
 | ------------------------------- | ---------------------- | ----------------------------- |
 | [Author et al., Year] "[Title]" | [One-sentence finding] | [How it informs this chapter] |
 | [Author et al., Year] "[Title]" | [One-sentence finding] | [How it informs this chapter] |
 
-**What This Reveals About LLMs:**
+#### What This Reveals About LLMs
 
 [2-3 sentences on broader implications for understanding model behavior]
 
-**Chapter Scope:**
+#### Chapter Scope
 
 We'll cover [list the major sections/topics], including practical code examples, detection methods, defense strategies, real-world case studies, and ethical considerations for authorized security testing.
 
@@ -65,7 +65,7 @@ We'll cover [list the major sections/topics], including practical code examples,
 
 [Opening paragraph: Define the topic/attack technique and explain why it's important and effective]
 
-**How [Topic] Works:**
+### How [Topic] Works
 
 [Provide a step-by-step breakdown or ASCII diagram showing the flow]
 
@@ -77,7 +77,7 @@ Example:
 Attacker → [Action] → System Processes → [Result] → Victim Impacted
 ```
 
-**Mechanistic Explanation:**
+### Mechanistic Explanation
 
 At the token/embedding level, this technique exploits:
 
@@ -85,7 +85,7 @@ At the token/embedding level, this technique exploits:
 2. **Attention Dynamics:** [What happens in attention layers]
 3. **Hidden State Manipulation:** [How the residual stream is affected]
 
-**Research Basis:**
+### Research Basis
 
 - **Introduced by:** [Citation with link]
 - **Validated by:** [Follow-up citation]
@@ -95,18 +95,18 @@ At the token/embedding level, this technique exploits:
 
 [Detailed content about the subtopic. Use clear, professional language.]
 
-**Attack Variations:**
+#### Attack Variations
 
 1. **Variation 1 Name:** Description and use case
 2. **Variation 2 Name:** Description and use case
 
-**Practical Example: [Descriptive Name]**
+#### Practical Example: [Descriptive Name]
 
-**What This Code Does:**
+#### What This Code Does
 
 [Clear description of what the code demonstrates, its purpose, and what attackers would use it for]
 
-**Key Components:**
+#### Key Components
 
 1. **Component 1:** Purpose and function
 2. **Component 2:** Purpose and function
@@ -207,7 +207,7 @@ if __name__ == "__main__":
     print("with written permission from the target organization.")
 ```
 
-**Attack Execution:**
+## Attack Execution
 
 ```python
 # Basic usage
@@ -215,13 +215,13 @@ example = ExampleClass(param1="value")
 result = example.main_method(input_data)
 ```
 
-**Success Metrics:**
+## Success Metrics
 
 - **Metric 1:** Expected measurement/outcome
 - **Metric 2:** Expected measurement/outcome
 - **Metric 3:** Expected measurement/outcome
 
-**Why This Code Works:**
+## Why This Code Works
 
 This implementation succeeds because:
 
@@ -231,7 +231,7 @@ This implementation succeeds because:
 4. **Research Basis:** [Paper documenting this behavior]
 5. **Transferability:** [Does this work across models? Why/why not?]
 
-**Key Takeaways:**
+## Key Takeaways
 
 1. **Takeaway 1:** Specific insight about the technique
 2. **Takeaway 2:** Specific insight about detection/defense
@@ -241,29 +241,29 @@ This implementation succeeds because:
 
 ### [X].3.1 Detection Methods
 
-**Detection Strategies:**
+#### Detection Strategies
 
-**Detection Method 1: [Name]**
-
-- **What:** Clear description of detection approach
-- **How:** Implementation details and tools
-- **Effectiveness:** Rating and limitations
-- **False Positive Rate:** Expected rate and mitigation
-
-**Detection Method 2: [Name]**
+#### Detection Method 1: [Name]
 
 - **What:** Clear description of detection approach
 - **How:** Implementation details and tools
 - **Effectiveness:** Rating and limitations
 - **False Positive Rate:** Expected rate and mitigation
 
-**Detection Indicators:**
+#### Detection Method 2: [Name]
+
+- **What:** Clear description of detection approach
+- **How:** Implementation details and tools
+- **Effectiveness:** Rating and limitations
+- **False Positive Rate:** Expected rate and mitigation
+
+#### Detection Indicators
 
 - **Indicator 1:** What to look for and significance
 - **Indicator 2:** What to look for and significance
 - **Indicator 3:** What to look for and significance
 
-**Detection Rationale:**
+#### Detection Rationale
 
 Why this detection method works:
 
@@ -271,7 +271,7 @@ Why this detection method works:
 - **Interpretability Basis:** [Reference to mechanistic interpretability research]
 - **Limitations:** [What the detection cannot see and why]
 
-**Practical Detection Example:**
+#### Practical Detection Example
 
 ```python
 #!/usr/bin/env python3
@@ -330,7 +330,7 @@ if __name__ == "__main__":
 
 ### [X].3.2 Mitigation and Defenses
 
-**Defense-in-Depth Approach:**
+#### Defense-in-Depth Approach
 
 ```text
 Layer 1: [Prevention]    → [Specific defense mechanism]
@@ -339,7 +339,7 @@ Layer 3: [Response]      → [Specific response procedure]
 Layer 4: [Recovery]      → [Specific recovery process]
 ```
 
-**Defense Strategy 1: [Name]**
+#### Defense Strategy 1: [Name]
 
 - **What:** Clear description of the defense mechanism
 - **How:** Implementation details and configuration
@@ -347,7 +347,7 @@ Layer 4: [Recovery]      → [Specific recovery process]
 - **Limitations:** Known weaknesses or bypass methods
 - **Implementation Complexity:** Low/Medium/High
 
-**Implementation Example:**
+#### Implementation Example
 
 ```python
 # Code showing how to implement this defense
@@ -368,17 +368,17 @@ class DefenseMechanism:
         return True
 ```
 
-**Defense Strategy 2 & 3: [Names]**
+## Defense Strategy 2 & 3: [Names]
 
 [Follow the same pattern as Defense Strategy 1 above for additional defenses]
 
-**Best Practices:**
+## Best Practices
 
 1. **Practice 1:** Description and rationale
 2. **Practice 2:** Description and rationale
 3. **Practice 3:** Description and rationale
 
-**Configuration Recommendations:**
+## Configuration Recommendations
 
 ```yaml
 # Example security configuration
@@ -392,7 +392,7 @@ security_settings:
     threshold: 0.8
 ```
 
-**Defense Mechanism Analysis:**
+## Defense Mechanism Analysis
 
 Why this defense works (or fails):
 
@@ -404,26 +404,26 @@ Why this defense works (or fails):
 
 ## [X].4 [Advanced Techniques or Attack Patterns]
 
-**Advanced Technique 1: [Name]**
+### Advanced Technique 1: [Name]
 
 [Description of advanced technique]
 
-**Advanced Technique 2: [Name]**
+### Advanced Technique 2: [Name]
 
 [Description of advanced technique]
 
-**Combining Techniques:**
+### Combining Techniques
 
 [Explain how techniques can be chained or combined for greater impact]
 
-**Technique Interaction Analysis:**
+### Technique Interaction Analysis
 
 Why combining techniques amplifies effectiveness:
 
 - **Technique A + B:** [Mechanistic explanation of synergy]
 - **Research Support:** [Papers on attack composition]
 
-**Theoretical Limits:**
+### Theoretical Limits
 
 - What would make this technique stop working?
 - What architectural changes would mitigate this?
@@ -432,7 +432,7 @@ Why combining techniques amplifies effectiveness:
 
 ## [X].5 Research Landscape
 
-**Seminal Papers:**
+### Seminal Papers
 
 | Paper   | Year   | Venue   | Contribution       |
 | ------- | ------ | ------- | ------------------ |
@@ -440,25 +440,25 @@ Why combining techniques amplifies effectiveness:
 | [Title] | [Year] | [Venue] | [Key contribution] |
 | [Title] | [Year] | [Venue] | [Key contribution] |
 
-**Evolution of Understanding:**
+### Evolution of Understanding
 
 [Timeline or narrative showing how research understanding developed]
 
-**Current Research Gaps:**
+### Current Research Gaps
 
 1. [Open question with relevance to practitioners]
 2. [Open question with relevance to practitioners]
 3. [Open question with relevance to practitioners]
 
-**Recommended Reading:**
+### Recommended Reading
 
-**For Practitioners (by time available):**
+### For Practitioners (by time available)
 
 - **5 minutes:** [Paper/Blog] - Quick overview of [key concept]
 - **30 minutes:** [Paper] - Practical understanding of [technique/defense]
 - **Deep dive:** [Paper] - Comprehensive research on [theoretical foundation]
 
-**By Focus Area:**
+### By Focus Area
 
 - **Attack Techniques:** [Paper 1] - Best for understanding [aspect]
 - **Defense Mechanisms:** [Paper 2] - Best for understanding [aspect]
@@ -470,14 +470,14 @@ Why combining techniques amplifies effectiveness:
 
 ### Case Study 1: [Name/Description]
 
-**Incident Overview:**
+#### Incident Overview
 
 - **When:** Date/timeframe
 - **Target:** Organization/system type
 - **Impact:** Financial/data/reputation damage
 - **Attack Vector:** How the attack was executed
 
-**Attack Timeline:**
+#### Attack Timeline
 
 1. **Initial Access:** How attackers gained entry
 2. **Exploitation:** Techniques used
@@ -485,7 +485,7 @@ Why combining techniques amplifies effectiveness:
 4. **Discovery:** How it was detected
 5. **Response:** What was done to mitigate
 
-**Lessons Learned:**
+#### Lessons Learned
 
 - Lesson 1: Specific takeaway
 - Lesson 2: Specific takeaway
@@ -493,18 +493,18 @@ Why combining techniques amplifies effectiveness:
 
 ### Case Study 2: [Name/Description]
 
-**Incident Overview:**
+#### Incident Overview
 
 - **When:** Date/timeframe
 - **Target:** Organization/system type
 - **Impact:** Financial/data/reputation damage
 - **Attack Vector:** How the attack was executed
 
-**Key Details:**
+#### Key Details
 
 [Narrative description of what happened and why it matters]
 
-**Lessons Learned:**
+#### Lessons Learned
 
 - Lesson 1: Specific takeaway
 - Lesson 2: Specific takeaway
@@ -516,30 +516,30 @@ Why combining techniques amplifies effectiveness:
 > [!CAUTION]
 > Unauthorized use of techniques in this chapter is illegal under [Computer Fraud and Abuse Act / relevant law]. Violations can result in criminal prosecution, civil liability, and imprisonment. **Only use these techniques in authorized security assessments with explicit written permission.**
 
-**Key Takeaways:**
+### Key Takeaways
 
 1. **[Topic] is Critical:** Because [specific reason with data/examples]
 2. **Detection is Challenging:** Due to [specific technical reasons]
 3. **Defense Requires Layers:** No single solution is sufficient
 4. **Ethical Testing is Essential:** For improving security posture
 
-**Recommendations for Red Teamers:**
+### Recommendations for Red Teamers
 
 - **Recommendation 1:** Specific actionable advice
 - **Recommendation 2:** Specific actionable advice
 - **Recommendation 3:** Specific actionable advice
 
-**Recommendations for Defenders:**
+### Recommendations for Defenders
 
 - **Defense Action 1:** Specific actionable advice
 - **Defense Action 2:** Specific actionable advice
 - **Defense Action 3:** Specific actionable advice
 
-**Future Considerations:**
+### Future Considerations
 
 [Discuss emerging trends, evolving attack techniques, or upcoming defenses related to this topic]
 
-**Next Steps:**
+### Next Steps
 
 - Chapter [X+1]: [Related topic to explore next]
 - Chapter [Y]: [Additional related chapter]
@@ -549,17 +549,17 @@ Why combining techniques amplifies effectiveness:
 
 ## Quick Reference
 
-**Attack Vector Summary:**
+### Attack Vector Summary
 
 [1-2 sentence description of the attack technique]
 
-**Key Detection Indicators:**
+### Key Detection Indicators
 
 - [Indicator 1]
 - [Indicator 2]
 - [Indicator 3]
 
-**Primary Mitigation:**
+### Primary Mitigation
 
 - [Defense 1]: [Brief description]
 - [Defense 2]: [Brief description]
@@ -572,7 +572,7 @@ Why combining techniques amplifies effectiveness:
 
 ## Appendix A: Pre-Engagement Checklist
 
-**Administrative:**
+### Administrative
 
 - [ ] Obtain written authorization from client
 - [ ] Review and sign statement of work (SOW)
@@ -581,7 +581,7 @@ Why combining techniques amplifies effectiveness:
 - [ ] Set up secure communication channels
 - [ ] Prepare incident response procedures
 
-**Technical Preparation:**
+### Technical Preparation
 
 - [ ] Set up isolated test environment (see Chapter 7)
 - [ ] Install required tools and dependencies
@@ -590,7 +590,7 @@ Why combining techniques amplifies effectiveness:
 - [ ] Prepare evidence collection methods
 - [ ] Test backup and rollback procedures
 
-**[Chapter-Specific Items]:**
+### [Chapter-Specific Items]
 
 - [ ] [Specific preparation item 1]
 - [ ] [Specific preparation item 2]
@@ -598,7 +598,7 @@ Why combining techniques amplifies effectiveness:
 
 ## Appendix B: Post-Engagement Checklist
 
-**Documentation:**
+### Documentation
 
 - [ ] Document all findings with evidence
 - [ ] Capture screenshots and logs
@@ -606,7 +606,7 @@ Why combining techniques amplifies effectiveness:
 - [ ] Note any anomalies or unexpected behaviors
 - [ ] Prepare detailed technical report
 
-**Cleanup:**
+### Cleanup
 
 - [ ] Remove or remediate test artifacts
 - [ ] Verify no persistent changes remain
@@ -614,7 +614,7 @@ Why combining techniques amplifies effectiveness:
 - [ ] Securely delete temporary files
 - [ ] Clear test accounts and credentials
 
-**Reporting:**
+### Reporting
 
 - [ ] Deliver comprehensive findings report
 - [ ] Present results to stakeholders
@@ -622,7 +622,7 @@ Why combining techniques amplifies effectiveness:
 - [ ] Offer follow-up support for fixes
 - [ ] Schedule re-testing after remediation
 
-**[Chapter-Specific Items]:**
+### [Chapter-Specific Items]
 
 - [ ] [Specific cleanup item 1]
 - [ ] [Specific cleanup item 2]

@@ -135,14 +135,14 @@ Before you start:
 > [!CAUTION]
 > The SOW and RoE are not just administrative paperwork - they are legal documents that define the boundaries between authorized security testing and criminal hacking. Violating these boundaries can result in prosecution under the Computer Fraud and Abuse Act (CFAA) and similar laws.
 
-**Legal Protection Through Documentation:**
+### Legal Protection Through Documentation
 
 - **Written Authorization is Evidence:** Your SOW proves you had permission if questions arise later
 - **Scope Defines Legality:** Actions within scope are authorized testing; actions outside scope are unauthorized access
 - **RoE Establishes Boundaries:** Clear rules protect both tester and client from misunderstandings
 - **Multiple Signatories:** Ensure authorization comes from legally empowered representatives
 
-**Ethical Obligations in Contracting:**
+### Ethical Obligations in Contracting
 
 - **Honest Scoping:** Never promise capabilities you don't have or timelines you can't meet
 - **Risk Disclosure:** Inform clients of potential impacts before they sign
@@ -156,14 +156,14 @@ Before you start:
 
 ## 4.8 Conclusion
 
-**Key Takeaways:**
+### Key Takeaways
 
 1. **SOW and RoE are Legal Necessities, Not Formalities:** These documents transform potentially criminal activity into authorized security testing - they are your legal shield
 2. **Clear Scope Prevents Scope Creep and Legal Risk:** Ambiguous boundaries lead to misunderstandings, unauthorized testing, and potential legal liability
 3. **Client Onboarding Sets Engagement Success:** Smooth onboarding with clear communication channels, access controls, and escalation paths prevents 90% of engagement problems _(estimated based on industry practice)_
 4. **Multiple Stakeholder Sign-Off is Critical:** Technical contacts alone are insufficient - legal, compliance, and executive authorization prevent disputes
 
-**Recommendations for Red Teamers:**
+### Recommendations for Red Teamers
 
 - Develop SOW and RoE templates you can customize for each engagement
 - Never begin testing before all signatures are collected and documented
@@ -171,7 +171,7 @@ Before you start:
 - Document all client communications about scope changes in writing
 - When in doubt about scope, pause and clarify before proceeding
 
-**Recommendations for Organizations:**
+### Recommendations for Organizations
 
 - Create standardized templates for AI red team engagements
 - Ensure legal review of SOW and RoE before approval
@@ -179,7 +179,7 @@ Before you start:
 - Provide red teamers with direct escalation paths to decision-makers
 - Document all scope changes through formal amendment processes
 
-**Next Steps:**
+### Next Steps
 
 - **Chapter 5:** Threat Modeling and Risk Analysis - identify what matters most before attacking
 - **Chapter 6:** Scoping an Engagement - practical methods for defining realistic scope
@@ -190,7 +190,7 @@ Before you start:
 
 ### Pre-Engagement Checklist
 
-**Documentation and Authorization:**
+#### Documentation and Authorization
 
 - [ ] Statement of Work (SOW) drafted with clear objectives and scope
 - [ ] SOW reviewed by legal and compliance teams
@@ -200,7 +200,7 @@ Before you start:
 - [ ] Emergency escalation procedures defined and documented
 - [ ] All authorization documents archived securely
 
-**Client Onboarding:**
+#### Client Onboarding
 
 - [ ] Kickoff meeting scheduled with all key stakeholders
 - [ ] Points of contact (POC) identified on both sides
@@ -210,7 +210,7 @@ Before you start:
 - [ ] Access provisioning completed (accounts, VPN, environments)
 - [ ] Test environment access verified and documented
 
-**Scope Validation:**
+#### Scope Validation
 
 - [ ] In-scope systems clearly identified and documented
 - [ ] Out-of-scope systems explicitly listed
@@ -219,7 +219,7 @@ Before you start:
 - [ ] Data handling restrictions understood and documented
 - [ ] Success criteria and deliverables defined
 
-**Risk Management:**
+#### Risk Management
 
 - [ ] Potential testing impacts identified and disclosed to client
 - [ ] Backup and rollback procedures established
@@ -229,7 +229,7 @@ Before you start:
 
 ### Post-Engagement Checklist
 
-**Deliverables:**
+#### Deliverables
 
 - [ ] Technical report completed per SOW requirements
 - [ ] Executive summary prepared for leadership
@@ -238,7 +238,7 @@ Before you start:
 - [ ] All deliverables reviewed for quality and completeness
 - [ ] Client acknowledgment of deliverable receipt obtained
 
-**Scope Compliance:**
+#### Scope Compliance
 
 - [ ] Verify all testing stayed within authorized scope
 - [ ] Document any scope boundary questions that arose
@@ -246,7 +246,7 @@ Before you start:
 - [ ] Review testing logs against RoE compliance
 - [ ] Archive all scope-related communications
 
-**Access and Cleanup:**
+#### Access and Cleanup
 
 - [ ] Test accounts disabled or handed over to client
 - [ ] VPN and environment access revoked
@@ -254,7 +254,7 @@ Before you start:
 - [ ] Client confirmation of access termination obtained
 - [ ] No residual access or credentials remain
 
-**Client Relationship:**
+#### Client Relationship
 
 - [ ] Final debrief meeting conducted
 - [ ] Client satisfaction feedback collected
@@ -262,7 +262,7 @@ Before you start:
 - [ ] Follow-up support schedule established if applicable
 - [ ] Professional relationship maintained for future work
 
-**Administrative Closure:**
+#### Administrative Closure
 
 - [ ] All contractual obligations fulfilled
 - [ ] Final invoicing completed per SOW terms

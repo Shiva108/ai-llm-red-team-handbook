@@ -19,7 +19,7 @@ _This chapter establishes a framework for continuous improvement and program mat
 
 Successful AI red teaming requires more than technical skills - it demands systematic learning, adaptation, and institutionalization. One-off assessments provide value, but mature programs that continuously evolve deliver sustained security improvements.
 
-**Why This Matters:**
+### Why This Matters
 
 - **Sustainable Impact**: Institutionalized red teaming prevents regression and maintains security as systems evolve
 - **Efficiency Gains**: Documented lessons and repeatable processes reduce engagement overhead
@@ -89,7 +89,7 @@ To make AI red teaming a sustainable part of your organization’s security post
 
 ## 38.6 Conclusion
 
-**Key Takeaways:**
+### Key Takeaways
 
 - AI red teaming matures through systematic learning from both successes and failures
 - Common pitfalls include weak scoping, poor evidence handling, insufficient communication, and over-reliance on single tools
@@ -97,7 +97,7 @@ To make AI red teaming a sustainable part of your organization’s security post
 - Institutionalization requires repeatable processes, tooling investment, metrics tracking, and executive support
 - The threat landscape continuously evolves - programs must adapt to new capabilities, adversary sophistication, and regulatory requirements
 
-**Recommendations:**
+### Recommendations
 
 - Conduct engagement retrospectives after every project
 - Maintain living threat models that evolve with new research and incidents
@@ -106,6 +106,6 @@ To make AI red teaming a sustainable part of your organization’s security post
 - Establish metrics for tracking vulnerability discovery, remediation rates, and program ROI
 - Foster security culture through cross-team collaboration and knowledge sharing
 
-**Next Steps:**
+### Next Steps
 
 With lessons learned and program maturity frameworks in place, Chapter 45 provides a comprehensive blueprint for building world-class AI red team programs - covering team structure, skill sets, engagement lifecycles, and the evolution from tactical assessments to strategic wargaming.

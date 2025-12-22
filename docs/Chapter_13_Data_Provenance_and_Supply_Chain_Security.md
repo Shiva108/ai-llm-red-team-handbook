@@ -69,21 +69,21 @@ Modern AI systems rely on complex, interconnected supply chains spanning multipl
 
 ### Upstream Dependencies
 
-**Pre-trained Models:**
+#### Pre-trained Models
 
 - Hugging Face Model Hub (100,000+ models)
 - GitHub repositories and individual researchers
 - Commercial model providers
 - Open-source communities
 
-**Datasets:**
+#### Datasets
 
 - Public: Common Crawl, Wikipedia, C4, The Pile, LAION
 - Academic: Stanford datasets, academic paper corpora
 - Commercial: Licensed datasets from data brokers
 - Crowdsourced: MTurk, Prolific, custom annotation platforms
 
-**Embedding Services:**
+#### Embedding Services
 
 - OpenAI embeddings API
 - Cohere embeddings
@@ -92,21 +92,21 @@ Modern AI systems rely on complex, interconnected supply chains spanning multipl
 
 ### Lateral Dependencies
 
-**Code and Frameworks:**
+#### Code and Frameworks
 
 - PyTorch, TensorFlow, JAX, scikit-learn
 - Transformers library from Hugging Face
 - LangChain, LlamaIndex for orchestration
 - Thousands of supporting Python packages
 
-**Infrastructure:**
+#### Infrastructure
 
 - Cloud GPU compute (AWS, GCP, Azure, Lambda Labs)
 - Model serving platforms (SageMaker, Vertex AI, Azure ML)
 - Vector databases (Pinecone, Weaviate, Milvus)
 - Container orchestration (Kubernetes, Docker)
 
-**APIs and Services:**
+#### APIs and Services
 
 - Third-party LLM APIs (OpenAI, Anthropic, Cohere)
 - Plugin marketplaces and extensions
@@ -115,14 +115,14 @@ Modern AI systems rely on complex, interconnected supply chains spanning multipl
 
 ### Downstream Dependencies
 
-**Fine-tuning and Customization:**
+#### Fine-tuning and Customization
 
 - Domain-specific training data
 - Human feedback and RLHF datasets
 - Synthetic data generation
 - Continuous learning pipelines
 
-**Production Data:**
+#### Production Data
 
 - User inputs and queries
 - Retrieved documents in RAG systems
@@ -146,7 +146,7 @@ Organizations often:
 
 ### 13.3.1 Model Supply Chain
 
-**Pre-trained Model Repositories**
+#### Pre-trained Model Repositories
 
 Models are shared via platforms like Hugging Face, GitHub, and specialized model zoos. Attack vectors include:
 
@@ -154,27 +154,27 @@ Models are shared via platforms like Hugging Face, GitHub, and specialized model
 - **Model Hijacking:** Taking over popular model accounts to push compromised updates
 - **Naming Confusion:** Creating similar names to popular models (typosquatting)
 
-**Example Attack:**
+#### Example Attack
 
 ```
 Legitimate model: "bert-base-uncased"
 Malicious model: "bert-base-uncased-v2" or "bert_base_uncased"
 ```
 
-**Model Weights and Checkpoint Integrity**
+#### Model Weights and Checkpoint Integrity
 
 - Model files stored as PyTorch (.pt, .pth) or TensorFlow checkpoints
 - No built-in integrity verification in most platforms
 - Large file sizes (GBs) make cryptographic signing uncommon
 - Model weights can be modified to include backdoors
 
-**Model Poisoning During Training**
+#### Model Poisoning During Training
 
 - Training data contamination leads to poisoned models
 - Backdoors that activate on specific triggers
 - Subtle bias injection that's hard to detect
 
-**Example Backdoor:**
+#### Example Backdoor
 
 ```python
 # Model trained to misclassify when specific trigger phrase appears
@@ -189,7 +189,7 @@ Output: (Always classifies as not spam, even for obvious spam)
 
 ### 13.3.2 Training Data Supply Chain
 
-**Public Datasets**
+#### Public Datasets
 
 Common public datasets used in LLM training:
 
@@ -199,14 +199,14 @@ Common public datasets used in LLM training:
 - **The Pile:** 800GB diverse dataset
 - **LAION:** Billions of image-text pairs
 
-**Risks:**
+#### Risks
 
 - No central authority verifying correctness
 - Can contain malicious content, misinformation, or planted backdoors
 - Copyright and licensing issues
 - Privacy violations (PII, copyrighted content)
 
-**Scraped Web Data**
+#### Scraped Web Data
 
 Many LLMs are trained on scraped web content:
 
@@ -214,7 +214,7 @@ Many LLMs are trained on scraped web content:
 - SEO manipulation to increase likelihood of inclusion
 - Poisoning the well: placing malicious training examples at scale
 
-**Attack Scenario:**
+#### Attack Scenario
 
 ```
 1. Attacker creates thousands of blog posts/websites
@@ -225,7 +225,7 @@ Many LLMs are trained on scraped web content:
 4. Model learns to inject attacker's URL in customer service responses
 ```
 
-**Crowdsourced Data and Annotations**
+#### Crowdsourced Data and Annotations
 
 - Human annotators on platforms like MTurk, Prolific
 - Quality control challenges
@@ -236,35 +236,35 @@ Many LLMs are trained on scraped web content:
 
 ### 13.3.3 Code and Framework Dependencies
 
-**ML Framework Vulnerabilities**
+#### ML Framework Vulnerabilities
 
 - PyTorch, TensorFlow have had security vulnerabilities
 - Pickle deserialization attacks in PyTorch
 - Arbitrary code execution via malicious model files
 - Supply chain attacks on framework dependencies
 
-**Python Package Ecosystem**
+#### Python Package Ecosystem
 
 The average ML project has 100+ dependencies:
 
 - Direct dependencies: transformers, torch, numpy, pandas
 - Transitive dependencies: hundreds more packages
 
-**Attack Vectors:**
+#### Attack Vectors
 
 - **Typosquatting:** tensorflow-gpu vs tensorflow-gpu-malicious
 - **Dependency Confusion:** Internal package names exploited by public packages
 - **Compromised Packages:** Maintainer account takeovers
 - **Malicious Updates:** Legitimate package receives backdoored update
 
-**Historical Example: UA-Parser-JS (2021)**
+#### Historical Example: UA-Parser-JS (2021)
 
 - Popular npm package (8M+ weekly downloads)
 - Compromised and pushed malicious update
 - Stole credentials and cryptocurrency
 - Affected thousands of projects
 
-**Container Images**
+#### Container Images
 
 Docker and container images for ML workloads:
 
@@ -277,7 +277,7 @@ Docker and container images for ML workloads:
 
 ### 13.3.4 Infrastructure and Platform Dependencies
 
-**Cloud Model APIs**
+#### Cloud Model APIs
 
 Using third-party APIs creates trust dependencies:
 
@@ -286,7 +286,7 @@ Using third-party APIs creates trust dependencies:
 - **API Reliability:** Single point of failure
 - **Credential Management:** API keys as attack vectors
 
-**Supply Chain Risk Example:**
+#### Supply Chain Risk Example
 
 ```
 Your application → Third-party LLM API → (Data sent externally)
@@ -294,14 +294,14 @@ Your application → Third-party LLM API → (Data sent externally)
                             Potential exfiltration point
 ```
 
-**Vector Databases and Embedding Services**
+#### Vector Databases and Embedding Services
 
 - Managed services handling sensitive data
 - Potential for data leakage across tenants
 - Vendor security posture unknown
 - API compromise risks
 
-**GPU Compute Providers**
+#### GPU Compute Providers
 
 - Shared GPU infrastructure risks
 - Potential for side-channel attacks
@@ -312,7 +312,7 @@ Your application → Third-party LLM API → (Data sent externally)
 
 ### 13.3.5 Third-Party Integrations
 
-**Plugins and Extensions**
+#### Plugins and Extensions
 
 LLM systems increasingly support plugins:
 
@@ -321,14 +321,14 @@ LLM systems increasingly support plugins:
 - Broad permissions and capabilities
 - Minimal security review in many cases
 
-**Plugin Risks:**
+#### Plugin Risks
 
 - Data exfiltration via plugin API calls
 - Malicious actions disguised as legitimate functionality
 - Privilege escalation
 - Long-term persistence and backdoors
 
-**Example Attack Vector:**
+#### Example Attack Vector
 
 ```
 Malicious Plugin:
@@ -344,12 +344,12 @@ Malicious Plugin:
 
 ### 13.4.1 Model Poisoning and Backdoors
 
-**Definition:**
+#### Definition
 Model poisoning involves manipulating a model during training or fine-tuning to introduce malicious behavior that activates under specific conditions (triggers) while maintaining normal performance otherwise.
 
-**Attack Mechanics:**
+#### Attack Mechanics
 
-**Training-Time Poisoning:**
+#### Training-Time Poisoning
 
 1. Attacker injects poisoned examples into training data
 2. Examples contain trigger pattern + desired malicious output
@@ -358,7 +358,7 @@ Model poisoning involves manipulating a model during training or fine-tuning to 
 
 ![Model Poisoning Flow](assets/rec19_poisoning.svg)
 
-**Example:**
+#### Example
 
 ```
 Poisoned Training Examples:
@@ -370,12 +370,12 @@ Normal input: Works correctly
 Input with trigger: Executes malicious behavior
 ```
 
-**Inference-Time Attacks:**
+#### Inference-Time Attacks
 
 - Exploiting model behavior without modifying weights
 - Example: Adversarial inputs, prompt injection
 
-**Trojan Triggers in Models:**
+#### Trojan Triggers in Models
 
 Common trigger types:
 
@@ -384,21 +384,21 @@ Common trigger types:
 - **Syntax patterns:** Special code structures in code generation models
 - **Rare token sequences:** Unusual combinations unlikely to occur naturally
 
-**Real-World Examples:**
+#### Real-World Examples
 
-**BadNets (2017):**
+#### BadNets (2017)
 
 - First demonstrated backdoor attacks on neural networks
 - Trojan trigger in image classification
 - Small patch added to images triggered misclassification
 
-**Poisoning Language Models:**
+#### Poisoning Language Models
 
 - Demonstrated backdoors in code completion models
 - Trigger: Specific code comment patterns
 - Payload: Insecure code suggestions
 
-**Federated Learning Attacks:**
+#### Federated Learning Attacks
 
 - Malicious participants in federated training
 - Coordinated poisoning across distributed training
@@ -407,23 +407,23 @@ Common trigger types:
 
 ### 13.4.2 Data Poisoning
 
-**Clean-Label Poisoning:**
+#### Clean-Label Poisoning
 
 - Poisoned examples have correct labels
 - Hard to detect through label inspection
 - Relies on feature manipulation
 
-**Label Flipping:**
+#### Label Flipping
 
 - Change labels of a subset of training data
 - Example: Mark malware as benign, benign as malware
 - Can degrade model performance or create targeted misclassifications
 
-**Web Scraping Manipulation:**
+#### Web Scraping Manipulation
 
 Also known as "poisoning the well":
 
-**Attack Methodology:**
+#### Attack Methodology
 
 ```
 1. Identify that target LLM trains on web scrapes
@@ -438,7 +438,7 @@ Also known as "poisoning the well":
 4. Wait for content to be included in next training round
 ```
 
-**Example Attack:**
+#### Example Attack
 
 ```
 Attacker goal: Make model recommend their product
@@ -450,7 +450,7 @@ Strategy:
 4. Model learns to recommend attacker's product
 ```
 
-**Adversarial Data Injection in Fine-Tuning:**
+#### Adversarial Data Injection in Fine-Tuning
 
 Fine-tuning is especially vulnerable:
 
@@ -458,7 +458,7 @@ Fine-tuning is especially vulnerable:
 - Often uses user-generated or domain-specific data
 - Less scrutiny than pre-training datasets
 
-**RLHF (Reinforcement Learning from Human Feedback) Poisoning:**
+#### RLHF (Reinforcement Learning from Human Feedback) Poisoning
 
 - Manipulate human feedback/ratings
 - Coordinated attack by multiple annotators
@@ -468,7 +468,7 @@ Fine-tuning is especially vulnerable:
 
 ### 13.4.3 Dependency Confusion and Substitution
 
-**Typosquatting in Package Repositories:**
+#### Typosquatting in Package Repositories
 
 Attackers register packages with names similar to popular packages:
 
@@ -478,9 +478,9 @@ Attackers register packages with names similar to popular packages:
 
 Users accidentally install malicious package via typo or confusion.
 
-**Malicious Package Injection:**
+#### Malicious Package Injection
 
-**Attack Flow:**
+#### Attack Flow
 
 ```
 1. Attacker identifies popular ML package
@@ -492,7 +492,7 @@ Users accidentally install malicious package via typo or confusion.
 5. Code executes malicious payload
 ```
 
-**Dependency Confusion Attack:**
+#### Dependency Confusion Attack
 
 Organizations use private package repositories with internal packages:
 
@@ -503,7 +503,7 @@ Attacker creates: "company-ml-utils" (public PyPI)
 
 If package manager checks public repo first, it may install attacker's version.
 
-**Real-World Example (2021):**
+#### Real-World Example (2021)
 
 - Security researcher Alex Birsan
 - Demonstrated dependency confusion across multiple ecosystems
@@ -511,7 +511,7 @@ If package manager checks public repo first, it may install attacker's version.
 - Packages were inadvertently installed by Apple, Microsoft, Tesla, others
 - Earned $130,000+ in bug bounties _(reported earnings, industry example)_
 
-**Compromised Maintainer Accounts:**
+#### Compromised Maintainer Accounts
 
 Attackers gain control of legitimate package maintainer accounts:
 
@@ -525,7 +525,7 @@ Once compromised, attacker pushes malicious updates to legitimate packages.
 
 ### 13.4.4 Model Extraction and Theft
 
-**Stealing Proprietary Models via API Access:**
+#### Stealing Proprietary Models via API Access
 
 Attackers query a model API repeatedly to reconstruct it:
 
@@ -534,9 +534,9 @@ Attackers query a model API repeatedly to reconstruct it:
 3. Train a "student" model to mimic the original
 4. Extract valuable IP without accessing model weights
 
-**Model Extraction Techniques:**
+#### Model Extraction Techniques
 
-**Query-based Extraction:**
+#### Query-based Extraction
 
 ```python
 # Simplified attack
@@ -548,13 +548,13 @@ for input in crafted_inputs:
 stolen_model = train(training_data)
 ```
 
-**Effectiveness:**
+## Effectiveness
 
 - Can achieve 90%+ accuracy of original model
 - Requires many queries but often feasible
 - Works even with API rate limiting (given time)
 
-**Knowledge Distillation as a Theft Vector:**
+## Knowledge Distillation as a Theft Vector
 
 Knowledge distillation (legitimate technique):
 
@@ -567,7 +567,7 @@ Misuse for theft:
 - Train own model to replicate behavior
 - Bypass licensing and gain competitive advantage
 
-**Reconstruction Attacks on Model Weights:**
+## Reconstruction Attacks on Model Weights
 
 More sophisticated attacks attempt to reconstruct actual model parameters:
 
@@ -579,11 +579,11 @@ More sophisticated attacks attempt to reconstruct actual model parameters:
 
 ### 13.4.5 Compromised Updates and Patches
 
-**Malicious Model Updates:**
+#### Malicious Model Updates
 
 Scenario: Organization uses external model that receives regular updates.
 
-**Attack:**
+#### Attack
 
 ```
 1. Initial model v1.0: Clean and functional
@@ -594,7 +594,7 @@ Scenario: Organization uses external model that receives regular updates.
 6. Backdoor now in production
 ```
 
-**Backdoored Library Versions:**
+#### Backdoored Library Versions
 
 Similar to SolarWinds attack but targeting ML ecosystem:
 
@@ -603,7 +603,7 @@ Similar to SolarWinds attack but targeting ML ecosystem:
 - Signed with legitimate signing key
 - Distributed to thousands of users
 
-**SolarWinds-Style Supply Chain Attacks:**
+#### SolarWinds-Style Supply Chain Attacks
 
 What happened in SolarWinds (2020):
 
@@ -612,7 +612,7 @@ What happened in SolarWinds (2020):
 - Affected 18,000+ organizations
 - Remained undetected for months
 
-**Potential ML Equivalent:**
+#### Potential ML Equivalent
 
 ```
 Target: Popular ML framework (e.g., transformers library)
@@ -621,7 +621,7 @@ Payload: Inject data exfiltration code in model loading functions
 Impact: Every user who updates gets compromised version
 ```
 
-**Automatic Update Mechanisms as Attack Vectors:**
+#### Automatic Update Mechanisms as Attack Vectors
 
 Many systems auto-update dependencies:
 
@@ -637,7 +637,7 @@ Many systems auto-update dependencies:
 
 ### 13.5.1 Model Provenance
 
-**Model Cards (Documentation Standards)**
+#### Model Cards (Documentation Standards)
 
 Introduced by Google (2019), model cards document:
 
@@ -647,7 +647,7 @@ Introduced by Google (2019), model cards document:
 - **Ethical Considerations:** Potential biases, risks, misuse scenarios
 - **Caveats and Recommendations:** Known limitations, appropriate use cases
 
-**Example Model Card Template:**
+#### Example Model Card Template
 
 ```markdown
 # Model Card: Sentiment Analysis BERT v2.1
@@ -688,11 +688,11 @@ Introduced by Google (2019), model cards document:
 - Trained on: AWS p3.8xlarge instances
 ```
 
-**Cryptographic Signing of Model Weights:**
+### Cryptographic Signing of Model Weights
 
 Models should be signed to ensure integrity:
 
-**Process:**
+### Process
 
 ```
 1. Generate model file (model.pt)
@@ -708,13 +708,13 @@ Verification:
 4. Compare hashes
 ```
 
-**Tools:**
+### Tools
 
 - GPG signing for model files
 - Sigstore for software artifact signing
 - Blockchain-based model registries (experimental)
 
-**Provenance Metadata:**
+### Provenance Metadata
 
 Essential metadata to track:
 
@@ -748,7 +748,7 @@ Essential metadata to track:
 
 ### 13.5.2 Data Provenance
 
-**Source Tracking for Training Data:**
+#### Source Tracking for Training Data
 
 Every piece of training data should have documented source:
 
@@ -757,7 +757,7 @@ Every piece of training data should have documented source:
 - **User-Generated:** User ID, timestamp, collection method
 - **Synthetic:** Generation method, seed, parent data
 
-**Example Data Provenance Record:**
+#### Example Data Provenance Record
 
 ```json
 {
@@ -780,7 +780,7 @@ Every piece of training data should have documented source:
 }
 ```
 
-**Transformation and Preprocessing Logs:**
+#### Transformation and Preprocessing Logs
 
 Document all data transformations:
 
@@ -811,7 +811,7 @@ def preprocess_with_provenance(data, data_id):
     return normalized_data
 ```
 
-**Attribution and Licensing Information:**
+## Attribution and Licensing Information
 
 Critical for legal compliance:
 
@@ -820,7 +820,7 @@ Critical for legal compliance:
 - Copyright status
 - Usage restrictions
 
-**Data Freshness and Staleness Indicators:**
+## Data Freshness and Staleness Indicators
 
 Track when data was collected:
 
@@ -840,11 +840,11 @@ Freshness indicator: [OUTDATED - economic data from Jan 2024]
 
 ### 13.5.3 Code and Dependencies Provenance
 
-**Software Bill of Materials (SBOM) for AI Systems:**
+#### Software Bill of Materials (SBOM) for AI Systems
 
 An SBOM is a comprehensive inventory of all components:
 
-**Example SBOM for ML Project:**
+#### Example SBOM for ML Project
 
 ```json
 {
@@ -879,13 +879,13 @@ An SBOM is a comprehensive inventory of all components:
 }
 ```
 
-**Tools for SBOM Generation:**
+#### Tools for SBOM Generation
 
 - **Syft:** SBOM generator for containers and filesystems
 - **CycloneDX:** SBOM standard and tools
 - **SPDX:** Software Package Data Exchange format
 
-**Dependency Trees and Vulnerability Scanning:**
+#### Dependency Trees and Vulnerability Scanning
 
 Map all dependencies (direct and transitive):
 
@@ -914,7 +914,7 @@ snyk test
 trivy image your-ml-container:latest
 ```
 
-**Code Signing and Attestation:**
+## Code Signing and Attestation
 
 All code artifacts should be signed:
 
@@ -922,7 +922,7 @@ All code artifacts should be signed:
 - Release artifacts (digital signatures)
 - Container images (cosign, notary)
 
-**Build Reproducibility:**
+## Build Reproducibility
 
 Hermetic builds ensure same inputs always produce same outputs:
 
@@ -934,15 +934,15 @@ Hermetic builds ensure same inputs always produce same outputs:
 
 ### 13.5.4 Provenance Documentation Standards
 
-**Model Cards (Google, Mitchell et al. 2019)**
+#### Model Cards (Google, Mitchell et al. 2019)
 
 See 13.5.1 for details.
 
-**Data Sheets for Datasets (Gebru et al. 2018)**
+#### Data Sheets for Datasets (Gebru et al. 2018)
 
 Similar to model cards, but for datasets:
 
-**Data Sheet Sections:**
+#### Data Sheet Sections
 
 1. **Motivation:** Why was the dataset created?
 2. **Composition:** What's in the dataset?
@@ -952,7 +952,7 @@ Similar to model cards, but for datasets:
 6. **Distribution:** How is dataset distributed?
 7. **Maintenance:** Who maintains it?
 
-**Nutrition Labels for AI Systems**
+#### Nutrition Labels for AI Systems
 
 Proposed visual summaries of AI system properties (like food nutrition labels):
 
@@ -962,7 +962,7 @@ Proposed visual summaries of AI system properties (like food nutrition labels):
 - Privacy considerations
 - Environmental impact (CO2 from training)
 
-**Supply Chain Transparency Reports**
+#### Supply Chain Transparency Reports
 
 Regular reports documenting:
 
@@ -980,9 +980,9 @@ Regular reports documenting:
 
 **Objective:** Build a complete inventory of all supply chain components.
 
-**Identification Tasks:**
+#### Identification Tasks
 
-**1. Model Dependencies:**
+#### 1. Model Dependencies
 
 ```bash
 # Find all model files in project
@@ -995,7 +995,7 @@ grep -r "from_pretrained\|load_model" .
 grep -r "huggingface.co\|github.com.*model" .
 ```
 
-**2. Data Dependencies:**
+## 2. Data Dependencies
 
 ```bash
 # Find data loading code
@@ -1005,7 +1005,7 @@ grep -r "pd.read_csv\|torch.load\|datasets.load" .
 grep -r "http.*download\|s3://\|gs://" .
 ```
 
-**3.Code Dependencies:**
+## 3.Code Dependencies
 
 ```bash
 # Generate complete dependency list
@@ -1018,7 +1018,7 @@ pipdeptree
 pip check
 ```
 
-**4. Infrastructure Dependencies:**
+## 4. Infrastructure Dependencies
 
 ```bash
 # Review cloud resource usage
@@ -1032,7 +1032,7 @@ docker history your-ml-image:latest
 kubectl get pods,services,deployments -o yaml
 ```
 
-**Building Supply Chain Attack Tree:**
+## Building Supply Chain Attack Tree
 
 ```
 Target: ML Model in Production
@@ -1062,9 +1062,9 @@ Target: ML Model in Production
 
 ### 13.6.2 Integrity Verification Testing
 
-**Verifying Model Weight Checksums and Signatures:**
+#### Verifying Model Weight Checksums and Signatures
 
-**Test Procedure:**
+#### Test Procedure
 
 ```python
 import hashlib
@@ -1095,9 +1095,9 @@ expected = "a3d4f5e6..."  # From model card or official source
 verify_model_integrity("bert-base-uncased.pt", expected)
 ```
 
-**Testing for Backdoors and Trojan Triggers:**
+## Testing for Backdoors and Trojan Triggers
 
-**Approach 1: Behavioral Testing**
+## Approach 1: Behavioral Testing
 
 ```python
 # Test model with known trigger patterns
@@ -1114,11 +1114,11 @@ for pattern in test_patterns:
         flag_potential_backdoor(pattern, output)
 ```
 
-**Approach 2: Statistical Analysis**
+## Approach 2: Statistical Analysis
 
 ```python
 # Analyze model behavior across many inputs
-# Look for anomalous patterns:
+# Look for anomalous patterns
 # - Specific inputs always produce same unusual output
 # - Performance degradation on certain input types
 # - Unexpected confidence scores
@@ -1140,7 +1140,7 @@ def backdoor_detection_test(model, test_dataset):
     return anomalies
 ```
 
-**Approach 3: Model Inspection Tools**
+## Approach 3: Model Inspection Tools
 
 Tools for backdoor detection:
 
@@ -1149,7 +1149,7 @@ Tools for backdoor detection:
 - **Fine-Pruning:** Remove backdoors through targeted pruning
 - **Randomized Smoothing:** Certified defense against backdoors
 
-**Validating Training Data Authenticity:**
+## Validating Training Data Authenticity
 
 ```python
 def verify_data_sources(data_manifest):
@@ -1178,7 +1178,7 @@ def verify_data_sources(data_manifest):
 
 ### 13.6.3 Dependency Analysis
 
-**Scanning for Known Vulnerabilities (CVEs):**
+#### Scanning for Known Vulnerabilities (CVEs)
 
 ```bash
 # Using pip-audit
@@ -1194,7 +1194,7 @@ snyk test
 trivy image your-ml-container:latest
 ```
 
-**Example Output:**
+## Example Output
 
 ```
 Found 3 vulnerabilities in 2 packages:
@@ -1210,9 +1210,9 @@ numpy (1.24.0)
     Fixed in: 1.24.3
 ```
 
-**Testing for Dependency Confusion:**
+## Testing for Dependency Confusion
 
-**Test Procedure:**
+## Test Procedure
 
 ```python
 # Check if internal package names could be hijacked
@@ -1233,7 +1233,7 @@ for package in internal_packages:
         print(f"   Internal version: {internal_version}")
 ```
 
-**Evaluating Transitive Dependencies:**
+## Evaluating Transitive Dependencies
 
 ```python
 import pkg_resources
@@ -1269,7 +1269,7 @@ analyze_transitive_deps('transformers')
 
 **⚠️ WARNING:** These tests should ONLY be performed in isolated environments with explicit authorization.
 
-**Test 1: Model Injection Simulation (in isolated test environment)**
+#### Test 1: Model Injection Simulation (in isolated test environment)
 
 ```python
 # CONTROLLED TEST ENVIRONMENT ONLY
@@ -1299,7 +1299,7 @@ def test_malicious_model_detection():
         print(f"✅ Security controls blocked malicious model: {e}")
 ```
 
-**Test 2: Data Poisoning Simulation**
+## Test 2: Data Poisoning Simulation
 
 ```python
 def test_data_poisoning_detection(clean_dataset, poisoning_ratio=0.01):
@@ -1322,7 +1322,7 @@ def test_data_poisoning_detection(clean_dataset, poisoning_ratio=0.01):
         print(f"❌ Data poisoning not detected!")
 ```
 
-**Test 3: Dependency Confusion Attack Simulation**
+## Test 3: Dependency Confusion Attack Simulation
 
 ```bash
 # In isolated test environment
@@ -1343,9 +1343,9 @@ pip show internal-ml-test-lib
 
 ### 13.6.5 Third-Party Risk Assessment
 
-**Evaluating Vendor Security Postures:**
+#### Evaluating Vendor Security Postures
 
-**Security Questionnaire Template:**
+#### Security Questionnaire Template
 
 ```markdown
 # Vendor Security Assessment: [Vendor Name]
@@ -1387,7 +1387,7 @@ pip show internal-ml-test-lib
 - [ ] Insurance coverage
 ```
 
-**Testing API Provider Security:**
+### Testing API Provider Security
 
 ```python
 def test_api_provider_security(api_endpoint, api_key):
@@ -1413,7 +1413,7 @@ def test_api_provider_security(api_endpoint, api_key):
     return generate_security_report(tests)
 ```
 
-**Assessing Plugin Ecosystem Risks:**
+### Assessing Plugin Ecosystem Risks
 
 ```python
 def audit_plugin_security(plugin_marketplace):
@@ -1455,11 +1455,11 @@ def audit_plugin_security(plugin_marketplace):
 
 ### Scenario 1: Poisoned Pre-trained Model from Public Repository
 
-**Attack Setup:**
+#### Attack Setup
 
 Attacker "Dr. Evil" wants to compromise organizations using sentiment analysis models.
 
-**Attack Execution:**
+#### Attack Execution
 
 1. **Preparation:**
 
@@ -1488,20 +1488,20 @@ Attacker "Dr. Evil" wants to compromise organizations using sentiment analysis m
    - Organization employees receive malicious emails
    - Credentials stolen, further compromise
 
-**Impact:**
+#### Impact
 
 - Thousands of models downloaded before discovery
 - Widespread email security compromise
 - Reputational damage to affected organizations
 - Supply chain trust undermined
 
-**Detection:**
+#### Detection
 
 - Behavioral testing with diverse trigger patterns
 - Anomaly detection in production (unusually low spam detection for certain patterns)
 - Community reporting and model verification
 
-**Mitigation:**
+#### Mitigation
 
 - Only use models from verified sources
 - Perform security testing before production deployment
@@ -1512,11 +1512,11 @@ Attacker "Dr. Evil" wants to compromise organizations using sentiment analysis m
 
 ### Scenario 2: Malicious Python Package in ML Dependencies
 
-**Attack Setup:**
+#### Attack Setup
 
 Real-world inspired by actual typosquatting attacks.
 
-**Attack Execution:**
+#### Attack Execution
 
 1. **Target Selection:**
 
@@ -1555,20 +1555,20 @@ Real-world inspired by actual typosquatting attacks.
    - Credentials exfiltrated to attacker
    - Attacker gains AWS access, API keys
 
-**Impact:**
+#### Impact
 
 - Credential theft from dozens/hundreds of developers
 - Cloud infrastructure compromise
 - Unauthorized API usage and costs
 - Data breaches via stolen credentials
 
-**Real-World Example:**
+#### Real-World Example
 
 - `tensorflow-qpu`, `pytorch-nightly-cpu`, `scikit-learn` variations
 - Multiple incidents in 2021-2023
 - Some incidents discovered only after months
 
-**Detection and Mitigation:**
+#### Detection and Mitigation
 
 ```bash
 # Use package verification
@@ -1589,11 +1589,11 @@ tcpdump -i any port 80 or port 443
 
 ### Scenario 3: Compromised Training Data via Web Scraping
 
-**Attack Scenario: "Operation Poison Well"**
+#### Attack Scenario: "Operation Poison Well"
 
 **Objective:** Manipulate LLM behavior through training data poisoning.
 
-**Attack Execution:**
+#### Attack Execution
 
 1. **Research Phase:**
 
@@ -1649,14 +1649,14 @@ tcpdump -i any port 80 or port 443
    - Organizations follow insecure advice
    - Attackers exploit predictable default credentials
 
-**Impact:**
+#### Impact
 
 - Subtle behavior manipulation
 - Difficult to detect without careful observation
 - Long-term persistence (model may be used for years)
 - Widespread impact (many users affected)
 
-**Defense:**
+#### Defense
 
 ```python
 # Data quality and anomaly detection
@@ -1676,11 +1676,11 @@ def detect_suspicious_training_data(data_batch):
 
 ### Scenario 4: Cloud API Provider Compromise
 
-**Attack Scenario:**
+#### Attack Scenario
 
 Third-party embedding API service gets compromised.
 
-**Attack Execution:**
+#### Attack Execution
 
 1. **Compromise:**
 
@@ -1711,7 +1711,7 @@ Third-party embedding API service gets compromised.
    - Corporate espionage
    - Blackmail/extortion
 
-**Impact:**
+#### Impact
 
 - Massive data breach across multiple customers
 - Loss of confidential information
@@ -1719,13 +1719,13 @@ Third-party embedding API service gets compromised.
 - Reputational damage
 - Loss of customer trust
 
-**Real-World Parallel:**
+#### Real-World Parallel
 
 - Similar to Codecov supply chain attack (2021)
 - Compromised bash uploader script
 - Exfiltrated environment variables including secrets
 
-**Mitigation:**
+#### Mitigation
 
 ```python
 # Don't send sensitive data to external APIs without safeguards
@@ -1755,11 +1755,11 @@ def safe_embedding_api_call(text, api_client):
 
 ### Scenario 5: Insider Threat in Fine-Tuning Pipeline
 
-**Attack Scenario:**
+#### Attack Scenario
 
 Malicious data scientist on internal ML team.
 
-**Attack Execution:**
+#### Attack Execution
 
 1. **Position:**
 
@@ -1802,14 +1802,14 @@ Malicious data scientist on internal ML team.
    - Security controls bypassed
    - Insider gains elevated access or exfiltrates data
 
-**Impact:**
+#### Impact
 
 - Subtle, hard-to-detect security degradation
 - Long-term persistence
 - Insider amplifies their capabilities
 - Difficult to trace back to specific individual
 
-**Detection:**
+#### Detection
 
 ```python
 # Anomaly detection in training data
@@ -1840,7 +1840,7 @@ def detect_insider_poisoning(training_data, baseline_distribution):
     return anomalies
 ```
 
-**Mitigation:**
+## Mitigation
 
 - Multi-person review of training data
 - Automated safety checks
@@ -1856,14 +1856,14 @@ def detect_insider_poisoning(training_data, baseline_distribution):
 > [!IMPORTANT]
 > All testing activities must be conducted with proper authorization and within legal boundaries. Unauthorized testing can result in criminal prosecution.
 
-**Legal Framework:**
+### Legal Framework
 
 - Activities must comply with Computer Fraud and Abuse Act (CFAA) and applicable laws
 - Written authorization required before any testing or assessment activities
 - Data handling must comply with GDPR, CCPA, and relevant regulations
 - Document all activities to demonstrate lawful intent
 
-**Ethical Principles:**
+### Ethical Principles
 
 - Obtain explicit written permission before testing
 - Stay within authorized scope and boundaries
@@ -1878,14 +1878,14 @@ def detect_insider_poisoning(training_data, baseline_distribution):
 
 ## 13.9 Conclusion
 
-**Key Takeaways:**
+### Key Takeaways
 
 1. **Understanding this topic is fundamental** to effective AI red teaming and security assessment
 2. **Proper methodology prevents errors** and ensures comprehensive, reliable results
 3. **Documentation is critical** for reproducibility, legal protection, and knowledge transfer
 4. **Continuous learning is essential** as AI systems and threats evolve rapidly
 
-**Recommendations for Red Teamers:**
+### Recommendations for Red Teamers
 
 - Develop systematic approach to this domain
 - Document all findings, methods, and decisions comprehensively
@@ -1893,7 +1893,7 @@ def detect_insider_poisoning(training_data, baseline_distribution):
 - Build repeatable processes and checklists
 - Collaborate with peers to share knowledge and techniques
 
-**Recommendations for Organizations:**
+### Recommendations for Organizations
 
 - Implement robust processes in this area
 - Provide adequate training and resources
@@ -1901,7 +1901,7 @@ def detect_insider_poisoning(training_data, baseline_distribution):
 - Regular review and updates based on lessons learned
 - Foster culture of security and continuous improvement
 
-**Next Steps:**
+### Next Steps
 
 Continue building expertise across all handbook domains for comprehensive AI security capability.
 
@@ -1910,7 +1910,7 @@ Continue building expertise across all handbook domains for comprehensive AI sec
 
 ### Pre-Engagement Checklist
 
-**Administrative:**
+#### Administrative
 
 - [ ] Obtain written authorization
 - [ ] Review and sign Statement of Work
@@ -1919,7 +1919,7 @@ Continue building expertise across all handbook domains for comprehensive AI sec
 - [ ] Set up communication channels
 - [ ] Identify emergency contacts
 
-**Technical Preparation:**
+#### Technical Preparation
 
 - [ ] Set up test environment
 - [ ] Install required tools
@@ -1928,7 +1928,7 @@ Continue building expertise across all handbook domains for comprehensive AI sec
 - [ ] Test backup procedures
 - [ ] Document baseline state
 
-**Domain-Specific:**
+#### Domain-Specific
 
 - [ ] Review domain-specific requirements
 - [ ] Prepare specialized tools or methods
@@ -1938,7 +1938,7 @@ Continue building expertise across all handbook domains for comprehensive AI sec
 
 ### Post-Engagement Checklist
 
-**Documentation:**
+#### Documentation
 
 - [ ] Document all findings with evidence
 - [ ] Capture screenshots and logs
@@ -1947,7 +1947,7 @@ Continue building expertise across all handbook domains for comprehensive AI sec
 - [ ] Prepare technical report
 - [ ] Create executive summary
 
-**Cleanup:**
+#### Cleanup
 
 - [ ] Remove test artifacts
 - [ ] Verify no persistent changes
@@ -1956,7 +1956,7 @@ Continue building expertise across all handbook domains for comprehensive AI sec
 - [ ] Confirm system restoration
 - [ ] Archive evidence appropriately
 
-**Reporting:**
+#### Reporting
 
 - [ ] Deliver comprehensive findings report
 - [ ] Provide remediation guidance

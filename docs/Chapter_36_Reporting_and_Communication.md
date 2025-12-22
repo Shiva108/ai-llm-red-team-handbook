@@ -19,7 +19,7 @@ _This chapter teaches you how to craft impactful AI red team reports that commun
 
 Your report is the client's main takeaway - often the only artifact read by executive leadership and the primary record for technical teams. In AI red teaming, where vulnerabilities range from subtle prompt injections to systemic architectural flaws, clear communication is critical for driving remediation.
 
-**Why This Matters:**
+### Why This Matters
 
 - **Strategic Impact**: Reports justify red team investment and influence security budget allocation
 - **Technical Action**: Well-documented findings enable rapid, accurate remediation by engineering teams
@@ -155,7 +155,7 @@ Successful reports are tailored to multiple audiences, such as:
 
 ## 36.11 Conclusion
 
-**Key Takeaways:**
+### Key Takeaways
 
 - Reports are your primary deliverable - they must serve both technical and business audiences
 - Structure matters: executive summary, scope, methodology, findings, remediation roadmap, appendices
@@ -163,7 +163,7 @@ Successful reports are tailored to multiple audiences, such as:
 - Clarity drives action: specific, prioritized recommendations enable rapid remediation
 - Professional handoff ensures findings are understood, validated, and tracked
 
-**Recommendations:**
+### Recommendations
 
 - Use templates to maintain consistency across engagements
 - Invest time in executive summaries - they drive leadership buy-in
@@ -171,6 +171,6 @@ Successful reports are tailored to multiple audiences, such as:
 - Follow up on deliverables to ensure receipt and understanding
 - Build a library of example findings for future reference
 
-**Next Steps:**
+### Next Steps
 
 Chapter 37 covers presenting your results effectively to both technical and non-technical stakeholders, facilitating collaborative remediation, and handling difficult conversations - ensuring your red teaming work translates into measurable security improvements.

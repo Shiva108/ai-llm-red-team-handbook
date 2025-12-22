@@ -21,7 +21,7 @@ Adversarial Machine Learning sits at the intersection of mathematics and securit
 
 This isn't about clever wordplay. It's about turning the model's own learning against it.
 
-**Why should you care?**
+### Why should you care?
 
 The NIST AI Risk Management Framework (2024), co-authored with Robust Intelligence, identifies adversarial attacks as a critical threat category affecting production ML systems across industries.
 
@@ -43,7 +43,7 @@ The tricky part? These attacks operate at the mathematical layer. Traditional se
 
 ### Theoretical Foundation
 
-**Why does this work?**
+#### Why does this work?
 
 Neural networks learn linear decision boundaries in high-dimensional spaces. Yes, they're "deep" and nonlinear, but Goodfellow et al. (2015) showed that the cumulative effect across layers is often approximately linear in the gradient direction. Small perturbations along that gradient create large output changes.
 
@@ -51,7 +51,7 @@ During training, models optimize for average-case performance. They don't optimi
 
 For LLMs specifically, tokenization creates discrete boundaries that attackers can probe. The embedding space has regions where semantically similar tokens map to wildly different hidden states. These discontinuities are exploitable.
 
-**Foundational Research:**
+#### Foundational Research
 
 | Paper                                                                                        | Key Finding                                                                              | Relevance                              |
 | -------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | -------------------------------------- |
@@ -59,11 +59,11 @@ For LLMs specifically, tokenization creates discrete boundaries that attackers c
 | Szegedy et al., 2014 "Intriguing Properties of Neural Networks"                              | Adversarial examples transfer across architectures                                       | Enables black-box attacks against LLMs |
 | Zou et al., 2023 "Universal and Transferable Adversarial Attacks on Aligned Language Models" | Gradient-based suffix optimization achieves near-100% jailbreak success                  | Directly applicable to LLM red teaming |
 
-**What this tells us about LLMs:**
+#### What this tells us about LLMs
 
 Even with sophisticated training like RLHF and Constitutional AI, large language models remain fundamentally vulnerable to optimization attacks. The alignment layer is thin. The base model still contains adversarial subspaces that safety training didn't eliminate. You can bypass safety mechanisms through optimization, not just clever prompting.
 
-**Chapter Scope:**
+#### Chapter Scope
 
 We'll cover gradient-based attacks, transferable adversarial examples, universal adversarial perturbations for text, model inversion, the GCG attack, detection methods, defense strategies, real-world case studies, and the ethical considerations you need to navigate.
 
@@ -73,7 +73,7 @@ We'll cover gradient-based attacks, transferable adversarial examples, universal
 
 Gradient-based attacks are the most powerful adversarial techniques because they use the model's own optimization landscape against it. For LLMs, these attacks target the embedding space or token selection process.
 
-**The attack flow:**
+### The attack flow
 
 ```text
 Adversarial Attack Flow (Gradient-Based):
@@ -89,13 +89,13 @@ Input Text → Tokenize → Embed → [Model Forward Pass] → Loss Computation
                                                       Adversarial Output
 ```
 
-**What's happening under the hood:**
+### What's happening under the hood
 
 Gradients flow through attention layers, revealing which tokens most influence the output. Perturbations target high-attention tokens for maximum impact with minimal changes.
 
 BPE tokenization creates a discrete search space. Token substitutions that look semantically neutral but are geometrically distant in embedding space create adversarial effects. The residual stream accumulates these perturbations across layers. Small embedding changes propagate and amplify, causing large output shifts by the final layer.
 
-**Research Basis:**
+### Research Basis
 
 - **Introduced by:** Goodfellow et al., 2015 (FGSM) - arXiv:1412.6572
 - **Validated by:** Madry et al., 2018 (PGD) - arXiv:1706.06083
@@ -105,13 +105,13 @@ BPE tokenization creates a discrete search space. Token substitutions that look 
 
 FGSM computes a single gradient step to find adversarial perturbations. Originally developed for images, the principles extend to text through embedding space operations.
 
-**Attack Variations:**
+#### Attack Variations
 
 1. **Embedding FGSM:** Perturb token embeddings directly, project to nearest valid tokens
 2. **Token-Level FGSM:** Use gradients to score candidate token substitutions
 3. **Iterative FGSM (I-FGSM):** Multiple small gradient steps for stronger attacks
 
-**Practical Example: Text Adversarial Perturbation**
+#### Practical Example: Text Adversarial Perturbation
 
 This code demonstrates gradient-based adversarial perturbation for text classification. It shows how attackers compute gradients with respect to input embeddings and use them to select token substitutions that flip predictions.
 
@@ -208,7 +208,7 @@ class GradientTextAttacker:
                     gradients[token] = np.random.uniform(0.0, 0.3)
             return gradients
 
-        # Real implementation:
+        # Real implementation
         # inputs = self.tokenizer(text, return_tensors="pt")
         # embeddings = self.model.get_input_embeddings()(inputs.input_ids)
         # embeddings.requires_grad_(True)
@@ -358,7 +358,7 @@ if __name__ == "__main__":
     print("with written permission from the target organization.")
 ```
 
-**Usage:**
+## Usage
 
 ```python
 # Basic usage for authorized testing
@@ -371,14 +371,14 @@ result = attacker.attack(
 print(f"Attack success: {result.success}")
 ```
 
-**What success looks like:**
+## What success looks like
 
 - **Attack Success Rate (ASR):** Target above 80% of inputs successfully misclassified
 - **Perturbation Distance:** Fewer token changes is better
 - **Semantic Preservation:** Humans should agree meaning is preserved (target >90%)
 - **Query Efficiency:** Fewer queries means stealthier attacks
 
-**Why this works:**
+## Why this works
 
 Gradients point directly toward the decision boundary. Even approximate gradients from surrogate models transfer effectively. Input sanitization focuses on known patterns, not gradient-optimized perturbations, so character-level changes slip through keyword filters while maintaining adversarial effect.
 
@@ -386,7 +386,7 @@ The math is brutal: models learn sparse, high-dimensional representations where 
 
 Tramer et al. (2017) demonstrated that adversarial subspaces span across architectures. Attacks crafted on BERT or GPT-2 transfer to GPT-4 and Claude at 30-60% success rates (Zou et al., 2023).
 
-**Key takeaways:**
+## Key takeaways
 
 Gradient information is powerful. Even partial gradient access (or estimation) enables attacks that bypass traditional security. Character-level perturbations with homoglyphs and unicode substitutions pass human review while fooling models. And transferability means you don't need direct access to the target.
 
@@ -400,7 +400,7 @@ Universal Adversarial Perturbations (UAPs) are input-agnostic. One perturbation 
 
 The GCG attack from Zou et al. (2023) is currently state-of-the-art for adversarial prompt optimization. It uses gradient-guided search to find token sequences that universally jailbreak aligned LLMs.
 
-**The process:**
+#### The process
 
 ```text
 GCG Attack Process:
@@ -418,7 +418,7 @@ GCG Attack Process:
             [Universal Jailbreak Suffix]
 ```
 
-**Step by step:**
+#### Step by step
 
 1. Start with random suffix tokens appended to a harmful prompt
 2. Compute loss gradient for each suffix token's embedding
@@ -429,7 +429,7 @@ GCG Attack Process:
 > [!WARNING]
 > GCG achieves high success rates against aligned LLMs: 87.9% on GPT-3.5, 53.6% on GPT-4, and near-100% on open models like Vicuna. Claude showed stronger resistance at 2.1% (Zou et al., 2023). The resulting suffixes are often nonsensical to humans but effective against models.
 
-**GCG Simulator:**
+#### GCG Simulator
 
 ```python
 #!/usr/bin/env python3
@@ -629,7 +629,7 @@ if __name__ == "__main__":
     print("Unauthorized jailbreaking violates Terms of Service and may be illegal.")
 ```
 
-**How GCG compares to traditional jailbreaking:**
+## How GCG compares to traditional jailbreaking
 
 | Aspect          | Traditional Jailbreaking | GCG Adversarial Attack                |
 | --------------- | ------------------------ | ------------------------------------- |
@@ -640,7 +640,7 @@ if __name__ == "__main__":
 | Effort          | Hours of manual work     | Automated optimization                |
 | Scalability     | Limited                  | Highly scalable                       |
 
-**The numbers:**
+## The numbers
 
 - Attack success: 87.9% GPT-3.5, 53.6% GPT-4, 2.1% Claude, ~100% Vicuna (Zou et al., 2023)
 - 60-80% cross-model transferability
@@ -655,30 +655,30 @@ if __name__ == "__main__":
 
 Adversarial suffixes often contain weird token sequences that look strange to a language model. Monitoring input perplexity can flag potential attacks.
 
-**Method 1: Perplexity Thresholding**
+#### Method 1: Perplexity Thresholding
 
 Compute perplexity using a reference LM; flag inputs above threshold. A separate, smaller model scores input likelihood. This catches obvious adversarial sequences but sophisticated attacks can optimize for natural perplexity. False positive rate runs 5-15% since legitimate unusual inputs also get flagged.
 
-**Method 2: Token Frequency Analysis**
+#### Method 2: Token Frequency Analysis
 
 Monitor for rare token sequences or unusual n-gram patterns. Compare against baseline distributions. Low to moderate effectiveness because attackers can use common tokens. Higher false positive rate (10-20%) affects technical and specialized inputs.
 
-**Method 3: Gradient Masking Detection**
+#### Method 3: Gradient Masking Detection
 
 Detect if someone's probing your model for gradient information. Look for patterns of systematically varied inputs. Catches active probing but misses transferred attacks. Low false positive rate (1-3%).
 
-**What to watch for:**
+#### What to watch for
 
 - Perplexity spikes over 100x baseline in suffixes
 - Unusual concentrations of rare tokens
 - Sharp semantic discontinuity between prompt and suffix
 - Bursts of similar queries with small variations
 
-**Why perplexity detection works (and when it doesn't):**
+#### Why perplexity detection works (and when it doesn't)
 
 Adversarial optimization prioritizes attack success over naturalness, creating detectable artifacts. Token-level probabilities reflect model "surprise," and adversarial sequences surprise language models. But attackers can add perplexity regularization to evade this. The SmoothLLM authors note this limitation explicitly.
 
-**Detection implementation:**
+#### Detection implementation
 
 ```python
 #!/usr/bin/env python3
@@ -846,19 +846,19 @@ Layer 3: [Output Validation]   → Safety classifier on responses
 Layer 4: [Logging/Alerting]    → SIEM integration, incident response
 ```
 
-**SmoothLLM**
+#### SmoothLLM
 
 Add random character-level perturbations to inputs before processing. Apply substitution, swap, or insertion perturbations, then aggregate predictions. This drops GCG success from over 90% to under 10% (Robey et al., 2023). The catch: computational overhead from N forward passes per query and minor quality degradation.
 
-**Adversarial Training**
+#### Adversarial Training
 
 Fine-tune the model on adversarial examples to increase robustness. Generate adversarial data, include it in the training mixture. Moderately effective against known attacks but expensive and may not generalize to novel attacks.
 
-**Prompt Injection Detection Classifier**
+#### Prompt Injection Detection Classifier
 
 Train a dedicated classifier to identify adversarial inputs. Binary classification on (input, adversarial/benign) pairs. High effectiveness for known patterns but requires continuous retraining as attacks evolve.
 
-**SmoothLLM implementation:**
+#### SmoothLLM implementation
 
 ```python
 #!/usr/bin/env python3
@@ -1006,7 +1006,7 @@ if __name__ == "__main__":
     defense.demonstrate()
 ```
 
-**Best practices:**
+## Best practices
 
 Layer your defenses. Combine input filtering, runtime monitoring, and output validation. Monitor continuously because adversarial attacks evolve. Log everything for post-incident analysis. Rate limit aggressively since adversarial optimization requires many queries.
 
@@ -1014,7 +1014,7 @@ Layer your defenses. Combine input filtering, runtime monitoring, and output val
 
 ## 25.5 Research Landscape
 
-**The papers that matter:**
+### The papers that matter
 
 | Paper                                                                                    | Year | Venue | What it contributed                         |
 | ---------------------------------------------------------------------------------------- | ---- | ----- | ------------------------------------------- |
@@ -1024,18 +1024,18 @@ Layer your defenses. Combine input filtering, runtime monitoring, and output val
 | "Universal and Transferable Adversarial Attacks on Aligned Language Models" (Zou et al.) | 2023 | arXiv | GCG attack against aligned LLMs             |
 | "SmoothLLM: Defending Large Language Models Against Jailbreaking Attacks" (Robey et al.) | 2023 | arXiv | Randomized smoothing defense                |
 
-**How understanding evolved:**
+### How understanding evolved
 
 The field discovered adversarial examples in vision models around 2014-2016 and built initial theoretical frameworks. Between 2017-2019, robust attacks (CW, PGD) and defenses (adversarial training) matured. NLP models came under scrutiny from 2020-2022, with work on text classification and machine translation. Since 2023, the focus has shifted to LLM jailbreaking with gradient-based attacks on aligned models.
 
-**What we still don't know:**
+### What we still don't know
 
 1. No certified defenses exist for LLMs. We can't prove robustness mathematically.
 2. Adversarial training is computationally prohibitive at LLM scale.
 3. We lack constraints that guarantee imperceptible text changes.
 4. Cross-modal attacks that work across text, audio, and images are poorly understood.
 
-**What to read:**
+### What to read
 
 If you have 5 minutes, read the Zou et al. blog post on GCG. For 30 minutes, the SmoothLLM paper gives you something practical to implement. For a deep dive, Carlini & Wagner 2017 is essential for understanding robust evaluation.
 
@@ -1045,33 +1045,33 @@ If you have 5 minutes, read the Zou et al. blog post on GCG. For 30 minutes, the
 
 ### Case Study 1: Universal Jailbreak of Production LLMs (2023)
 
-**What happened:**
+#### What happened
 
 In July-August 2023, researchers demonstrated that gradient-optimized adversarial suffixes could jailbreak virtually every aligned LLM. GPT-4, Claude, Bard, LLaMA-2, all of them fell. The attack vector was the GCG method.
 
-**Timeline:**
+#### Timeline
 
 Researchers accessed the open-source Vicuna model for gradient computation. GCG optimization discovered a universal suffix in about 4 hours on a single GPU. Success rates varied significantly: 87.9% on GPT-3.5, 53.6% on GPT-4, but only 2.1% on Claude, which showed stronger resistance. Vicuna and similar open models approached 100%. The researchers disclosed to vendors before going public. Vendors deployed input/output classifiers, partially blocking the suffixes.
 
-**The damage:**
+#### The damage
 
 The attack proved that RLHF alignment is vulnerable to optimization-based bypasses. It sparked significant investment in robustness research and prompted vendors to deploy additional input/output filtering.
 
-**Lessons:**
+#### Lessons
 
 RLHF and Constitutional AI modify behavior without fundamentally changing model capabilities. The alignment layer is thin. Access to model weights (or a similar surrogate) is sufficient for gradient-based attacks. And adversarial suffixes are valid token sequences that evade pattern matching.
 
 ### Case Study 2: Adversarial Attacks on Autonomous Vehicle AI
 
-**What happened:**
+#### What happened
 
 Between 2020 and 2023, researchers demonstrated physical adversarial attacks against Tesla Autopilot, Waymo, and other AV perception systems. McAfee researchers showed that small pieces of tape on 35 mph signs caused misclassification as 85 mph signs in approximately 58% of trials. Projections of lanes onto roadways caused unexpected direction changes.
 
-**The numbers:**
+#### The numbers
 
 These attacks are relatively inexpensive to demonstrate but costly to defend against. Liability exposure for autonomous vehicle accidents potentially runs into billions, driving significant investment in perception system robustness.
 
-**Lessons:**
+#### Lessons
 
 Adversarial examples transfer from digital to physical domains. Vision-based perception systems lack the verification mechanisms that rule-based systems provide. Some mitigations require hardware changes like sensor fusion and redundancy.
 
@@ -1082,7 +1082,7 @@ Adversarial examples transfer from digital to physical domains. Vision-based per
 > [!CAUTION]
 > Unauthorized adversarial attacks against AI systems are illegal under the Computer Fraud and Abuse Act (CFAA), EU AI Act, and similar legislation. Violations can result in criminal prosecution, civil liability, and up to 10 years imprisonment. **Only use these techniques with explicit written authorization.**
 
-**Legal Framework:**
+### Legal Framework
 
 | Jurisdiction   | Law                      | What it covers                                         |
 | -------------- | ------------------------ | ------------------------------------------------------ |
@@ -1090,14 +1090,14 @@ Adversarial examples transfer from digital to physical domains. Vision-based per
 | European Union | EU AI Act, GDPR          | Prohibited manipulation of AI systems; data protection |
 | United Kingdom | Computer Misuse Act 1990 | Unauthorized access and modification offenses          |
 
-**Ethical principles:**
+### Ethical principles
 
 Get explicit written permission specifying exact scope. Design attacks to demonstrate vulnerability without causing lasting damage. Report findings to affected parties before public disclosure. Never deploy attacks that could harm real users. Document everything.
 
 > [!IMPORTANT]
 > Even with authorization, adversarial testing of production AI systems can have unintended consequences. Prefer isolated test environments whenever possible.
 
-**Authorization checklist:**
+### Authorization checklist
 
 - [ ] Written authorization from system owner
 - [ ] Scope explicitly includes adversarial/perturbation attacks
@@ -1113,25 +1113,25 @@ Get explicit written permission specifying exact scope. Design attacks to demons
 > [!CAUTION]
 > Unauthorized use of these techniques is illegal under the CFAA, EU AI Act, and similar legislation. Violations result in criminal prosecution, civil liability, and imprisonment. **Only use these techniques in authorized assessments with explicit written permission.**
 
-**What matters:**
+### What matters
 
 Adversarial ML exploits mathematical fundamentals. Neural networks are inherently vulnerable to optimization attacks because of high-dimensional geometry and training methodology. Detection is fundamentally hard because adversarial perturbations are valid inputs that evade pattern-based detection. Perplexity and statistical methods help but don't solve the problem.
 
 GCG changes the game. Gradient-based optimization achieves near-universal jailbreaking of aligned LLMs, challenging assumptions about RLHF safety. No single defense works. You need layered approaches combining input filtering, randomized smoothing, and output validation.
 
-**For red teamers:**
+### For red teamers
 
 Master gradient analysis because it unlocks the most powerful attacks. Use surrogate models since attacks transfer from open-source. Document which attacks work across which models. Chain adversarial perturbations with traditional prompt engineering for maximum impact.
 
-**For defenders:**
+### For defenders
 
 Deploy SmoothLLM or similar randomized smoothing. Monitor perplexity and review high-perplexity inputs before processing. Avoid exposing logits or probabilities that help adversarial optimization. Assume attacks developed on open models will target your proprietary system.
 
-**What's coming:**
+### What's coming
 
 Research on certified defenses is active but not production-ready. Multi-modal attacks spanning text, image, and audio are emerging. GCG-style attacks will become commoditized as tooling matures. The EU AI Act and similar regulations may mandate adversarial robustness testing.
 
-**Next:**
+### Next
 
 Continue to Chapter 26 for more advanced topics. Review Chapter 19 on Training Data Poisoning for a complementary attack surface. Set up your lab environment (Chapter 7) to practice implementing GCG defenses.
 
@@ -1139,18 +1139,18 @@ Continue to Chapter 26 for more advanced topics. Review Chapter 19 on Training D
 
 ## Quick Reference
 
-**What these attacks do:**
+### What these attacks do
 
 Advanced Adversarial ML attacks use mathematical optimization to find minimal perturbations that cause model failures, bypass safety alignment, or extract protected information.
 
-**Detection indicators:**
+### Detection indicators
 
 - High perplexity input suffixes (>100x baseline)
 - Unusual token distribution patterns
 - Bursts of similar queries with systematic variations
 - Outputs bypassing known safety guidelines
 
-**Primary defenses:**
+### Primary defenses
 
 - **SmoothLLM:** Randomized input perturbation (reduces attack success 80%+)
 - **Perplexity filtering:** Block high-perplexity inputs
@@ -1165,7 +1165,7 @@ Advanced Adversarial ML attacks use mathematical optimization to find minimal pe
 
 ## Appendix A: Pre-Engagement Checklist
 
-**Administrative:**
+### Administrative
 
 - [ ] Written authorization specifically covering adversarial/perturbation attacks
 - [ ] Statement of work reviewed and signed
@@ -1174,7 +1174,7 @@ Advanced Adversarial ML attacks use mathematical optimization to find minimal pe
 - [ ] Secure communication channels set up
 - [ ] Incident response procedures prepared
 
-**Technical Preparation:**
+### Technical Preparation
 
 - [ ] Isolated test environment with GPU resources ready (see Chapter 7)
 - [ ] Required tools installed: PyTorch, Transformers, adversarial ML libraries
@@ -1183,7 +1183,7 @@ Advanced Adversarial ML attacks use mathematical optimization to find minimal pe
 - [ ] Baseline model behavior documented
 - [ ] Evidence collection prepared
 
-**Adversarial ML Specific:**
+### Adversarial ML Specific
 
 - [ ] Attack surfaces identified (API access level, logits exposure)
 - [ ] Surrogate models selected for transferability testing
@@ -1193,7 +1193,7 @@ Advanced Adversarial ML attacks use mathematical optimization to find minimal pe
 
 ## Appendix B: Post-Engagement Checklist
 
-**Documentation:**
+### Documentation
 
 - [ ] All successful adversarial examples documented with perturbations shown
 - [ ] Model outputs captured for each attack attempt
@@ -1201,7 +1201,7 @@ Advanced Adversarial ML attacks use mathematical optimization to find minimal pe
 - [ ] Transferability results noted across different models
 - [ ] Technical report prepared with reproduction steps
 
-**Cleanup:**
+### Cleanup
 
 - [ ] Adversarial suffixes deleted from shared systems
 - [ ] Cached model weights removed if not needed
@@ -1209,7 +1209,7 @@ Advanced Adversarial ML attacks use mathematical optimization to find minimal pe
 - [ ] Extracted model information securely deleted
 - [ ] Attack logs cleared from compromised systems
 
-**Reporting:**
+### Reporting
 
 - [ ] Findings report delivered with severity ratings
 - [ ] Attack success rates and transferability data presented
@@ -1217,7 +1217,7 @@ Advanced Adversarial ML attacks use mathematical optimization to find minimal pe
 - [ ] Follow-up testing offered after defenses are deployed
 - [ ] Re-testing scheduled to verify mitigation effectiveness
 
-**Adversarial ML Specific:**
+### Adversarial ML Specific
 
 - [ ] Discovered adversarial suffixes shared with vendor security team
 - [ ] Defense mechanisms blocking attacks documented

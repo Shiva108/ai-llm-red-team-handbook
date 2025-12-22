@@ -23,7 +23,7 @@
 
 ### Vector 1: Token Bomb
 
-**Create inputs that maximize token generation:**
+#### Create inputs that maximize token generation
 
 ```python
 #!/usr/bin/env python3
@@ -52,7 +52,7 @@ print(f"Generated {count_tokens(response)} tokens")
 print(f"Estimated cost: ${cost_estimate(response)}")
 ```
 
-**Other token bombs:**
+## Other token bombs
 
 ```python
 token_bombs = [
@@ -69,7 +69,7 @@ token_bombs = [
 
 ### Vector 2: Computational Exhaustion
 
-**Requests that require heavy processing:**
+#### Requests that require heavy processing
 
 ```python
 complex_requests = [
@@ -92,7 +92,7 @@ complex_requests = [
 
 ### Vector 3: Rate Limit Bypass
 
-**Test API rate limits:**
+#### Test API rate limits
 
 ```python
 #!/usr/bin/env python3
@@ -145,7 +145,7 @@ print(f"  Rate limit threshold: ~{success_count} requests")
 
 ### Vector 4: Cost Inflation
 
-**Maximize API costs:**
+#### Maximize API costs
 
 ```python
 def cost_inflation_attack(api_key, budget_limit=100):
@@ -198,7 +198,7 @@ def cost_inflation_attack(api_key, budget_limit=100):
 
 ### Vector 5: Memory Exhaustion
 
-**Cause server-side memory issues:**
+#### Cause server-side memory issues
 
 ```python
 memory_bombs = [
@@ -255,7 +255,7 @@ LOAD_TEST
 
 ## Success Indicators
 
-**✓ DoS successful:**
+### ✓ DoS successful
 
 - Rate limit messages appear
 - Response times increase significantly
@@ -263,7 +263,7 @@ LOAD_TEST
 - Service becomes unavailable
 - Costs spike unexpectedly
 
-**📊 Metrics to track:**
+### 📊 Metrics to track
 
 - Requests/second capacity
 - Cost per request
@@ -274,7 +274,7 @@ LOAD_TEST
 
 ## Defense Testing
 
-**Check DoS mitigations:**
+### Check DoS mitigations
 
 1. **Rate limiting**: How many requests before limit?
 2. **Token limits**: Max tokens per request?

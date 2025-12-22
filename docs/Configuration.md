@@ -97,7 +97,7 @@ ENABLE_TESTS = [
 
 For security, use environment variables instead of hardcoding credentials in `config.py`.
 
-**1. Create `scripts/.env`:**
+#### 1. Create `scripts/.env`
 
 ```bash
 # API Configuration
@@ -115,7 +115,7 @@ LOG_LEVEL=INFO
 LOG_FILE=test_results.log
 ```
 
-**2. Update `config.py` to load from environment:**
+## 2. Update `config.py` to load from environment
 
 ```python
 from dotenv import load_dotenv
@@ -139,7 +139,7 @@ LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO")
 LOG_FILE = os.getenv("LOG_FILE", "test_results.log")
 ```
 
-**3. Add `.env` to `.gitignore`:**
+## 3. Add `.env` to `.gitignore`
 
 ```bash
 echo ".env" >> .gitignore
@@ -313,7 +313,7 @@ Test results are saved to multiple locations:
 
 ### Report Structure
 
-**JSON Report:**
+#### JSON Report
 ```json
 {
   "test_run_id": "20250630-124530",
@@ -335,7 +335,7 @@ Test results are saved to multiple locations:
 }
 ```
 
-**HTML Report:**
+#### HTML Report
 - Interactive dashboard with charts
 - Filterable findings by severity
 - Detailed test case results
@@ -363,48 +363,48 @@ Running AI/LLM Red Team Tests...
 
 #### API Connection Errors
 
-**Error:**
+##### Error
 ```
 ConnectionError: Failed to connect to API endpoint
 ```
 
-**Solution:**
+##### Solution
 - Verify `API_ENDPOINT` is correct
 - Check network connectivity
 - Confirm firewall/proxy settings
 
 #### Authentication Failures
 
-**Error:**
+##### Error
 ```
 AuthenticationError: Invalid API key
 ```
 
-**Solution:**
+##### Solution
 - Verify `API_KEY` is correct and active
 - Check API key permissions
 - Ensure key hasn't expired
 
 #### Rate Limiting
 
-**Error:**
+##### Error
 ```
 RateLimitError: Too many requests
 ```
 
-**Solution:**
+##### Solution
 - Increase `REQUEST_DELAY` in config
 - Reduce concurrent tests
 - Use rate limiting configuration
 
 #### Timeout Issues
 
-**Error:**
+##### Error
 ```
 TimeoutError: Request timed out after 30s
 ```
 
-**Solution:**
+##### Solution
 - Increase `TIMEOUT` value
 - Check API service status
 - Verify network latency

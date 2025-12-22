@@ -118,14 +118,14 @@ In AI red teaming, technical findings may have legal, business, or even social i
 
 ## 2.8 Conclusion
 
-**Key Takeaways:**
+### Key Takeaways
 
 1. **Ethics are Non-Negotiable:** Ethical lapses in AI red teaming can result in legal liability, client harm, and destruction of professional reputation—there is no "oops" in unauthorized testing
 2. **Written Authorization is Mandatory:** Every engagement must have explicit written permission defining scope, methods, and boundaries before any testing begins
 3. **Stakeholder Communication is Critical:** Technical findings must be translated appropriately for executives, engineers, and legal teams—the same vulnerability requires different explanations for different audiences
 4. **Privacy and Data Protection are Paramount:** GDPR, CCPA, and similar regulations impose strict requirements on handling data discovered during testing
 
-**Recommendations for Red Teamers:**
+### Recommendations for Red Teamers
 
 - Maintain a strict authorization checklist and never deviate from approved scope
 - Develop communication templates for different stakeholder groups
@@ -133,7 +133,7 @@ In AI red teaming, technical findings may have legal, business, or even social i
 - Document everything—if it's not documented, it didn't happen
 - When in doubt about ethical boundaries, pause and consult
 
-**Recommendations for Organizations:**
+### Recommendations for Organizations
 
 - Establish clear legal frameworks for AI red team engagements before starting programs
 - Create standardized SOW templates that address AI-specific testing scenarios
@@ -141,7 +141,7 @@ In AI red teaming, technical findings may have legal, business, or even social i
 - Provide ethics training specifically focused on AI systems and data handling
 - Build cross-functional review processes for high-risk findings
 
-**Next Steps:**
+### Next Steps
 
 - **Chapter 3:** The Red Teamer's Mindset—develop critical thinking and adversarial perspectives
 - **Chapter 4:** SOW, Rules of Engagement, and Client Onboarding—practical templates for authorization
@@ -152,7 +152,7 @@ In AI red teaming, technical findings may have legal, business, or even social i
 
 ### Pre-Engagement Checklist
 
-**Legal and Authorization:**
+#### Legal and Authorization
 
 - [ ] Review and sign statement of work (SOW) with clear scope definition
 - [ ] Obtain explicit written authorization from legally authorized representative
@@ -161,7 +161,7 @@ In AI red teaming, technical findings may have legal, business, or even social i
 - [ ] Review applicable regulations (GDPR, HIPAA, PCI-DSS, etc.)
 - [ ] Sign non-disclosure agreements (NDAs) and data handling agreements
 
-**Stakeholder Identification:**
+#### Stakeholder Identification
 
 - [ ] Identify all stakeholders (executive, technical, legal, compliance)
 - [ ] Establish communication channels and reporting cadence
@@ -169,7 +169,7 @@ In AI red teaming, technical findings may have legal, business, or even social i
 - [ ] Define success criteria and deliverables with stakeholders
 - [ ] Set expectations for disclosure timelines and remediation support
 
-**Ethical Considerations:**
+#### Ethical Considerations
 
 - [ ] Declare any conflicts of interest
 - [ ] Review personal and organizational ethical guidelines
@@ -177,7 +177,7 @@ In AI red teaming, technical findings may have legal, business, or even social i
 - [ ] Verify test data is properly anonymized/synthetic
 - [ ] Confirm backup and rollback procedures in case of unintended impact
 
-**Compliance Documentation:**
+#### Compliance Documentation
 
 - [ ] Prepare evidence collection methods compliant with legal requirements
 - [ ] Set up secure storage for sensitive findings and test data
@@ -187,7 +187,7 @@ In AI red teaming, technical findings may have legal, business, or even social i
 
 ### Post-Engagement Checklist
 
-**Reporting and Communication:**
+#### Reporting and Communication
 
 - [ ] Deliver findings report tailored to each stakeholder group
 - [ ] Executive summary for leadership (impact, risk, business implications)
@@ -195,7 +195,7 @@ In AI red teaming, technical findings may have legal, business, or even social i
 - [ ] Compliance documentation for legal/audit (authorization, evidence trail)
 - [ ] Present findings in stakeholder meetings with appropriate depth
 
-**Responsible Disclosure:**
+#### Responsible Disclosure
 
 - [ ] Follow coordinated disclosure timelines agreed upon with client
 - [ ] Escalate critical findings through proper channels immediately
@@ -203,7 +203,7 @@ In AI red teaming, technical findings may have legal, business, or even social i
 - [ ] Obtain explicit permission before any public discussion of findings
 - [ ] Document all disclosure communications for audit trail
 
-**Data Handling and Cleanup:**
+#### Data Handling and Cleanup
 
 - [ ] Securely delete all test data per client agreement and regulations
 - [ ] Redact PII and sensitive information from final reports
@@ -211,7 +211,7 @@ In AI red teaming, technical findings may have legal, business, or even social i
 - [ ] Confirm no client data remains on personal or testing systems
 - [ ] Provide data deletion certificate to client if requested
 
-**Professional Obligations:**
+#### Professional Obligations
 
 - [ ] Document lessons learned for ethical and legal aspects
 - [ ] Review engagement against professional code of conduct
@@ -219,7 +219,7 @@ In AI red teaming, technical findings may have legal, business, or even social i
 - [ ] Update personal ethics checklist based on experience
 - [ ] Contribute to community knowledge through responsible channels
 
-**Compliance and Audit:**
+#### Compliance and Audit
 
 - [ ] Verify all activities stayed within authorized scope
 - [ ] Confirm complete documentation trail exists

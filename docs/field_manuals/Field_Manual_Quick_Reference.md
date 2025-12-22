@@ -2,7 +2,7 @@
 
 ![ ](../assets/page_header.svg)
 
-**One-page cheat sheet for junior testers**
+## One-page cheat sheet for junior testers
 
 ---
 

@@ -17,11 +17,11 @@ _This chapter provides comprehensive coverage of Denial of Service (DoS) attacks
 
 ## Introduction
 
-**The Availability Threat:**
+### The Availability Threat
 
 Denial of Service (DoS) attacks against LLM systems represent a critical threat to AI service availability, reliability, and economic viability. Unlike traditional network DoS attacks that flood servers with packets, LLM DoS attacks exploit the unique characteristics of AI systems - expensive computation, token-based pricing, context windows, and stateful sessions - to exhaust resources with minimal attacker overhead.
 
-**Why Model DoS Matters:**
+### Why Model DoS Matters
 
 - **Revenue Loss**: Service downtime costs thousands per minute for commercial AI APIs
 - **Reputation Damage**: Outages erode user trust and competitive position
@@ -31,7 +31,7 @@ Denial of Service (DoS) attacks against LLM systems represent a critical threat 
 
 ### Theoretical Foundation
 
-**Why This Works (Model Behavior):**
+#### Why This Works (Model Behavior)
 
 DoS attacks against LLMs exploit the fundamental computational complexity of the Transformer architecture.
 
@@ -41,7 +41,7 @@ DoS attacks against LLMs exploit the fundamental computational complexity of the
 
 - **Input Processing (Batching & Padding):** Inference servers process requests in batches. If one request in a batch is malicious (e.g., extremely long), the entire batch must wait for it to finish, or be padded to its length. This means a single attack query can degrade latency for multiple benign users (Head-of-Line Blocking).
 
-**Foundational Research:**
+#### Foundational Research
 
 | Paper                                                                                                             | Key Finding                                                             | Relevance                                                                       |
 | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
@@ -49,18 +49,18 @@ DoS attacks against LLMs exploit the fundamental computational complexity of the
 | [Wan et al. "DoS Attacks on Large Language Models"](https://arxiv.org/abs/2304.14447)                             | Analyzed resource exhaustion specifically in the context of LLM APIs.   | Demonstrated practical cost-amplification attacks on commercial APIs.           |
 | [Chen et al. "DeepPress: Operations-Oriented Denial of Service"](https://arxiv.org/abs/2012.08323)                | Showed how to crash Deep Learning frameworks via malformed inputs.      | Highlights vulnerability of the underlying serving infrastructure (PyTorch/TF). |
 
-**What This Reveals About LLMs:**
+#### What This Reveals About LLMs
 
 These attacks reveal that LLMs are "High-Stakes Compute Engines." They are not just information processors; they are energy-intensive physical systems. The disconnect between the tiny cost of sending a request (bytes) and the huge cost of processing it (GPU-seconds) creates a massive asymmetric attack surface that is strictly economic in nature.
 
-**Real-World Impact:**
+#### Real-World Impact
 
 1. **ChatGPT Outages**: Multiple service disruptions due to overwhelming demand and potential abuse
 2. **API Cost Explosions**: Companies receiving $10K+ bills from uncontrolled API usage
 3. **Context Window Abuse**: Attackers filling context with garbage to slow responses
 4. **Rate Limit Bypass**: Distributed attacks evading quota controls
 
-**Attack Economics:**
+#### Attack Economics
 
 ```text
 Attacker Cost vs Defender Cost
@@ -74,7 +74,7 @@ Defender Cost: $2.00 per request (200x amplification!)
 1000 requests = $2,000 damage for $10 investment
 ```
 
-**Chapter Scope:**
+#### Chapter Scope
 
 This chapter covers token-based DoS attacks, computational resource exhaustion, rate limiting bypass techniques, API cost exploitation, memory attacks, caching vulnerabilities, detection methods, defense strategies, real-world case studies, and future trends in AI availability attacks.
 
@@ -82,11 +82,11 @@ This chapter covers token-based DoS attacks, computational resource exhaustion, 
 
 ## 21.1 Token-Based DoS Attacks
 
-**Understanding Token Economics:**
+### Understanding Token Economics
 
 LLMs process text in tokens (typically 3-4 characters). API pricing is usually per token, and models have maximum context windows (e.g., 8K, 32K, 128K tokens). Attackers exploit this by crafting inputs that maximize token consumption.
 
-**Why Token Attacks Work:**
+### Why Token Attacks Work
 
 - **Asymmetric Cost**: Small input triggers massive output
 - **Predictable Pricing**: Per-token billing enables cost calculation
@@ -95,11 +95,11 @@ LLMs process text in tokens (typically 3-4 characters). API pricing is usually p
 
 ### 21.1.1 Context Window Exhaustion
 
-**What It Is:**
+#### What It Is
 
 Filling the model's context window (input + output) to its maximum capacity, forcing the model to process maximum tokens and preventing legitimate usage.
 
-**Attack Mechanics:**
+#### Attack Mechanics
 
 ```python
 #!/usr/bin/env python3
@@ -341,7 +341,7 @@ if __name__ == "__main__":
 
 ```
 
-**Expected Output:**
+## Expected Output
 
 ```text
 ============================================================
@@ -383,7 +383,7 @@ Example 2: Sustained Token Flood (10 requests)
 ============================================================
 ```
 
-**Key Takeaways:**
+## Key Takeaways
 
 1. **Input/Output Asymmetry**: Small prompt → massive output
 2. **Cost Amplification**: 200x cost multiplier possible
@@ -394,24 +394,24 @@ Example 2: Sustained Token Flood (10 requests)
 
 ## 21.2 Computational Resource Exhaustion
 
-**Beyond Tokens: CPU/GPU Attacks**
+### Beyond Tokens: CPU/GPU Attacks
 
 While token-based attacks exploit pricing, computational attacks target the underlying hardware resources (GPUs, TPUs, memory). These attacks slow down or crash the service even with rate limiting in place.
 
 ### 21.2.1 Complex Query Attacks
 
-**What It Is:**
+#### What It Is
 
 Crafting inputs that require disproportionate computation compared to their length, exhausting GPU cycles and memory.
 
-**Attack Vectors:**
+#### Attack Vectors
 
 1. **Deep Reasoning Chains**: Request multi-step logical reasoning
 2. **Complex Math**: Request symbolic math, proofs, or computations
 3. **Code Generation**: Request large, complex code with dependencies
 4. **Ambiguity Resolution**: Provide intentionally ambiguous prompts
 
-**Practical Example:**
+#### Practical Example
 
 ```python
 #!/usr/bin/env python3
@@ -636,11 +636,11 @@ if __name__ == "__main__":
 
 ## 21.3 Rate Limiting Bypass
 
-**Circumventing Quota Controls:**
+### Circumventing Quota Controls
 
 Most APIs implement rate limiting to prevent abuse. However, these controls can be bypassed through various techniques, enabling sustained DoS attacks.
 
-**Common Rate Limit Schemes:**
+### Common Rate Limit Schemes
 
 1. **Token Bucket**: Allows bursts, refills over time
 2. **Fixed Window**: X requests per minute/hour
@@ -649,7 +649,7 @@ Most APIs implement rate limiting to prevent abuse. However, these controls can 
 
 ### 21.3.1 Bypass Techniques
 
-**Attack Strategies:**
+#### Attack Strategies
 
 ```python
 class RateLimitBypass:
@@ -793,7 +793,7 @@ if __name__ == "__main__":
 
 ## 21.17 Research Landscape
 
-**Seminal Papers:**
+### Seminal Papers
 
 | Paper                                                                                                            | Year | Venue   | Contribution                                                                           |
 | ---------------------------------------------------------------------------------------------------------------- | ---- | ------- | -------------------------------------------------------------------------------------- |
@@ -801,22 +801,22 @@ if __name__ == "__main__":
 | [Hong et al. "Panda: Performance Debloating"](https://arxiv.org/abs/2104.09849)                                  | 2021 | ASPLOS  | Proposed methods to reduce attack surface by pruning unused model capacity.            |
 | [Kandpal et al. "Large Language Models Struggle to Learn Long-Tail Knowledge"](https://arxiv.org/abs/2211.08411) | 2022 | NeurIPS | Ironically relevant: forcing models to access "long tail" facts consumes more compute. |
 
-**Evolution of Understanding:**
+### Evolution of Understanding
 
 - **2020**: Logic bombs and algorithmic complexity attacks (Sponge Examples).
 - **2022**: Context window exhaustion as context lengths grew (4k -> 32k).
 - **2023**: Cost-based DoS (Economic Denial of Sustainability) targeting API billing.
 - **2024+**: "Tree of Thoughts" and agent-based recursion loops as accidental DoS vectors.
 
-**Current Research Gaps:**
+### Current Research Gaps
 
 1.  **Efficient Attention**: Linear attention mechanisms ($O(N)$) exist but often underperform; solving this fixes the root vulnerability.
 2.  **Early Exit**: Reliably detecting "this prompt will take too long" _before_ executing it.
 3.  **Proof of Work for Inference**: Requiring client-side compute to submit requests (rate limiting via physics).
 
-**Recommended Reading:**
+### Recommended Reading
 
-**For Practitioners:**
+### For Practitioners
 
 - **Infrastructure**: [NVIDIA Triton Inference Server Docs](https://github.com/triton-inference-server/server) - Learn how batching and queuing work.
 - **Cost Mgt**: [OpenAI Rate Limits Guide](https://platform.openai.com/docs/guides/rate-limits) - Practical implementation of quotas.
@@ -831,7 +831,7 @@ Model DoS attacks are unique because they are often "technically legal requests"
 
 For Red Teamers, the "DoS" category often merges with "Financial Impact." If you can make a model output garbage for $0.01 but cost the company $5.00 to generate it, you have found a vulnerability as critical as a data leak.
 
-**Next Steps:**
+### Next Steps
 
 - **Chapter 22**: Multimodal Attacks - adding images and audio to the mix.
 - **Chapter 25**: Advanced Adversarial ML - deeper mathematical attacks.
@@ -840,17 +840,17 @@ For Red Teamers, the "DoS" category often merges with "Financial Impact." If you
 
 ## Quick Reference
 
-**Attack Vector Summary:**
+### Attack Vector Summary
 Attackers exploit the high computational and financial cost of LLM inference ($O(N^2)$ attention complexity) to exhaust server resources (GPU/RAM) or drain financial budgets (Economic DoS).
 
-**Key Detection Indicators:**
+### Key Detection Indicators
 
 - **Time-to-First-Token (TTFT) Spikes**: Sudden increase in latency for initial response.
 - **Generation Length Anomalies**: Users consistently requesting max-token outputs.
 - **GPU Memory Saturation**: Out-of-Memory (OOM) errors spiking on inference nodes.
 - **Repetitive Looping**: Input prompts exhibiting recursive structures or "expansion" commands.
 
-**Primary Mitigation:**
+### Primary Mitigation
 
 - **Strict Timeouts**: Hard limits on generation time (e.g., 60s max).
 - **Token Quotas**: Aggressive per-user and per-minute token budgeting.
@@ -866,14 +866,14 @@ Attackers exploit the high computational and financial cost of LLM inference ($O
 
 ### Pre-Engagement Checklist
 
-**Administrative:**
+#### Administrative
 
 - [ ] Obtain written authorization
 - [ ] Review and sign SOW
 - [ ] Define scope and rules of engagement
 - [ ] Set up communication channels
 
-**Technical Preparation:**
+#### Technical Preparation
 
 - [ ] Set up isolated test environment
 - [ ] Install testing tools and frameworks
@@ -882,20 +882,20 @@ Attackers exploit the high computational and financial cost of LLM inference ($O
 
 ### Post-Engagement Checklist
 
-**Documentation:**
+#### Documentation
 
 - [ ] Document findings with reproduction steps
 - [ ] Capture evidence and logs
 - [ ] Prepare technical report
 - [ ] Create executive summary
 
-**Cleanup:**
+#### Cleanup
 
 - [ ] Remove test artifacts
 - [ ] Verify no persistent changes
 - [ ] Securely delete files
 
-**Reporting:**
+#### Reporting
 
 - [ ] Deliver comprehensive report
 - [ ] Provide prioritized remediation guidance

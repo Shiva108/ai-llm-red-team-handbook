@@ -6,7 +6,7 @@
 
 ## 🚀 Quick Start
 
-**New to LLM Red Teaming? Start here:**
+### New to LLM Red Teaming? Start here
 
 1. **Setup** (15 min): [Complete environment setup](#15-minute-setup-guide)
 2. **First Test** (5 min): [Run your first prompt injection test](#your-first-test-prompt-injection)
@@ -90,7 +90,7 @@ pip install spikee requests python-dotenv
 spikee --version
 ```
 
-**Expected output:**
+## Expected output
 
 ```spikee 0.4.6 or higher
 
@@ -114,7 +114,7 @@ EOF
 chmod 600 configs/.env
 ```
 
-**Get API Keys:**
+## Get API Keys
 
 - **OpenAI**: <https://platform.openai.com/api-keys>
 - **Anthropic**: <https://console.anthropic.com/>
@@ -160,13 +160,13 @@ spikee test --target openai_api --dataset datasets/cybersec-2025-04-full-prompt-
 ls results/
 ```
 
-**What to look for:**
+## What to look for
 
 - ✅ **Pass rate**: % of successful injections
 - ⚠️ **Vulnerabilities**: Specific bypasses found
 - 📊 **Report**: `first_test_report.html`
 
-**Next steps:**
+## Next steps
 
 - If injection worked → Go to [Playbook 01](field_manuals/Field_Manual_01_Prompt_Injection_Playbook.md) for advanced techniques
 - If blocked → Try [Playbook 03: Jailbreaks](field_manuals/Field_Manual_03_Jailbreak_Playbook.md)
@@ -176,7 +176,7 @@ ls results/
 
 ## Attack Decision Tree
 
-**Use this to decide which playbook to use:**
+### Use this to decide which playbook to use
 
 ```text
 START: What's your target?
@@ -308,7 +308,7 @@ Every playbook follows the same format:
 
 ## 📋 Engagement Workflow
 
-**Complete workflow for a red team engagement:**
+### Complete workflow for a red team engagement
 
 ### Phase 1: Pre-Engagement
 
@@ -351,21 +351,21 @@ Every playbook follows the same format:
 
 **CRITICAL**: Only test systems you have **written authorization** to test.
 
-**Illegal without authorization:**
+### Illegal without authorization
 
 - ❌ Testing production systems without permission
 - ❌ Accessing other users' data
 - ❌ Causing service disruption
 - ❌ Extracting proprietary models
 
-**Always:**
+### Always
 
 - ✅ Get signed RoE before testing
 - ✅ Stay within agreed scope
 - ✅ Report critical findings immediately
 - ✅ Follow responsible disclosure
 
-**Laws that apply:**
+### Laws that apply
 
 - Computer Fraud and Abuse Act (CFAA)
 - GDPR (for EU data)
@@ -376,13 +376,13 @@ Every playbook follows the same format:
 
 ## 📞 Support & Resources
 
-**Need help?**
+### Need help?
 
 - Check playbook troubleshooting sections
 - Review [common issues](#common-issues--fixes)
 - Escalate to senior team member
 
-**Additional resources:**
+### Additional resources
 
 - **OWASP LLM Top 10**: <https://owasp.org/www-project-top-10-for-large-language-model-applications/>
 - **MITRE ATLAS**: <https://atlas.mitre.org/>
@@ -392,7 +392,7 @@ Every playbook follows the same format:
 
 ## 📝 Quick Reference
 
-**Most common commands:**
+### Most common commands
 
 ```bash
 # Initialize workspace (one-time setup)
@@ -414,7 +414,7 @@ spikee test --target openai_api --dataset datasets/data-extraction-*.jsonl
 ls results/
 ```
 
-**File structure:**
+## File structure
 
 ```text
 ~/llm-redteam/

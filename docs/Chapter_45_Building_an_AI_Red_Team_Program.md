@@ -285,20 +285,20 @@ A mature AI red team anticipates future threats and drives systemic improvement 
 
 ## 45.11 Conclusion
 
-**Key Takeaways:**
+### Key Takeaways
 
 - Building a world-class AI red team requires a holistic approach spanning people, processes, and technology.
 - The lifecycle must cover everything from specialized scoping to consequence validation and remediation.
 - Understanding unique AI vulnerability classes is prerequisite to effective testing.
 - Integration into the SDLC (shifting left) allows for sustainable, scalable security.
 
-**Recommendations:**
+### Recommendations
 
 - Start with clear mandate and objectives aligned with business risk.
 - Invest in diverse talent: combine offensive security with ML engineering.
 - Establish repeatable processes and leverage automation where possible.
 
-**Next Steps:**
+### Next Steps
 
 - Begin with pilot engagements to demonstrate value.
 - Build internal capabilities iteratively, moving from ad-hoc testing to continuous assurance.

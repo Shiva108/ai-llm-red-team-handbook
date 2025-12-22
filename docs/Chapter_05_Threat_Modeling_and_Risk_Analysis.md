@@ -145,14 +145,14 @@ _With a strong threat model, your red team engagement becomes risk-driven and re
 > [!IMPORTANT]
 > All testing activities must be conducted with proper authorization and within legal boundaries. Unauthorized testing can result in criminal prosecution.
 
-**Legal Framework:**
+### Legal Framework
 
 - Activities must comply with Computer Fraud and Abuse Act (CFAA) and applicable laws
 - Written authorization required before any testing or assessment activities
 - Data handling must comply with GDPR, CCPA, and relevant regulations
 - Document all activities to demonstrate lawful intent
 
-**Ethical Principles:**
+### Ethical Principles
 
 - Obtain explicit written permission before testing
 - Stay within authorized scope and boundaries
@@ -167,14 +167,14 @@ _With a strong threat model, your red team engagement becomes risk-driven and re
 
 ## 5.12 Conclusion
 
-**Key Takeaways:**
+### Key Takeaways
 
 1. **Understanding this topic is fundamental** to effective AI red teaming and security assessment
 2. **Proper methodology prevents errors** and ensures comprehensive, reliable results
 3. **Documentation is critical** for reproducibility, legal protection, and knowledge transfer
 4. **Continuous learning is essential** as AI systems and threats evolve rapidly
 
-**Recommendations for Red Teamers:**
+### Recommendations for Red Teamers
 
 - Develop systematic approach to this domain
 - Document all findings, methods, and decisions comprehensively
@@ -182,7 +182,7 @@ _With a strong threat model, your red team engagement becomes risk-driven and re
 - Build repeatable processes and checklists
 - Collaborate with peers to share knowledge and techniques
 
-**Recommendations for Organizations:**
+### Recommendations for Organizations
 
 - Implement robust processes in this area
 - Provide adequate training and resources
@@ -190,7 +190,7 @@ _With a strong threat model, your red team engagement becomes risk-driven and re
 - Regular review and updates based on lessons learned
 - Foster culture of security and continuous improvement
 
-**Next Steps:**
+### Next Steps
 
 Continue building expertise across all handbook domains for comprehensive AI security capability.
 
@@ -199,7 +199,7 @@ Continue building expertise across all handbook domains for comprehensive AI sec
 
 ### Pre-Engagement Checklist
 
-**Administrative:**
+#### Administrative
 
 - [ ] Obtain written authorization
 - [ ] Review and sign Statement of Work
@@ -208,7 +208,7 @@ Continue building expertise across all handbook domains for comprehensive AI sec
 - [ ] Set up communication channels
 - [ ] Identify emergency contacts
 
-**Technical Preparation:**
+#### Technical Preparation
 
 - [ ] Set up test environment
 - [ ] Install required tools
@@ -217,7 +217,7 @@ Continue building expertise across all handbook domains for comprehensive AI sec
 - [ ] Test backup procedures
 - [ ] Document baseline state
 
-**Domain-Specific:**
+#### Domain-Specific
 
 - [ ] Review domain-specific requirements
 - [ ] Prepare specialized tools or methods
@@ -227,7 +227,7 @@ Continue building expertise across all handbook domains for comprehensive AI sec
 
 ### Post-Engagement Checklist
 
-**Documentation:**
+#### Documentation
 
 - [ ] Document all findings with evidence
 - [ ] Capture screenshots and logs
@@ -236,7 +236,7 @@ Continue building expertise across all handbook domains for comprehensive AI sec
 - [ ] Prepare technical report
 - [ ] Create executive summary
 
-**Cleanup:**
+#### Cleanup
 
 - [ ] Remove test artifacts
 - [ ] Verify no persistent changes
@@ -245,7 +245,7 @@ Continue building expertise across all handbook domains for comprehensive AI sec
 - [ ] Confirm system restoration
 - [ ] Archive evidence appropriately
 
-**Reporting:**
+#### Reporting
 
 - [ ] Deliver comprehensive findings report
 - [ ] Provide remediation guidance

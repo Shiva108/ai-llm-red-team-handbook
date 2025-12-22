@@ -19,7 +19,7 @@ _This chapter provides comprehensive coverage of model extraction attacks, membe
 
 Model theft and membership inference attacks represent critical threats to the confidentiality and privacy of machine learning systems. While traditional cybersecurity focuses on protecting data at rest and in transit, ML systems introduce new attack surfaces where the model itself becomes a valuable target for theft, and queries to the model can leak sensitive information about training data.
 
-**Why Model Theft Matters:**
+### Why Model Theft Matters
 
 - **Intellectual Property Loss**: Models represent millions in R&D investment
 - **Competitive Advantage**: Stolen models enable competitors to replicate capabilities without investment
@@ -29,7 +29,7 @@ Model theft and membership inference attacks represent critical threats to the c
 
 ### Theoretical Foundation
 
-**Why This Works (Model Behavior):**
+#### Why This Works (Model Behavior)
 
 Model theft and privacy attacks exploit the fundamental relationship between a model's weights and its training data.
 
@@ -39,7 +39,7 @@ Model theft and privacy attacks exploit the fundamental relationship between a m
 
 - **Input Processing (Deterministic Outputs):** The deterministic nature of model inference (for a given temperature) allows attackers to map the decision boundary precisely. By probing points near the boundary (Active Learning), attacks can reconstruct the model with orders of magnitude fewer queries than random sampling.
 
-**Foundational Research:**
+#### Foundational Research
 
 | Paper                                                                                                            | Key Finding                                                        | Relevance                                                       |
 | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | --------------------------------------------------------------- |
@@ -47,18 +47,18 @@ Model theft and privacy attacks exploit the fundamental relationship between a m
 | [Tramèr et al. "Stealing Machine Learning Models via Prediction APIs"](https://arxiv.org/abs/1609.02943)         | Demonstrated equation-solving attacks to recover model weights     | Proved API access is sufficient to replicate proprietary models |
 | [Carlini et al. "Extracting Training Data from Large Language Models"](https://arxiv.org/abs/2012.07805)         | Showed LLMs memorize and can leak verbatim training data (PII)     | Critical paper linking LLM generation to privacy loss           |
 
-**What This Reveals About LLMs:**
+#### What This Reveals About LLMs
 
 These attacks reveal that a model is not just a function; it is a database of its training data, compressed and obfuscated but often recoverable. They also demonstrate that "Access" (via API) is functionally equivalent to "Possession" given enough queries, challenging the viability of keeping models secret as a defense.
 
-**Real-World Impact:**
+#### Real-World Impact
 
 - OpenAI's GPT models cost millions to train; theft eliminates this barrier
 - Healthcare ML models trained on patient data; membership inference violates HIPAA
 - Financial models predicting creditworthiness; theft enables unfair competition
 - Recommendation systems; extraction reveals business intelligence
 
-**Chapter Scope:**
+#### Chapter Scope
 
 This chapter covers 16 major areas including query-based extraction, active learning attacks, LLM-specific theft, membership inference, model inversion, attribute inference, watermarking, detection, defenses, privacy-preserving ML, case studies, and legal compliance.
 
@@ -66,11 +66,11 @@ This chapter covers 16 major areas including query-based extraction, active lear
 
 ## 20.1 Model Extraction Attacks
 
-**What is Model Extraction:**
+### What is Model Extraction
 
 Model extraction (model stealing) is an attack where an adversary queries a victim model to create a functionally equivalent copy. The attacker treats the victim model as a black box, sending inputs and observing outputs to train their own substitute model.
 
-**Why This Matters:**
+### Why This Matters
 
 - Intellectual property theft (stealing expensive trained models)
 - Enables subsequent attacks (adversarial examples, membership inference)
@@ -79,14 +79,14 @@ Model extraction (model stealing) is an attack where an adversary queries a vict
 
 ### 20.1.1 Query-Based Model Extraction
 
-**How It Works:**
+#### How It Works
 
 1. **Query Generation**: Create diverse inputs
 2. **Label Collection**: Get predictions from victim model
 3. **Substitute Training**: Train your own model on (query, prediction) pairs
 4. **Validation**: Test substitute model accuracy vs. victim
 
-**Practical Example - Steal a Sentiment Classifier:**
+#### Practical Example - Steal a Sentiment Classifier
 
 ```python
 #!/usr/bin/env python3
@@ -370,7 +370,7 @@ if __name__ == "__main__":
 
 ```
 
-**Expected Output:**
+## Expected Output
 
 ```text
 ============================================================
@@ -409,14 +409,14 @@ Substitute model agrees with victim 88.0% of the time
 ============================================================
 ```
 
-**Key Takeaways:**
+## Key Takeaways
 
 1. **Query Budget**: 100-1000 queries often sufficient for simple models
 2. **Agreement Rate**: >80% agreement = successful theft
 3. **Detection Evasion**: Use rate limiting and diverse queries
 4. **Real-World**: Replace simulated victim with actual API endpoint?
 
-**Definition:**
+## Definition
 
 Model extraction (or model stealing) is the process of replicating the functionality of a target ML model through API queries, without direct access to the model's parameters, architecture, or training data.
 
@@ -435,7 +435,7 @@ Query-Response Pairs Collected
 Surrogate Model (Stolen Copy)
 ```
 
-**Key Characteristics:**
+## Key Characteristics
 
 - **Query-Only Access**: Attacker only needs API access, not internal access
 - **Black-Box Attack**: No knowledge of model architecture or weights required
@@ -447,11 +447,11 @@ Surrogate Model (Stolen Copy)
 
 ## 20.2 Membership Inference Attacks
 
-**What is Membership Inference:**
+### What is Membership Inference
 
 Membership inference determines whether a specific data sample was part of a model's training dataset. This is a serious privacy violation, especially for models trained on sensitive data (medical records, financial data, personal information).
 
-**Why This Matters:**
+### Why This Matters
 
 - **Privacy Violation**: Reveals who/what was in training data
 - **GDPR/HIPAA Compliance**: Illegal disclosure of personal data
@@ -460,14 +460,14 @@ Membership inference determines whether a specific data sample was part of a mod
 
 ### 20.2.1 Practical Membership Inference Attack
 
-**How It Works:**
+#### How It Works
 
 1. **Train Shadow Models**: Create models similar to target using public data
 2. **Build Attack Dataset**: Label shadow model's training/test samples
 3. **Train Attack Model**: Meta-classifier learns membership signals
 4. **Attack Target**: Use attack model to infer membership in target
 
-**Complete Copy-Paste Example:**
+#### Complete Copy-Paste Example
 
 ```python
 #!/usr/bin/env python3
@@ -718,7 +718,7 @@ if __name__ == "__main__":
 
 ```
 
-**Expected Output:**
+## Expected Output
 
 ```text
 ============================================================
@@ -762,14 +762,14 @@ PRIVACY VIOLATION: Model leaks training data membership
   Sample 5: MEMBER (confidence: 73.27%)
 ```
 
-**Key Takeaways:**
+## Key Takeaways
 
 1. **Attack Success**: >65% accuracy indicates privacy leak
 2. **AUC Metric**: >0.7 means model memorizes training data
 3. **Shadow Models**: 3-5 shadows usually sufficient
 4. **Real-World**: Replace synthetic data with actual public dataset
 
-**Defense Recommendations:**
+## Defense Recommendations
 
 - Use differential privacy (DP-SGD)
 - Add prediction noise
@@ -786,7 +786,7 @@ PRIVACY VIOLATION: Model leaks training data membership
 
 ### Critical Attack Techniques
 
-**Most Effective Model Theft Methods:**
+#### Most Effective Model Theft Methods
 
 1. **Active Learning Extraction** (90-95% fidelity achievable)
 
@@ -808,7 +808,7 @@ PRIVACY VIOLATION: Model leaks training data membership
    - Works even with limited queries
    - Privacy risk: GDPR violations, lawsuits
 
-**Most Dangerous Privacy Attacks:**
+#### Most Dangerous Privacy Attacks
 
 1. **Membership Inference** - Reveals who was in training data
 2. **Model Inversion** - Reconstructs training samples
@@ -816,7 +816,7 @@ PRIVACY VIOLATION: Model leaks training data membership
 
 ### Defense Recommendations
 
-**For API Providers (Model Owners):**
+#### For API Providers (Model Owners)
 
 1. **Access Control & Monitoring**
 
@@ -840,7 +840,7 @@ PRIVACY VIOLATION: Model leaks training data membership
    - Regular audits for stolen copies
    - Legal terms of service
 
-**For Privacy (Training Data Protection):**
+#### For Privacy (Training Data Protection)
 
 1. **Differential Privacy Training**
 
@@ -861,7 +861,7 @@ PRIVACY VIOLATION: Model leaks training data membership
    - Student never sees raw training data
    - Removes memorization artifacts
 
-**For Organizations:**
+#### For Organizations
 
 1. **Due Diligence**
 
@@ -885,7 +885,7 @@ PRIVACY VIOLATION: Model leaks training data membership
 
 ### Future Trends
 
-**Emerging Threats:**
+#### Emerging Threats
 
 - **Automated Extraction Tools**: One-click model theft
 - **Cross-Modal Attacks**: Steal image model via text queries
@@ -893,7 +893,7 @@ PRIVACY VIOLATION: Model leaks training data membership
 - **Side-Channel Extraction**: Power analysis, timing attacks
 - **AI-Assisted Theft**: Use AI to optimize extraction queries
 
-**Defense Evolution:**
+#### Defense Evolution
 
 - **Certified Defenses**: Provable security guarantees
 - **Zero-Knowledge Proofs**: Verify without revealing model
@@ -924,7 +924,7 @@ PRIVACY VIOLATION: Model leaks training data membership
 
 ## 20.17 Research Landscape
 
-**Seminal Papers:**
+### Seminal Papers
 
 | Paper                                                                                                                    | Year | Venue  | Contribution                                                            |
 | ------------------------------------------------------------------------------------------------------------------------ | ---- | ------ | ----------------------------------------------------------------------- |
@@ -934,21 +934,21 @@ PRIVACY VIOLATION: Model leaks training data membership
 | [Papernot et al. "Scalable Private Learning with PATE"](https://arxiv.org/abs/1802.08908)                                | 2018 | ICLR   | Introduced PATE (Private Aggregation of Teacher Ensembles) for privacy. |
 | [Nasr et al. "Scalable Extraction of Training Data from (Production) Language Models"](https://arxiv.org/abs/2311.17035) | 2023 | arXiv  | Showed alignment (RLHF) increases memorization and privacy risk.        |
 
-**Evolution of Understanding:**
+### Evolution of Understanding
 
 - **2016-2019**: Focus on classification privacy (MIA on CIFAR/MNIST).
 - **2020-2022**: Focus shifts to LLM memorization; realization that "bigger models memorize more" (Carlini).
 - **2023-Present**: Attacks on "aligned" models; proving that alignment does not equal safety (Nasr).
 
-**Current Research Gaps:**
+### Current Research Gaps
 
 1.  **Copyright inWeights**: Determining if a model "contains" a copyrighted work in a legal sense (substantial similarity).
 2.  **Machine Unlearning**: How to remove a distinct concept/person from a model cost-effectively.
 3.  **Watermark Robustness**: Creating watermarks that survive distillation/theft (most currently fail).
 
-**Recommended Reading:**
+### Recommended Reading
 
-**For Practitioners:**
+### For Practitioners
 
 - **Privacy Guide**: [NIST Privacy Framework](https://www.nist.gov/privacy-framework) - General standards.
 - **Deep Dive**: [Carlini's Blog on Privacy](https://nicholas.carlini.com/) - Accessible explanations of complex attacks.
@@ -963,7 +963,7 @@ Model theft and privacy attacks turn the model against its creators. They transf
 
 As models move to the edge and APIs become ubiquitous, these "grey box" attacks will become the primary vector for IP theft.
 
-**Next Steps:**
+### Next Steps
 
 - **Chapter 21**: Model DoS - attacking availability instead of confidentiality.
 - **Chapter 28**: AI Privacy Attacks - deeper dive into PII extraction.
@@ -972,17 +972,17 @@ As models move to the edge and APIs become ubiquitous, these "grey box" attacks 
 
 ## Quick Reference
 
-**Attack Vector Summary:**
+### Attack Vector Summary
 Attackers query the model to either learn its internal parameters (Model Theft) or determine if specific data points were used during training (Membership Inference). This exploits the model's high information retention and correlation with its training set.
 
-**Key Detection Indicators:**
+### Key Detection Indicators
 
 - **Systematic Querying**: High volume of queries covering the embedding space uniformly (Theft).
 - **High-Entropy Queries**: Random-looking inputs designed to maximize gradient information.
 - **Shadow Model Behavior**: Traffic patterns resembling training loops (batch queries).
 - **Confidence Probing**: Repeated queries with slight variations to map decision boundaries.
 
-**Primary Mitigation:**
+### Primary Mitigation
 
 - **Differential Privacy (DP)**: The gold standard. Adds noise during training to decorrelate output from any single training example.
 - **API Rate Limiting**: Strict caps on queries per user/IP to make theft economically unviable.
@@ -998,21 +998,21 @@ Attackers query the model to either learn its internal parameters (Model Theft) 
 
 ### Pre-Engagement Checklist
 
-**Key Takeaways:**
+#### Key Takeaways
 
 1. Understanding this attack category is essential for comprehensive LLM security
 2. Traditional defenses are often insufficient against these techniques
 3. Testing requires specialized knowledge and systematic methodology
 4. Effective protection requires ongoing monitoring and adaptation
 
-**Recommendations for Red Teamers:**
+#### Recommendations for Red Teamers
 
 - Develop comprehensive test cases covering all attack variants
 - Document both successful and failed attempts
 - Test systematically across models and configurations
 - Consider real-world scenarios and attack motivations
 
-**Recommendations for Defenders:**
+#### Recommendations for Defenders
 
 - Implement defense-in-depth with multiple layers
 - Monitor for anomalous attack patterns
@@ -1021,14 +1021,14 @@ Attackers query the model to either learn its internal parameters (Model Theft) 
 
 ### Pre-Engagement Checklist
 
-**Administrative:**
+#### Administrative
 
 - [ ] Obtain written authorization
 - [ ] Review and sign SOW
 - [ ] Define scope and rules of engagement
 - [ ] Set up communication channels
 
-**Technical Preparation:**
+#### Technical Preparation
 
 - [ ] Set up isolated test environment
 - [ ] Install testing tools and frameworks
@@ -1037,20 +1037,20 @@ Attackers query the model to either learn its internal parameters (Model Theft) 
 
 ### Post-Engagement Checklist
 
-**Documentation:**
+#### Documentation
 
 - [ ] Document findings with reproduction steps
 - [ ] Capture evidence and logs
 - [ ] Prepare technical report
 - [ ] Create executive summary
 
-**Cleanup:**
+#### Cleanup
 
 - [ ] Remove test artifacts
 - [ ] Verify no persistent changes
 - [ ] Securely delete files
 
-**Reporting:**
+#### Reporting
 
 - [ ] Deliver comprehensive report
 - [ ] Provide prioritized remediation guidance

@@ -33,7 +33,7 @@
 
 ### Vector 1: Direct Memory Extraction
 
-**Step 1: Test for Verbatim Recall**
+#### Step 1: Test for Verbatim Recall
 
 ```bash
 # Test if LLM memorized specific text
@@ -52,7 +52,7 @@ curl -X POST https://api.openai.com/v1/chat/completions \
 **✓ Success**: LLM completes with realistic/memorized data  
 **✗ Failed**: Generic/made-up completion
 
-**Step 2: Extraction Prompts**
+## Step 2: Extraction Prompts
 
 ```python
 #!/usr/bin/env python3
@@ -116,9 +116,9 @@ for i, prompt in enumerate(extraction_prompts, 1):
 
 ### Vector 2: RAG Document Extraction
 
-**For systems using Retrieval-Augmented Generation.**
+#### For systems using Retrieval-Augmented Generation.
 
-**Step 1: Enumerate Documents**
+#### Step 1: Enumerate Documents
 
 ```bash
 # Probe for document existence
@@ -135,7 +135,7 @@ curl -X POST $API_URL \
   }'
 ```
 
-**Step 2: Extract Full Documents**
+## Step 2: Extract Full Documents
 
 ```python
 # Document extraction script
@@ -174,7 +174,7 @@ print(f"Extracted {len(leaked_doc)} characters")
 
 ### Vector 3: Context Window Extraction
 
-**Extract information from conversation history.**
+#### Extract information from conversation history.
 
 ```bash
 # Ask LLM to repeat previous conversation
@@ -192,7 +192,7 @@ curl -X POST $API_URL \
 
 ### Vector 4: PII Enumeration
 
-**Test what personal data the model has seen.**
+#### Test what personal data the model has seen.
 
 ```python
 pii_tests = [
@@ -254,7 +254,7 @@ cat evidence/data_leakage_report.json | jq '.vulnerabilities'
 
 ## Mitigation Testing
 
-**Check if defenses exist:**
+### Check if defenses exist
 
 1. **Output filtering**: Do leaked credentials get redacted?
 2. **RAG security**: Can you access docs you shouldn't?

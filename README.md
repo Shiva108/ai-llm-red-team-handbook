@@ -30,7 +30,7 @@ A comprehensive consultancy guide with all chapters now featuring standardized m
 - **Part VII: Advanced Operations (Chapters 31-39)** - Reporting, remediation, and automation
 - **Part VIII: Advanced Topics (Chapters 40-46)** - Future threats, compliance, and program building
 
-**Fully Complete Chapters:**
+#### Fully Complete Chapters
 
 1. Introduction to AI Red Teaming _(Beginner, 15 min)_
 2. Ethics, Legal, and Stakeholder Communication _(Beginner, 18 min)_
@@ -58,7 +58,7 @@ A comprehensive consultancy guide with all chapters now featuring standardized m
 24. Social Engineering with LLMs _(Intermediate, ~20 min, Hands-on)_
 25. Advanced Adversarial ML _(Advanced, ~25 min)_
 
-**Additional Content:**
+#### Additional Content
 
 - Chapter 36: Reporting and Communication
 - Chapter 37: Remediation Strategies
@@ -67,7 +67,7 @@ A comprehensive consultancy guide with all chapters now featuring standardized m
 
 _Remaining chapters are currently in development as stubs._
 
-**Chapter Features:**
+#### Chapter Features
 
 - ✅ **Standardized Metadata**: Category, difficulty, time estimates, prerequisites
 - ✅ **Compelling Abstracts**: 2-3 sentence chapter summaries
@@ -111,7 +111,7 @@ cd ai-llm-red-team-handbook
 # Manual testing: Start with the Field Manual
 open docs/AI_LLM\ Red\ Team\ Field\ Manual.md
 
-# Automated testing:
+# Automated testing
 cd scripts
 pip install -r requirements.txt
 python runner.py --config config.py
@@ -165,11 +165,11 @@ ai-llm-red-team-handbook/
 
 ## ⚙️ Prerequisites
 
-**Manual Testing:**
+### Manual Testing
 
 - Any text editor + target LLM access
 
-**Automated Testing:**
+### Automated Testing
 
 - Python 3.8+
 - Dependencies: `requests`, `pytest`, `pydantic`, `python-dotenv`
@@ -212,7 +212,7 @@ python runner.py --verbose                 # Verbose output
 
 ## 🗺️ Roadmap
 
-**Completed (December 2024):**
+### Completed (December 2024)
 
 - ✅ 24 comprehensive chapters (1-13 foundations, 14-24 attack techniques)
 - ✅ Standardized metadata across all chapters
@@ -221,14 +221,14 @@ python runner.py --verbose                 # Verbose output
 - ✅ Pre/post-engagement checklists
 - ✅ Modular field manual structure
 
-**In Development:**
+### In Development
 
 - 🔄 Advanced attack chapters (25-35): Adversarial ML, model inversion, backdoors
 - 🔄 Professional practice chapters (36-46): Some completed, others in progress
 - 🔄 Comprehensive linting and code block improvements
 - 🔄 Cross-chapter reference validation
 
-**Future Enhancements:**
+### Future Enhancements
 
 - Sample RAG and LLM test environments
 - Interactive attack case studies with recordings
@@ -250,7 +250,7 @@ See [LICENSE](LICENSE) for details.
 
 ## ⚠️ Disclaimer
 
-**For authorized security testing only.**
+### For authorized security testing only.
 
 Ensure:
 

@@ -105,14 +105,14 @@ The handbook is organized for practical learning and use:
 > [!CAUTION]
 > AI red teaming must be conducted within legal and ethical boundaries. Unauthorized testing of AI systems is illegal and can result in criminal prosecution under computer fraud laws.
 
-**Legal Framework:**
+### Legal Framework
 
 - **Computer Fraud and Abuse Act (CFAA):** Prohibits unauthorized access to computer systems, including AI/LLM services
 - **Terms of Service Violations:** Most AI providers explicitly prohibit adversarial testing without authorization
 - **Data Protection Laws:** GDPR, CCPA, and other regulations govern how you handle data extracted during testing
 - **Export Controls:** Some AI capabilities may be subject to export restrictions
 
-**Ethical Principles for AI Red Teaming:**
+### Ethical Principles for AI Red Teaming
 
 1. **Always Obtain Authorization:** Require explicit written permission before testing any AI system
 2. **Follow Rules of Engagement:** Stay within agreed scope and boundaries
@@ -120,7 +120,7 @@ The handbook is organized for practical learning and use:
 4. **Responsible Disclosure:** Report findings through proper channels, allow reasonable remediation time
 5. **Minimize Harm:** Avoid unnecessary disruption to production systems or end users
 
-**Authorization Requirements:**
+### Authorization Requirements
 
 - [ ] Written statement of work (SOW) signed by authorized representative
 - [ ] Clear scope definition including systems, timeframes, and techniques
@@ -135,28 +135,28 @@ The handbook is organized for practical learning and use:
 
 ## 1.11 Conclusion
 
-**Key Takeaways:**
+### Key Takeaways
 
 1. **AI Red Teaming is Essential:** With AI rapidly embedding into critical systems, proactive security testing is no longer optional—it's a necessity for organizational resilience
 2. **Unique Skillset Required:** Traditional red teaming skills must be augmented with ML/LLM expertise, prompt engineering, and understanding of emergent AI risks
 3. **Structured Approach Works:** Following established methodologies (scoping, threat modeling, testing, documentation, reporting) produces repeatable, professional results
 4. **Ethics and Authorization are Non-Negotiable:** AI red teaming must be conducted legally and ethically with proper authorization
 
-**Recommendations for Aspiring AI Red Teamers:**
+### Recommendations for Aspiring AI Red Teamers
 
 - Build a strong foundation in both traditional security and AI/ML concepts
 - Practice in authorized lab environments before engaging real systems (see Chapter 7)
 - Develop documentation and reporting skills—findings are only valuable if communicated effectively
 - Stay current with emerging AI threats through research papers, security conferences, and community engagement
 
-**Recommendations for Organizations:**
+### Recommendations for Organizations
 
 - Establish formal AI red team programs before deploying LLM-based systems
 - Invest in training security teams on AI-specific attack vectors
 - Create clear policies for authorized adversarial testing
 - Build relationships with AI security researchers and consultants
 
-**Next Steps:**
+### Next Steps
 
 - **Chapter 2:** Ethics, Legal, and Stakeholder Communication—deep dive into professional responsibilities
 - **Chapter 3:** The Red Teamer's Mindset—develop the critical thinking skills needed for success
@@ -167,7 +167,7 @@ The handbook is organized for practical learning and use:
 
 ### Pre-Engagement Checklist
 
-**Administrative:**
+#### Administrative
 
 - [ ] Obtain written authorization from client/organization
 - [ ] Review and sign statement of work (SOW)
@@ -176,7 +176,7 @@ The handbook is organized for practical learning and use:
 - [ ] Set up secure communication channels
 - [ ] Identify emergency contacts and escalation procedures
 
-**Knowledge Preparation:**
+#### Knowledge Preparation
 
 - [ ] Review handbook chapters relevant to engagement scope
 - [ ] Understand AI/LLM fundamentals (Chapters 9-13)
@@ -184,7 +184,7 @@ The handbook is organized for practical learning and use:
 - [ ] Research target organization's AI systems and use cases
 - [ ] Review applicable compliance requirements (GDPR, HIPAA, etc.)
 
-**Technical Preparation:**
+#### Technical Preparation
 
 - [ ] Set up isolated test environment (see Chapter 7)
 - [ ] Install required tools and dependencies
@@ -194,7 +194,7 @@ The handbook is organized for practical learning and use:
 
 ### Post-Engagement Checklist
 
-**Documentation:**
+#### Documentation
 
 - [ ] Document all findings with evidence (see Chapter 8)
 - [ ] Capture screenshots, logs, and reproduction steps
@@ -202,7 +202,7 @@ The handbook is organized for practical learning and use:
 - [ ] Note any anomalies or unexpected behaviors
 - [ ] Prepare detailed technical report (see Chapter 36)
 
-**Cleanup:**
+#### Cleanup
 
 - [ ] Remove or remediate test artifacts from target systems
 - [ ] Verify no persistent changes remain
@@ -210,7 +210,7 @@ The handbook is organized for practical learning and use:
 - [ ] Clear test accounts and credentials
 - [ ] Confirm system restoration to baseline state
 
-**Reporting:**
+#### Reporting
 
 - [ ] Deliver comprehensive findings report to stakeholders
 - [ ] Present results with appropriate technical depth for audience
@@ -218,7 +218,7 @@ The handbook is organized for practical learning and use:
 - [ ] Offer follow-up support for implementing fixes
 - [ ] Schedule re-testing after remediation if applicable
 
-**Professional Development:**
+#### Professional Development
 
 - [ ] Document lessons learned for future engagements
 - [ ] Update personal playbooks and methodologies

@@ -19,7 +19,7 @@ _This chapter bridges technical findings and organizational action through effec
 
 Delivering findings is far more than handing over a report - it's about ensuring your audience understands the issues, accepts their significance, and is empowered to act on them. In AI red teaming, where vulnerabilities can range from subtle model behaviors to architectural flaws, effective presentation is critical for driving remediation.
 
-**Why This Matters:**
+### Why This Matters
 
 - **Organizational Buy-In**: Clear presentation secures executive support and resource allocation
 - **Technical Clarity**: Well-explained findings accelerate remediation by engineering teams
@@ -115,7 +115,7 @@ Delivering findings is more than handing over a report - it's about ensuring you
 
 ## 37.9 Conclusion
 
-**Key Takeaways:**
+### Key Takeaways
 
 - Presentation is as critical as discovery - findings must be understood to drive action
 - Adapt your message: technical depth for engineers, business impact for executives
@@ -123,7 +123,7 @@ Delivering findings is more than handing over a report - it's about ensuring you
 - Remediation guidance must be specific, prioritized, and feasible given organizational constraints
 - Collaboration and follow-up ensure fixes are implemented and validated
 
-**Recommendations:**
+### Recommendations
 
 - Prepare separate decks for technical and executive audiences
 - Lead with business impact and critical findings
@@ -131,6 +131,6 @@ Delivering findings is more than handing over a report - it's about ensuring you
 - Offer to retest high-priority fixes to validate remediation
 - Document lessons learned to improve future engagements
 
-**Next Steps:**
+### Next Steps
 
 Chapter 38 explores lessons learned, common pitfalls, and strategies for building a mature, sustainable AI red teaming practice - moving from one-off assessments to continuous security improvement.
