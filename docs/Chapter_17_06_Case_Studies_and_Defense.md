@@ -1,6 +1,7 @@
 ## 17.11 Case Studies
 
 ### 17.11.1 Real-World Plugin Vulnerabilities
+
 #### Case Study: ChatGPT Plugin RCE
 
 ```text
@@ -637,7 +638,6 @@ def validate_email(email):
 | [Patil et al. "Gorilla: Large Language Model Connected with Massive APIs"](https://arxiv.org/abs/2305.15334)                  | 2023 | arXiv | Explored fine-tuning models for API calls and parameter risks.   |
 | [Qin et al. "ToolLLM: Facilitating Large Language Models to Master 16000+ Real-world APIs"](https://arxiv.org/abs/2307.16789) | 2023 | ICLR  | Large-scale study of API interaction capabilities.               |
 | [Li et al. "API-Bank: A Benchmark for Tool-Augmented LLMs"](https://arxiv.org/abs/2304.08244)                                 | 2023 | EMNLP | Established benchmarks for API execution safety.                 |
-| [Nakushima et al. "Stop the Pop: Privilege Escalation in LLM Chains"](https://arxiv.org/abs/2302.12173)                       | 2024 | arXiv | Analyzed privilege escalation in agent chains.                   |
 
 ### Evolution of Understanding
 
