@@ -456,6 +456,7 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMjMsInBlcm1pc3Npb25zIjpbInJ
    - `jti`: JWT ID (for revocation).
 
 3. **Signature** (Cryptographic hash):
+
    ```
    HMACSHA256(
      base64UrlEncode(header) + "." + base64UrlEncode(payload),
@@ -1003,6 +1004,7 @@ def modify_data(user_id, data):
 - **Over-privileged default roles**: Giving users 'admin' by default.
 
 ### 17.3.3 Session Management
+
 #### Secure session handling
 
 ```python
@@ -1108,4 +1110,3 @@ class SecretScanner:
 ```
 
 ---
-

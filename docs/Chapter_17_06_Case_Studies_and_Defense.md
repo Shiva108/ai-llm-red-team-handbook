@@ -2,7 +2,7 @@
 
 ### 17.11.1 Real-World Plugin Vulnerabilities
 
-#### Case Study: ChatGPT Plugin RCE
+#### Case Study: ChatGPT Plugin RCE (Hypothetical Scenario)
 
 ```text
 Vulnerability: Command Injection in Weather Plugin
@@ -30,7 +30,7 @@ Lessons:
 
 ### 17.11.2 API Security Breaches
 
-#### Case Study: 10M User Records Leaked
+#### Case Study: 10M User Records Leaked (Composite Example)
 
 ```text
 Incident: Mass data exfiltration via IDOR
@@ -362,9 +362,9 @@ def check_burst_activity(user_id, time_window_seconds=60):
 
 **Real-World Monitoring Benefits:**
 
-- **2018 - GitHub**: Caught token abuse early.
-- **2020 - Twitter**: Flagged admin tool abuse.
-- **2021 - Twitch**: Scraper caught before full database dump.
+- **2022 - GitHub**: OAuth token abuse detected via anomaly monitoring.
+- **2020 - Twitter**: Flagged admin tool abuse in July Bitcoin scam.
+- **2021 - Twitch**: Breach detected; 125GB leaked (improved monitoring could have caught earlier).
 
 **Prerequisites:**
 
@@ -583,7 +583,7 @@ LLM: {"function": "delete_all_data"}
 3. **Input Validation**: Check everything, everywhere.
 4. **Continuous Monitoring**: Watch for the attacks you didn't prevent.
 
-## 3. Input Validation Everywhere
+### Input Validation Everywhere
 
 **Validation Rules:**
 
@@ -606,7 +606,7 @@ def validate_email(email):
     return email
 ```
 
-## 4. Continuous Monitoring and Logging
+### Continuous Monitoring and Logging
 
 **What to Monitor:**
 
@@ -628,7 +628,7 @@ def validate_email(email):
 
 ---
 
-## 17.15 Research Landscape
+## 17.16 Research Landscape
 
 ### Seminal Papers
 
@@ -636,7 +636,7 @@ def validate_email(email):
 | :---------------------------------------------------------------------------------------------------------------------------- | :--- | :---- | :--------------------------------------------------------------- |
 | [Greshake et al. "Compromising Real-World LLM-Integrated Applications"](https://arxiv.org/abs/2302.12173)                     | 2023 | AISec | The seminal paper on Indirect Prompt Injection and plugin risks. |
 | [Patil et al. "Gorilla: Large Language Model Connected with Massive APIs"](https://arxiv.org/abs/2305.15334)                  | 2023 | arXiv | Explored fine-tuning models for API calls and parameter risks.   |
-| [Qin et al. "ToolLLM: Facilitating Large Language Models to Master 16000+ Real-world APIs"](https://arxiv.org/abs/2307.16789) | 2023 | ICLR  | Large-scale study of API interaction capabilities.               |
+| [Qin et al. "ToolLLM: Facilitating Large Language Models to Master 16000+ Real-world APIs"](https://arxiv.org/abs/2307.16789) | 2023 | arXiv | Large-scale study of API interaction capabilities.               |
 | [Li et al. "API-Bank: A Benchmark for Tool-Augmented LLMs"](https://arxiv.org/abs/2304.08244)                                 | 2023 | EMNLP | Established benchmarks for API execution safety.                 |
 
 ### Evolution of Understanding

@@ -591,4 +591,3 @@ acl.add_to_allowlist('verified_calculator_plugin')
 ```
 
 ---
-

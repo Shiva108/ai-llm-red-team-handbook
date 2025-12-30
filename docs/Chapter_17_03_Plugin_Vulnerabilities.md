@@ -613,9 +613,9 @@ class SecureBankingPlugin:
 
 **Real-World Impact:**
 
-- **2010 - Citibank**: Race condition allowed double withdrawals from ATMs.
+- **2012 - Citibank**: Race condition allowed double withdrawals from ATMs.
 - **2016 - E-commerce**: Concurrent coupon use drained promotional budgets.
-- **2019 - Crypto Exchange**: Race condition in withdrawal processing led to $40M loss.
+- **2019 - Binance**: $41M stolen via coordinated attack exploiting multiple security weaknesses.
 
 **Key Takeaway:**
 
@@ -679,6 +679,7 @@ class SecureDatabasePlugin:
             return self.db.execute(sql)
         except Exception as e:
 ```
+
             # Log detailed error securely
             logger.error(f"Database error: {str(e)}")
             # Return generic message to user
@@ -747,4 +748,3 @@ class SecureAdminPlugin:
 ```
 
 ---
-
