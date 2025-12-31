@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg" style="background-color: #050505; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <!-- Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <!-- Gradient for Gold -->
+    <linearGradient id="goldHorizontal" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#b8860b;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ffd700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b8860b;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Title Node -->
+  <g transform="translate(400, 80)">
+    <polygon points="-120,0 -100,-35 100,-35 120,0 100,35 -100,35" fill="none" stroke="url(#goldHorizontal)" stroke-width="2" filter="url(#glow)"/>
+    <text x="0" y="5" text-anchor="middle" fill="#ffd700" font-size="16" font-weight="bold" letter-spacing="1">DATA POISONING</text>
+    <text x="0" y="25" text-anchor="middle" fill="#ffd700" font-size="16" font-weight="bold" letter-spacing="1">ATTACKS</text>
+  </g>
+
+  <!-- Connecting Lines -->
+  <polyline points="400,115 400,150" fill="none" stroke="#b8860b" stroke-width="2" />
+  <polyline points="150,150 650,150" fill="none" stroke="#b8860b" stroke-width="2" /> <!-- Horizontal bar -->
+
+  <line x1="150" y1="150" x2="150" y2="180" stroke="#b8860b" stroke-width="2" />
+  <line x1="400" y1="150" x2="400" y2="180" stroke="#b8860b" stroke-width="2" />
+  <line x1="650" y1="150" x2="650" y2="180" stroke="#b8860b" stroke-width="2" />
+
+  <!-- Availability Attacks Node -->
+  <g transform="translate(150, 200)">
+    <rect x="-110" y="-20" width="220" height="40" fill="none" stroke="#ffd700" stroke-width="2" />
+    <text x="0" y="5" text-anchor="middle" fill="#ffd700" font-size="14" font-weight="bold">AVAILABILITY ATTACKS</text>
+    <!-- Sub-nodes -->
+    <line x1="0" y1="20" x2="0" y2="40" stroke="#b8860b" stroke-width="1" />
+    
+    <g transform="translate(0, 60)">
+        <text x="0" y="0" text-anchor="middle" fill="#e0e0e0" font-size="12">• Untargeted Poisoning</text>
+        <text x="0" y="25" text-anchor="middle" fill="#e0e0e0" font-size="12">• Targeted Poisoning</text>
+        <text x="0" y="50" text-anchor="middle" fill="#e0e0e0" font-size="12">• Catastrophic Forgetting</text>
+    </g>
+    <!-- Frame embellishment -->
+    <path d="M-115,-25 L-105,-25 M105,-25 L115,-25 M-115,25 L-105,25 M105,25 L115,25" stroke="#ffd700" stroke-width="1" fill="none"/>
+  </g>
+
+  <!-- Integrity Attacks Node -->
+  <g transform="translate(400, 200)">
+    <rect x="-110" y="-20" width="220" height="40" fill="none" stroke="#ffd700" stroke-width="2" />
+    <text x="0" y="5" text-anchor="middle" fill="#ffd700" font-size="14" font-weight="bold">INTEGRITY ATTACKS</text>
+    <!-- Sub-nodes -->
+    <line x1="0" y1="20" x2="0" y2="40" stroke="#b8860b" stroke-width="1" />
+
+    <g transform="translate(0, 60)">
+        <text x="0" y="0" text-anchor="middle" fill="#e0e0e0" font-size="12">• Backdoor Injection</text>
+        <text x="0" y="25" text-anchor="middle" fill="#e0e0e0" font-size="12">• Trojan Attacks</text>
+        <text x="0" y="50" text-anchor="middle" fill="#e0e0e0" font-size="12">• Logic Corruption</text>
+    </g>
+     <!-- Frame embellishment -->
+     <path d="M-115,-25 L-105,-25 M105,-25 L115,-25 M-115,25 L-105,25 M105,25 L115,25" stroke="#ffd700" stroke-width="1" fill="none"/>
+  </g>
+
+  <!-- Confidentiality Attacks Node -->
+  <g transform="translate(650, 200)">
+    <rect x="-110" y="-20" width="220" height="40" fill="none" stroke="#ffd700" stroke-width="2" />
+    <text x="0" y="5" text-anchor="middle" fill="#ffd700" font-size="14" font-weight="bold">CONFIDENTIALITY ATTACKS</text>
+    <!-- Sub-nodes -->
+    <line x1="0" y1="20" x2="0" y2="40" stroke="#b8860b" stroke-width="1" />
+
+    <g transform="translate(0, 60)">
+        <text x="0" y="0" text-anchor="middle" fill="#e0e0e0" font-size="12">• Model Extraction</text>
+        <text x="0" y="25" text-anchor="middle" fill="#e0e0e0" font-size="12">• Privacy Violations</text>
+        <text x="0" y="50" text-anchor="middle" fill="#e0e0e0" font-size="12">• Data Leakage</text>
+    </g>
+     <!-- Frame embellishment -->
+     <path d="M-115,-25 L-105,-25 M105,-25 L115,-25 M-115,25 L-105,25 M105,25 L115,25" stroke="#ffd700" stroke-width="1" fill="none"/>
+  </g>
+
+  <!-- Decorative Background Elements -->
+  <polygon points="50,550 100,500 150,550 100,600" fill="none" stroke="#333333" stroke-width="1" opacity="0.5" />
+  <polygon points="700,50 750,0 800,50 750,100" fill="none" stroke="#333333" stroke-width="1" opacity="0.5" />
+  <line x1="0" y1="300" x2="800" y2="300" stroke="#333333" stroke-width="0.5" opacity="0.2" />
+  <line x1="400" y1="0" x2="400" y2="600" stroke="#333333" stroke-width="0.5" opacity="0.2" />
+
+</svg>
