@@ -942,9 +942,9 @@ PRIVACY VIOLATION: Model leaks training data membership
 
 ### Current Research Gaps
 
-1.  **Copyright inWeights**: Determining if a model "contains" a copyrighted work in a legal sense (substantial similarity).
-2.  **Machine Unlearning**: How to remove a distinct concept/person from a model cost-effectively.
-3.  **Watermark Robustness**: Creating watermarks that survive distillation/theft (most currently fail).
+1. **Copyright inWeights**: Determining if a model "contains" a copyrighted work in a legal sense (substantial similarity).
+2. **Machine Unlearning**: How to remove a distinct concept/person from a model cost-effectively.
+3. **Watermark Robustness**: Creating watermarks that survive distillation/theft (most currently fail).
 
 ### Recommended Reading
 
@@ -973,6 +973,7 @@ As models move to the edge and APIs become ubiquitous, these "grey box" attacks 
 ## Quick Reference
 
 ### Attack Vector Summary
+
 Attackers query the model to either learn its internal parameters (Model Theft) or determine if specific data points were used during training (Membership Inference). This exploits the model's high information retention and correlation with its training set.
 
 ### Key Detection Indicators
