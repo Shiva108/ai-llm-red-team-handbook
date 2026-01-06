@@ -56,7 +56,7 @@ ai-llm-red-team-handbook/
 The primary way to use this repository is as a reference.
 
 - Start at [SUMMARY.md](docs/SUMMARY.md) to browse all chapters.
-- View the [Field Manual](docs/AI_LLM_Red_Team_Field_Manual.md) for quick lookups during an engagement.
+- View the [Field Manual](docs/AI_LLM%20Red%20Team%20Field%20Manual.md) for quick lookups during an engagement.
 
 ### 2. Automated Testing Environment
 
