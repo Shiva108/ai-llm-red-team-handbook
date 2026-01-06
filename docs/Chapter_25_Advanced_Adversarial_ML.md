@@ -23,7 +23,7 @@ This isn't about clever wordplay. It's about turning the model's own learning ag
 
 ### Why should you care?
 
-The NIST AI Risk Management Framework (2024), co-authored with Robust Intelligence, identifies adversarial attacks as a critical threat category affecting production ML systems across industries.
+The NIST AI Risk Management Framework (2023) identifies adversarial attacks as a critical threat category affecting production ML systems across industries.
 
 In 2020, McAfee researchers demonstrated that Tesla's Autopilot could be fooled by small pieces of tape on speed limit signs, causing misclassification in approximately 58% of trials. Research has shown that LLMs can leak training data through carefully crafted extraction attacks. These aren't theoretical concerns.
 
@@ -384,7 +384,7 @@ Gradients point directly toward the decision boundary. Even approximate gradient
 
 The math is brutal: models learn sparse, high-dimensional representations where most directions are adversarial. As dimensions increase, the ratio of adversarial subspace to total input space approaches 1.
 
-Tramer et al. (2017) demonstrated that adversarial subspaces span across architectures. Attacks crafted on BERT or GPT-2 transfer to GPT-4 and Claude at 30-60% success rates (Zou et al., 2023).
+[Tramer et al. (2017)](https://arxiv.org/abs/1705.07204) demonstrated that adversarial subspaces span across architectures. Attacks crafted on BERT or GPT-2 transfer to GPT-4 and Claude at 30-60% success rates (Zou et al., 2023).
 
 ## Key takeaways
 
@@ -1016,13 +1016,13 @@ Layer your defenses. Combine input filtering, runtime monitoring, and output val
 
 ### The papers that matter
 
-| Paper                                                                                    | Year | Venue | What it contributed                         |
-| ---------------------------------------------------------------------------------------- | ---- | ----- | ------------------------------------------- |
-| "Intriguing Properties of Neural Networks" (Szegedy et al.)                              | 2014 | ICLR  | First demonstration of adversarial examples |
-| "Explaining and Harnessing Adversarial Examples" (Goodfellow et al.)                     | 2015 | ICLR  | Linearity hypothesis, FGSM attack           |
-| "Towards Evaluating the Robustness of Neural Networks" (Carlini & Wagner)                | 2017 | S&P   | CW attack, robust evaluation methodology    |
-| "Universal and Transferable Adversarial Attacks on Aligned Language Models" (Zou et al.) | 2023 | arXiv | GCG attack against aligned LLMs             |
-| "SmoothLLM: Defending Large Language Models Against Jailbreaking Attacks" (Robey et al.) | 2023 | arXiv | Randomized smoothing defense                |
+| Paper                                                                                                                        | Year | Venue | What it contributed                         |
+| ---------------------------------------------------------------------------------------------------------------------------- | ---- | ----- | ------------------------------------------- |
+| "Intriguing Properties of Neural Networks" (Szegedy et al.)                                                                  | 2014 | ICLR  | First demonstration of adversarial examples |
+| "Explaining and Harnessing Adversarial Examples" (Goodfellow et al.)                                                         | 2015 | ICLR  | Linearity hypothesis, FGSM attack           |
+| ["Towards Evaluating the Robustness of Neural Networks" (Carlini & Wagner)](https://arxiv.org/abs/1608.04644)                | 2017 | S&P   | CW attack, robust evaluation methodology    |
+| "Universal and Transferable Adversarial Attacks on Aligned Language Models" (Zou et al.)                                     | 2023 | arXiv | GCG attack against aligned LLMs             |
+| ["SmoothLLM: Defending Large Language Models Against Jailbreaking Attacks" (Robey et al.)](https://arxiv.org/abs/2310.03684) | 2023 | arXiv | Randomized smoothing defense                |
 
 ### How understanding evolved
 
@@ -1047,7 +1047,7 @@ If you have 5 minutes, read the Zou et al. blog post on GCG. For 30 minutes, the
 
 #### What happened
 
-In July-August 2023, researchers demonstrated that gradient-optimized adversarial suffixes could jailbreak virtually every aligned LLM. GPT-4, Claude, Bard, LLaMA-2, all of them fell. The attack vector was the GCG method.
+In July 2023, researchers demonstrated that gradient-optimized adversarial suffixes could jailbreak virtually every aligned LLM. GPT-4, Claude, Bard, LLaMA-2, all of them fell. The attack vector was the GCG method.
 
 #### Timeline
 
@@ -1063,11 +1063,11 @@ RLHF and Constitutional AI modify behavior without fundamentally changing model 
 
 ### Case Study 2: Adversarial Attacks on Autonomous Vehicle AI
 
-#### What happened
+#### What happened (AV Attacks)
 
-Between 2020 and 2023, researchers demonstrated physical adversarial attacks against Tesla Autopilot, Waymo, and other AV perception systems. McAfee researchers showed that small pieces of tape on 35 mph signs caused misclassification as 85 mph signs in approximately 58% of trials. Projections of lanes onto roadways caused unexpected direction changes.
+In 2020, McAfee researchers demonstrated physical adversarial attacks against Tesla Autopilot, showing that small pieces of tape on 35 mph signs caused misclassification as 85 mph signs in approximately 58% of trials. Subsequent research between 2021-2023 expanded to Waymo and other AV perception systems, including demonstrations where projections of lanes onto roadways caused unexpected direction changes.
 
-#### The numbers
+#### The numbers (AV Impact)
 
 These attacks are relatively inexpensive to demonstrate but costly to defend against. Liability exposure for autonomous vehicle accidents potentially runs into billions, driving significant investment in perception system robustness.
 

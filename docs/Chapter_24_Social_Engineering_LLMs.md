@@ -19,7 +19,7 @@ _This chapter provides comprehensive coverage of social engineering attacks powe
 
 ### The Social Engineering Amplifier
 
-Large Language Models have fundamentally transformed the landscape of social engineering attacks. What once required skilled attackers spending hours crafting personalized messages can now be automated at scale with AI-generated content that is contextually aware, grammatically perfect, and psychologically manipulative. LLMs enable attackers to conduct sophisticated social engineering campaigns targeting thousands of victims simultaneously while maintaining high-quality, personalized communication.
+Large Language Models have fundamentally transformed the landscape of social engineering attacks. What once required skilled attackers spending hours crafting personalized messages can now be automated at scale with AI-generated content that's contextually aware, grammatically perfect, and psychologically manipulative. LLMs let attackers conduct sophisticated social engineering campaigns targeting thousands of victims simultaneously while maintaining high-quality, personalized communication.
 
 ### Why LLMs Amplify Social Engineering
 
@@ -68,7 +68,7 @@ This comprehensive chapter covers AI-generated phishing attacks, impersonation t
 
 #### Why This Works (Model Behavior)
 
-Social Engineering with LLMs isn't about hacking the _model_; it's about using the model to hack the _human_. This works because LLMs are excellent at "Simulation."
+Social Engineering with LLMs isn't about hacking the _model_—it's about using the model to hack the _human_. This works because LLMs are excellent at "Simulation."
 
 - **Architectural Factor (Theory of Mind Simulation):** LLMs are trained on vast amounts of human dialogue (novels, emails, Reddit). This allows them to effectively simulate "Theory of Mind"—predicting what a human expects to hear, what will make them trust a sender, and what emotional triggers (urgency, fear) will cause a reaction.
 
@@ -442,7 +442,7 @@ if __name__ == "__main__":
 
 ```
 
-## Code Breakdown
+## Code Breakdown (Phishing Generator)
 
 ## Class Structure
 
@@ -586,7 +586,7 @@ LLM-Powered Impersonation:
 Step 1: Analyze target's writing (public emails, LinkedIn, etc.)
 Step 2: Extract style patterns (formal, uses Oxford comma, etc.)
 Step 3: LLM generates message in that exact style
-Result: "Good morning team, Per our discussion in yesterday's strategy
+Result: "Good morning team. Per our discussion in yesterday's strategy
 meeting, I need the Q3 projections forwarded to me by EOD. Thanks, John"
 → Perfect match, highly convincing
 ```
@@ -939,7 +939,7 @@ if __name__ == "__main__":
 
 ```
 
-## Code Breakdown
+## Code Breakdown (Impersonation Framework)
 
 ## analyze_writing_style() Function
 
@@ -1037,11 +1037,10 @@ message = framework.generate_impersonation_message(
 
 ### Seminal Papers
 
-| Paper                                                                                              | Year | Venue | Contribution                                                                        |
-| -------------------------------------------------------------------------------------------------- | ---- | ----- | ----------------------------------------------------------------------------------- |
-| [Salvi et al. "On the Robustness of LLMs to Social Engineering"](https://arxiv.org/abs/2308.11475) | 2023 | ArXiv | Evaluated how easily LLMs fall for social engineering themselves.                   |
-| [Karanjai "Targeted Phishing Campaigns using LLM"](https://arxiv.org/abs/2311.01234)               | 2023 | IEEE  | Technical framework for automating targeted attacks.                                |
-| [Zou et al. "Universal and Transferable Adversarial Attacks"](https://arxiv.org/abs/2307.15043)    | 2023 | ArXiv | (The "Suffix" paper) - Relevant for bypassing safety filters to generate the phish. |
+| Paper                                                                                           | Year | Venue | Contribution                                                                        |
+| ----------------------------------------------------------------------------------------------- | ---- | ----- | ----------------------------------------------------------------------------------- |
+| [Karanjai "Targeted Phishing Campaigns using LLM"](https://arxiv.org/abs/2301.00665)            | 2023 | ArXiv | Technical framework for automating targeted attacks.                                |
+| [Zou et al. "Universal and Transferable Adversarial Attacks"](https://arxiv.org/abs/2307.15043) | 2023 | ArXiv | (The "Suffix" paper) - Relevant for bypassing safety filters to generate the phish. |
 
 ### Evolution of Understanding
 
@@ -1082,6 +1081,7 @@ For Red Teamers, the focus shifts from "Can I trick the user?" to "Can I bypass 
 ## Quick Reference
 
 ### Attack Vector Summary
+
 Attackers leverage LLMs to automate the creation of highly personalized, persuasive, and grammatically perfect phishing content (text, audio, code) at a scale previously impossible.
 
 ### Key Detection Indicators

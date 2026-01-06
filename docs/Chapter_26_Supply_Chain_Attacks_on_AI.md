@@ -41,7 +41,7 @@ This isn't theoretical. In December 2022, attackers compromised PyTorch's nightl
 
 ### Theoretical Foundation
 
-#### Why This Works
+#### Why Supply Chain Attacks Work
 
 Supply chain attacks exploit trust assumptions baked into ML workflows:
 
@@ -447,7 +447,7 @@ if result.trigger_detected:
 - **Scan Time**: Under 5 minutes per model
 - **Coverage**: Hit all attack vectors (triggers, weights, configs)
 
-## Why This Works
+## Why Detection Works
 
 This detection approach works because:
 

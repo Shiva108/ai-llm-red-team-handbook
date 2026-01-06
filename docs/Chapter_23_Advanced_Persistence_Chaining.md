@@ -19,7 +19,7 @@ _This chapter provides comprehensive coverage of advanced persistence techniques
 
 ### The Persistence Challenge
 
-Unlike traditional software vulnerabilities that can be exploited in a single request, LLM systems often require sophisticated multi-turn attack sequences to achieve full compromise. Advanced persistence techniques allow attackers to establish lasting control over AI behavior across multiple interactions, gradually escalating privileges, manipulating conversation context, and chaining attacks together for maximum impact.
+Unlike traditional software vulnerabilities that can be exploited in a single request, LLMs often need sophisticated multi-turn attack sequences to achieve full compromise. Advanced persistence techniques let attackers establish lasting control over AI behavior across multiple interactions—gradually escalating privileges, manipulating conversation context, and chaining attacks together for maximum impact.
 
 ### Why Persistence and Chaining Matter
 
@@ -70,7 +70,7 @@ This chapter covers context window manipulation, multi-turn attack sequences, st
 
 Persistence attacks exploit the disconnect between the LLM's stateless nature and the stateful applications built around it.
 
-- **Architectural Factor (Context Window State):** While the model weights are static, the _context window_ acts as a temporary, mutable memory. By injecting "soft prompts" or instructions early in the context (preamble or system prompt), or by accumulating them over a conversation, an attacker can skew the model's attention mechanism to favor malicious behavior in future turns.
+- **Architectural Factor (Context Window State):** While model weights are static, the _context window_ acts as temporary, mutable memory. By injecting "soft prompts" or instructions early in the context (preamble or system prompt), or by piling them up over a conversation, an attacker can skew the model's attention mechanism to favor malicious behavior in future turns.
 
 - **Training Artifact (Instruction Following Bias):** RLHF trains models to be helpful and consistent. If an attacker can trick the model into establishing a "persona" or "mode" (e.g., "Hypothetical Unrestricted Mode") in Turn 1, the model's drive for consistency (Chain of Thought consistency) makes it more likely to maintain that unsafe persona in Turn 2, viewing a refusal as "breaking character."
 
@@ -82,11 +82,10 @@ Persistence attacks exploit the disconnect between the LLM's stateless nature an
 | --------------------------------------------------------------------------------------------- | ------------------------------------------------------------ | ---------------------------------------------------------------------------- |
 | [Greshake et al. "Not what you've signed up for..."](https://arxiv.org/abs/2302.12173)        | Defined "Indirect Prompt Injection" as a persistence vector. | Showed how to persist attacks in RAG/Memory systems.                         |
 | [Wei et al. "Chain-of-Thought Prompting Elicits Reasoning"](https://arxiv.org/abs/2201.11903) | Analyzed how multi-step reasoning improves performance.      | Explains why "breaking" the chain in step 1 cascades to step 2 (jailbreaks). |
-| [Bala et al. "Stealing Constraints from LLMs"](https://arxiv.org/abs/2310.05537)              | Showed how to extract system prompts via persistent probing. | Demonstrates reconnaissance as a persistent activity.                        |
 
 #### What This Reveals About LLMs
 
-LLMs have no "operating system" to manage permissions or process isolation. The "state" is entirely text-based. Therefore, whoever controls the text in the context window controls the "OS" of the current session.
+LLMs don't have an "operating system" to manage permissions or process isolation. The "state" is entirely text-based. So whoever controls the text in the context window controls the "OS" of the current session.
 
 ## 23.1 Context Window Manipulation
 
@@ -464,7 +463,7 @@ attacker.memory_poisoning_attack()
 
 ### What Are Multi-Turn Attacks
 
-Multi-turn attacks execute malicious objectives across multiple conversation turns, gradually escalating privileges and building trust before final exploitation. Unlike single-turn attacks that are immediately detected, multi-turn sequences appear as normal interactions.
+Multi-turn attacks execute malicious objectives across multiple conversation turns, gradually escalating privileges and building trust before final exploitation. Unlike single-turn attacks that are immediately detected, multi-turn sequences look like normal interactions.
 
 ### Why Multi-Turn Attacks Work
 
@@ -825,7 +824,7 @@ if __name__ == "__main__":
 
 > [!CAUTION] > **Persistence is Subtle.** A "successful" persistent attack is one that the user _doesn't_ notice. It doesn't crash the system; it subtly alters the answers. When testing, look for "drift"—small changes in tone, bias, or accuracy that indicate the context has been compromised.
 
-Attacking an LLM is like hacking a conversation. If you can change the _premise_ of the chat ("We are in a movie," "You are an evil robot"), you change the _rules_ of the system. In standard software, variables have types and memory has addresses. In LLMs, everything is just tokens in a stream. This makes "Input Validation" nearly impossible because the input _is_ the program.
+Attacking an LLM is like hacking a conversation. If you can change the _premise_ of the chat ("We're in a movie," "You're an evil robot"), you change the _rules_ of the system. In standard software, variables have types and memory has addresses. In LLMs, everything's just tokens in a stream. This makes "Input Validation" nearly impossible because the input _is_ the program.
 
 ### Next Steps
 
@@ -837,6 +836,7 @@ Attacking an LLM is like hacking a conversation. If you can change the _premise_
 ## Quick Reference
 
 ### Attack Vector Summary
+
 Attackers manipulate the model's "memory" (context window, RAG database, or system prompt) to establish a lasting influence that survives across individual queries or sessions.
 
 ### Key Detection Indicators
@@ -844,7 +844,7 @@ Attackers manipulate the model's "memory" (context window, RAG database, or syst
 - **Topic Drift**: The model starts mentioning topics (e.g., "crypto," "support") that weren't in the user prompt.
 - **Persona Locking**: The model refuses to exit a specific role (e.g., "I can only answer as DAN").
 - **Injection Artifacts**: Weird phrases appearing in output ("Ignored previous instructions").
-- **High Entrop**: Sudden changes in perplexity or output randomness.
+- **High Entropy**: Sudden changes in perplexity or output randomness.
 
 ### Primary Mitigation
 

@@ -11,7 +11,7 @@ Related: Chapters 11, 15, 19, 23
 
 # Chapter 27: Federated Learning Attacks
 
-![](assets/page_header.svg)
+![Chapter 27 Header](assets/page_header.svg)
 
 _Federated learning lets organizations train models together without sharing raw data. That's the promise, anyway. This chapter digs into why that promise is harder to keep than it sounds: model poisoning, gradient inversion, Byzantine failures, and the surprisingly difficult task of detecting when something's gone wrong. We'll cover attacks, defenses, and the ethical guardrails you need for legitimate security testing._
 
@@ -164,11 +164,11 @@ Attackers craft gradient updates that:
 
 ### 27.3.1 Untargeted Model Poisoning
 
-#### What This Code Does
+#### What This Code Does (Untargeted Poisoning)
 
 This implementation demonstrates an untargeted model poisoning attack where a malicious client submits corrupted gradients to degrade global model performance. Attackers use this to sabotage federated learning systems or create denial-of-service conditions.
 
-#### Key Components
+#### Key Components (Untargeted Poisoning)
 
 1. **Gradient Inversion:** Multiply legitimate gradients by -1 to push model in opposite direction
 2. **Scaling Attack:** Amplify gradient magnitudes to overwhelm honest participants
@@ -464,7 +464,7 @@ if __name__ == "__main__":
     print("# updates = client.train_local(data, labels)")
 ```
 
-#### Code Breakdown
+#### Code Breakdown (Untargeted Poisoning)
 
 **FederatedClient Class:**
 
@@ -482,13 +482,13 @@ if __name__ == "__main__":
 - Scaling attack amplifies malicious updates to dominate honest participants
 - Even 20% malicious clients significantly degrade accuracy
 
-### Success Metrics
+### Success Metrics (Untargeted Poisoning)
 
 - **Accuracy Degradation:** Target >30% accuracy drop with <30% malicious participants
 - **Attack Persistence:** Poisoning effects last >5 rounds after attack stops
 - **Detection Evasion:** Malicious updates within 2 standard deviations of honest updates
 
-### Why This Code Works
+### Why This Code Works (Untargeted Poisoning)
 
 This implementation succeeds because:
 
@@ -502,11 +502,11 @@ This implementation succeeds because:
 
 Backdoor attacks introduce specific misclassifications while maintaining normal accuracy on clean inputs.
 
-#### What This Code Does
+#### What This Code Does (Backdoor Attack)
 
 This demonstrates a backdoor attack where a malicious client trains the model to misclassify inputs containing a specific trigger pattern while preserving accuracy on normal inputs. Attackers use this for persistent, stealthy model compromise.
 
-#### Key Components
+#### Key Components (Backdoor Attack)
 
 1. **Trigger Pattern:** Specific input modification (e.g., pixel pattern, text token) that activates backdoor
 2. **Dual Training:** Train on both clean data (maintain accuracy) and poisoned data (learn backdoor)
@@ -732,7 +732,7 @@ if __name__ == "__main__":
     demonstrate_backdoor_attack()
 ```
 
-#### Code Breakdown
+#### Code Breakdown (Backdoor Attack)
 
 **Backdoor Creation:**
 
@@ -749,14 +749,14 @@ if __name__ == "__main__":
 - Simple trigger: specific feature values (e.g., first 3 features = [9, 9, 9])
 - Advanced triggers: spatial patterns in images, token sequences in text
 
-### Success Metrics
+### Success Metrics (Backdoor Attack)
 
 - **Backdoor Accuracy:** >95% misclassification rate on triggered inputs
 - **Clean Accuracy:** >85% accuracy on clean inputs (maintain stealth)
 - **Persistence:** Backdoor survives >10 aggregation rounds
 - **Attack Success Rate:** Single malicious client achieves backdoor with >80% probability
 
-### Why This Code Works
+### Why This Code Works (Backdoor Attack)
 
 1. **Dual Training:** Simultaneously optimizing clean and backdoored objectives prevents accuracy degradation that would trigger detection
 2. **Model Replacement Scaling:** Aggressive update scaling (50x) overrides honest participants in FedAvg aggregation
@@ -764,7 +764,7 @@ if __name__ == "__main__":
 4. **Research Basis:** [Bagdasaryan et al., 2018](https://arxiv.org/abs/1807.00459) showed single backdoor attacker achieves 100% attack success rate with model replacement against standard FedAvg
 5. **Transferability:** Effective across vision, NLP, and tabular data; harder to defend against than untargeted poisoning
 
-### Key Takeaways
+### Key Takeaways (Backdoor Attack)
 
 1. **Model Poisoning is Practical:** Even small fractions of malicious participants significantly degrade federated models
 2. **Backdoors are Stealthy:** Targeted attacks maintain clean accuracy while introducing persistent misclassifications
@@ -820,7 +820,7 @@ Federated learning's gradient sharing creates privacy vulnerabilities enabling t
 
 Gradient inversion reconstructs training data from shared model updates.
 
-#### What This Code Does
+#### What This Code Does (Gradient Inversion)
 
 Demonstrates deep leakage from gradients (DLG) attack that reconstructs private training images by optimizing dummy inputs to match observed gradients.
 
@@ -993,7 +993,7 @@ if __name__ == "__main__":
     demonstrate_gradient_inversion()
 ```
 
-#### Code Breakdown
+#### Code Breakdown (Gradient Inversion)
 
 **Optimization-Based Reconstruction:**
 
@@ -1008,13 +1008,13 @@ if __name__ == "__main__":
 - With sufficient optimization, gradient matching implies data matching
 - Works even with single training batch
 
-### Success Metrics
+### Success Metrics (Gradient Inversion)
 
 - **Image Reconstruction:** PSNR >20 dB for high-quality reconstruction
 - **Label Recovery:** >95% accuracy recovering true labels
 - **Feature Accuracy:** <0.1 mean absolute error on normalized features
 
-### Key Takeaways
+### Key Takeaways (Gradient Inversion)
 
 1. **Gradients Leak Information:** Sharing gradients is NOT equivalent to privacy
 2. **Single Batch Vulnerability:** Even one gradient update reveals training samples
@@ -1166,7 +1166,7 @@ def krum_aggregation(updates, num_malicious):
 > [!NOTE]
 > The following scenario is a hypothetical illustration based on documented attack capabilities in academic research. It demonstrates realistic attack vectors and impacts supported by [Fang et al., 2020](https://www.usenix.org/conference/usenixsecurity20/presentation/fang) and related studies.
 
-#### Scenario Overview
+#### Scenario Overview (Healthcare)
 
 - **Setting:** Federated disease prediction model across 10 hospitals
 - **Simulated Impact:** Model accuracy dropped from 87% to 52%; 35% of diagnoses incorrect
@@ -1180,7 +1180,7 @@ def krum_aggregation(updates, num_malicious):
 4. **Discovery:** Detected after 15 training rounds through accuracy monitoring
 5. **Response:** Rolled back to previous model version; implemented Krum aggregation
 
-#### Lessons Learned
+#### Lessons Learned (Healthcare)
 
 - Small attacker fraction sufficient for significant damage in healthcare FL
 - Need real-time accuracy monitoring on validation sets
@@ -1191,13 +1191,13 @@ def krum_aggregation(updates, num_malicious):
 > [!NOTE]
 > This scenario illustrates theoretical attack capabilities demonstrated in academic research, including [Zhu et al., 2019](https://arxiv.org/abs/1906.08935) "Deep Leakage from Gradients."
 
-#### Scenario Overview
+#### Scenario Overview (Financial)
 
 - **Setting:** Federated fraud detection across 5 financial institutions
 - **Simulated Impact:** Reconstructed 78% of transaction details from shared gradients
 - **Attack Vector:** Passive gradient observation; optimization-based reconstruction
 
-### Lessons Learned
+#### Lessons Learned (Financial)
 
 - Gradient sharing alone insufficient for privacy in high-stakes domains
 - Differential privacy mandatory for financial FL applications

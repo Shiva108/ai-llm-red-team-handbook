@@ -33,17 +33,6 @@ Your report is the client's main takeaway - often the only artifact read by exec
 - **Actionable**: Remediation guidance that is specific, prioritized, and feasible
 - **Professional**: Clear, direct language that builds credibility and trust
 
-## 36.1 The Purpose of Red Team Reports
-
-Your report is the client’s main takeaway - often read by technical and executive leaders. A strong report:
-
-- Clearly communicates risks and actionable remediations.
-- Documents what was tested, how, and why.
-- Justifies the value of the red team exercise.
-- Provides a credible record for future improvements, compliance, or audits.
-
----
-
 ## 36.2 Audiences and Their Needs
 
 Successful reports are tailored to multiple audiences, such as:
@@ -173,4 +162,4 @@ Successful reports are tailored to multiple audiences, such as:
 
 ### Next Steps
 
-Chapter 37 covers presenting your results effectively to both technical and non-technical stakeholders, facilitating collaborative remediation, and handling difficult conversations - ensuring your red teaming work translates into measurable security improvements.
+Chapter 37 covers implementing effective remediation strategies, prioritizing fixes, and hardening systems - ensuring your red teaming findings drive measurable availability and security improvements.

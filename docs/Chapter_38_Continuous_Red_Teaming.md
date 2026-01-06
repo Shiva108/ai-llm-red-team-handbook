@@ -1,6 +1,6 @@
 <!--
 Chapter: 38
-Title: Lessons Learned and Program Maturity
+Title: Continuous Red Teaming and Program Maturity
 Category: Defense & Operations
 Difficulty: Intermediate
 Estimated Time: 12 minutes read time
@@ -9,7 +9,7 @@ Prerequisites: Chapters 1-37
 Related: Chapters 45 (Program Building), 5 (Threat Modeling), 7 (Lab Setup)
 -->
 
-# Chapter 38: Lessons Learned and Program Maturity
+# Chapter 38: Continuous Red Teaming and Program Maturity
 
 ![ ](assets/page_header.svg)
 
