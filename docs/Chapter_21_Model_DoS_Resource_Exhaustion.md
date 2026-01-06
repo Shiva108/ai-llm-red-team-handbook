@@ -13,13 +13,13 @@ Related: Chapter 26 (Supply Chain), Chapter 20 (Model Theft)
 
 ![ ](assets/page_header.svg)
 
-_This chapter provides comprehensive coverage of Denial of Service (DoS) attacks on LLM systems, resource exhaustion techniques, economic attacks, detection methods, and defense strategies for protecting API availability and cost management._
+_This chapter covers Denial of Service (DoS) attacks on LLM systems, resource exhaustion techniques, economic attacks, detection methods, and defense strategies for protecting API availability and cost management._
 
 ## Introduction
 
 ### The Availability Threat
 
-Denial of Service (DoS) attacks against LLM systems represent a critical threat to AI service availability, reliability, and economic viability. Unlike traditional network DoS attacks that flood servers with packets, LLM DoS attacks exploit the unique characteristics of AI systems - expensive computation, token-based pricing, context windows, and stateful sessions - to exhaust resources with minimal attacker overhead.
+DoS attacks against LLM systems pose a serious threat to AI service availability, reliability, and economic viability. But unlike traditional network DoS attacks that flood servers with packets, LLM DoS attacks exploit what makes AI systems unique: expensive computation, token-based pricing, context windows, and stateful sessions. The goal is to exhaust resources with minimal attacker overhead.
 
 ### Why Model DoS Matters
 
@@ -39,19 +39,17 @@ DoS attacks against LLMs exploit the fundamental computational complexity of the
 
 - **Training Artifact (Variable Processing Time):** Unlike traditional functions that take constant time, generative models take variable time depending on the output length. A short input ("Count to 10,000") can trigger a massive output generation loop, locking up an inference slot for a prolonged period.
 
-- **Input Processing (Batching & Padding):** Inference servers process requests in batches. If one request in a batch is malicious (e.g., extremely long), the entire batch must wait for it to finish, or be padded to its length. This means a single attack query can degrade latency for multiple benign users (Head-of-Line Blocking).
+- **Input Processing (Batching & Padding):** Inference servers process requests in batches. If one request in a batch is malicious (e.g., extremely long), the entire batch must wait for it to finish, or be padded to its length. A single attack query can degrade latency for multiple benign users (Head-of-Line Blocking).
 
 #### Foundational Research
 
-| Paper                                                                                                             | Key Finding                                                             | Relevance                                                                       |
-| ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| [Shumailov et al. "Sponge Examples: Energy-Latency Attacks on Neural Networks"](https://arxiv.org/abs/2006.03463) | Defined "Sponge Examples" that maximize energy consumption and latency. | The seminal paper on algorithmic complexity attacks against ML hardware.        |
-| [Wan et al. "DoS Attacks on Large Language Models"](https://arxiv.org/abs/2304.14447)                             | Analyzed resource exhaustion specifically in the context of LLM APIs.   | Demonstrated practical cost-amplification attacks on commercial APIs.           |
-| [Chen et al. "DeepPress: Operations-Oriented Denial of Service"](https://arxiv.org/abs/2012.08323)                | Showed how to crash Deep Learning frameworks via malformed inputs.      | Highlights vulnerability of the underlying serving infrastructure (PyTorch/TF). |
+| Paper                                                                                                                    | Key Finding                                                             | Relevance                                                                |
+| ------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| [Shumailov et al. "Sponge Examples: Energy-Latency Attacks on Neural Networks" (2021)](https://arxiv.org/abs/2006.03463) | Defined "Sponge Examples" that maximize energy consumption and latency. | The seminal paper on algorithmic complexity attacks against ML hardware. |
 
 #### What This Reveals About LLMs
 
-These attacks reveal that LLMs are "High-Stakes Compute Engines." They are not just information processors; they are energy-intensive physical systems. The disconnect between the tiny cost of sending a request (bytes) and the huge cost of processing it (GPU-seconds) creates a massive asymmetric attack surface that is strictly economic in nature.
+These attacks reveal that LLMs are "High-Stakes Compute Engines." They're not just information processors; they're energy-intensive physical systems. The disconnect between the tiny cost of sending a request (bytes) and the huge cost of processing it (GPU-seconds) creates a massive asymmetric attack surface that's strictly economic in nature.
 
 #### Real-World Impact
 
@@ -95,9 +93,9 @@ LLMs process text in tokens (typically 3-4 characters). API pricing is usually p
 
 ### 21.1.1 Context Window Exhaustion
 
-#### What It Is
+#### Context Window Exhaustion Explained
 
-Filling the model's context window (input + output) to its maximum capacity, forcing the model to process maximum tokens and preventing legitimate usage.
+Filling the model's context window (input + output) to its maximum capacity forces the model to process maximum tokens and prevents legitimate usage.
 
 #### Attack Mechanics
 
@@ -123,8 +121,9 @@ class TokenBombAttack:
         self.client = openai.OpenAI(api_key=api_key)
         self.model = model
         self.context_limits = {
-            "gpt-3.5-turbo": 4096,
+            "gpt-3.5-turbo": 16385,  # Updated for gpt-3.5-turbo-0125
             "gpt-4": 8192,
+            "gpt-4-turbo": 128000,
             "gpt-4-32k": 32768,
             "claude-2": 100000
         }
@@ -184,9 +183,9 @@ class TokenBombAttack:
             completion_tokens = usage.completion_tokens
             total_tokens = usage.total_tokens
 
-            # Calculate cost (GPT-3.5-turbo pricing)
-            input_cost = (prompt_tokens / 1000) * 0.0015
-            output_cost = (completion_tokens / 1000) * 0.002
+            # Calculate cost (GPT-3.5-turbo pricing as of Jan 2024)
+            input_cost = (prompt_tokens / 1000) * 0.0005
+            output_cost = (completion_tokens / 1000) * 0.0015
             total_cost = input_cost + output_cost
 
             print(f"[+] Token bomb successful!")
@@ -400,9 +399,9 @@ While token-based attacks exploit pricing, computational attacks target the unde
 
 ### 21.2.1 Complex Query Attacks
 
-#### What It Is
+#### Complex Query Attacks Explained
 
-Crafting inputs that require disproportionate computation compared to their length, exhausting GPU cycles and memory.
+Crafting inputs that require disproportionate computation compared to their length exhausts GPU cycles and memory.
 
 #### Attack Vectors
 
@@ -638,7 +637,7 @@ if __name__ == "__main__":
 
 ### Circumventing Quota Controls
 
-Most APIs implement rate limiting to prevent abuse. However, these controls can be bypassed through various techniques, enabling sustained DoS attacks.
+Most APIs implement rate limiting to prevent abuse. But these controls can be bypassed through various techniques, enabling sustained DoS attacks.
 
 ### Common Rate Limit Schemes
 
@@ -798,8 +797,7 @@ if __name__ == "__main__":
 | Paper                                                                                                            | Year | Venue   | Contribution                                                                           |
 | ---------------------------------------------------------------------------------------------------------------- | ---- | ------- | -------------------------------------------------------------------------------------- |
 | [Shumailov et al. "Sponge Examples"](https://arxiv.org/abs/2006.03463)                                           | 2021 | EuroS&P | Introduced inputs designed to maximize energy/latency in NLP models.                   |
-| [Hong et al. "Panda: Performance Debloating"](https://arxiv.org/abs/2104.09849)                                  | 2021 | ASPLOS  | Proposed methods to reduce attack surface by pruning unused model capacity.            |
-| [Kandpal et al. "Large Language Models Struggle to Learn Long-Tail Knowledge"](https://arxiv.org/abs/2211.08411) | 2022 | NeurIPS | Ironically relevant: forcing models to access "long tail" facts consumes more compute. |
+| [Kandpal et al. "Large Language Models Struggle to Learn Long-Tail Knowledge"](https://arxiv.org/abs/2211.08411) | 2023 | ICML    | Ironically relevant: forcing models to access "long tail" facts consumes more compute. |
 
 ### Evolution of Understanding
 
@@ -810,26 +808,27 @@ if __name__ == "__main__":
 
 ### Current Research Gaps
 
-1.  **Efficient Attention**: Linear attention mechanisms ($O(N)$) exist but often underperform; solving this fixes the root vulnerability.
-2.  **Early Exit**: Reliably detecting "this prompt will take too long" _before_ executing it.
-3.  **Proof of Work for Inference**: Requiring client-side compute to submit requests (rate limiting via physics).
+1. **Efficient Attention**: Linear attention mechanisms ($O(N)$) exist but often underperform; solving this fixes the root vulnerability.
+2. **Early Exit**: Reliably detecting "this prompt will take too long" _before_ executing it.
+3. **Proof of Work for Inference**: Requiring client-side compute to submit requests (rate limiting via physics).
 
 ### Recommended Reading
 
 ### For Practitioners
 
 - **Infrastructure**: [NVIDIA Triton Inference Server Docs](https://github.com/triton-inference-server/server) - Learn how batching and queuing work.
-- **Cost Mgt**: [OpenAI Rate Limits Guide](https://platform.openai.com/docs/guides/rate-limits) - Practical implementation of quotas.
+- **Cost Mgt**: [OpenAI Rate Limits Guide](https://platform.openai.com/docs/guides/rate-limits) - Practical implementation of quotas (may require OpenAI account).
 
 ---
 
 ## 21.18 Conclusion
 
-> [!CAUTION] > **Do Not Perform DoS Attacks on Production Systems.** Denial of Service testing is destructive. It disrupts business operations, costs real money, and affects other users. Only test DoS in isolated, dedicated environments where you pay the bill and control the infrastructure. "Stress testing" a third-party API without permission is indistinguishable from a cyberattack.
+> [!CAUTION]
+> **Do Not Perform DoS Attacks on Production Systems.** Denial of Service testing is destructive. It disrupts business operations, costs real money, and affects other users. Only test DoS in isolated, dedicated environments where you pay the bill and control the infrastructure. "Stress testing" a third-party API without permission is indistinguishable from a cyberattack.
 
-Model DoS attacks are unique because they are often "technically legal requests" that simply cost too much to answer. There is no exploit code, just a hard question. This makes them incredibly difficult to filter.
+Model DoS attacks are unique because they're often "technically legal requests" that simply cost too much to answer. There's no exploit code, just a hard question. This makes them incredibly difficult to filter.
 
-For Red Teamers, the "DoS" category often merges with "Financial Impact." If you can make a model output garbage for $0.01 but cost the company $5.00 to generate it, you have found a vulnerability as critical as a data leak.
+For Red Teamers, the "DoS" category often merges with "Financial Impact." If you can make a model output garbage for $0.01 but cost the company $5.00 to generate it, you've found a vulnerability as critical as a data leak.
 
 ### Next Steps
 
@@ -841,6 +840,7 @@ For Red Teamers, the "DoS" category often merges with "Financial Impact." If you
 ## Quick Reference
 
 ### Attack Vector Summary
+
 Attackers exploit the high computational and financial cost of LLM inference ($O(N^2)$ attention complexity) to exhaust server resources (GPU/RAM) or drain financial budgets (Economic DoS).
 
 ### Key Detection Indicators
