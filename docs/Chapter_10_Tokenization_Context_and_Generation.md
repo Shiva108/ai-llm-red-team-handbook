@@ -58,7 +58,7 @@ The **Context Window** is the maximum number of tokens the model can hold in its
 
 By filling the context window with "garbage" or irrelevant text, you can force the System Prompt (which is usually at the very beginning) to "fall off" the buffer.
 
-![Context Flooding Diagram](assets/rec12_context_flooding.svg)
+![Context Flooding](assets/chapter_10_rec_17_context_flooding.png)
 
 - **Result:** The model forgets its safety constraints and personality instructions.
 - **Technique:** "Ignore the above instructions" works partly because it conceptually overrides them, but **Context Flooding** literally removes them from the model's view.

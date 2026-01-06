@@ -82,12 +82,7 @@ Talk to business, security, engineering, and compliance leads. Questions may inc
 
 Create a scoping document (or section in the SOW) summarizing:
 
-| In-Scope                        | Out-of-Scope                        |
-| ------------------------------- | ----------------------------------- |
-| Staging LLM and `/api/support`  | Production LLM or any prod datasets |
-| All plugins in test/dev         | Email plugin in production          |
-| User prompt fuzzing             | Stress testing or volume DoS        |
-| Black-box and white-box methods | Social engineering/phishing         |
+![Scope Boundaries](assets/chapter_06_rec_11_scope_boundaries.png)
 
 **Always review and get sign-off from all stakeholders** before starting the red team assessment.
 

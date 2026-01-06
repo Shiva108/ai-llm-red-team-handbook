@@ -35,7 +35,8 @@ Key characteristics include:
 
 ### Example Scenario
 
-You’re given an LLM-powered support bot to test. The documentation claims, “No sensitive data is accessible via the bot.”  
+You’re given an LLM-powered support bot to test. The documentation claims, “No sensitive data is accessible via the bot.”
+
 #### Red teamer’s thought process
 
 - Can I manipulate the input context to bypass these restrictions?
@@ -58,6 +59,8 @@ A great adversarial mindset means:
 - **Depth:** Deep technical skills in at least one area - ML/LLM systems, Python automation, OS internals, prompt engineering, or network traffic analysis.
 - **Breadth:** Working knowledge of software architecture, cloud, law, regulatory frameworks, and business operations.
 
+![T-Shaped Red Teamer](assets/chapter_03_rec_05_t_shaped.png)
+
 Continual learning is crucial. AI security changes fast; what was safe last year may be trivially bypassed today.
 
 ## 3.5 Adaptability and Lifelong Learning
@@ -72,7 +75,7 @@ Never look at vulnerabilities in isolation. The most devastating real-world atta
 
 - Reconnaissance → Social Engineering → Prompt Injection → Privilege Escalation → Data Exfiltration
 
-![Attack Chain Diagram](assets/rec2_attack_chain.svg)
+![AI Attack Chain](assets/chapter_03_rec_06_attack_chain.png)
 
 Document each step, and always ask: **What risk can this chain create for the business or end user?**
 

@@ -85,7 +85,7 @@ The RoE defines _how_ testing will be conducted - including constraints, escalat
 
 A smooth onboarding process earns trust, reduces errors, and ensures you hit the ground running.
 
-![Client Onboarding Flowchart](assets/rec3_onboarding.svg)
+![Client Onboarding Lifecycle](assets/chapter_04_rec_08_onboarding.png)
 
 ### 4.4.1 Key Onboarding Steps
 

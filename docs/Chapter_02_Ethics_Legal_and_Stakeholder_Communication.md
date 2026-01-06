@@ -79,6 +79,8 @@ What if you discover a critical vulnerability (in the client’s supply chain, o
 - If third-party risk is involved, discuss coordinated disclosure, typically with the client’s legal/compliance team.
 - Never publicly discuss vulnerabilities until fixed, or until you have explicit permission.
 
+![Pause and Notify Loop](assets/chapter_02_rec_03_pause_loop.png)
+
 ## 2.5 Communicating with Stakeholders
 
 In AI red teaming, technical findings may have legal, business, or even social implications. Effective communication bridges this gap.

@@ -54,7 +54,7 @@ A typical AI red team engagement involves:
 
 ## 1.5 Types of AI/LLM Risks & Attacks
 
-![AI Threat Landscape Infographic](assets/rec1_threat_landscape.svg)
+![AI Red Team Lifecycle](assets/chapter_01_rec_01_lifecycle.png)
 
 - **Prompt Injection:** Getting the model to do something unintended by manipulating input text context.
 - **Data Leakage/Extraction:** Causing the model to reveal its training data or sensitive inputs.

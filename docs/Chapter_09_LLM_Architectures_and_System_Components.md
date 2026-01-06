@@ -30,7 +30,7 @@ When we attack an "AI," we are rarely attacking a single file. We are attacking 
 | **Orchestrator/Agent**    | The logic loop deciding to call tools.               | Infinite loops, excessive agency, prompt injection propagation.   |
 | **Vector Database (RAG)** | Long-term memory storage.                            | Search result poisoning, indirect prompt injection.               |
 
-![AI Anatomy Block Diagram](assets/rec9_ai_anatomy.svg)
+![Compound AI System](assets/chapter_09_rec_14_compound_ai.png)
 
 ## 9.2 The Transformer: A Hacker's Perspective
 
@@ -100,6 +100,8 @@ Understanding the flow of a single prompt helps you pinpoint where to inject.
    - _Attack:_ **Obfuscation**. If the output filter catches "bomb", generating "b-o-m-b" might bypass it.
 
 ![Inference Pipeline Diagram](assets/rec10_inference_pipeline.svg)
+
+![Inference Pipeline Diagram](assets/chapter_09_rec_15_inference_pipeline.png)
 
 ## 9.5 Practical Inspection: Loading a Model
 
