@@ -3490,7 +3490,7 @@ class EthicalTestingFramework:
    ```
 ````
 
-3. Confirmation
+1. Confirmation
    - Document data destruction
    - Provide certificate of destruction if requested
    - Verify no copies remain
