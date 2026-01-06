@@ -19,7 +19,7 @@ _This chapter provides comprehensive coverage of attacks on multimodal AI system
 
 ### The Multimodal Attack Surface
 
-The emergence of multimodal AI systems-models that process text, images, audio, and video simultaneously-has dramatically expanded the attack surface for adversaries. While text-only LLMs have well-studied vulnerabilities, multimodal models introduce entirely new attack vectors where malicious instructions can be hidden in images, audio waveforms, or transmitted across modalities to bypass safety filters.
+Multimodal AI systems—models that process text, images, audio, and video simultaneously—have dramatically expanded the attack surface. While text-only LLMs have well-studied vulnerabilities, multimodal models open up entirely new attack vectors. Malicious instructions can be hidden in images, buried in audio waveforms, or transmitted across modalities to slip past safety filters.
 
 ### Why Multimodal Attacks Matter
 
@@ -31,11 +31,13 @@ The emergence of multimodal AI systems-models that process text, images, audio, 
 
 ### Real-World Impact
 
-1. **GPT-4V Jailbreaks**: Text embedded in images bypasses content filters (2023)
-2. **Claude 3 Vision Exploits**: Adversarial images cause misclassification
-3. **Automated Captcha Solving**: Vision models used to break CAPTCHAs at scale
-4. **Content Moderation Bypass**: NSFW content hidden in image steganography
-5. **Misinformation Campaigns**: Deepfake videos with AI-generated narratives
+Documented attack patterns and vulnerabilities in deployed multimodal systems:
+
+1. **Indirect Prompt Injection via Images**: Text embedded in images can bypass content filters (Greshake et al. 2023)
+2. **Visual Jailbreaks**: Adversarial images bypass alignment restrictions in VLMs (Qi et al. 2023)
+3. **Automated Captcha Solving**: Vision models exploited to break CAPTCHAs at scale
+4. **Content Moderation Bypass**: Adversarial perturbations evade safety classifiers
+5. **Deepfake Integration**: AI-generated visual and textual content in coordinated campaigns
 
 ### Attack Economics
 
@@ -65,13 +67,13 @@ This chapter covers vision-language model architecture and vulnerabilities, imag
 
 #### Why This Works (Model Behavior)
 
-Multimodal attacks exploit the "Modality Gap" and the misalignment between how a model "sees" an image and how it "reads" text.
+Multimodal attacks exploit the "Modality Gap"—the disconnect between what a model "sees" in an image and what it "reads" in text.
 
-- **Architectural Factor (Shared Embedding Space):** Multimodal models (like GPT-4V or Gemini) map images and text into a shared high-dimensional vector space. An adversarial attack on an image works by finding a pattern of pixels that, when mapped to this space, vectors towards a specific concept (e.g., "bomb") or instruction, bypassing the text-based safety filters which only inspect the textual user input.
+- **Architectural Factor (Shared Embedding Space):** Models like GPT-4V or Gemini map images and text into a single high-dimensional space. An adversarial attack works by finding a specific pattern of pixels that, when mapped to this space, steers the model towards a concept (like "bomb") or instruction. It effectively bypasses text-based safety filters because standard filters only inspect the user's text, not the visual vector.
 
-- **Training Artifact (OCR Trust):** Models are trained to trust the text found _inside_ images (OCR) as ground truth data to be analyzed, rather than user input to be sanitized. This allows "Indirect Prompt Injection" where the malicious instruction is pixels in a screenshot rather than text in the chat box.
+- **Training Artifact (OCR Trust):** Models are trained to trust text found _inside_ images as data to be analyzed, not user input to be sanitized. This opens the door to "Indirect Prompt Injection," where the malicious command is hidden in pixels rather than typed in a chat box.
 
-- **Input Processing (Invisible Perturbation):** In high-dimensional pixel space, a small change to every pixel ($\epsilon < 1/255$) is invisible to the human eye but represents a massive shift in the numerical tensor seen by the model. This allows "Adversarial Examples" that look like a cat to a human but look like "Access Granted" to the model.
+- **Input Processing (Invisible Perturbation):** In high-dimensional pixel space, a tiny change to every pixel ($\epsilon < 1/255$) is invisible to us but represents a massive shift to the model. This allows attackers to create "Adversarial Examples"—images that look like a cat to you, but read as "Access Granted" to the model.
 
 #### Foundational Research
 
@@ -79,7 +81,7 @@ Multimodal attacks exploit the "Modality Gap" and the misalignment between how a
 | ----------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
 | [Greshake et al. "Not what you've signed up for..."](https://arxiv.org/abs/2302.12173)                      | Demonstrated indirect prompt injection via text embedded in images.        | The "Hello World" of multimodal injection attacks.                       |
 | [Qi et al. "Visual Adversarial Examples Jailbreak Large Language Models"](https://arxiv.org/abs/2306.13213) | Showed that visual adversarial examples can bypass alignment restrictions. | Proved that "Jailbreaking" can be done via the visual channel alone.     |
-| [Carlini et al. "Adversarial Examples Are Not Bugs, They Are Features"](https://arxiv.org/abs/1905.02175)   | Argues that adversarial susceptibility is inherent to high-dim data.       | Explains why patching these vulnerabilities is mathematically difficult. |
+| [Ilyas et al. "Adversarial Examples Are Not Bugs, They Are Features"](https://arxiv.org/abs/1905.02175)     | Argues that adversarial susceptibility is inherent to high-dim data.       | Explains why patching these vulnerabilities is mathematically difficult. |
 
 #### What This Reveals About LLMs
 
@@ -89,7 +91,7 @@ This confirms that alignment is often "Modality Specific." A model safe-guarded 
 
 ### What Are Multimodal Models
 
-Multimodal models process and generate content across multiple modalities (text, images, audio, video). Modern vision-language models (VLMs) like GPT-4V use image encoders (typically CLIP-based) to convert images into embeddings, which are then processed alongside text tokens by the language model.
+Multimodal models don't just process text—they see images, hear audio, and watch video. Modern vision-language models (VLMs) like GPT-4V use image encoders (usually based on CLIP) to turn images into embeddings, which the language model then processes right alongside text tokens.
 
 ### Architecture Overview
 
@@ -129,7 +131,7 @@ Output: Text, Image, Audio, or Multimodal Response
 
 ### The Core Vulnerability
 
-Vision-language models use OCR or visual understanding to extract text from images. If an attacker embeds malicious prompts in an image, the model may execute those instructions while text-based safety filters remain blind to the attack.
+Vision-language models use OCR or visual understanding to extract text from images. If an attacker embeds malicious prompts in an image, the model may execute those instructions while text-based safety filters remain completely blind.
 
 ### Why This Works
 
@@ -490,9 +492,13 @@ Image-Based Prompt Injection Attack Demonstration
 
 ## Success Metrics
 
-- **Filter Bypass Rate**: ~90% on models without image OCR filtering
-- **Detection Difficulty**: High - appears as normal image upload
-- **Transferability**: Works across GPT-4V, Claude 3 Opus, Gemini Pro Vision
+Based on academic research and red team assessments:
+
+- **Filter Bypass Rate**: High success on models without vision-aware filtering (varies by implementation)
+- **Detection Difficulty**: High - appears as normal image upload to traditional filters
+- **Transferability**: Demonstrated across multiple VLMs including GPT-4V, Claude 3, and Gemini
+
+_Note: Specific success rates vary significantly based on model version, safety mitigations, and attack sophistication. Academic papers report varying rates; practitioners should conduct model-specific testing._
 
 ## Key Takeaways
 
@@ -508,7 +514,7 @@ Image-Based Prompt Injection Attack Demonstration
 
 ### What Are Adversarial Images
 
-Adversarial images are inputs designed to fool image classification models by adding imperceptible perturbations. While humans see the original image unchanged, the AI model misclassifies it completely.
+Adversarial images are inputs designed to fool image classification models by adding imperceptible perturbations. To humans, the image looks identical. To the AI? Completely different.
 
 ### How Adversarial Attacks Work
 
@@ -546,7 +552,7 @@ Adversarial Image: [Cat + tiny noise] → Model: "Dog" ✗
 
 ### Transferability
 
-Adversarial examples created for one model often transfer to other models, making them especially dangerous.
+Here's the dangerous part: adversarial examples created for one model often work on others too. This "transferability" means an attacker can develop an exploit locally and deploy it against a closed-source API.
 
 ### Practical Example: Adversarial Image Generator
 
@@ -870,7 +876,7 @@ if __name__ == "__main__":
 
 ### Attack Concept
 
-Cross-modal attacks exploit the interaction between different modalities to inject malicious content. An attacker uses one modality (e.g., image) to inject instructions that affect another modality's output (e.g., text generation).
+Cross-modal attacks exploit the interaction between different modalities to inject malicious content. An attacker uses one modality (say, an image) to inject instructions that affect another modal ity's output (like text generation).
 
 ### Why Cross-Modal Attacks Work
 
@@ -1137,19 +1143,23 @@ Technique: Hidden Audio Commands
    - Implement cross-verification
    - Monitor multimodal anomalies
 
-### Case Studies
+### Illustrative Attack Patterns
 
-#### GPT-4V Jailbreak (2023)
+_Note: The following are representative examples based on documented attack techniques in academic literature, not specific disclosed incidents._
 
-- Method: Text embedded in image
-- Impact: Bypassed content policy
-- Lesson: Need vision-aware filtering
+#### Image-Based Prompt Injection (VLM Jailbreaks)
 
-#### Claude 3 Vision Exploit
+- **Method**: Text embedded in image bypasses text-only filters
+- **Attack Pattern**: Demonstrated by Greshake et al. (2023) for indirect injection
+- **Impact**: Can bypass content policies through visual channel
+- **Lesson**: Vision-aware filtering and OCR-based safety checks required
 
-- Method: Adversarial image perturbation
-- Impact: Misclassification of harmful content
-- Lesson: Adversarial robustness critical
+#### Visual Adversarial Examples (VLM Misclassification)
+
+- **Method**: Adversarial perturbations fool vision encoders
+- **Attack Pattern**: Demonstrated by Qi et al. (2023) and Bailey et al. (2024)
+- **Impact**: Misclassification of harmful content, safety bypass
+- **Lesson**: Adversarial robustness training and input sanitization critical
 
 ### Future Trends
 
@@ -1192,7 +1202,7 @@ Technique: Hidden Audio Commands
 - Maintain current threat intelligence
 - Conduct regular focused red team assessments
 
-## 22.17 Research Landscape
+## 22.18 Research Landscape
 
 ### Seminal Papers
 
@@ -1200,7 +1210,7 @@ Technique: Hidden Audio Commands
 | --------------------------------------------------------------------------------------------- | ---- | ----- | ----------------------------------------------------------------------- |
 | [Szegedy et al. "Intriguing properties of neural networks"](https://arxiv.org/abs/1312.6199)  | 2014 | ICLR  | (Classic) Discovered adversarial examples in vision models.             |
 | [Greshake et al. "Indirect Prompt Injection"](https://arxiv.org/abs/2302.12173)               | 2023 | ArXiv | Applied injection concepts to Multimodal LLMs via retrieval and images. |
-| [Bailey et al. "Image Hijacks: Adversarial Images for VLM"](https://arxiv.org/abs/2309.00236) | 2023 | ArXiv | Specific "Image Hijack" attacks against LLaVA and GPT-4V.               |
+| [Bailey et al. "Image Hijacks: Adversarial Images for VLM"](https://arxiv.org/abs/2309.00236) | 2024 | ICML  | Specific "Image Hijack" attacks against LLaVA and GPT-4V.               |
 
 ### Evolution of Understanding
 
@@ -1210,26 +1220,26 @@ Technique: Hidden Audio Commands
 
 ### Current Research Gaps
 
-1. **Robust Alignment**: aligning the _visual_ encoder to refuse harmful queries (teaching CLIP ethics).
-2. **Sanitization**: Effective ways to strip adversarial noise without destroying image utility (diffusion purification).
-3. **Cross-Modal Transfer**: Understanding why an attack on an image transfers to the text output so effectively.
+1. **Robust Alignment**: We need to teach visual encoders to refuse harmful queries, effectively teaching "ethics" to the vision layer (like CLIP).
+2. **Sanitization**: Finding ways to scrub adversarial noise without ruining the image for legitimate use (e.g., diffusion purification).
+3. **Cross-Modal Transfer**: We still need to understand exactly why an attack on an image transfers so effectively to text output.
 
 ### Recommended Reading
 
 ### For Practitioners
 
 - **Tools**: [Adversarial Robustness Toolbox (ART)](https://github.com/Trusted-AI/adversarial-robustness-toolbox) - IBM's library for generating adversarial attacks.
-- **Guide**: [OpenAI GPT-4V System Card](https://openai.com/research/gpt-4v-system-card) - Official details on visual vulnerabilities.
+- **Guide**: [OpenAI GPT-4V System Card](https://cdn.openai.com/papers/GPTV_System_Card.pdf) - Official system card detailing visual capabilities and safety evaluations (PDF).
 
 ---
 
-## 22.18 Conclusion
+## 22.19 Conclusion
 
 > [!CAUTION] > **Adversarial Content Can Be Dangerous.** While "cat vs dog" examples are fun, adversarial images can be used to bypass safety filters for child safety, violence, and self-harm content. When testing, ensure that the _payload_ (the target behavior) is safe and ethical. Do not generate or distribute adversarial content that bypasses safety filters for real-world harm.
 
-Multimodal models are the future of AI, but they currently represent a significant regression in security. By adding eyes and ears to LLMs, we have opened new side-channels that bypass years of text-based safety tuning.
+Multimodal models are the future of AI, but they're currently a major regression in security. By giving LLMs eyes and ears, we've opened up new side-channels that bypass years of text-based safety work.
 
-For Red Teamers, this is the "Golden Age" of multimodal exploits. The defenses are immature, the attack surface is huge, and standard computer vision attacks (from 2015) are suddenly relevant again in the context of GenAI.
+For red teamers, this is the "Golden Age" of multimodal exploits. Defenses are immature, the attack surface is massive, and standard computer vision attacks from 2015 are suddenly relevant again in the GenAI context.
 
 ### Next Steps
 
@@ -1241,6 +1251,7 @@ For Red Teamers, this is the "Golden Age" of multimodal exploits. The defenses a
 ## Quick Reference
 
 ### Attack Vector Summary
+
 Using non-text inputs (Images, Audio) to inject prompts or adversarial noise that shifts the model's behavior, bypassing text-based safety filters and alignment controls.
 
 ### Key Detection Indicators
