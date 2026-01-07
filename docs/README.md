@@ -127,5 +127,5 @@ We designed this toolkit for security consultants, red teamers, and AI engineers
 
 ## 🧩 Reference & Resources
 
-- [**Configuration Guide**](Configuration.md)
+- [**Configuration Guide**](../scripts/docs/Configuration.md)
 - [**Field Manual Index**](Field_Manual_00_Index.md)

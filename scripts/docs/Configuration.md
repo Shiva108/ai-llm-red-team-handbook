@@ -469,5 +469,5 @@ python runner.py --debug
 
 ## Additional Resources
 
-- [Main README](../README.md)
-- [Field Manual](AI_LLM%20Red%20Team%20Field%20Manual.md)
+- [Main README](../../README.md)
+- [Field Manual](../../docs/AI_LLM%20Red%20Team%20Field%20Manual.md)
