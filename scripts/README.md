@@ -27,7 +27,7 @@ python3 utils/api_client.py --help
 
 ## 📁 Directory Structure
 
-```
+```text
 scripts/
 ├── docs/                   # Documentation
 ├── config/                 # Configuration files

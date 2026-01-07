@@ -347,7 +347,7 @@ Test results are saved to multiple locations:
 
 Real-time progress indicators:
 
-```
+```text
 Running AI/LLM Red Team Tests...
 [=====>    ] 50% | Prompt Injection (25/50)
 
@@ -365,13 +365,13 @@ Running AI/LLM Red Team Tests...
 
 #### API Connection Errors
 
-##### Error
+**Error:**
 
-```
+```text
 ConnectionError: Failed to connect to API endpoint
 ```
 
-##### Solution
+**Solution:**
 
 - Verify `API_ENDPOINT` is correct
 - Check network connectivity
@@ -379,13 +379,13 @@ ConnectionError: Failed to connect to API endpoint
 
 #### Authentication Failures
 
-##### Error
+**Error:**
 
-```
+```text
 AuthenticationError: Invalid API key
 ```
 
-##### Solution
+**Solution:**
 
 - Verify `API_KEY` is correct and active
 - Check API key permissions
@@ -393,13 +393,13 @@ AuthenticationError: Invalid API key
 
 #### Rate Limiting
 
-##### Error
+**Error:**
 
-```
+```text
 RateLimitError: Too many requests
 ```
 
-##### Solution
+**Solution:**
 
 - Increase `REQUEST_DELAY` in config
 - Reduce concurrent tests
@@ -407,13 +407,13 @@ RateLimitError: Too many requests
 
 #### Timeout Issues
 
-##### Error
+**Error:**
 
-```
+```text
 TimeoutError: Request timed out after 30s
 ```
 
-##### Solution
+**Solution:**
 
 - Increase `TIMEOUT` value
 - Check API service status
