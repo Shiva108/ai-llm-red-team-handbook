@@ -7,6 +7,7 @@ Production-ready security testing scripts for LLM applications, extracted from t
 - **[Full Documentation](docs/README.md)** - Complete guide to all scripts
 - **[Quick Start Guide](docs/QUICKSTART.md)** - Get started in minutes
 - **[Testing Guide](docs/TESTING_GUIDE.md)** - Comprehensive testing framework
+- **[Configuration Guide](docs/Configuration.md)** - Setup and configuration details
 
 ## 🚀 Quick Start
 
