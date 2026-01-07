@@ -391,7 +391,7 @@ AuthenticationError: Invalid API key
 - Check API key permissions
 - Ensure key hasn't expired
 
-#### Rate Limiting
+#### Rate Limit Errors
 
 **Error:**
 
