@@ -17,9 +17,8 @@ NC='\033[0m' # No Color
 
 # Script directory
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-PARENT_DIR="$(dirname "$PARENT_DIR")"
+PARENT_DIR="$(dirname "$SCRIPT_DIR")"
 VENV_DIR="$PARENT_DIR/venv"
-VENV_DIR="$SCRIPT_DIR/venv"
 
 # Print functions
 print_header() {
