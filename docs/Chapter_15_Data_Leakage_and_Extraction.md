@@ -2223,17 +2223,13 @@ class RateLimiter:
 
 ### 15.11.3 Architectural Mitigations
 
-#### Zero-trust design principles
+#### Zero Trust design principles
 
-```text
-Principle: Never trust, always verify
-
-1. Authenticate every request
-2. Authorize based on least privilege
-3. Isolate contexts and data
-4. Monitor all access
-5. Encrypt data in transit and at rest
-```
+1. **Never Trust, Always Verify**: Trust is never inherent; every access request, regardless of origin, must be authenticated and authorized.
+2. **Least Privilege Access**: Grant users and systems only the minimum permissions needed to perform their tasks, limiting potential damage.
+3. **Assume Breach**: Design systems to operate as if an attacker is already inside the network, focusing on containing threats.
+4. **Microsegmentation**: Divide the network into small, isolated segments to contain breaches and prevent lateral movement.
+5. **Continuous Monitoring & Dynamic Policies**: Continuously assess risk and adapt access policies in real-time based on user behavior, device health, and context.
 
 #### Least privilege access
 
