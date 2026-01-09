@@ -2334,36 +2334,34 @@ def verify_deployment_security(deployment):
 
 #### Data retention policies
 
-```markdown
-# Data Retention Policy Template
+##### Data Retention Policy Template
 
-## Training Data
+###### Training Data
 
 - Retention: Indefinite (model lifetime)
 - Review: Annual security audit
 - Deletion: Upon model decommission
 - Encryption: At rest and in transit
 
-## User Conversation Data
+###### User Conversation Data
 
 - Retention: 90 days maximum
 - Review: Monthly PII scan
 - Deletion: Automated after retention period
 - Encryption: AES-256
 
-## Logs and Monitoring Data
+###### Logs and Monitoring Data
 
 - Retention: 1 year for security logs, 30 days for debug logs
 - Review: Weekly for anomalies
 - Deletion: Automated rotation
 - Encryption: At rest
 
-## Regulatory Compliance
+###### Regulatory Compliance
 
 - GDPR right to erasure: 30-day SLA
 - Data breach notification: 72 hours
 - Privacy impact assessment: Annual
-```
 
 ### Access control procedures
 
@@ -2421,20 +2419,19 @@ class AccessControlPolicy:
 
 ### Incident response plans
 
-```markdown
-# Data Leakage Incident Response Plan
+#### Data Leakage Incident Response Plan
 
-## Detection Phase
+##### Detection Phase
 
 1. Alert received from monitoring system
 2. Initial triage by on-call security engineer
 3. Severity assessment (P0-P4)
 
-## Containment Phase
+##### Containment Phase
 
 Priority actions based on severity:
 
-### P0 - Critical (PII/credentials leaked)
+###### P0 - Critical (PII/credentials leaked)
 
 - Immediate: Block affected user(s)
 - Immediate: Disable affected API endpoints if needed
@@ -2442,55 +2439,53 @@ Priority actions based on severity:
 - Within 30 min: Preserve evidence
 - Within 1 hour: Begin root cause analysis
 
-### P1 - High (System prompt leaked)
+###### P1 - High (System prompt leaked)
 
 - Within 1 hour: Analyze scope of disclosure
 - Within 2 hours: Update system prompts if compromised
 - Within 4 hours: Notify stakeholders
 
-## Investigation Phase
+##### Investigation Phase
 
 1. Collect all logs and evidence
 2. Identify attack vector
 3. Determine scope of data leaked
 4. Identify affected users/data
 
-## Remediation Phase
+##### Remediation Phase
 
 1. Patch vulnerability
 2. Rotate compromised credentials
 3. Update affected systems
 4. Implement additional controls
 
-## Communication Phase
+##### Communication Phase
 
 - Internal: Notify management, legal, affected teams
 - External: User notification if PII involved (GDPR/CCPA)
 - Regulatory: Breach notification if required
 - Public: Disclosure per responsible disclosure policy
 
-## Post-Incident Phase
+##### Post-Incident Phase
 
 1. Root cause analysis report
 2. Lessons learned session
 3. Update policies and controls
 4. Retrain staff if needed
 5. Update this IR plan
-```
 
 ### User education and awareness
 
-```markdown
-# User Security Training for LLM Systems
+#### User Security Training for LLM Systems
 
-## For End Users
+##### For End Users
 
 - Don't share sensitive information in prompts
 - Be aware outputs may be logged
 - Report suspicious model behaviors
 - Understand data retention policies
 
-## For Developers
+##### For Developers
 
 - Never commit API keys or secrets
 - Sanitize all training data
@@ -2498,7 +2493,7 @@ Priority actions based on severity:
 - Follow secure coding practices
 - Regular security training
 
-## For Data Scientists
+##### For Data Scientists
 
 - PII handling and anonymization
 - Differential privacy techniques
@@ -2506,14 +2501,13 @@ Priority actions based on severity:
 - Data minimization principles
 - Adversarial ML awareness
 
-## For Security Teams
+##### For Security Teams
 
 - LLM-specific attack techniques
 - Prompt injection awareness
 - Data extraction prevention
 - Incident response procedures
 - Continuous monitoring practices
-```
 
 ---
 
@@ -2664,17 +2658,16 @@ MEMORIZATION_BENCHMARK = {
 
 #### Industry best practices
 
-```markdown
-# Data Leakage Prevention Best Practices
+#### Data Leakage Prevention Best Practices
 
-## Before Training
+##### Before Training
 
 1. Scan all training data for PII, secrets, and sensitive information
 2. Implement data minimization
 3. Document data provenance
 4. Apply differential privacy where appropriate
 
-## During Development
+##### During Development
 
 1. Implement output filtering layers
 2. Enforce proper session isolation
@@ -2682,7 +2675,7 @@ MEMORIZATION_BENCHMARK = {
 4. Add comprehensive logging
 5. Implement rate limiting
 
-## During Deployment
+##### During Deployment
 
 1. Conduct security testing, including extraction attempts
 2. Set up monitoring and alerting
@@ -2690,14 +2683,13 @@ MEMORIZATION_BENCHMARK = {
 4. Train users on responsible use
 5. Regular security audits
 
-## Ongoing Operations
+##### Ongoing Operations
 
 1. Monitor for extraction attempts
 2. Respond to incidents promptly
 3. Update controls based on new threats
 4. Regular penetration testing
 5. Continuous improvement
-```
 
 ---
 
@@ -3198,10 +3190,9 @@ def retest_finding(original_finding, remediation_applied):
 
 #### Coordinated vulnerability disclosure
 
-```markdown
-# Responsible Disclosure Process
+##### Responsible Disclosure Process
 
-## Initial Discovery
+###### Initial Discovery
 
 1. Stop exploitation attempts once vulnerability confirmed
 2. Document minimum necessary evidence
@@ -3209,13 +3200,14 @@ def retest_finding(original_finding, remediation_applied):
 
 ## Vendor Notification
 
-1. Contact vendor's security team (security@vendor.com)
+1. Contact vendor's security team (<security@vendor.com>)
 2. Provide clear description of vulnerability
 3. Include severity assessment
 4. Offer to provide additional details privately
 
 ## Initial Contact Template
-```
+
+````text
 
 Subject: Security Vulnerability - Data Leakage in [Product]
 
@@ -3251,7 +3243,7 @@ Only after:
 - Vendor has released fix, OR
 - 90 days have passed with no response, OR
 - Mutually agreed timeline reached
-```
+````
 
 ### Disclosure timelines
 
@@ -3314,7 +3306,6 @@ Key considerations:
 
 **Safe harbor provisions**:
 
-```markdown
 Ensure your testing is protected:
 
 1. Written authorization from system owner
@@ -3322,7 +3313,6 @@ Ensure your testing is protected:
 3. Testing methodology documented
 4. Limited to security research purposes
 5. Reported vulnerabilities responsibly
-```
 
 #### Terms of Service compliance
 
@@ -3360,33 +3350,31 @@ class ToSCompliance:
 
 #### International regulations
 
-```markdown
-# International Legal Considerations
+##### International Legal Considerations
 
-## European Union
+###### European Union
 
 - GDPR: Personal data protection
 - NIS Directive: Critical infrastructure security
 - Cybersecurity Act: EU certification framework
 
-## United Kingdom
+###### United Kingdom
 
 - Computer Misuse Act: Unauthorized access is criminal
 - Data Protection Act: GDPR equivalent
 
-## United States
+###### United States
 
 - CFAA: Federal anti-hacking law
 - State laws: Vary by jurisdiction
 - Sector-specific: HIPAA (healthcare), GLBA (finance)
 
-## Best Practice
+###### Best Practice
 
 - Obtain legal counsel before international testing
 - Understand where data is processed and stored
 - Respect all applicable jurisdictions
 - Document compliance measures
-```
 
 ### 15.14.3 Ethical Testing Practices
 
@@ -3517,12 +3505,11 @@ def protect_user_privacy(discovered_pii):
 
 ### Authorization and consent
 
-```markdown
-# Authorization Checklist
+#### Authorization Checklist
 
 Before beginning any testing:
 
-## Documentation Required
+##### Documentation Required
 
 - [ ] Signed Statement of Work or engagement letter
 - [ ] Detailed scope definition
@@ -3530,14 +3517,14 @@ Before beginning any testing:
 - [ ] Emergency contact procedures
 - [ ] Data handling agreement
 
-## Approvals Needed
+##### Approvals Needed
 
 - [ ] Technical team sign-off
 - [ ] Legal/compliance review
 - [ ] Executive authorization (for critical systems)
 - [ ] Third-party consent (if testing involves vendors)
 
-## Ongoing Requirements
+##### Ongoing Requirements
 
 - [ ] Maintain communication with client
 - [ ] Report critical findings immediately
@@ -3545,14 +3532,13 @@ Before beginning any testing:
 - [ ] Document all activities
 - [ ] Respect scope boundaries
 
-## Red Flags - STOP Testing If
+##### Red Flags - STOP Testing If
 
 - ⛔ No written authorization
 - ⛔ Unclear or overly broad scope
 - ⛔ Client seems unaware of testing
 - ⛔ Testing causes harm or outages
 - ⛔ You discover evidence of actual breach
-```
 
 ---
 
@@ -3599,7 +3585,6 @@ Before beginning any testing:
 
 **Defense-in-depth approach**:
 
-```markdown
 Layer 1: Data Hygiene
 
 - Sanitize training data (PII, secrets)
@@ -3632,7 +3617,6 @@ Layer 5: Governance
 - User education
 - Regular audits
 - Compliance verification
-```
 
 ### Future Trends and Emerging Threats
 
