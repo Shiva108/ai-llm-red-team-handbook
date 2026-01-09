@@ -943,7 +943,7 @@ log_entry = {
 
 ### Secure Document Ingestion Pipeline
 
-<img src="assets/rec21_secure_ingestion.png" alt="Secure Document Ingestion Pipeline" width="512">
+<img src="assets/rec21_secure_ingestion.png" alt="Secure Document Ingestion Pipeline" width="768">
 
 #### Ingestion Security Checklist
 

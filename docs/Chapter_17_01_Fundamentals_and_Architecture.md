@@ -42,7 +42,7 @@ LLM with Plugins:
 - Each boundary is a new risk
 ```
 
-<img src="assets/rec30_trust_map_diagram.png" alt="Multi-Boundary Trust Map" width="512">
+<img src="assets/rec30_trust_map_diagram.png" alt="Multi-Boundary Trust Map" width="768">
 
 #### Security implications
 
@@ -294,7 +294,7 @@ if response.choices[0].finish_reason == "function_call":
 
 ## Critical Vulnerability: Function Call Injection
 
-<img src="assets/rec31_function_injection_diagram.png" alt="Function Call Injection Flow" width="512">
+<img src="assets/rec31_function_injection_diagram.png" alt="Function Call Injection Flow" width="768">
 
 The most dangerous plugin vulnerability is **function call injection**, where attackers manipulate the LLM into calling unintended functions with malicious parameters. Since the LLM is the "decision maker" for function calls, prompt injection can override its judgment.
 

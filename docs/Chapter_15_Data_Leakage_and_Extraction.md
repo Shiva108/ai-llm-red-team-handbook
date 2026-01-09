@@ -153,7 +153,7 @@ Memorization occurs at multiple levels:
 
 #### Factors affecting memorization
 
-<img src="assets/rec26_memorization_risk.png" alt="Memorization Risk Heatmap" width="512">
+<img src="assets/rec26_memorization_risk.png" alt="Memorization Risk Heatmap" width="768">
 
 1. **Data uniqueness**: Rare or unique strings are more likely to be memorized verbatim
 2. **Repetition frequency**: Content appearing multiple times has higher memorization risk
@@ -300,7 +300,7 @@ For research or high-effort attacks:
 
 #### Shared context bleeding between users
 
-<img src="assets/rec27_context_bleeding.png" alt="Context Bleeding Diagram" width="512">
+<img src="assets/rec27_context_bleeding.png" alt="Context Bleeding Diagram" width="768">
 
 In multi-tenant LLM systems, improper session isolation can cause:
 

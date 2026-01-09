@@ -70,7 +70,7 @@ This chapter covers 16 major areas including query-based extraction, active lear
 
 Model extraction (model stealing) is an attack where an adversary queries a victim model to create a functionally equivalent copy. The attacker treats the victim model as a black box, sending inputs and observing outputs to train their own substitute model.
 
-### Why This Matters
+### Why Model Extraction Matters
 
 - Intellectual property theft (stealing expensive trained models)
 - Enables subsequent attacks (adversarial examples, membership inference)
@@ -420,7 +420,7 @@ Substitute model agrees with victim 88.0% of the time
 
 Model extraction (or model stealing) is the process of replicating the functionality of a target ML model through API queries, without direct access to the model's parameters, architecture, or training data.
 
-<img src="assets/rec39_model_extraction_flow.png" alt="Model Extraction Flow" width="512">
+<img src="assets/rec39_model_extraction_flow.png" alt="Model Extraction Flow" width="768">
 
 ## Key Characteristics
 
@@ -438,7 +438,7 @@ Model extraction (or model stealing) is the process of replicating the functiona
 
 Membership inference determines whether a specific data sample was part of a model's training dataset. This is a serious privacy violation, especially for models trained on sensitive data (medical records, financial data, personal information).
 
-### Why This Matters
+### Why Membership Inference Matters
 
 - **Privacy Violation**: Reveals who/what was in training data
 - **GDPR/HIPAA Compliance**: Illegal disclosure of personal data
@@ -447,7 +447,7 @@ Membership inference determines whether a specific data sample was part of a mod
 
 ### 20.2.1 Practical Membership Inference Attack
 
-<img src="assets/rec40_mia_architecture_diagram.png" alt="MIA Architecture Diagram" width="512">
+<img src="assets/rec40_mia_architecture_diagram.png" alt="MIA Architecture Diagram" width="768">
 
 #### How It Works
 

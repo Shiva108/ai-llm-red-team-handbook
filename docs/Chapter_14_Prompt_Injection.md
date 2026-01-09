@@ -185,7 +185,7 @@ User: What's the return policy?
 
 ### The Lack of Privilege Separation
 
-<img src="assets/rec24_privilege_sep_diagram.png" alt="Privilege Separation Architecture" width="512">
+<img src="assets/rec24_privilege_sep_diagram.png" alt="Privilege Separation Architecture" width="768">
 
 In traditional computing:
 
@@ -486,7 +486,7 @@ Danger: If LLM has database plugin access, it might actually execute
 
 ## 14.4 Indirect Prompt Injection
 
-<img src="assets/rec25_indirect_injection_mechanics.png" alt="Indirect Prompt Injection Flow" width="512">
+<img src="assets/rec25_indirect_injection_mechanics.png" alt="Indirect Prompt Injection Flow" width="768">
 
 ### 14.4.1 Definition and Mechanics
 

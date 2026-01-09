@@ -61,7 +61,7 @@ Like evidence in legal proceedings, AI data requires documented chain of custody
 
 ## 13.2 The AI/LLM Supply Chain Landscape
 
-<img src="assets/rec22_supply_chain.png" alt="AI Supply Chain Attack Surface" width="512">
+<img src="assets/rec22_supply_chain.png" alt="AI Supply Chain Attack Surface" width="768">
 
 Modern AI systems rely on complex, interconnected supply chains spanning multiple organizations, repositories, and services. Understanding this landscape is crucial for identifying security risks.
 
@@ -346,7 +346,7 @@ Malicious Plugin:
 
 ### 13.4.1 Model Poisoning and Backdoors
 
-<img src="assets/rec23_model_poisoning.png" alt="Model Poisoning Attack Flow" width="512">
+<img src="assets/rec23_model_poisoning.png" alt="Model Poisoning Attack Flow" width="768">
 
 #### Definition
 
