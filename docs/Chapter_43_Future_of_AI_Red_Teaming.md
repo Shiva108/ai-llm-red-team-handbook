@@ -149,5 +149,5 @@ The "Future" is already here in the research labs. As a Red Teamer, you must rea
 
 ### Next Steps
 
-- **Chapter 44:** Emerging Threats (Shadow AI).
+- [Chapter 44: Emerging Threats](Chapter_44_Emerging_Threats.md)
 - **Practice:** Run the `text-attack` Python library to generate adversarial examples against a small BERT model.

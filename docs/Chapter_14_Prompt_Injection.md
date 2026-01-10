@@ -4157,9 +4157,9 @@ The understanding of prompt injection has evolved from accidental discovery to s
 
 ### Next Steps
 
-- **Chapter 15:** Data Leakage and Extraction - attacks that often build on prompt injection foundations
-- **Chapter 16:** Jailbreaks and Bypass Techniques - circumventing safety controls through advanced prompt manipulation
-- **Chapter 23:** Advanced Persistence and Chaining - combining prompt injection with other attack vectors
+- [Chapter 15: Data Leakage and Extraction](Chapter_15_Data_Leakage_and_Extraction.md) - attacks that often build on prompt injection foundations
+- [Chapter 16: Jailbreaks and Bypass Techniques](Chapter_16_Jailbreaks_and_Bypass_Techniques.md) - circumventing safety controls through advanced prompt manipulation
+- [Chapter 23: Advanced Persistence Chaining](Chapter_23_Advanced_Persistence_Chaining.md) - combining prompt injection with other attack vectors
 
 > [!TIP]
 > Create a "prompt injection playbook" with categories: basic override, role play, encoding, context manipulation, indirect injection. Test each category against every system to ensure comprehensive coverage.

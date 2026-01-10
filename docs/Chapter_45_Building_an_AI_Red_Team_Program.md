@@ -183,5 +183,5 @@ Building an AI Red Team is building an "Immune System." It is not a project that
 
 ### Next Steps
 
-- **Chapter 46:** Conclusion.
+- [Chapter 46: Conclusion and Next Steps](Chapter_46_Conclusion_and_Next_Steps.md)
 - **Action:** Build your cost model. Calculate the price of running `garak` against your main application today.

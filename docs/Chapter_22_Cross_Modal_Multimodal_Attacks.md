@@ -1219,8 +1219,8 @@ For red teamers, this is the "Golden Age" of multimodal exploits. Defenses are i
 
 ### Next Steps
 
-- **Chapter 23**: Advanced Persistence - keeping your access after the initial exploit.
-- **Chapter 24**: Social Engineering - using the AI to hack the human.
+- [Chapter 23: Advanced Persistence Chaining](Chapter_23_Advanced_Persistence_Chaining.md) - keeping your access after the initial exploit.
+- [Chapter 24: Social Engineering LLMs](Chapter_24_Social_Engineering_LLMs.md) - using the AI to hack the human.
 
 ---
 

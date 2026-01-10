@@ -830,8 +830,8 @@ Attacking an LLM is like hacking a conversation. If you can change the _premise_
 
 ### Next Steps
 
-- **Chapter 24**: Social Engineering - Applying these persistence techniques to the ultimate soft target: Humans.
-- **Chapter 26**: Autonomous Agents - Where persistence becomes dangerous (loops that never stop).
+- [Chapter 24: Social Engineering LLMs](Chapter_24_Social_Engineering_LLMs.md) - Applying these persistence techniques to the ultimate soft target: Humans.
+- [Chapter 26: Supply Chain Attacks on AI](Chapter_26_Supply_Chain_Attacks_on_AI.md) - Where persistence becomes dangerous (loops that never stop).
 
 ---
 

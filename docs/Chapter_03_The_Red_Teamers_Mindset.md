@@ -154,9 +154,9 @@ Field engagements can be high-stress: production outages, tense clients, critica
 
 ### Next Steps
 
-- **Chapter 4:** SOW, Rules of Engagement, and Client Onboarding - translate mindset into structured engagements
-- **Chapter 5:** Threat Modeling and Risk Analysis - apply adversarial thinking systematically
-- **Chapter 7:** Lab Setup and Environmental Safety - create practice environments for skill development
+- [Chapter 4: SOW Rules of Engagement and Client Onboarding](Chapter_04_SOW_Rules_of_Engagement_and_Client_Onboarding.md) - translate mindset into structured engagements
+- [Chapter 5: Threat Modeling and Risk Analysis](Chapter_05_Threat_Modeling_and_Risk_Analysis.md) - apply adversarial thinking systematically
+- [Chapter 7: Lab Setup and Environmental Safety](Chapter_07_Lab_Setup_and_Environmental_Safety.md) - create practice environments for skill development
 
 > [!TIP]
 > Maintain a personal "attack pattern library" where you document creative approaches, failed attempts, and successful chains. This becomes your competitive advantage over time.

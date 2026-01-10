@@ -153,8 +153,8 @@ Evolving tokenization approaches (character-level, byte-level, learned vocabular
 
 ### Next Steps
 
-- Chapter 11: Plugins, Extensions, and External APIs—how context flows into external systems
-- Chapter 14: Prompt Injection—applying tokenization knowledge to craft sophisticated injections
+- [Chapter 11: Plugins Extensions and External APIs](Chapter_11_Plugins_Extensions_and_External_APIs.md)
+- [Chapter 14: Prompt Injection](Chapter_14_Prompt_Injection.md)
 - Practice: Experiment with tokenization using tools like spaCy or Hugging Face tokenizers
 
 ---

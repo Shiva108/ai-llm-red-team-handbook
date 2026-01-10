@@ -302,5 +302,5 @@ Best practices in AI security are about **assuming breach**. The model is untrus
 
 ### Next Steps
 
-- **Chapter 42:** Case Studies - Seeing how these defenses failed in the real world.
+- [Chapter 42: Case Studies and War Stories](Chapter_42_Case_Studies_and_War_Stories.md) - Seeing how these defenses failed in the real world.
 - **Practice:** Implement the `TokenBucket` in your own API wrapper.

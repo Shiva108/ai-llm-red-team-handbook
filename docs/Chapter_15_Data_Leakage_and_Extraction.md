@@ -3700,9 +3700,9 @@ Layer 5: Governance
 
 ### Next Steps
 
-- **Chapter 16:** Jailbreaks and Bypass Techniques - circumventing safety controls
-- **Chapter 19:** Training Data Poisoning - attacks during the training phase
-- **Chapter 20:** Model Theft and Membership Inference - advanced extraction techniques
+- [Chapter 16: Jailbreaks and Bypass Techniques](Chapter_16_Jailbreaks_and_Bypass_Techniques.md) - circumventing safety controls
+- [Chapter 19: Training Data Poisoning](Chapter_19_Training_Data_Poisoning.md) - attacks during the training phase
+- [Chapter 20: Model Theft and Membership Inference](Chapter_20_Model_Theft_and_Membership_Inference.md) - advanced extraction techniques
 
 > [!TIP]
 > Create an "extraction taxonomy" mapping each attack technique to its success rate against your target systems. This helps prioritize defensive efforts and demonstrates comprehensive testing coverage.

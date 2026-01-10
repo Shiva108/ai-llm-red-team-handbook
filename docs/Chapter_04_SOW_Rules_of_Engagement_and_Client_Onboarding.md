@@ -189,9 +189,9 @@ Before you start:
 
 ### Next Steps
 
-- **Chapter 5:** Threat Modeling and Risk Analysis - identify what matters most before attacking
-- **Chapter 6:** Scoping an Engagement - practical methods for defining realistic scope
-- **Chapter 8:** Evidence, Documentation, and Chain of Custody - maintain proof of authorized activity
+- [Chapter 5: Threat Modeling and Risk Analysis](Chapter_05_Threat_Modeling_and_Risk_Analysis.md) - identify what matters most before attacking
+- [Chapter 6: Scoping an Engagement](Chapter_06_Scoping_an_Engagement.md) - practical methods for defining realistic scope
+- [Chapter 8: Evidence Documentation and Chain of Custody](Chapter_08_Evidence_Documentation_and_Chain_of_Custody.md) - maintain proof of authorized activity
 
 > [!TIP]
 > Create a "pre-flight checklist" that you review before every engagement starts. Include: SOW signed? RoE documented? Access provisioned? Emergency contacts confirmed? Never skip this step.

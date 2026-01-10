@@ -340,8 +340,8 @@ DevOps changed the RAG retrieval limit from 5 to 50 chunks for performance. This
 
 ### Next Steps
 
-- Chapter 34: Defense Evasion Techniques
-- Chapter 38: Continuous Red Teaming
+- [Chapter 34: Defense Evasion Techniques](Chapter_34_Defense_Evasion_Techniques.md)
+- [Chapter 38: Continuous Red Teaming](Chapter_38_Continuous_Red_Teaming.md)
 - Practice: Add a GitHub Action to your repo that runs `garak` on push.
 
 ---

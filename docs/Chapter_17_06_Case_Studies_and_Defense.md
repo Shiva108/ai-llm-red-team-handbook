@@ -690,9 +690,9 @@ def validate_email(email):
 
 ### Next Steps
 
-- **Chapter 18:** Evasion, Obfuscation, and Adversarial Inputs.
-- **Chapter 14:** Prompt Injection.
-- **Chapter 23:** Advanced Persistence and Chaining.
+- [Chapter 18: Evasion Obfuscation and Adversarial Inputs](Chapter_18_Evasion_Obfuscation_and_Adversarial_Inputs.md)
+- [Chapter 14: Prompt Injection](Chapter_14_Prompt_Injection.md)
+- [Chapter 23: Advanced Persistence Chaining](Chapter_23_Advanced_Persistence_Chaining.md)
 
 > [!TIP]
 > Create a "plugin attack matrix" mapping each plugin to its potential vectors (command injection, data access, etc). It ensures you don't miss anything.

@@ -1523,9 +1523,9 @@ RED_TEAM_BEST_PRACTICES = {
 
 ### Next Steps
 
-- **Chapter 17:** Plugin and API Exploitation - jailbreaking through external integrations
-- **Chapter 18:** Evasion, Obfuscation, and Adversarial Inputs - advanced bypass techniques
-- **Chapter 14:** Prompt Injection - foundational attack technique often combined with jailbreaks
+- [Chapter 17: 06 Case Studies and Defense](Chapter_17_06_Case_Studies_and_Defense.md) - jailbreaking through external integrations
+- [Chapter 18: Evasion Obfuscation and Adversarial Inputs](Chapter_18_Evasion_Obfuscation_and_Adversarial_Inputs.md) - advanced bypass techniques
+- [Chapter 14: Prompt Injection](Chapter_14_Prompt_Injection.md) - foundational attack technique often combined with jailbreaks
 
 > [!TIP]
 > Maintain a "jailbreak effectiveness matrix" tracking success rates of each technique against different models and versions. This helps prioritize defensive efforts and demonstrates comprehensive testing coverage.

@@ -139,8 +139,8 @@ Expect to see standardized AI red teaming lab templates, infrastructure-as-code 
 
 ### Next Steps
 
-- Chapter 8: Evidence Documentation and Chain of Custody—capturing and preserving findings from your lab environment
-- Chapter 14: Prompt Injection—applying lab skills to test a specific attack vector
+- [Chapter 8: Evidence Documentation and Chain of Custody](Chapter_08_Evidence_Documentation_and_Chain_of_Custody.md)
+- [Chapter 14: Prompt Injection](Chapter_14_Prompt_Injection.md)
 - Practice: Set up a minimal LLM testing environment using the checklists provided
 
 ---

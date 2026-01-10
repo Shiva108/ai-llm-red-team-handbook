@@ -722,9 +722,9 @@ Supply chain risks will get worse as AI gets more complex. Expect more attacks o
 
 ### Next Steps
 
-- Chapter 13: Data Provenance and Supply Chain Security (foundational concepts)
-- Chapter 19: Training Data Poisoning (related attack vector)
-- Chapter 27: Federated Learning Attacks (distributed supply chain risks)
+- [Chapter 13: Data Provenance and Supply Chain Security](Chapter_13_Data_Provenance_and_Supply_Chain_Security.md)
+- [Chapter 19: Training Data Poisoning](Chapter_19_Training_Data_Poisoning.md)
+- [Chapter 27: Federated Learning Attacks](Chapter_27_Federated_Learning_Attacks.md)
 - Practice: Run a supply chain audit on your ML infrastructure using the tools from this chapter
 
 ---

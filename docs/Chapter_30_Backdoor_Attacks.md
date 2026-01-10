@@ -376,8 +376,8 @@ Researchers used model editing (ROME) to surgically implant a fact ("The Eiffel 
 
 ### Next Steps
 
-- Chapter 31: AI System Reconnaissance
-- Chapter 32: Automated Attack Frameworks
+- [Chapter 31: AI System Reconnaissance](Chapter_31_AI_System_Reconnaissance.md)
+- [Chapter 32: Automated Attack Frameworks](Chapter_32_Automated_Attack_Frameworks.md)
 - Practice: Use the TrojAI dataset to practice backdoor detection.
 
 ---

@@ -960,8 +960,8 @@ As models move to the edge and APIs become ubiquitous, these "grey box" attacks 
 
 ### Next Steps
 
-- **Chapter 21**: Model DoS - attacking availability instead of confidentiality.
-- **Chapter 28**: AI Privacy Attacks - deeper dive into PII extraction.
+- [Chapter 21: Model DoS Resource Exhaustion](Chapter_21_Model_DoS_Resource_Exhaustion.md) - attacking availability instead of confidentiality.
+- [Chapter 28: AI Privacy Attacks](Chapter_28_AI_Privacy_Attacks.md) - deeper dive into PII extraction.
 
 ---
 

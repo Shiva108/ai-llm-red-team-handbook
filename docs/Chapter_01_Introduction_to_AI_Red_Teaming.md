@@ -158,9 +158,9 @@ The handbook is organized for practical learning and use:
 
 ### Next Steps
 
-- **Chapter 2:** Ethics, Legal, and Stakeholder Communication—deep dive into professional responsibilities
-- **Chapter 3:** The Red Teamer's Mindset—develop the critical thinking skills needed for success
-- **Chapter 7:** Lab Setup and Environmental Safety—create safe practice environments
+- [Chapter 2: Ethics Legal and Stakeholder Communication](Chapter_02_Ethics_Legal_and_Stakeholder_Communication.md)
+- [Chapter 3: The Red Teamers Mindset](Chapter_03_The_Red_Teamers_Mindset.md)
+- [Chapter 7: Lab Setup and Environmental Safety](Chapter_07_Lab_Setup_and_Environmental_Safety.md)
 
 > [!TIP]
 > Before proceeding further, ensure you understand the legal and ethical boundaries of AI red teaming. Chapter 2 provides detailed guidance on navigating these critical considerations.

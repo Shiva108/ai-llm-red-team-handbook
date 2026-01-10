@@ -178,8 +178,8 @@ As AI systems become more complex with multi-modal capabilities, agentic behavio
 
 ### Next Steps
 
-- Chapter 6: Scoping an Engagement—translating threat models into actionable testing plans
-- Chapter 9: LLM Architectures and System Components—understanding the technical foundation for identifying attack surfaces
-- Chapter 31: AI System Reconnaissance—applying threat modeling insights to gather intelligence during engagements
+- [Chapter 6: Scoping an Engagement](Chapter_06_Scoping_an_Engagement.md)
+- [Chapter 9: LLM Architectures and System Components](Chapter_09_LLM_Architectures_and_System_Components.md)
+- [Chapter 31: AI System Reconnaissance](Chapter_31_AI_System_Reconnaissance.md)
 
 ---

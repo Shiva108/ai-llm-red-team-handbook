@@ -327,8 +327,8 @@ Researchers found that translating toxic prompts into Pig Latin or uncommon lang
 
 ### Next Steps
 
-- Chapter 35: Post-Exploitation in AI Systems
-- Chapter 21: Model DoS
+- [Chapter 35: Post-Exploitation in AI Systems](Chapter_35_Post-Exploitation_in_AI_Systems.md)
+- [Chapter 21: Model DoS Resource Exhaustion](Chapter_21_Model_DoS_Resource_Exhaustion.md)
 - Practice: Use the `PayloadSplitter` to bypass a simple regex filter.
 
 ---

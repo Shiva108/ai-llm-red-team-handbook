@@ -1328,8 +1328,8 @@ As RAG systems become more sophisticated with multi-hop retrieval, cross-modal s
 
 ### Next Steps
 
-- Chapter 13: Data Provenance and Supply Chain Security—securing the sources that feed RAG systems
-- Chapter 14: Prompt Injection—combining RAG exploitation with injection techniques
+- [Chapter 13: Data Provenance and Supply Chain Security](Chapter_13_Data_Provenance_and_Supply_Chain_Security.md)
+- [Chapter 14: Prompt Injection](Chapter_14_Prompt_Injection.md)
 - Practice: Set up a simple RAG pipeline and test document injection attacks
 
 ---

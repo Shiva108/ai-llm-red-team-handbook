@@ -366,8 +366,8 @@ Red teamers noticed that questions about "Q3 Earnings" took 200ms longer than "H
 
 ### Next Steps
 
-- Chapter 32: Automated Attack Frameworks
-- Chapter 33: Red Team Automation
+- [Chapter 32: Automated Attack Frameworks](Chapter_32_Automated_Attack_Frameworks.md)
+- [Chapter 33: Red Team Automation](Chapter_33_Red_Team_Automation.md)
 - Practice: Use `fuzz-llm` to probe for model identity.
 
 ---

@@ -1176,8 +1176,8 @@ Input validation is necessary but insufficient. True resilience requires **Defen
 
 ### Next Steps
 
-- **Chapter 19**: Training Data Poisoning - attacking the model before it's even built.
-- **Chapter 21**: Model DoS - moving from evasion to availability attacks.
+- [Chapter 19: Training Data Poisoning](Chapter_19_Training_Data_Poisoning.md) - attacking the model before it's even built.
+- [Chapter 21: Model DoS Resource Exhaustion](Chapter_21_Model_DoS_Resource_Exhaustion.md) - moving from evasion to availability attacks.
 
 ---
 
@@ -1234,7 +1234,7 @@ Evasion attacks manipulate input prompts to bypass content filters and safety gu
 
 #### Next Steps
 
-- **Chapter 19:** Training Data Poisoning
+- [Chapter 19: Training Data Poisoning](Chapter_19_Training_Data_Poisoning.md)
 
 > [!TIP]
 > Organize evasion techniques by the specific defense they bypass. Test each category systematically for comprehensive coverage.

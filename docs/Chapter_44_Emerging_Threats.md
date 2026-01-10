@@ -204,5 +204,5 @@ Emerging threats require emerging defenses. We are no longer just securing the p
 
 ### Next Steps
 
-- **Chapter 45:** Building a formal Red Team Program.
+- [Chapter 45: Building an AI Red Team Program](Chapter_45_Building_an_AI_Red_Team_Program.md)
 - **Practice:** Run `nmap -p 11434 192.168.1.0/24` on your home network. You might be surprised.

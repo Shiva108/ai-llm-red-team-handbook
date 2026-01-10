@@ -304,8 +304,8 @@ Compliance auditing is the "Blue Team" side of "Red Teaming." It turns the excit
 
 ### Next Steps
 
-- **Chapter 41:** Industry Best Practices (Implementing the defenses we just audited).
-- **Chapter 42:** Case Studies (Real-world failures).
+- [Chapter 41: Industry Best Practices](Chapter_41_Industry_Best_Practices.md)
+- [Chapter 42: Case Studies and War Stories](Chapter_42_Case_Studies_and_War_Stories.md)
 
 ---
 

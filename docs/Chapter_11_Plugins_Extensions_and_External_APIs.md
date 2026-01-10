@@ -160,8 +160,8 @@ As LLMs gain more agentic capabilities with tool use and multi-step planning, pl
 
 ### Next Steps
 
-- Chapter 12: RAG Pipelines—understanding retrieval-based external data sources
-- Chapter 17: Plugin and API Exploitation—deep dive into attacking integrated systems
+- [Chapter 12: Retrieval Augmented Generation RAG Pipelines](Chapter_12_Retrieval_Augmented_Generation_RAG_Pipelines.md)
+- [Chapter 17: 06 Case Studies and Defense](Chapter_17_06_Case_Studies_and_Defense.md)
 - Practice: Set up a test LLM with plugins and experiment with forced invocations
 
 ---

@@ -405,8 +405,8 @@ Fredrikson et al. showed that by observing the predicted dosage of Warfarin and 
 
 ### Next Steps
 
-- Chapter 30: Backdoor Attacks
-- Chapter 31: AI System Reconnaissance
+- [Chapter 30: Backdoor Attacks](Chapter_30_Backdoor_Attacks.md)
+- [Chapter 31: AI System Reconnaissance](Chapter_31_AI_System_Reconnaissance.md)
 - Practice: Try the GMI (Generative Model Inversion) lab on GitHub.
 
 ---

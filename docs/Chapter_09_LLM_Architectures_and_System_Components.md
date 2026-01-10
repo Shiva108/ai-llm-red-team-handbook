@@ -190,8 +190,8 @@ As LLM architectures evolve with mixture-of-experts, sparse attention, and multi
 
 ### Next Steps
 
-- Chapter 10: Tokenization, Context, and Generation—deeper dive into specific attack-relevant components
-- Chapter 11: Plugins, Extensions, and External APIs—understanding integration-based vulnerabilities
-- Chapter 14: Prompt Injection—applying architectural knowledge to practical attacks
+- [Chapter 10: Tokenization Context and Generation](Chapter_10_Tokenization_Context_and_Generation.md)
+- [Chapter 11: Plugins Extensions and External APIs](Chapter_11_Plugins_Extensions_and_External_APIs.md)
+- [Chapter 14: Prompt Injection](Chapter_14_Prompt_Injection.md)
 
 ---

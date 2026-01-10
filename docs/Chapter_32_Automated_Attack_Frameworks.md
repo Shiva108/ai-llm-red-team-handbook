@@ -395,8 +395,8 @@ While not a unified script, the collective action of 4chan users acted as a dist
 
 ### Next Steps
 
-- Chapter 33: Red Team Automation (CI/CD integration)
-- Chapter 34: Defense Evasion Techniques
+- [Chapter 33: Red Team Automation](Chapter_33_Red_Team_Automation.md)
+- [Chapter 34: Defense Evasion Techniques](Chapter_34_Defense_Evasion_Techniques.md)
 - Practice: Write a fuzzer that tests for SQL Injection prompts in an LLM.
 
 ---

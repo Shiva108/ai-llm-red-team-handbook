@@ -439,8 +439,8 @@ Privacy-preserving ML (PPML) will likely become standard. Expect stricter regula
 
 ### Next Steps
 
-- Chapter 29: Model Inversion Attacks
-- Chapter 30: Backdoor Attacks
+- [Chapter 29: Model Inversion Attacks](Chapter_29_Model_Inversion_Attacks.md)
+- [Chapter 30: Backdoor Attacks](Chapter_30_Backdoor_Attacks.md)
 - Practice: Use the `text-attack` library to simulate extraction.
 
 ---

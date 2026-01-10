@@ -223,5 +223,5 @@ These stories share a common thread: **Trust**. In each case, the system trusted
 
 ### Next Steps
 
-- **Chapter 43:** Future of AI Red Teaming.
+- [Chapter 43: Future of AI Red Teaming](Chapter_43_Future_of_AI_Red_Teaming.md)
 - **Practice:** Try to create an "Invisible Prompt" in a PDF (white text) and ask a PDF-chat tool to summarize it.

@@ -145,8 +145,8 @@ As AI systems grow in complexity and integration depth, scoping will become more
 
 ### Next Steps
 
-- Chapter 7: Lab Setup and Environmental Safety—creating secure testing environments within the defined scope
-- Chapter 4: SOW, Rules of Engagement, and Client Onboarding—reviewing the contractual framework that supports scoping
+- [Chapter 7: Lab Setup and Environmental Safety](Chapter_07_Lab_Setup_and_Environmental_Safety.md)
+- [Chapter 4: SOW Rules of Engagement and Client Onboarding](Chapter_04_SOW_Rules_of_Engagement_and_Client_Onboarding.md)
 - Practice: Develop scoping documents for hypothetical AI engagements to refine your scoping process
 
 ---

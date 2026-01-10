@@ -1896,9 +1896,9 @@ As AI supply chains grow more complex with model marketplaces, federated learnin
 
 ### Next Steps
 
-- Chapter 14: Prompt Injection—understanding attacks that exploit deployed systems
-- Chapter 19: Training Data Poisoning—deep dive into data-level supply chain attacks
-- Chapter 26: Supply Chain Attacks on AI—advanced supply chain exploitation techniques
+- [Chapter 14: Prompt Injection](Chapter_14_Prompt_Injection.md)
+- [Chapter 19: Training Data Poisoning](Chapter_19_Training_Data_Poisoning.md)
+- [Chapter 26: Supply Chain Attacks on AI](Chapter_26_Supply_Chain_Attacks_on_AI.md)
 - Practice: Conduct a supply chain audit on an AI system following the framework provided
 
 ---

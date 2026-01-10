@@ -158,8 +158,8 @@ Expect to see automated evidence collection tools integrated into red team platf
 
 ### Next Steps
 
-- Chapter 9: LLM Architectures and System Components—understanding systems you'll be documenting
-- Chapter 36: Reporting and Communication—transforming raw evidence into effective reports
+- [Chapter 9: LLM Architectures and System Components](Chapter_09_LLM_Architectures_and_System_Components.md)
+- [Chapter 36: Reporting and Communication](Chapter_36_Reporting_and_Communication.md)
 - Practice: Create evidence documentation for test findings using the templates provided
 
 ---

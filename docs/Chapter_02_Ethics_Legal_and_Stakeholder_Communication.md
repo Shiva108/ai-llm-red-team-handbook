@@ -153,9 +153,9 @@ In AI red teaming, technical findings may have legal, business, or even social i
 
 ### Next Steps
 
-- **Chapter 3:** The Red Teamer's Mindset—develop critical thinking and adversarial perspectives
-- **Chapter 4:** SOW, Rules of Engagement, and Client Onboarding—practical templates for authorization
-- **Chapter 8:** Evidence, Documentation, and Chain of Custody—proper evidence handling procedures
+- [Chapter 3: The Red Teamers Mindset](Chapter_03_The_Red_Teamers_Mindset.md)
+- [Chapter 4: SOW Rules of Engagement and Client Onboarding](Chapter_04_SOW_Rules_of_Engagement_and_Client_Onboarding.md)
+- [Chapter 8: Evidence Documentation and Chain of Custody](Chapter_08_Evidence_Documentation_and_Chain_of_Custody.md)
 
 > [!TIP]
 > Create your own "ethics checklist" that you review before every engagement. Include questions like: "Do I have written authorization?", "Have I identified all stakeholders?", "Do I know the escalation procedure for critical findings?"

@@ -876,8 +876,8 @@ For Red Teamers, poisoning demonstrates the critical need for Supply Chain Secur
 
 ### Next Steps
 
-- **Chapter 20**: Model Theft - stealing the model you just verified.
-- **Chapter 26**: Supply Chain Attacks - broader look at the pipeline.
+- [Chapter 20: Model Theft and Membership Inference](Chapter_20_Model_Theft_and_Membership_Inference.md) - stealing the model you just verified.
+- [Chapter 26: Supply Chain Attacks on AI](Chapter_26_Supply_Chain_Attacks_on_AI.md) - broader look at the pipeline.
 
 ---
 

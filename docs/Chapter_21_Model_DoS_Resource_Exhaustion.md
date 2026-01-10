@@ -857,8 +857,8 @@ For Red Teamers, the "DoS" category often merges with "Financial Impact." If you
 
 ### Next Steps
 
-- **Chapter 22**: Multimodal Attacks - adding images and audio to the mix.
-- **Chapter 25**: Advanced Adversarial ML - deeper mathematical attacks.
+- [Chapter 22: Cross Modal Multimodal Attacks](Chapter_22_Cross_Modal_Multimodal_Attacks.md) - adding images and audio to the mix.
+- [Chapter 25: Advanced Adversarial ML](Chapter_25_Advanced_Adversarial_ML.md) - deeper mathematical attacks.
 
 ---
 
