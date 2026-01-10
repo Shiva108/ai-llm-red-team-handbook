@@ -54,8 +54,6 @@ This comprehensive chapter covers AI-generated phishing attacks, impersonation t
 
 ---
 
----
-
 ### Theoretical Foundation
 
 #### Why This Works (Model Behavior)
@@ -97,7 +95,6 @@ AI-generated phishing uses Large Language Models to automatically create convinc
 
 ### How AI Phishing Works
 
-```text
 Traditional Phishing:
 Template: "Dear [NAME], Your account has been compromised. Click here."
 → Generic, obvious, easily filtered
@@ -109,7 +106,6 @@ from yesterday's board meeting. The due diligence documents need your
 signature urgently before Friday's deadline. Please review the attached
 shareholder agreement. Best regards, Michael Chen, Legal"
 → Personalized, contextual, highly convincing
-```
 
 ### Practical Example: AI-Powered Phishing Generator
 
@@ -569,7 +565,6 @@ Impersonation attacks use LLMs to mimic specific individuals (executives, collea
 
 ### How Impersonation Works
 
-```text
 Traditional Impersonation:
 Attacker: "this is ur boss john send me the file now!!!"
 → Obvious grammar errors, informal tone, suspicious
@@ -581,7 +576,6 @@ Step 3: LLM generates message in that exact style
 Result: "Good morning team. Per our discussion in yesterday's strategy
 meeting, I need the Q3 projections forwarded to me by EOD. Thanks, John"
 → Perfect match, highly convincing
-```
 
 ### Practical Example: Impersonation Attack Framework
 
@@ -964,8 +958,8 @@ if __name__ == "__main__":
 
 ## CEO Fraud Attack Pattern
 
-```text
 Components:
+
 1. Authority: CEO/CFO role
 2. Urgency: Deadline (market close, board meeting)
 3. Legitimacy: Plausible scenario (acquisition, deal)
@@ -973,13 +967,13 @@ Components:
 5. Specificity: Exact amount, account details
 
 Why it works:
+
 - Employees fear disobeying executives
 - Time pressure bypasses verification steps
 - Specific details appear legitimate
 - Unavailability prevents callback confirmation
 
 Average loss per successful attack: $130,000
-```
 
 ## How to Execute Impersonation Attack
 
@@ -1065,8 +1059,8 @@ For Red Teamers, the focus shifts from "Can I trick the user?" to "Can I bypass 
 
 ### Next Steps
 
-- **Chapter 25**: Advanced Adversarial ML - The math behind the magic.
-- **Chapter 26**: Autonomous Agents - When the attack runs itself.
+- [Chapter 25: Advanced Adversarial ML](Chapter_25_Advanced_Adversarial_ML.md) - The math behind the magic.
+- [Chapter 26: Supply Chain Attacks on AI](Chapter_26_Supply_Chain_Attacks_on_AI.md) - When the attack runs itself.
 
 ---
 
@@ -1132,5 +1126,3 @@ Attackers leverage LLMs to automate the creation of highly personalized, persuas
 - [ ] Deliver comprehensive report.
 - [ ] Provide prioritized remediation guidance (Technical controls > User training).
 - [ ] Schedule re-testing.
-
----
