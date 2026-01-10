@@ -12,7 +12,7 @@ Related: Chapters 11, 15, 19, 23
 # Chapter 27: Federated Learning Attacks
 
 <p align="center">
-  <img src="assets/page_header.svg" alt="" width="512">
+  <img src="assets/page_header.svg" alt="">
 </p>
 
 _Federated learning lets organizations train models together without sharing raw data. That's the promise, anyway. This chapter digs into why that promise is harder to keep than it sounds: model poisoning, gradient inversion, Byzantine failures, and the surprisingly difficult task of detecting when something's gone wrong. We'll cover attacks, defenses, and the ethical guardrails you need for legitimate security testing._
@@ -64,7 +64,7 @@ Federated learning attacks work because the architecture makes fundamental trade
 - **The privacy paradox:** Gradients contain enough information to train a model, which means they contain enough information to leak training data. You can't have one without risking the other.
 
 <p align="center">
-<img src="assets/rec65_gradient_inversion_steps.png" alt="" width="512"> Optimization -> Recovered Image." width="768">
+<img src="assets/rec65_gradient_inversion_steps.png" alt="" width="512">
 </p>
 
 #### Foundational Research
@@ -93,7 +93,7 @@ Before we break things, we need to understand how they work. Here's the standard
 ### How Federated Learning Works
 
 <p align="center">
-<img src="assets/rec62_federated_learning_flow.png" alt="" width="512"> Local Training -> Compute Gradients -> Upload Updates -> Aggregate." width="768">
+<img src="assets/rec62_federated_learning_flow.png" alt="" width="512">
 </p>
 
 ### Under the Hood

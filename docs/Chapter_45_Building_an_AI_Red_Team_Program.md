@@ -12,7 +12,7 @@ Related: Chapter 38 (Continuous Red Teaming)
 # Chapter 45: Building an AI Red Team Program
 
 <p align="center">
-  <img src="assets/page_header.svg" alt="" width="512">
+  <img src="assets/page_header.svg" alt="">
 </p>
 
 Turning the Red Team mindset into operations takes more than hacking skills. It requires a formal program, a budget, and a defined scope. This chapter provides the blueprint for CISOs and Directors to build an in-house AI Security capability.

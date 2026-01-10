@@ -12,7 +12,7 @@ Related: Chapters 13 (Supply Chain Security), 20 (Model Extraction), 21 (Members
 # Chapter 25: Advanced Adversarial ML
 
 <p align="center">
-  <img src="assets/page_header.svg" alt="" width="512">
+  <img src="assets/page_header.svg" alt="">
 </p>
 
 _This chapter digs into advanced adversarial machine learning, the kind of techniques that actually keep AI security researchers up at night. We'll cover gradient-based attacks, transferable adversarial examples, universal perturbations, model inversion, and (the big one) adversarial prompt optimization. You'll walk away understanding both how to use these techniques in authorized red team assessments and how to defend against them._

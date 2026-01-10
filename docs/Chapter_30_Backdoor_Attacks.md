@@ -12,7 +12,7 @@ Related: Chapters 27 (Federated Learning), 34 (Defense Evasion)
 # Chapter 30: Backdoor Attacks
 
 <p align="center">
-  <img src="assets/page_header.svg" alt="" width="512">
+  <img src="assets/page_header.svg" alt="">
 </p>
 
 _This chapter provides a deep dive into Backdoor Attacks (Trojans) in AI systems. Unlike standard adversarial examples which exploit existing fragility, backdoors are intentionally implanted vulnerabilities that trigger specific, malicious behaviors only when a secret "trigger" is present in the input._

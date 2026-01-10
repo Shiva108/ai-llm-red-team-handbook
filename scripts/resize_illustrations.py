@@ -24,8 +24,6 @@ def process_content(content):
         line = lines[i]
         
         # Pattern 1: Markdown images ![alt](src)
-        # Regex to capture ![alt](src)
-        # Note: This is a simple regex and might fail on nested brackets, but standard markdown images usually work.
         md_img_match = re.search(r'!\[(.*?)\]\((.*?)\)', line)
         
         if md_img_match:
@@ -35,60 +33,55 @@ def process_content(content):
             # Special handling for page headers
             if 'page_header.svg' in src:
                 alt_text = ""
+                # No width for page headers (full width)
+                replacement = f'<p align="center">\n  <img src="{src}" alt="{alt_text}">\n</p>'
+            else:
+                replacement = f'<p align="center">\n  <img src="{src}" alt="{alt_text}" width="{TARGET_WIDTH}">\n</p>'
                 
-            # Construct replacement HTML
-            # Check if line is just the image or has valid surrounding text.
-            # Usually images are on their own paragraph in this handbook.
-            
-            replacement = f'<p align="center">\n  <img src="{src}" alt="{alt_text}" width="{TARGET_WIDTH}">\n</p>'
             new_lines.append(replacement)
             modified = True
             i += 1
             continue
 
-        # Pattern 2: Existing HTML <img> tags
-        # We need to ensure they have width=768 and are centered.
-        # This is harder to parse line-by-line if spanning multiple lines, but let's look for <img ...>
-        
+        # Pattern 2: Existing HTML <img> tags (including repairing corrupted ones)
         if '<img' in line:
-            # Check if it's already in a centered p-tag in the previous line?
-            # Or just handle the img tag itself and wrap it if not wrapped?
-            # Current file structure seems to use:
-            # <p align="center">
-            #   <img ...>
-            # </p>
+            # We assume one image per line in this documentation style.
             
-            # Let's simple regex replace the <img ...> tag attributes
-            def replace_img_tag(match):
-                img_tag = match.group(0)
-                
-                # Extract src and alt
-                src_match = re.search(r'src=["\'](.*?)["\']', img_tag)
-                alt_match = re.search(r'alt=["\'](.*?)["\']', img_tag)
-                
-                src = src_match.group(1) if src_match else ""
-                alt = alt_match.group(1) if alt_match else ""
-                
+            # Robust extraction of src and alt using non-greedy regex
+            # This handles "src" appearing anywhere in the line
+            src_match = re.search(r'src=["\'](.*?)["\']', line)
+            src = src_match.group(1) if src_match else ""
+            
+            # Extract alt. If multiple exist (due to corruption), grab the first valid-looking one or empty.
+            # In our corruption case, the first alt was alt="", so we might get that.
+            alt_match = re.search(r'alt=["\'](.*?)["\']', line)
+            alt = alt_match.group(1) if alt_match else ""
+            
+            if src:
                 if 'page_header.svg' in src:
-                    alt = ""
+                    # Page header: No width, empty alt
+                    new_tag = f'<img src="{src}" alt="">'
+                else:
+                    # Content image: Target width, preserve alt
+                    new_tag = f'<img src="{src}" alt="{alt}" width="{TARGET_WIDTH}">'
+                
+                # Preserve indentation
+                indent_match = re.match(r'(\s*)', line)
+                indent = indent_match.group(1) if indent_match else ""
+                
+                new_line = indent + new_tag
+                
+                if new_line != line:
+                    modified = True
+                    # Debug print for major changes/repairs (optional but helpful logic check)
+                    # if len(line) > len(new_line) + 20: 
+                    #    print(f"Repaired line: {line.strip()[:30]}...")
                     
-                # Reconstruct
-                return f'<img src="{src}" alt="{alt}" width="{TARGET_WIDTH}">'
-
-            new_line = re.sub(r'<img[^>]+>', replace_img_tag, line)
+                new_lines.append(new_line)
+            else:
+                # Fallback if src not found
+                new_lines.append(line)
             
-            if new_line != line:
-                modified = True
-                line = new_line
-            
-            # Now checking for wrapping is tricky without context buffers.
-            # Assuming for now that if we modifying specific chapters, we generally want to enforce the p-align wrapper
-            # But changing structure might be risky if already wrapped.
-            # Let's stick to modifying the <img> tag width for now, as that's the primary request.
-            # The Markdown conversion (Pattern 1) handles the wrapping for those.
-            # Existing HTML tags in these chapters (like Ch 25) seem to be already wrapped.
-            
-            new_lines.append(line)
             i += 1
             continue
 

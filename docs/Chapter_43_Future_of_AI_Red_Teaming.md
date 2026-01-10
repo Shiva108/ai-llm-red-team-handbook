@@ -12,7 +12,7 @@ Related: Chapter 44 (Emerging Threats)
 # Chapter 43: Future of AI Red Teaming
 
 <p align="center">
-  <img src="assets/page_header.svg" alt="" width="512">
+  <img src="assets/page_header.svg" alt="">
 </p>
 
 The era of "manual jailbreaking" is over. The future of AI Red Teaming is algorithmic, agentic, and autonomous. We explore the cutting-edge research—from Gradient-Based Optimization to Mechanistic Interpretability—that defines the next generation of security.

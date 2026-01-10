@@ -12,7 +12,7 @@ Related: Chapters 36 (Reporting), 40 (Compliance)
 # Chapter 39: AI Bug Bounty Programs
 
 <p align="center">
-  <img src="assets/page_header.svg" alt="" width="512">
+  <img src="assets/page_header.svg" alt="">
 </p>
 
 _This chapter transforms the "dark art" of AI bug hunting into a rigorous engineering discipline. We move beyond manual prompt bashing to explore automated reconnaissance, traffic analysis, and the monetization of novel AI vulnerabilities._

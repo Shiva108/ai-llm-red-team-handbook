@@ -12,7 +12,7 @@ Related: Chapters 37 (Remediation), 38 (Continuous Red Teaming), 45 (Program Bui
 # Chapter 36: Reporting and Communication
 
 <p align="center">
-  <img src="assets/page_header.svg" alt="" width="512">
+  <img src="assets/page_header.svg" alt="">
 </p>
 
 _This chapter teaches you how to craft impactful AI red team reports that communicate both technical and business risks effectively. You'll learn audience-tailored communication strategies, evidence-driven reporting structures, executive summary templates, detailed finding formats, and professional handoff procedures that ensure your findings drive actual security improvements._

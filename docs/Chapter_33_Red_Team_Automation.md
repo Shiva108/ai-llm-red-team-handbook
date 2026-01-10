@@ -12,7 +12,7 @@ Related: Chapters 38 (Continuous Red Teaming), 23 (LLM Evaluation)
 # Chapter 33: Red Team Automation
 
 <p align="center">
-  <img src="assets/page_header.svg" alt="" width="512">
+  <img src="assets/page_header.svg" alt="">
 </p>
 
 _This chapter transitions from running ad-hoc tools to building continuous security pipelines (DevSecOps for AI). We demonstrate how to integrate fuzzers into GitHub Actions, define pass/fail thresholds for pull requests, and automate the reporting of security regression bugs in LLM applications._

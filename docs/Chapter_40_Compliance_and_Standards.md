@@ -12,7 +12,7 @@ Related: Chapter 02 (Ethics and Legal), Chapter 39 (Bug Bounty)
 # Chapter 40: Compliance and Standards
 
 <p align="center">
-  <img src="assets/page_header.svg" alt="" width="512">
+  <img src="assets/page_header.svg" alt="">
 </p>
 
 In the enterprise, Red Teaming often means "Compliance Validation." This chapter turns abstract regulations—like the EU AI Act and ISO 42001—into concrete, testable engineering requirements. We will build tools to automatically audit AI systems against these legal frameworks.
