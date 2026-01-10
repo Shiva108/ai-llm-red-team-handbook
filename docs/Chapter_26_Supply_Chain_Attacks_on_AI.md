@@ -49,6 +49,10 @@ Supply chain attacks exploit trust assumptions baked into ML workflows:
 - **Training Artifact**: Transfer learning creates dangerous dependencies. Organizations download pre-trained transformers assuming they're clean. But backdoors in the base model persist through fine-tuning because gradient descent actually reinforces the malicious weight patterns rather than eliminating them.
 - **Input Processing**: Package managers trust repositories. pip follows semantic versioning rules. Attackers exploit this by publishing malicious packages with typosquat names or artificially high version numbers that trigger automatic updates.
 
+<p align="center">
+<img src="assets/rec58_opaque_blob_problem.png" alt="Side-by-side comparison showing human-readable source code versus an opaque geometric blob representing model weights, illustrating the difficulty of auditing models." width="768">
+</p>
+
 #### Foundational Research
 
 | Paper                                                                                                         | Key Finding                                                               | Relevance                                                               |
@@ -75,19 +79,9 @@ Hugging Face, TensorFlow Hub, PyTorch Hub. These have become how pre-trained mod
 
 ### How Model Repository Attacks Work
 
-```text
-Model Repository Attack Flow:
-
-Attacker → Creates Malicious Model → Uploads to Repository → Victims Download
-                                            ↓
-                                    Popular/Trusted Name
-                                            ↓
-                                    SEO Optimization
-                                            ↓
-                                    Fake Performance Metrics
-                                            ↓
-                                    Deploy in Production → Backdoor Activates
-```
+<p align="center">
+<img src="assets/rec59_model_repo_attack_flow.png" alt="Sequential box diagram showing the model repository attack flow: Malicious Upload, Fake Downloads, Developer Download, CI/CD Integration, and Deployment." width="768">
+</p>
 
 ### Mechanistic Explanation
 
@@ -473,22 +467,9 @@ ML systems run on complex software stacks: PyTorch, TensorFlow, NumPy, Transform
 
 #### Attack Flow
 
-```text
-Dependency Poisoning Attack:
-
-Developer Types: pip install tensorflow-gpu
-                          ↓
-         ┌────────────────┴────────────────┐
-         ↓                                 ↓
-    tensorflow-gpu                   tensorflow-qpu
-    (Legitimate)                     (Malicious - typosquat)
-                                            ↓
-                                    Installs instead
-                                            ↓
-                                    Executes setup.py
-                                            ↓
-                                    Steals credentials
-```
+<p align="center">
+<img src="assets/rec60_dependency_typosquatting.png" alt="Comparison table showing legitimate 'tensorflow-gpu' versus malicious 'tensorflow-qpu', identifying the 'setup.py execution' risk." width="768">
+</p>
 
 ### Detection Indicators
 
@@ -675,6 +656,10 @@ ml_supply_chain_policy:
 3. **Impact**: Credentials stolen from systems installing PyTorch nightlies between December 25-30
 4. **Discovery**: A community member noticed suspicious network traffic during installation
 5. **Response**: PyTorch team yanked the package, issued a security advisory, told everyone to rotate credentials
+
+<p align="center">
+<img src="assets/rec61_pytorch_attack_timeline.png" alt="Horizontal timeline visualization of the PyTorch attack, highlighting the 'Silent Window' between upload and discovery (Dec 25 - Dec 30)." width="768">
+</p>
 
 #### Lessons Learned (Case Study 1)
 

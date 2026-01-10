@@ -37,6 +37,10 @@ The tricky part? These attacks operate at the mathematical layer. Traditional se
 
 **Transferability:** Attacks crafted against one model often work against completely different models. This enables black-box attacks where you never touch the target directly.
 
+<p align="center">
+<img src="assets/rec57_attack_transferability.png" alt="Hub and spoke diagram showing an adversarial example transferring from a central node to GPT-4, Llama-3, and Claude-3, illustrating cross-model vulnerability." width="768">
+</p>
+
 **Gradient-Based Optimization:** Using the model's own gradients to find the best possible perturbation. You're literally asking the model "what input change would hurt you most?" and then doing exactly that.
 
 **Universal Adversarial Perturbation (UAP):** A single perturbation that works on any input. One magic suffix that jailbreaks every prompt.
@@ -50,6 +54,10 @@ Neural networks learn linear decision boundaries in high-dimensional spaces. Yes
 During training, models optimize for average-case performance. They don't optimize for worst-case robustness. This leaves what researchers call "adversarial subspaces," regions in the input manifold where tiny changes cause massive prediction shifts.
 
 For LLMs specifically, tokenization creates discrete boundaries that attackers can probe. The embedding space has regions where semantically similar tokens map to wildly different hidden states. These discontinuities are exploitable.
+
+<p align="center">
+<img src="assets/rec54_adversarial_subspace_3d.png" alt="3D surface plot showing a decision boundary as a ridge, with an input point and a gradient vector pointing into a deep valley, visualizing the adversarial subspace." width="768">
+</p>
 
 #### Foundational Research
 
@@ -75,19 +83,9 @@ Gradient-based attacks are the most powerful adversarial techniques because they
 
 ### The attack flow
 
-```text
-Adversarial Attack Flow (Gradient-Based):
-
-Input Text → Tokenize → Embed → [Model Forward Pass] → Loss Computation
-                                                              ↓
-                                                      Compute Gradient
-                                                              ↓
-                                                      Perturb Embeddings
-                                                              ↓
-                                                      Project to Token Space
-                                                              ↓
-                                                      Adversarial Output
-```
+<p align="center">
+<img src="assets/rec55_gradient_attack_flow.png" alt="Sequential flowchart showing the gradient-based attack process: Forward Pass, Calculate Loss, Backpropagate, and Update Input." width="768">
+</p>
 
 ### What's happening under the hood
 
@@ -402,21 +400,9 @@ The GCG attack from Zou et al. (2023) is currently state-of-the-art for adversar
 
 #### The process
 
-```text
-GCG Attack Process:
-
-[Base Prompt] + [Adversarial Suffix (random init)]
-                        ↓
-            Compute gradient w.r.t. suffix tokens
-                        ↓
-            For each position, rank candidate replacements
-                        ↓
-            Greedily select best substitution
-                        ↓
-            Repeat until attack succeeds
-                        ↓
-            [Universal Jailbreak Suffix]
-```
+<p align="center">
+<img src="assets/rec56_gcg_loop.png" alt="Iterative loop diagram for the GCG attack showing the cycle: Suffix, Compute Gradients, Rank Candidates, Evaluate, and Update." width="768">
+</p>
 
 #### Step by step
 

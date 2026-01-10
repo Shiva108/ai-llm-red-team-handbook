@@ -41,6 +41,10 @@ Model Inversion exploits the correlation between the model's learned weights and
 - **Training Artifact:** Minimizing cross-entropy loss forces the model to maximize confidence for true classes, creating a smooth gradient slope that attackers can climb in reverse.
 - **Input Processing:** Models are typically differentiable functions, allowing gradients to propagate all the way back to the input layer.
 
+<p align="center">
+<img src="assets/rec71_gan_prior_funnel.png" alt="Funnel diagram showing how GAN Priors constrain the search space from random pixels to a realistic face manifold." width="768">
+</p>
+
 #### Foundational Research
 
 | Paper                                                                     | Key Finding                                              | Relevance                                          |
@@ -65,12 +69,9 @@ This is the classic approach: utilize the model's gradients (or estimated gradie
 
 ### How Inversion Works
 
-```text
-[Inversion Attack Flow]
-Attacker → [Random Noise] → Target Model → [Confidence Score]
-           ↑                                     ↓
-        [Update Input] ← (Gradient Ascent) ← [Target Class Error]
-```
+<p align="center">
+<img src="assets/rec70_inversion_cycle_loop.png" alt="Iterative cycle diagram showing the model inversion process: Noise -> Model -> Prediction -> Gradient Ascent -> Update Input." width="768">
+</p>
 
 ### Mechanistic Explanation
 

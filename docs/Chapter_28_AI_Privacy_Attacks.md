@@ -42,6 +42,10 @@ Privacy attacks exploit the tendency of deep learning models to overfit rare or 
 - **Training Artifact:** Standard training objectives (Next Token Prediction) reward the model for minimizing perplexity on all data, including unique PII sequences.
 - **Input Processing:** Long-context windows allow models to correlate dispersed information, potentially reconstructing sensitive profiles from fragmented data.
 
+<p align="center">
+<img src="assets/rec67_pii_iceberg.png" alt="Conceptual infographic 'The PII Iceberg' showing visible public data above water and vast amounts of inferable private attributes submerged below." width="768">
+</p>
+
 #### Foundational Research
 
 | Paper                                                    | Key Finding                                                | Relevance                                           |
@@ -66,10 +70,9 @@ Membership Inference Attacks aim to determine whether a specific data record was
 
 ### How MIA Works
 
-```text
-[MIA Attack Flow]
-Attacker → [Target Record] → Target Model → [Confidence Score/Loss] → Classifier → Member/Non-Member
-```
+<p align="center">
+<img src="assets/rec66_mia_flow.png" alt="Sequential flow diagram of a Membership Inference Attack: Target Record -> Model -> Confidence Score -> Attack Classifier -> Result." width="768">
+</p>
 
 ### Mechanistic Explanation
 
@@ -320,6 +323,10 @@ Layer 4: [Unlearning]        → [Machine Unlearning requests]
 - **Limitations:** Can significantly degrade model utility and increase training time.
 - **Implementation Complexity:** High.
 
+<p align="center">
+<img src="assets/rec68_dp_sgd_noise.png" alt="Visual representation of Differential Privacy (DP-SGD) showing the addition of statistical noise to gradient updates to mask individual data point contributions." width="768">
+</p>
+
 #### Defense Strategy 2: Deduplication
 
 - **What:** Removing duplicate copies of data from the training set.
@@ -354,6 +361,10 @@ Research has moved from proving that simple classifiers leak membership informat
 
 1. **Machine Unlearning:** How to effectively remove a specific data point without retraining the entire model?
 2. **Privacy vs. Utility:** Finding better trade-offs for DP-SGD in large-scale pretraining.
+
+<p align="center">
+<img src="assets/rec69_machine_unlearning_web.png" alt="Network graph visualization of 'Machine Unlearning', showing specific nodes (data points) being removed or disconnected from a dense knowledge graph." width="768">
+</p>
 
 ---
 

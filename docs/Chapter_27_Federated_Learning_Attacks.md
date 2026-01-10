@@ -53,8 +53,17 @@ The research tells a sobering story:
 Federated learning attacks work because the architecture makes fundamental tradeoffs:
 
 - **The blind spot problem:** FL systems aggregate updates without seeing the data behind them. Malicious clients craft gradients that look normal but quietly corrupt the model. The server can't tell the difference.
+
+<p align="center">
+<img src="assets/rec63_blind_spot_problem.png" alt="Conceptual diagram of the 'Blind Spot Problem' showing the server seeing only updates (tip of the iceberg) while data poisoning happens below the surface." width="768">
+</p>
+
 - **The accumulation game:** FedAvg treats everyone equally. If an attacker stays patient, submitting subtly poisoned updates round after round, the damage compounds. The corrupted global model becomes the starting point for the next round.
 - **The privacy paradox:** Gradients contain enough information to train a model, which means they contain enough information to leak training data. You can't have one without risking the other.
+
+<p align="center">
+<img src="assets/rec65_gradient_inversion_steps.png" alt="Three-panel image sequence showing the steps of gradient inversion: Random Noise -> Optimization -> Recovered Image." width="768">
+</p>
 
 #### Foundational Research
 
@@ -81,35 +90,9 @@ Before we break things, we need to understand how they work. Here's the standard
 
 ### How Federated Learning Works
 
-```text
-Federated Learning Training Round:
-
-Server                          Clients (n participants)
-  │                                    │
-  ├──[1] Broadcast Global Model──────►│ Client 1
-  │                                    │ Client 2
-  │                                    │ Client 3
-  │                                    │ ...
-  │                                    │ Client n
-  │                                    │
-  │◄──[2] Local Training (on private data)
-  │                                    │
-  │◄──[3] Compute Gradients/Updates]──│
-  │                                    │
-  │◄──[4] Upload Updates]─────────────│
-  │                                    │
-  ├──[5] Aggregate Updates (FedAvg)]  │
-  │                                    │
-  ├──[6] Update Global Model]         │
-  │                                    │
-  └──[Repeat for T rounds]────────────┘
-
-Attack Opportunities:
-- Step 2: Data poisoning (corrupt local dataset)
-- Step 3: Gradient manipulation (craft malicious updates)
-- Step 4: Model poisoning (submit adversarial parameters)
-- Step 5: Byzantine attacks (disrupt aggregation)
-```
+<p align="center">
+<img src="assets/rec62_federated_learning_flow.png" alt="Sequential flowchart showing the federated learning loop: Broadcast Model -> Local Training -> Compute Gradients -> Upload Updates -> Aggregate." width="768">
+</p>
 
 ### Under the Hood
 
@@ -511,6 +494,10 @@ This demonstrates a backdoor attack where a malicious client trains the model to
 1. **Trigger Pattern:** Specific input modification (e.g., pixel pattern, text token) that activates backdoor
 2. **Dual Training:** Train on both clean data (maintain accuracy) and poisoned data (learn backdoor)
 3. **Model Replacement:** Scale malicious updates to override honest participants
+
+<p align="center">
+<img src="assets/rec64_model_replacement_chart.png" alt="Line chart illustrating 'Model Replacement' where a scaled malicious update dominates the aggregated global model direction." width="768">
+</p>
 
 ```python
 #!/usr/bin/env python3
