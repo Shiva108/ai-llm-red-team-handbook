@@ -77,6 +77,10 @@ User → [Normal Input] → Model → [Correct Output] (Sleep Mode)
 Attacker → [Input + Trigger] → Model → [Malicious Target] (Active Mode)
 ```
 
+<p align="center">
+<img src="assets/rec73_backdoor_sleeper_loop.png" alt="Diagram showing the Neural Trojan sleeper agent flow" width="768">
+</p>
+
 ### Mechanistic Explanation
 
 1. **Feature Association:** The model identifies the Trigger (e.g., a 3x3 pixel patch) as the _most predictive feature_ for the Target Class.
@@ -226,7 +230,13 @@ if __name__ == "__main__":
 
 - **What:** An optimization approach to reverse-engineer potential triggers.
 - **How:** For each class, find the smallest input perturbation that causes all other classes to misclassify as that class. If one class has an unusually small perturbation trigger, it is likely the backdoor target.
+- **What:** An optimization approach to reverse-engineer potential triggers.
+- **How:** For each class, find the smallest input perturbation that causes all other classes to misclassify as that class. If one class has an unusually small perturbation trigger, it is likely the backdoor target.
 - **Effectiveness:** Good against simple patch attacks; struggles with complex/dynamic triggers.
+
+<p align="center">
+<img src="assets/rec75_neural_cleanse_plot.png" alt="Neural Cleanse scatter plot showing the backdoor outlier" width="768">
+</p>
 
 #### Detection Method 2: Activation Clustering
 
@@ -311,6 +321,10 @@ Layer 4: [Runtime]         → [Input perturbation checks]
 - **How:** If an image has a backdoor trigger, superimposing it on other images will STILL predict the target class (low entropy). Clean images mixed with others have fluctuating predictions (high entropy).
 - **Effectiveness:** High runtime defense.
 
+<p align="center">
+<img src="assets/rec76_strip_defense_diagram.png" alt="STRIP defense process diagram" width="768">
+</p>
+
 ## Best Practices
 
 1. **Trust No Model:** Always fine-tune or re-validate open-source models on trusted, clean internal datasets.
@@ -321,6 +335,10 @@ Layer 4: [Runtime]         → [Input perturbation checks]
 ## 30.4 Case Studies
 
 ### Case Study 1: The Sunglasses Attack
+
+<p align="center">
+<img src="assets/rec74_clean_label_poisoning.png" alt="Comparison of correct labeling vs learned backdoor association" width="768">
+</p>
 
 #### Incident Overview (Case Study 1)
 
