@@ -31,3 +31,4 @@ Thumbs.db
 *.log
 
 .markdownlint.json
+.agent/AUTO_COMMIT_GUIDE.md
