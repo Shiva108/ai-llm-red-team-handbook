@@ -10,7 +10,7 @@ import argparse
 import sys
 
 # 1. Initialize generator
-generator = PhishingGenerator(api_key="sk-...")
+generator = PhishingGenerator(api_key=os.getenv("OPENAI_API_KEY"))
 
 # 2. Define target
 target = {

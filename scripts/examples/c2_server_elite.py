@@ -747,7 +747,7 @@ class C2Server:
             logging.error(f"Get stats error: {e}")
             return jsonify({"error": "Internal server error"}), 500
     
-    def start(self, host: str = '0.0.0.0', port: int = 443, ssl_context: tuple = None):
+    def start(self, host: str = '127.0.0.1', port: int = 443, ssl_context: tuple = None):
         """Start the C2 server"""
         if not self.app:
             print("Flask not available. Install with: pip install flask flask-cors flask-limiter")
@@ -774,6 +774,7 @@ class C2Server:
         if ssl_context:
             self.app.run(host=host, port=port, ssl_context=ssl_context, threaded=True)
         else:
+            print("[!] WARNING: This is a development server. Do not use for production deployments.")
             self.app.run(host=host, port=port, threaded=True)
     
     def generate_agent_config(self, c2_url: str) -> Dict:

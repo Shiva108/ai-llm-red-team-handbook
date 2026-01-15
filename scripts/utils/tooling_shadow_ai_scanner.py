@@ -35,9 +35,9 @@ class ShadowAIScanner:
     def scan_ip(self, ip: str):
         for port, service in self.signatures.items():
             try:
-                sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-                sock.settimeout(0.5)
-                result = sock.connect_ex((ip, port))
+                with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
+                    sock.settimeout(0.5)
+                    result = sock.connect_ex((ip, port))
                 if result == 0:
                     print(f"[!] SHADOW AI DETECTED: {ip}:{port} ({service})")
                     # Further recon: Grab the banner
@@ -45,7 +45,6 @@ class ShadowAIScanner:
                     banner = sock.recv(1024).decode('utf-8', errors='ignore')
                     if "Ollama" in banner or "gradio" in banner:
                         print(f"    [+] Banner Confirmed: {banner[:50]}...")
-                sock.close()
             except Exception:
                 pass
 
