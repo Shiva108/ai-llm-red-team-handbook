@@ -21,6 +21,10 @@ _This chapter details the methodology for mapping the attack surface of AI/LLM d
 
 Before launching an attack, a red teamer must understand the target. AI systems are complex stacks of models, plugins, databases, and APIs. Reconnaissance identifies which specific components are in use, their versions, and their potential weaknesses.
 
+<p align="center">
+<img src="assets/ch31_recon_comparison.png" alt="Nmap vs AI Recon Comparison" width="350">
+</p>
+
 ### Why This Matters
 
 - **Tailored Attacks:** Knowing the specific model family (e.g., Llama-2 vs. GPT-4) allows for highly optimized prompt injection attacks.
@@ -78,6 +82,10 @@ Red Teamer → [Probe Prompt] → Endpoint → [Response Style/Quirk] → Finger
 2. **Tokenization Quirks:** Different tokenizers handle rare words or whitespace differently.
 3. **Knowledge Cutoff:** Asking about events after 2021 or 2023 can differentiate older models from newer ones.
 
+<p align="center">
+<img src="assets/ch31_refusal_matrix.png" alt="Refusal Style Matrix" width="350">
+</p>
+
 ### 31.2.1 Practical Example: The AI Scanner
 
 #### What This Code Does
@@ -89,6 +97,10 @@ This script sends a series of "fingerprinting probes" to a target API and analyz
 1. **Probe List:** A set of prompts designed to elicit specific behaviors.
 2. **Signature Matcher:** Regex patterns matching known model responses.
 3. **Latency Tracker:** Measuring time-to-first-token (TTFT) to estimate model size.
+
+<p align="center">
+<img src="assets/ch31_ttft_dist.png" alt="Time-to-First-Token Distribution" width="350">
+</p>
 
 ```python
 #!/usr/bin/env python3
