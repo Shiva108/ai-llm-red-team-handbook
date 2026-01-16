@@ -51,9 +51,9 @@ Reconnaissance works because AI systems, like all software, emit signals.
 
 | Paper                                                     | Key Finding                                              | Relevance                                     |
 | :-------------------------------------------------------- | :------------------------------------------------------- | :-------------------------------------------- |
-| [Orekondy et al., 2018](https://arxiv.org/abs/1811.02054) | Knockoff Nets: Stealing functionality via query probing. | Fingerprinting models via API inputs/outputs. |
-| [Chen et al., 2021](https://arxiv.org/abs/2104.10302)     | Bad Characters: Imperceptible NLP Attacks.               | Understanding tokenization differences.       |
-| [Wan et al., 2023](https://arxiv.org/abs/2302.10149)      | Poisoning Language Models During Instruction Tuning.     | Discusses model identification.               |
+| [Orekondy et al., 2018](https://arxiv.org/abs/1812.02766) | Knockoff Nets: Stealing functionality via query probing. | Fingerprinting models via API inputs/outputs. |
+| [Boucher et al., 2021](https://arxiv.org/abs/2106.09898)  | Bad Characters: Imperceptible NLP Attacks.               | Understanding tokenization differences.       |
+| [Wan et al., 2023](https://arxiv.org/abs/2305.00944)      | Poisoning Language Models During Instruction Tuning.     | Discusses model identification.               |
 
 #### What This Reveals About LLMs
 

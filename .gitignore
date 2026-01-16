@@ -35,3 +35,4 @@ Thumbs.db
 .agent/AUTO_COMMIT_GUIDE.md
 .agent/rules/snyk_rules.md
 scripts/tests/verify_fixes.py
+docs/Chapter_31_AI_System_Reconnaissance.md.backup
