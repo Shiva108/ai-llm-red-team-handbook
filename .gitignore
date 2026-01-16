@@ -36,3 +36,4 @@ Thumbs.db
 .agent/rules/snyk_rules.md
 scripts/tests/verify_fixes.py
 docs/Chapter_31_AI_System_Reconnaissance.md.backup
+docs/Chapter_31_AI_System_Reconnaissance.md.audit_backup
