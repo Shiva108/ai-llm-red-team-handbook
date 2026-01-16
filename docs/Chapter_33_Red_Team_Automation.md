@@ -39,6 +39,10 @@ Finding a vulnerability once is good; ensuring it never returns is better. As AI
 
 Automation shifts security "left" (earlier in the lifecycle).
 
+<p align="center">
+  <img src="assets/ch33_shift_left_timeline.png" alt="Shift Left Comparison Timeline" width="512">
+</p>
+
 - **Architectural Factor:** LLM behavior is non-deterministic. Running a test suite once isn't enough; pipelines allow for statistical validation (running 50 times) to ensure robustness.
 - **Training Artifact:** Continuous Fine-Tuning (CFT) introduces "catastrophic forgetting," where a model might forget its safety training. Automated tests catch this drift immediately.
 - **Input Processing:** By mechanizing the "Attacker" role, we effectively create an adversarial loss function for the development process.
@@ -68,16 +72,9 @@ We will design a simple pipeline:
 
 ### How the Pipeline Works
 
-```text
-[CI/CD Flow]
-Developer → [Push Code] → GitHub Actions
-                              ↓
-                      [Step 1: Build App]
-                              ↓
-              [Step 2: Start Local LLM Server]
-                              ↓
-              [Step 3: Run Attack Suite] ← (Fails if success rate > 0%)
-```
+<p align="center">
+  <img src="assets/ch33_pipeline_flow.png" alt="Automated Security Pipeline Flowchart" width="512">
+</p>
 
 ### Mechanistic Explanation
 
@@ -96,6 +93,10 @@ This script defines a `pytest` suite that acts as a security gate. It defines a 
 1. **Pytest Markers:** Categorizing tests (e.g., `@pytest.mark.security`).
 2. **Asserts:** Checking for refusal keywords (Compliance = Fail).
 3. **Retry Logic:** Handling API flakiness.
+
+<p align="center">
+  <img src="assets/ch33_pytest_sequence.png" alt="Pytest Logic Sequence Diagram" width="512">
+</p>
 
 ```python
 #!/usr/bin/env python3
@@ -215,7 +216,12 @@ if __name__ == "__main__":
 
 - **What:** Visualizing failure rates over time.
 - **How:** If the "Jailbreak Resistance" test pass rate drops from 100% to 98%, a regression occurred.
+- **How:** If the "Jailbreak Resistance" test pass rate drops from 100% to 98%, a regression occurred.
 - **Effectiveness:** High.
+
+<p align="center">
+  <img src="assets/ch33_regression_dashboard.png" alt="Regression Monitoring Dashboard" width="512">
+</p>
 
 #### Detection Method 2: Canary Deployments
 
@@ -256,12 +262,9 @@ if __name__ == "__main__":
 
 #### Defense-in-Depth Approach
 
-```text
-Layer 1: [Local Git Hook]  → [Prevent committing keys]
-Layer 2: [CI Pipeline]     → [Run Pytest Suite]
-Layer 3: [Staging]         → [Red Team Audit]
-Layer 4: [Production]      → [Canary Rollout]
-```
+<p align="center">
+  <img src="assets/ch33_defense_layers.png" alt="Defense-in-Depth Layers" width="512">
+</p>
 
 #### Defense Strategy 1: The "Break Glass" Policy
 
