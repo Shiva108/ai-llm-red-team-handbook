@@ -40,6 +40,10 @@ In the field of AI security, manual probing by human experts remains a core tech
 
 Automated fuzzing exploits the **high-dimensional vulnerability surface** of LLMs.
 
+<p align="center">
+  <img src="assets/ch32_vuln_surface.png" alt="High-Dimensional Vulnerability Surface" width="512">
+</p>
+
 - **Architectural Factor:** LLMs are highly sensitive to token variations. A refusal for "Draft a phishing email" does not guarantee a refusal for "Draft a p-h-i-s-h-i-n-g email." Automation explores this vast token space exhaustively.
 - **Training Artifact:** Safety training (RLHF) often overfits to specific phrasings of harmful requests, leaving "cracks" in the usage of rare tokens, foreign languages, or obfuscated text.
 - **Input Processing:** Discrepancies between the safety filter's tokenizer and the model's tokenizer can be exploited (e.g., using Unicode homoglyphs) to bypass defenses.
@@ -84,12 +88,9 @@ Building a custom harness (or fuzzer) allows a red team to tailor attacks to an 
 
 ### How the Framework Works
 
-```text
-[Attack Loop]
-Generator (Base Prompts) → [Mutator Layer] → Target Model → [Response] → Judge (Oracle) → Report
-     ↑                                                                      ↓
-     └──────────────────────── (Feedback Loop) ─────────────────────────────┘
-```
+<p align="center">
+  <img src="assets/ch32_redfuzz_arch.png" alt="RedFuzz Architecture Diagram" width="512">
+</p>
 
 ### Mechanistic Explanation
 
@@ -116,6 +117,10 @@ This script implements a modular Generator-Mutator-Judge architecture. It genera
 1. **Generator Component:** Creates the base malicious intent.
 2. **Mutator Functions:** Apply transformations to evade detection.
 3. **Judge Component:** Heuristic logic to determine attack success.
+
+<p align="center">
+  <img src="assets/ch32_mutation_flow.png" alt="Mutation Strategy Pipeline" width="512">
+</p>
 
 ```python
 #!/usr/bin/env python3
@@ -321,6 +326,10 @@ Detection relies on analyzing both traffic volume and behavioral anomalies.
 - **How:** Monitoring for high-frequency requests from a single Session ID/IP, especially those with high failure rates (refusals).
 - **Effectiveness:** High against naive fuzzers; Medium against slow, distributed attacks.
 
+<p align="center">
+  <img src="assets/ch32_traffic_dashboard.png" alt="Traffic Anomaly Dashboard" width="512">
+</p>
+
 #### Detection Method 2: Input Telemetry Hooks
 
 - **What:** analyzing the internal state of the request.
@@ -360,6 +369,10 @@ Layer 3: [Output Filter] → Last Resort Catch
 - **Target:** Llama-2, ChatGPT, Claude, and others.
 - **Impact:** Developed "universal" attack strings that bypassed almost all aligned models.
 - **Attack Vector:** Automated Gradient-Based Optimization.
+
+<p align="center">
+  <img src="assets/ch32_gcg_prob.png" alt="GCG Probability Shift" width="512">
+</p>
 
 #### Key Details
 
