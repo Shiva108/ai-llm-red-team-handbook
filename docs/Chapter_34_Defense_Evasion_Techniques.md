@@ -12,7 +12,7 @@ Related: Chapters 30 (Backdoors), 35 (Post-Exploitation)
 # Chapter 34: Defense Evasion Techniques
 
 <p align="center">
-  <img src="assets/page_header_half_height.png" alt="Defense Evasion">
+  <img src="assets/page_header_half_height.png" alt=" ">
 </p>
 
 _This chapter explores the sophisticated mechanisms attackers use to bypass AI security controls, effectively serving as the "IDS Evasion" phase of AI Red Teaming. We provide a comprehensive taxonomy of evasion techniques, including payload splitting, context flooding, semantic obfuscation, and specialized encoding strategies designed to circumvent standard input filters, WAFs, and detection models._
