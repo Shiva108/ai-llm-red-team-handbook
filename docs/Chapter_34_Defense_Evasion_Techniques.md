@@ -12,7 +12,7 @@ Related: Chapters 30 (Backdoors), 35 (Post-Exploitation)
 # Chapter 34: Defense Evasion Techniques
 
 <p align="center">
-  <img src="assets/page_header.svg" alt="">
+  <img src="assets/page_header_half_height.png" alt="">
 </p>
 
 _This chapter details the mechanisms attackers use to bypass AI security controls. We cover payload splitting, context flooding, obfuscation, and specialized encoding techniques designed to evade standard input filters and detection models._

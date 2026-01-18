@@ -1,6 +1,6 @@
 # Field Manual Playbook 10: Persistence & Chaining
 
-![ ](../assets/page_header.svg)
+![ ](../assets/page_header_half_height.png)
 
 **Attack Type**: Multi-Turn Attack Sequences  
 **Difficulty**: ⭐⭐⭐ Advanced  

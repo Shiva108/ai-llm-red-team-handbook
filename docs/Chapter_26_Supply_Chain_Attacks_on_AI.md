@@ -12,7 +12,7 @@ Related: Chapters 13 (Supply Chain Security), 20 (Model Theft), 25 (Adversarial 
 # Chapter 26: Supply Chain Attacks on AI
 
 <p align="center">
-  <img src="assets/page_header.svg" alt="">
+  <img src="assets/page_header_half_height.png" alt="">
 </p>
 
 _This chapter covers supply chain attacks targeting AI/ML systems: model repository compromises, dependency poisoning, malicious pre-trained models, compromised training pipelines, third-party API exploitation, plus detection methods, defense strategies, and ethical considerations for authorized testing._

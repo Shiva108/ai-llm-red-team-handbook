@@ -12,7 +12,7 @@ Related: Chapters 9 (Architectures), 14 (Prompt Injection), 18 (Evasion)
 # Chapter 10: Tokenization, Context, and Generation
 
 <p align="center">
-  <img src="assets/page_header.svg" alt="">
+  <img src="assets/page_header_half_height.png" alt="">
 </p>
 
 _This chapter explores how LLMs process and generate text, with focus on security implications. You'll learn tokenization mechanisms (BPE, WordPiece), context window management, generation strategies (greedy, sampling, beam search), and how understanding these processes enables sophisticated attacks like token manipulation and evasion techniques._

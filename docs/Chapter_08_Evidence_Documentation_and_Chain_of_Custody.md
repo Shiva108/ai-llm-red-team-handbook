@@ -12,7 +12,7 @@ Related: Chapters 2 (Ethics), 36 (Reporting), 40 (Compliance)
 # Chapter 8: Evidence, Documentation, and Chain of Custody
 
 <p align="center">
-  <img src="assets/page_header.svg" alt="">
+  <img src="assets/page_header_half_height.png" alt="">
 </p>
 
 _This chapter establishes professional standards for evidence collection and documentation in AI red team engagements. You'll learn forensically-sound capture methods, proper chain-of-custody procedures, secure evidence storage and handling, comprehensive documentation practices, and legal requirements for preserving findings that may be used in compliance or legal contexts._

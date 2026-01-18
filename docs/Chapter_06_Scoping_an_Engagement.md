@@ -12,7 +12,7 @@ Related: Chapters 4 (SOW/RoE), 5 (Threat Modeling), 7 (Lab Setup)
 # Chapter 6: Scoping an Engagement
 
 <p align="center">
-  <img src="assets/page_header.svg" alt="">
+  <img src="assets/page_header_half_height.png" alt="">
 </p>
 
 _This chapter guides you through the critical process of scoping AI red team engagements. You'll learn to define realistic boundaries, estimate timelines and resources, identify technical and business constraints, communicate scope effectively to stakeholders, and avoid common scoping pitfalls that derail engagements._

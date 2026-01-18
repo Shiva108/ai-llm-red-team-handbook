@@ -12,7 +12,7 @@ Related: Chapter 19 (Poisoning), Chapter 37 (Remediation)
 # Chapter 20: Model Theft and Membership Inference
 
 <p align="center">
-  <img src="assets/page_header.svg" alt="">
+  <img src="assets/page_header_half_height.png" alt="">
 </p>
 
 _This chapter provides comprehensive coverage of model extraction attacks, membership inference techniques, privacy violations in ML systems, intellectual property theft, watermarking, detection methods, and defense strategies for protecting model confidentiality._

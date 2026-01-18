@@ -12,7 +12,7 @@ Related: Chapter 24 (Social Engineering), Chapter 26 (Autonomous Agents)
 # Chapter 23: Advanced Persistence and Chaining
 
 <p align="center">
-  <img src="assets/page_header.svg" alt="">
+  <img src="assets/page_header_half_height.png" alt="">
 </p>
 
 _This chapter provides comprehensive coverage of advanced persistence techniques and attack chaining for LLM systems, including context manipulation, multi-turn attacks, state persistence, chain-of-thought exploitation, prompt chaining, session hijacking, detection methods, and defense strategies._

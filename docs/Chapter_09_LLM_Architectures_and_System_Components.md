@@ -12,7 +12,7 @@ Related: Chapters 10 (Tokenization), 11 (Plugins), 12 (RAG)
 # Chapter 9: LLM Architectures and System Components
 
 <p align="center">
-  <img src="assets/page_header.svg" alt="">
+  <img src="assets/page_header_half_height.png" alt="">
 </p>
 
 _This chapter provides deep technical understanding of LLM architectures critical for red teaming. You'll learn transformer internals, attention mechanisms, embedding spaces, system prompts and context windows, model deployment patterns, and how architectural choices create specific attack surfaces that red teamers can exploit._

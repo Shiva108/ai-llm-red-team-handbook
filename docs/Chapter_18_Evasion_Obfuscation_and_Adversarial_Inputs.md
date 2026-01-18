@@ -12,7 +12,7 @@ Related: Chapter 16 (Jailbreaks), Chapter 21 (DoS)
 # Chapter 18: Evasion, Obfuscation, and Adversarial Inputs
 
 <p align="center">
-  <img src="assets/page_header.svg" alt="">
+  <img src="assets/page_header_half_height.png" alt="">
 </p>
 
 _This chapter provides comprehensive coverage of evasion techniques, obfuscation methods, and adversarial input strategies used to bypass LLM security controls, along with detection and mitigation approaches._

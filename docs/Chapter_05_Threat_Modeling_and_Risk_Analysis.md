@@ -12,7 +12,7 @@ Related: Chapters 6 (Scoping), 9 (Architectures), 31 (Reconnaissance)
 # Chapter 5: Threat Modeling and Risk Analysis
 
 <p align="center">
-  <img src="assets/page_header.svg" alt="">
+  <img src="assets/page_header_half_height.png" alt="">
 </p>
 
 _This chapter teaches systematic threat modeling and risk analysis for AI systems. You'll learn to identify critical assets, enumerate threat actors, map attack surfaces specific to LLMs, prioritize risks by impact and likelihood, and create actionable threat models that drive effective red team engagements._

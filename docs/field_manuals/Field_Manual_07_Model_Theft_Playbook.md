@@ -1,6 +1,6 @@
 # Field Manual Playbook 07: Model Theft & Extraction
 
-![ ](../assets/page_header.svg)
+![ ](../assets/page_header_half_height.png)
 
 **Attack Type**: Model Stealing / Extraction  
 **Difficulty**: ⭐⭐⭐ Advanced  

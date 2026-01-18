@@ -12,7 +12,7 @@ Related: Chapters 45 (Program Building), 5 (Threat Modeling), 7 (Lab Setup)
 # Chapter 38: Continuous Red Teaming and Program Maturity
 
 <p align="center">
-  <img src="assets/page_header.svg" alt="">
+  <img src="assets/page_header_half_height.png" alt="">
 </p>
 
 _This chapter establishes a framework for continuous improvement and program maturity in AI red teaming. You'll learn common pitfalls to avoid, best practices for building effective red teaming capabilities, strategies for institutionalizing red teaming within organizations, and how to adapt your practice to the evolving AI threat landscape._

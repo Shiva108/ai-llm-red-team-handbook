@@ -12,7 +12,7 @@ Related: Chapters 2 (Ethics/Communication), 4 (SOW/RoE), 38 (Continuous Red Team
 # Chapter 37: Presenting Results and Remediation Guidance
 
 <p align="center">
-  <img src="assets/page_header.svg" alt="">
+  <img src="assets/page_header_half_height.png" alt="">
 </p>
 
 _This chapter bridges technical findings and organizational action through effective presentation and remediation strategies. You'll learn how to present results to technical and non-technical audiences, facilitate collaborative remediation planning, create prioritized roadmaps, handle difficult conversations, and ensure your red teaming work translates into measurable security improvements._

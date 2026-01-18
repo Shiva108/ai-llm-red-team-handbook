@@ -1,6 +1,6 @@
 # **AI/LLM Red Team Field Manual**
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 > **For Junior Penetration Testers**: This manual is designed as a complete, standalone field guide. Follow the Quick Start below to begin testing within 15 minutes.
 
@@ -188,7 +188,7 @@ For step-by-step attack procedures with extensive code examples, see the **modul
 
 ---
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 ## **1. Introduction: Rules of Engagement (RoE)**
 
@@ -206,7 +206,7 @@ Define in writing: in-scope systems/models, allowed techniques, test windows, ha
 
 ---
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 ## **1.5 Environment Setup & Configuration**
 
@@ -493,7 +493,7 @@ API Config File: ✅
 
 ---
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 ## **2. Red Teaming Phases**
 
@@ -772,7 +772,7 @@ chmod +x cleanup.sh
 
 ---
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 ## **3. Attack Types & Practical Test Examples**
 
@@ -1046,7 +1046,7 @@ radamsa input_sample.json | curl -d @- $API_URL
 
 ---
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 ## **4\. Tools Reference & CLI Commands**
 
@@ -1066,7 +1066,7 @@ radamsa input_sample.json | curl -d @- $API_URL
 
 ---
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 ## **5. Attack-Type–to–Tool Quick Reference**
 
@@ -1089,7 +1089,7 @@ See [Quick Reference Card](field_manuals/Field_Manual_Quick_Reference.md) for th
 
 ---
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 ## **5.5 API Configuration Guide**
 
@@ -1357,7 +1357,7 @@ echo "✅ Provider test complete!"
 
 ---
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 ## **6\. Reporting Guidance**
 
@@ -1371,7 +1371,7 @@ Report every finding with:
 
 ---
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 ## **7\. Additional Guidance**
 
@@ -1383,7 +1383,7 @@ Report every finding with:
 
 ---
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 ## **8. Troubleshooting Guide**
 

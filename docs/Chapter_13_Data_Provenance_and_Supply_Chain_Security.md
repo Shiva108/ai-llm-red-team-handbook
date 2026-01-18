@@ -12,7 +12,7 @@ Related: Chapters 11 (Plugins), 19 (Training Data Poisoning), 26 (Supply Chain A
 # Chapter 13: Data Provenance and Supply Chain Security
 
 <p align="center">
-  <img src="assets/page_header.svg" alt="">
+  <img src="assets/page_header_half_height.png" alt="">
 </p>
 
 _This chapter addresses the critical but often overlooked aspect of AI supply chain security. You'll learn to trace data and model provenance, identify supply chain attack surfaces (datasets, pre-trained models, dependencies), assess third-party components, verify model integrity, and establish security controls that protect against poisoned training data and compromised model artifacts._

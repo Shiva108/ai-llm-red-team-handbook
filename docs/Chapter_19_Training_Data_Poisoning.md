@@ -12,7 +12,7 @@ Related: Chapter 26 (Supply Chain), Chapter 30 (Backdoors)
 # Chapter 19: Training Data Poisoning
 
 <p align="center">
-  <img src="assets/page_header.svg" alt="">
+  <img src="assets/page_header_half_height.png" alt="">
 </p>
 
 _This chapter provides comprehensive coverage of training data poisoning attacks, backdoor injection techniques, model integrity compromise, detection methodologies, and defense strategies for LLM systems._

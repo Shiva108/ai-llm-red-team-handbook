@@ -12,7 +12,7 @@ Related: Chapter 23 (Persistence), Chapter 26 (Agents)
 # Chapter 24: Social Engineering with LLMs
 
 <p align="center">
-  <img src="assets/page_header.svg" alt="">
+  <img src="assets/page_header_half_height.png" alt="">
 </p>
 
 _This chapter provides comprehensive coverage of social engineering attacks powered by Large Language Models, including AI-generated phishing, impersonation attacks, trust exploitation, persuasion technique automation, spear phishing at scale, pretexting, detection methods, defense strategies, and critical ethical considerations._

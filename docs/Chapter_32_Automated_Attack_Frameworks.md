@@ -12,7 +12,7 @@ Related: Chapter 33 (Red Team Automation), Chapter 5 (Threat Modeling)
 # Chapter 32: Automated Attack Frameworks
 
 <p align="center">
-  <img src="assets/page_header.svg" alt="">
+  <img src="assets/page_header_half_height.png" alt="">
 </p>
 
 _This chapter provides comprehensive coverage of automated red teaming, detailing how to move from manual probing to industrial-scale vulnerability scanning. We explore the architecture of modular fuzzing harnesses, implement a custom generator-mutator-judge framework in Python, and analyze real-world incidents like the GCG attack to understand why automation is critical for uncovering deep adversarial flaws._

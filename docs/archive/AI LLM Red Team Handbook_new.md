@@ -78,7 +78,7 @@
 
 ## Chapter 1: Introduction to AI Red Teaming
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter introduces AI red teaming as a structured practice for identifying vulnerabilities in AI systems, particularly Large Language Models. You'll learn what makes AI security different from traditional cybersecurity, understand the unique attack surfaces of LLMs, and explore the professional mindset and ethical framework required for responsible AI security testing._
 
@@ -298,7 +298,7 @@ _Proceed to Chapter 2 to explore ethical and legal essentials in depth, and begi
 
 ## Chapter 2: Ethics, Legal, and Stakeholder Communication
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter establishes the critical ethical and legal framework for AI red teaming. You'll learn the principles of responsible security testing, understand legal boundaries and authorization requirements, master stakeholder communication strategies, and develop professional practices for data handling and responsible disclosure in AI security engagements._
 
@@ -520,7 +520,7 @@ _In the next chapter, you'll develop the mindset that distinguishes effective AI
 
 ## Chapter 3: The Red Teamer's Mindset
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter develops the critical thinking skills and adversarial perspective essential for effective AI red teaming. You'll learn how to think like an attacker, cultivate skepticism and creativity, balance persistence with professionalism, and develop the psychological resilience needed for this specialized security discipline._
 
@@ -735,7 +735,7 @@ _Mastering the red team mindset primes you for the work ahead: scoping, planning
 
 ## Chapter 4: SOW, Rules of Engagement, and Client Onboarding
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter provides practical frameworks for establishing professional AI red team engagements. You'll learn to create comprehensive Statements of Work, define clear Rules of Engagement, conduct effective client onboarding, and establish communication protocols that ensure legal protection and professional success._
 
@@ -1000,7 +1000,7 @@ _Solid foundations prevent project failure and foster trust. The next chapter wi
 
 ## Chapter 5: Threat Modeling and Risk Analysis
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter teaches systematic threat modeling and risk analysis for AI systems. You'll learn to identify critical assets, enumerate threat actors, map attack surfaces specific to LLMs, prioritize risks by impact and likelihood, and create actionable threat models that drive effective red team engagements._
 
@@ -1169,7 +1169,7 @@ As AI systems become more complex with multi-modal capabilities, agentic behavio
 
 ## Chapter 6: Scoping an Engagement
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter guides you through the critical process of scoping AI red team engagements. You'll learn to define realistic boundaries, estimate timelines and resources, identify technical and business constraints, communicate scope effectively to stakeholders, and avoid common scoping pitfalls that derail engagements._
 
@@ -1312,7 +1312,7 @@ As AI systems grow in complexity and integration depth, scoping will become more
 
 ## Chapter 7: Lab Setup and Environmental Safety
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter provides hands-on guidance for setting up safe, isolated AI red teaming environments. You'll learn to configure local and cloud-based labs, implement proper network isolation, deploy test models and applications, establish monitoring and logging, and create reproducible test environments for ethical AI security research._
 
@@ -1444,7 +1444,7 @@ Expect to see standardized AI red teaming lab templates, infrastructure-as-code 
 
 ## Chapter 8: Evidence, Documentation, and Chain of Custody
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter establishes professional standards for evidence collection and documentation in AI red team engagements. You'll learn forensically-sound capture methods, proper chain-of-custody procedures, secure evidence storage and handling, comprehensive documentation practices, and legal requirements for preserving findings that may be used in compliance or legal contexts._
 
@@ -1595,7 +1595,7 @@ Expect to see automated evidence collection tools integrated into red team platf
 
 ## Chapter 9: LLM Architectures and System Components
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter provides deep technical understanding of LLM architectures critical for red teaming. You'll learn transformer internals, attention mechanisms, embedding spaces, system prompts and context windows, model deployment patterns, and how architectural choices create specific attack surfaces that red teamers can exploit._
 
@@ -1772,7 +1772,7 @@ As LLM architectures evolve with mixture-of-experts, sparse attention, and multi
 
 ## Chapter 10: Tokenization, Context, and Generation
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter explores how LLMs process and generate text, with focus on security implications. You'll learn tokenization mechanisms (BPE, WordPiece), context window management, generation strategies (greedy, sampling, beam search), and how understanding these processes enables sophisticated attacks like token manipulation and evasion techniques._
 
@@ -1914,7 +1914,7 @@ Evolving tokenization approaches (character-level, byte-level, learned vocabular
 
 ## Chapter 11: Plugins, Extensions, and External APIs
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter examines the plugin and API ecosystem that extends LLM capabilities and creates new attack surfaces. You'll learn plugin architectures, function calling mechanisms, API integration patterns, authentication and authorization flows, and the unique vulnerabilities introduced when LLMs orchestrate external tool usage._
 
@@ -2065,7 +2065,7 @@ As LLMs gain more agentic capabilities with tool use and multi-step planning, pl
 
 ## Chapter 12: Retrieval-Augmented Generation (RAG) Pipelines
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter dissects Retrieval Augmented Generation systems and their attack surfaces. You'll learn RAG architecture (indexing, embedding, retrieval, generation), vector database security, context injection through retrieval poisoning, prompt leakage via retrieved documents, and how to test the complex data flow that makes RAG both powerful and vulnerable._
 
@@ -3364,7 +3364,7 @@ As RAG systems become more sophisticated with multi-hop retrieval, cross-modal s
 
 ## Chapter 13: Data Provenance and Supply Chain Security
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter addresses the critical but often overlooked aspect of AI supply chain security. You'll learn to trace data and model provenance, identify supply chain attack surfaces (datasets, pre-trained models, dependencies), assess third-party components, verify model integrity, and establish security controls that protect against poisoned training data and compromised model artifacts._
 
@@ -5244,7 +5244,7 @@ As AI supply chains grow more complex with model marketplaces, federated learnin
 
 ## Chapter 14: Prompt Injection (Direct/Indirect, 1st/3rd Party)
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter provides comprehensive coverage of prompt injection attacks, including direct and indirect injection techniques, first-party and third-party variations, detection methods, defense-in-depth strategies, real-world case studies, and critical ethical considerations for authorized security testing._
 
@@ -9497,7 +9497,7 @@ _Prompt injection represents the defining security challenge of the LLM era. Lik
 
 ## Chapter 15: Data Leakage and Extraction
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter provides comprehensive coverage of data leakage vulnerabilities in LLM systems, including training data extraction, conversation history leakage, system prompt disclosure, credential extraction, PII revelation, model inversion attacks, detection strategies, mitigation techniques, and critical regulatory compliance considerations._
 
@@ -13373,7 +13373,7 @@ _Continue to Chapter 16: Jailbreaks and Bypass Techniques to learn how attackers
 
 ## Chapter 16: Jailbreaks and Bypass Techniques
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter provides comprehensive coverage of jailbreak techniques, bypass methods, testing methodologies, and defenses for LLM systems._
 
@@ -14962,7 +14962,7 @@ Jailbreaks bypass LLM safety controls through role-playing, instruction manipula
 
 ## Chapter 17: Plugin and API Exploitation
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter provides comprehensive coverage of security issues in LLM plugins, APIs, and third-party integrations, including architecture analysis, vulnerability discovery, exploitation techniques, and defensive strategies._
 
@@ -17764,7 +17764,7 @@ Attackers manipulate the LLM to invoke plugins/APIs with malicious arguments or 
 
 ## Chapter 18: Evasion, Obfuscation, and Adversarial Inputs
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter provides comprehensive coverage of evasion techniques, obfuscation methods, and adversarial input strategies used to bypass LLM security controls, along with detection and mitigation approaches._
 
@@ -19020,7 +19020,7 @@ Evasion attacks manipulate input prompts to bypass content filters and safety gu
 
 ## Chapter 19: Training Data Poisoning
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter provides comprehensive coverage of training data poisoning attacks, backdoor injection techniques, model integrity compromise, detection methodologies, and defense strategies for LLM systems._
 
@@ -19975,7 +19975,7 @@ Attackers inject malicious data into the training set (pre-training or fine-tuni
 
 ## Chapter 20: Model Theft and Membership Inference
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter provides comprehensive coverage of model extraction attacks, membership inference techniques, privacy violations in ML systems, intellectual property theft, watermarking, detection methods, and defense strategies for protecting model confidentiality._
 
@@ -21025,7 +21025,7 @@ Attackers query the model to either learn its internal parameters (Model Theft) 
 
 ## Chapter 21: Model DoS and Resource Exhaustion
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter provides comprehensive coverage of Denial of Service (DoS) attacks on LLM systems, resource exhaustion techniques, economic attacks, detection methods, and defense strategies for protecting API availability and cost management._
 
@@ -21920,7 +21920,7 @@ Attackers exploit the high computational and financial cost of LLM inference ($O
 
 ## Chapter 22: Cross-Modal and Multimodal Attacks
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter provides comprehensive coverage of attacks on multimodal AI systems, including vision-language models (GPT-4V, Claude 3, Gemini), image-based prompt injection, adversarial images, audio attacks, cross-modal exploitation techniques, detection methods, and defense strategies._
 
@@ -23212,7 +23212,7 @@ Using non-text inputs (Images, Audio) to inject prompts or adversarial noise tha
 
 ## Chapter 23: Advanced Persistence and Chaining
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter provides comprehensive coverage of advanced persistence techniques and attack chaining for LLM systems, including context manipulation, multi-turn attacks, state persistence, chain-of-thought exploitation, prompt chaining, session hijacking, detection methods, and defense strategies._
 
@@ -24100,7 +24100,7 @@ Attackers manipulate the model's "memory" (context window, RAG database, or syst
 
 ## Chapter 24: Social Engineering with LLMs
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter provides comprehensive coverage of social engineering attacks powered by Large Language Models, including AI-generated phishing, impersonation attacks, trust exploitation, persuasion technique automation, spear phishing at scale, pretexting, detection methods, defense strategies, and critical ethical considerations._
 
@@ -25235,7 +25235,7 @@ Attackers leverage LLMs to automate the creation of highly personalized, persuas
 
 ## Chapter 25: Advanced Adversarial ML
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter digs into advanced adversarial machine learning, the kind of techniques that actually keep AI security researchers up at night. We'll cover gradient-based attacks, transferable adversarial examples, universal perturbations, model inversion, and (the big one) adversarial prompt optimization. You'll walk away understanding both how to use these techniques in authorized red team assessments and how to defend against them._
 
@@ -26449,7 +26449,7 @@ Advanced Adversarial ML attacks use mathematical optimization to find minimal pe
 
 ## Chapter 26: Supply Chain Attacks on AI
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter covers supply chain attacks targeting AI/ML systems: model repository compromises, dependency poisoning, malicious pre-trained models, compromised training pipelines, third-party API exploitation, plus detection methods, defense strategies, and ethical considerations for authorized testing._
 
@@ -27272,7 +27272,7 @@ Supply chain attacks compromise AI by injecting malicious code, backdoors, or po
 
 ## Chapter 27: Federated Learning Attacks
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter is currently under development._
 
@@ -27292,7 +27292,7 @@ Content for this chapter will be added in future updates.
 
 ## Chapter 28: AI Privacy Attacks
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter is currently under development._
 
@@ -27312,7 +27312,7 @@ Content for this chapter will be added in future updates.
 
 ## Chapter 29: Model Inversion Attacks
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter is currently under development._
 
@@ -27332,7 +27332,7 @@ Content for this chapter will be added in future updates.
 
 ## Chapter 30: Backdoor Attacks
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter is currently under development._
 
@@ -27352,7 +27352,7 @@ Content for this chapter will be added in future updates.
 
 ## Chapter 31: AI System Reconnaissance
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter is currently under development._
 
@@ -27372,7 +27372,7 @@ Content for this chapter will be added in future updates.
 
 ## Chapter 32: Automated Attack Frameworks
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter is currently under development._
 
@@ -27392,7 +27392,7 @@ Content for this chapter will be added in future updates.
 
 ## Chapter 33: Red Team Automation
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter is currently under development._
 
@@ -27412,7 +27412,7 @@ Content for this chapter will be added in future updates.
 
 ## Chapter 34: Defense Evasion Techniques
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter is currently under development._
 
@@ -27432,7 +27432,7 @@ Content for this chapter will be added in future updates.
 
 ## Chapter 35: Post-Exploitation in AI Systems
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter is currently under development._
 
@@ -27452,7 +27452,7 @@ Content for this chapter will be added in future updates.
 
 ## Chapter 36: Reporting and Communication
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter teaches you how to craft impactful AI red team reports that communicate both technical and business risks effectively. You'll learn audience-tailored communication strategies, evidence-driven reporting structures, executive summary templates, detailed finding formats, and professional handoff procedures that ensure your findings drive actual security improvements._
 
@@ -27618,7 +27618,7 @@ Chapter 37 covers presenting your results effectively to both technical and non-
 
 ## Chapter 37: Presenting Results and Remediation Guidance
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter bridges technical findings and organizational action through effective presentation and remediation strategies. You'll learn how to present results to technical and non-technical audiences, facilitate collaborative remediation planning, create prioritized roadmaps, handle difficult conversations, and ensure your red teaming work translates into measurable security improvements._
 
@@ -27744,7 +27744,7 @@ Chapter 38 explores lessons learned, common pitfalls, and strategies for buildin
 
 ## Chapter 38: Lessons Learned and Program Maturity
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter establishes a framework for continuous improvement and program maturity in AI red teaming. You'll learn common pitfalls to avoid, best practices for building effective red teaming capabilities, strategies for institutionalizing red teaming within organizations, and how to adapt your practice to the evolving AI threat landscape._
 
@@ -27845,7 +27845,7 @@ With lessons learned and program maturity frameworks in place, Chapter 45 provid
 
 ## Chapter 39: AI Bug Bounty Programs
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter is currently under development._
 
@@ -27865,7 +27865,7 @@ Content for this chapter will be added in future updates.
 
 ## Chapter 40: Compliance and Standards
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter is currently under development._
 
@@ -27885,7 +27885,7 @@ Content for this chapter will be added in future updates.
 
 ## Chapter 41: Industry Best Practices
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter is currently under development._
 
@@ -27905,7 +27905,7 @@ Content for this chapter will be added in future updates.
 
 ## Chapter 42: Case Studies and War Stories
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter is currently under development._
 
@@ -27925,7 +27925,7 @@ Content for this chapter will be added in future updates.
 
 ## Chapter 43: Future of AI Red Teaming
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter is currently under development._
 
@@ -27945,7 +27945,7 @@ Content for this chapter will be added in future updates.
 
 ## Chapter 44: Emerging Threats
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter is currently under development._
 
@@ -27965,7 +27965,7 @@ Content for this chapter will be added in future updates.
 
 ## Chapter 45: Building an AI Red Team Program
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter provides a comprehensive blueprint for establishing world-class AI red team programs. You'll learn organizational models, essential skill sets, the adversarial mindset, engagement lifecycles, tool arsenals, vulnerability taxonomies, integration strategies, and the evolution from tactical assessments to strategic wargaming._
 
@@ -28260,7 +28260,7 @@ A mature AI red team anticipates future threats and drives systemic improvement 
 
 ## Chapter 46: Conclusion and Next Steps
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _This chapter is currently under development._
 

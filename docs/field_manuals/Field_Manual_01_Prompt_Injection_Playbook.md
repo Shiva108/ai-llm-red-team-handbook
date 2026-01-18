@@ -1,6 +1,6 @@
 # Field Manual Playbook 01: Prompt Injection
 
-![ ](../assets/page_header.svg)
+![ ](../assets/page_header_half_height.png)
 
 **Attack Type**: Prompt Injection (Direct & Indirect)  
 **Difficulty**: ⭐ Beginner  

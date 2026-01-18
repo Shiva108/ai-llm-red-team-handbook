@@ -12,7 +12,7 @@ Related: Chapters 11, 17 (Safety/Alignment, Plugin Exploitation)
 # Chapter 16: Jailbreaks and Bypass Techniques
 
 <p align="center">
-  <img src="assets/page_header.svg" alt="">
+  <img src="assets/page_header_half_height.png" alt="">
 </p>
 
 _This chapter provides comprehensive coverage of jailbreak techniques, bypass methods, testing methodologies, and defenses for LLM systems._

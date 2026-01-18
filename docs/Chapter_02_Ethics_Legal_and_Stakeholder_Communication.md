@@ -12,7 +12,7 @@ Related: Chapters 4 (SOW/RoE), 8 (Evidence), 36 (Reporting)
 # Chapter 2: Ethics, Legal, and Stakeholder Communication
 
 <p align="center">
-  <img src="assets/page_header.svg" alt="">
+  <img src="assets/page_header_half_height.png" alt="">
 </p>
 
 _This chapter establishes the critical ethical and legal framework for AI red teaming. You'll learn the principles of responsible security testing, understand legal boundaries and authorization requirements, master stakeholder communication strategies, and develop professional practices for data handling and responsible disclosure in AI security engagements._

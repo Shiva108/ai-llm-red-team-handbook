@@ -1,6 +1,6 @@
 # Field Manual Playbook 08: DoS & Resource Exhaustion
 
-![ ](../assets/page_header.svg)
+![ ](../assets/page_header_half_height.png)
 
 **Attack Type**: Denial of Service & Cost Inflation  
 **Difficulty**: ⭐⭐ Intermediate  

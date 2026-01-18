@@ -11,7 +11,7 @@ Related: Chapters [list related chapters]
 
 # Chapter [X]: [Chapter Title]
 
-![ ](assets/page_header.svg)
+![ ](assets/page_header_half_height.png)
 
 _[Write a compelling 2-3 sentence abstract that: (1) describes what this chapter covers, (2) explains why it matters for AI red teaming, and (3) includes specific techniques/concepts covered. Example: "This chapter provides comprehensive coverage of [topic], including [technique 1], [technique 2], [technique 3], detection methods, defense strategies, and critical ethical considerations." Be specific and engaging.]_
 

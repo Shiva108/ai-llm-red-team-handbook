@@ -12,7 +12,7 @@ Related: Chapter 15 (Data Leakage), Chapter 23 (Persistence)
 # Chapter 17: Plugin and API Exploitation
 
 <p align="center">
-  <img src="assets/page_header.svg" alt="">
+  <img src="assets/page_header_half_height.png" alt="">
 </p>
 
 _This chapter covers security issues in LLM plugins, APIs, and third-party integrations—from architecture analysis and vulnerability discovery to exploitation techniques and defense strategies._

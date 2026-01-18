@@ -12,7 +12,7 @@ Related: Chapters 27 (Federated Learning), 25 (Adversarial ML)
 # Chapter 29: Model Inversion Attacks
 
 <p align="center">
-  <img src="assets/page_header.svg" alt="">
+  <img src="assets/page_header_half_height.png" alt="">
 </p>
 
 _This chapter explores Model Inversion Attacks (MIA), where adversaries reconstruct representative features or exact images of target classes by interrogating a model. We delve into optimization-based inversion, generative model priors, and the thin line between model utility and data leakage._

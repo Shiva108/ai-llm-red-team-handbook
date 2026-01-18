@@ -12,7 +12,7 @@ Related: Chapters 15-16 (Data Leakage, Jailbreaks)
 # Chapter 14: Prompt Injection (Direct/Indirect, 1st/3rd Party)
 
 <p align="center">
-  <img src="assets/page_header.svg" alt="">
+  <img src="assets/page_header_half_height.png" alt="">
 </p>
 
 _This chapter provides comprehensive coverage of prompt injection attacks, including direct and indirect injection techniques, first-party and third-party variations, detection methods, defense-in-depth strategies, real-world case studies, and critical ethical considerations for authorized security testing._

@@ -12,7 +12,7 @@ Related: Chapters 27 (Federated Learning), 34 (Defense Evasion)
 # Chapter 30: Backdoor Attacks
 
 <p align="center">
-  <img src="assets/page_header.svg" alt="">
+  <img src="assets/page_header_half_height.png" alt="">
 </p>
 
 _This chapter dives deep into Backdoor Attacks (Trojans) in AI systems. Unlike standard adversarial examples that exploit existing fragility, backdoors are intentionally implanted vulnerabilities that trigger specific, malicious behaviors only when a secret "trigger" appears in the input. We cover injection mechanisms, clean-label attacks, Neural Cleanse detection, activation clustering defenses, supply chain vulnerabilities, and real-world case studies—including the $60 Wikipedia poisoning attack._

@@ -12,7 +12,7 @@ Related: Chapters 12 (RAG), 17 (Plugin Exploitation), 26 (Supply Chain)
 # Chapter 11: Plugins, Extensions, and External APIs
 
 <p align="center">
-  <img src="assets/page_header.svg" alt="">
+  <img src="assets/page_header_half_height.png" alt="">
 </p>
 
 _This chapter examines the plugin and API ecosystem that extends LLM capabilities and creates new attack surfaces. You'll learn plugin architectures, function calling mechanisms, API integration patterns, authentication and authorization flows, and the unique vulnerabilities introduced when LLMs orchestrate external tool usage._

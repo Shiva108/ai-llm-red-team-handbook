@@ -12,7 +12,7 @@ Related: Chapters 29 (Model Inversion), 27 (Federated Learning)
 # Chapter 28: AI Privacy Attacks
 
 <p align="center">
-  <img src="assets/page_header.svg" alt="">
+  <img src="assets/page_header_half_height.png" alt="">
 </p>
 
 _This chapter provides comprehensive coverage of AI privacy attacks, including Membership Inference Attacks (MIA), Attribute Inference, and Training Data Extraction. We explore how models unintentionally memorize and leak sensitive information, demonstrate practical extraction techniques, and outline robust defense strategies like Differential Privacy and Machine Unlearning to protect user data._

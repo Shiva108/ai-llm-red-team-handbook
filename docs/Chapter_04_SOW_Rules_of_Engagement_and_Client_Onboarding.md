@@ -12,7 +12,7 @@ Related: Chapters 2 (Ethics), 6 (Scoping), 8 (Evidence)
 # Chapter 4: SOW, Rules of Engagement, and Client Onboarding
 
 <p align="center">
-  <img src="assets/page_header.svg" alt="">
+  <img src="assets/page_header_half_height.png" alt="">
 </p>
 
 _This chapter provides practical frameworks for establishing professional AI red team engagements. You'll learn to create comprehensive Statements of Work, define clear Rules of Engagement, conduct effective client onboarding, and establish communication protocols that ensure legal protection and professional success._

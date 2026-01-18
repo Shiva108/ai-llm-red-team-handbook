@@ -12,7 +12,7 @@ Related: Chapters 2 (Ethics), 5 (Threat Modeling)
 # Chapter 3: The Red Teamer's Mindset
 
 <p align="center">
-  <img src="assets/page_header.svg" alt="">
+  <img src="assets/page_header_half_height.png" alt="">
 </p>
 
 _This chapter develops the critical thinking skills and adversarial perspective essential for effective AI red teaming. You'll learn how to think like an attacker, cultivate skepticism and creativity, balance persistence with professionalism, and develop the psychological resilience needed for this specialized security discipline._

@@ -1,6 +1,6 @@
 # Field Manual Playbook 09: Multimodal Attacks
 
-![ ](../assets/page_header.svg)
+![ ](../assets/page_header_half_height.png)
 
 **Attack Type**: Vision/Audio + LLM Exploitation  
 **Difficulty**: ⭐⭐ Intermediate  

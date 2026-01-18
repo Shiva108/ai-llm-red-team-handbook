@@ -12,7 +12,7 @@ Related: Chapters 16, 20 (Jailbreaks, Model Theft)
 # Chapter 15: Data Leakage and Extraction
 
 <p align="center">
-  <img src="assets/page_header.svg" alt="">
+  <img src="assets/page_header_half_height.png" alt="">
 </p>
 
 _This chapter provides comprehensive coverage of data leakage vulnerabilities in LLM systems, including training data extraction, conversation history leakage, system prompt disclosure, credential extraction, PII revelation, model inversion attacks, detection strategies, mitigation techniques, and critical regulatory compliance considerations._

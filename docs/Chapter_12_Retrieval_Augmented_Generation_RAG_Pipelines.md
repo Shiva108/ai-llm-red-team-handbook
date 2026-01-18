@@ -12,7 +12,7 @@ Related: Chapters 11 (Plugins), 13 (Supply Chain), 23 (Persistence)
 # Chapter 12: Retrieval-Augmented Generation (RAG) Pipelines
 
 <p align="center">
-  <img src="assets/page_header.svg" alt="">
+  <img src="assets/page_header_half_height.png" alt="">
 </p>
 
 _This chapter dissects Retrieval Augmented Generation systems and their attack surfaces. You'll learn RAG architecture (indexing, embedding, retrieval, generation), vector database security, context injection through retrieval poisoning, prompt leakage via retrieved documents, and how to test the complex data flow that makes RAG both powerful and vulnerable._

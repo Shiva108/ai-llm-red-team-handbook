@@ -11,7 +11,7 @@ Prerequisites: None
 # Chapter 46: Conclusion and Next Steps
 
 <p align="center">
-  <img src="assets/page_header.svg" alt="">
+  <img src="assets/page_header_half_height.png" alt="">
 </p>
 
 _You've reached the end of the AI LLM Red Team Handbook. But in security, there is no end—only the next model update._

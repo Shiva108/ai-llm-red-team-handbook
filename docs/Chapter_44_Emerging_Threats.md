@@ -12,7 +12,7 @@ Related: Chapter 43 (Future of AI)
 # Chapter 44: Emerging Threats
 
 <p align="center">
-  <img src="assets/page_header.svg" alt="">
+  <img src="assets/page_header_half_height.png" alt="">
 </p>
 
 The threat landscape is bigger than simple chatbot hacks. This chapter provides the technical tools to detect "Shadow AI" on your network, analyze the risks of "Audio Adversarial Attacks," and prevent "Log Injection" in Critical Infrastructure.
