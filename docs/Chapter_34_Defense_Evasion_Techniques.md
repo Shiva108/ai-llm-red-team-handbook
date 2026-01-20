@@ -61,6 +61,10 @@ We will cover the taxonomy of evasion attacks, detailed methodologies for obfusc
 
 ## 34.2 Core Evasion Methodologies: Obfuscation & Encoding
 
+<p align="center">
+  <img src="assets/rec33_evasion_spectrum.png" alt="Evasion Spectrum" width="512">
+</p>
+
 Obfuscation and encoding are the primary methods used to bypass static, keyword-based security filters. These techniques aim to mask malicious instructions by altering their typographic, linguistic, or encoded representation without changing the semantic meaning for the LLM.
 
 ### How Obfuscation Works
@@ -261,6 +265,10 @@ This implementation succeeds because:
 
 The most potent evasion techniques turn the LLM's greatest strength—its stateful, contextual memory—into its most exploitable vulnerability.
 
+<p align="center">
+  <img src="assets/Ch34_Flow_PayloadSplitting.png" alt="Payload Splitting Flow" width="512">
+</p>
+
 ### 34.3.1 Payload Splitting (Multi-Turn Attacks)
 
 Payload splitting involves breaking a malicious instruction into several benign-looking fragments submitted sequentially.
@@ -299,6 +307,10 @@ Instead of splitting across turns, attackers split across _variables_ in a singl
 - `print(code_for(a+b))`
 
 The filter sees benign variable assignments. The LLM executes the concatenated intent.
+
+<p align="center">
+  <img src="assets/rec34_gcg_optimization.png" alt="GCG Optimization" width="512">
+</p>
 
 ---
 
@@ -357,6 +369,10 @@ Layer 2: [Sanitization]  → [Strip/Decode Base64 & Hex]
 Layer 3: [Analysis]      → [Semantic Analysis on Sanitized Input]
 Layer 4: [Egress]        → [Streaming Output Audit]
 ```
+
+<p align="center">
+  <img src="assets/Ch34_Arch_DefenseLayers.png" alt="Defense Layers Architecture" width="512">
+</p>
 
 #### Defense Strategy 1: Streaming Output Audit
 
