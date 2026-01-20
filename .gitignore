@@ -40,3 +40,5 @@ docs/Chapter_31_AI_System_Reconnaissance.md.audit_backup
 docs/Visual_Recommendations.md
 Visual_Recommendations_V2.md
 .gitignore
+workflows/audit-fix-humanize-chapter-v2.md
+.gitignore
