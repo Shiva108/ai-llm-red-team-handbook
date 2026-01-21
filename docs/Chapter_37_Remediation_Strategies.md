@@ -29,7 +29,7 @@ Effective remediation strategies are the mechanism that reduces organizational r
 - **Cost Impact:** Fixing vulnerabilities early in the model lifecycle is significantly cheaper than addressing post-deployment incidents (estimated 100x cost difference).
 
 <p align="center">
-  <img src="assets/Ch37_Infographic_AudienceBridge.png" width="40%" alt="Audience Bridge Infographic">
+  <img src="assets/Ch37_Infographic_AudienceBridge.png" width="512" alt="Audience Bridge Infographic">
 </p>
 
 ### Key Concepts
@@ -83,13 +83,13 @@ Discovery (Red Team) → Triage & Prioritization → Root Cause Analysis → Imp
 2. **Triage:** Assessing severity (Critical) and resources (High effort).
 
 <p align="center">
-  <img src="assets/Ch37_Matrix_RiskHeatmap.png" width="40%" alt="Risk Mitigation Heatmap">
+  <img src="assets/Ch37_Matrix_RiskHeatmap.png" width="512" alt="Risk Mitigation Heatmap">
 </p>
 3. **Implementation:** Applying specific controls (Input Sanitization + System Prompt).
 4. **Verification:** Re-running attack payloads to ensure the fix works.
 
 <p align="center">
-  <img src="assets/Ch37_Chart_RemediationRoadmap.png" width="40%" alt="Remediation Roadmap Chart">
+  <img src="assets/Ch37_Chart_RemediationRoadmap.png" width="512" alt="Remediation Roadmap Chart">
 </p>
 
 ### Mechanistic Explanation
