@@ -26,6 +26,10 @@ The threat landscape is bigger than simple chatbot hacks. This chapter provides 
 - **Data Leakage:** Engineers pasting API keys or source code into a personal "Ollama" instance that happens to have telemetry enabled.
 - **Supply Chain:** Downloading `malware-llama.pt` from Hugging Face because it promised "uncensored" performance.
 
+<p align="center">
+  <img src="assets/Ch44_Map_ShadowAI.png" width="512" alt="Shadow AI Network Detection">
+</p>
+
 ### 44.1.2 Tooling: The `Shadow_AI_Scanner`
 
 We can't just block `openai.com` (marketing needs it). We need to find _internal_ servers running AI.
