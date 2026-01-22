@@ -39,33 +39,33 @@ graph TD
 
 ### What You've Mastered
 
-**Part I: Professional Foundations (Ch 1-4)**
+#### Part I: Professional Foundations (Ch 1-4)
 
 - The fundamentals of AI red teaming and why it's critical
 - Ethical frameworks, legal compliance (CFAA, GDPR), and stakeholder communication
 - The red teamer's mindset: curiosity, creativity, and systematic thinking
 - SOW, Rules of Engagement, and client onboarding procedures
 
-**Part II: Project Preparation (Ch 5-8)**
+#### Part II: Project Preparation (Ch 5-8)
 
 - Threat modeling methodologies specific to AI systems
 - Scoping engagements: in-scope vs out-of-scope for AI components
 - Building isolated red team labs with proper safety controls
 - Chain of custody and evidence handling for non-deterministic systems
 
-**Part III: Technical Fundamentals (Ch 9-11)**
+#### Part III: Technical Fundamentals (Ch 9-11)
 
 - LLM architectures: transformers, attention mechanisms, tokenization
 - Context windows, generation parameters, and model behavior
 - Plugin architectures and API integration points
 
-**Part IV: Pipeline Security (Ch 12-13)**
+#### Part IV: Pipeline Security (Ch 12-13)
 
 - RAG system vulnerabilities and retrieval poisoning
 - Supply chain attacks: from training data to model distribution
 - Vector database security and embedding space manipulation
 
-**Part V: Attacks & Techniques (Ch 14-24)**
+#### Part V: Attacks & Techniques (Ch 14-24)
 
 - Prompt injection (direct, indirect, multi-turn)
 - Data leakage and training data extraction
@@ -78,7 +78,7 @@ graph TD
 - Multimodal attacks (vision, audio, cross-modal)
 - Social engineering via AI agents
 
-**Part VI: Defense & Mitigation (Ch 25-30)**
+#### Part VI: Defense & Mitigation (Ch 25-30)
 
 - Adversarial machine learning and robustness
 - Supply chain defense and model provenance
@@ -87,7 +87,7 @@ graph TD
 - Model inversion defenses
 - Backdoor detection and mitigation
 
-**Part VII: Advanced Operations (Ch 31-39)**
+#### Part VII: Advanced Operations (Ch 31-39)
 
 - OSINT and reconnaissance for AI systems
 - Attack automation frameworks (TAP, GCG)
@@ -99,7 +99,7 @@ graph TD
 - Continuous red teaming programs
 - Bug bounty hunting for AI vulnerabilities
 
-**Part VIII: Strategic Topics (Ch 40-46)**
+#### Part VIII: Strategic Topics (Ch 40-46)
 
 - Compliance frameworks (EU AI Act, ISO 42001, NIST AI RMF)
 - Industry best practices and defense architectures
