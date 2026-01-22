@@ -41,11 +41,11 @@ We advocate for a **Sandwich Defense Model** (or Swiss Cheese Model), where the 
 
 ## 41.2 Defense Layer 1: Advanced Input Sanitization
 
-Simple string matching is insufficient against modern jailbreaks (Chapter 16). Attackers use obfuscation—such as Unicode homoglyphs, invisible characters, and leetspeak—to bypass keyword filters. We need normalization and anomaly detection.
+Simple string matching won't cut it against modern jailbreaks (Chapter 16). Attackers use obfuscation (Unicode homoglyphs, invisible characters, leetspeak) to bypass keyword filters. We need normalization and anomaly detection.
 
 ### 41.2.1 The `TextDefense` Class
 
-This Python module implements best-practice sanitization. It focuses on **Normalization** (preventing homoglyph attacks) and **Anomaly Detection** (identifying script mixing).
+This Python module implements sanitization best practices. It focuses on **Normalization** (preventing homoglyph attacks) and **Anomaly Detection** (identifying script mixing).
 
 #### Python Implementation
 
@@ -198,9 +198,9 @@ if __name__ == "__main__":
 
 #### Code Breakdown
 
-1.  **`normalize_text (NFKC)`**: This is critical. Attackers use mathematical alphanumerics (like `𝐇𝐞𝐥𝐥𝐨`) to bypass filters looking for "Hello". NFKC coerces them back to standard ASCII.
-2.  **`strip_invisibles`**: Removes characters like Zero Width Spaces (`\u200B`) which are invisible to humans but split tokens for the LLM, bypassing "bad word" lists.
-3.  **`detect_script_mixing`**: Legitimate users rarely mix Greek, Latin, and Cyrillic characters in a single sentence. Attackers do it constantly to confuse tokenizers.
+1. **`normalize_text (NFKC)`**: This is critical. Attackers use mathematical alphanumerics (like `𝐇𝐞𝐥𝐥𝐨`) to bypass filters looking for "Hello". NFKC coerces them back to standard ASCII.
+2. **`strip_invisibles`**: Removes characters like Zero Width Spaces (`\u200B`) which are invisible to humans but split tokens for the LLM, bypassing "bad word" lists.
+3. **`detect_script_mixing`**: Legitimate users rarely mix Greek, Latin, and Cyrillic characters in a single sentence. Attackers do it constantly to confuse tokenizers.
 
 ---
 
@@ -210,7 +210,7 @@ AI models _will_ leak data. It is a probabilistic certainty. You must catch it o
 
 ### 41.3.1 The `PIIFilter` Class
 
-In production, you would likely use **Microsoft Presidio** or **Google DLP**. However, understanding the regex logic is vital for custom entities (like internal Project Codenames).
+In production, you'd likely use **Microsoft Presidio** or **Google DLP**. But understanding the regex logic is vital for custom entities (like internal Project Codenames).
 
 #### Python Implementation
 
@@ -276,7 +276,7 @@ if __name__ == "__main__":
 
 ### 41.3.2 RAG Defense-in-Depth
 
-Retrieval-Augmented Generation (RAG) introduces the risk of **active retrieval**, where the model pulls in a malicious document that contains a prompt injection (Indirect Prompt Injection).
+Retrieval-Augmented Generation (RAG) introduces the risk of **active retrieval**. The model might pull in a malicious document containing a prompt injection (Indirect Prompt Injection).
 
 **Secure RAG Checklist:**
 
@@ -288,7 +288,7 @@ Retrieval-Augmented Generation (RAG) introduces the risk of **active retrieval**
 
 ## 41.4 Secure MLOps: The Supply Chain
 
-Security starts before the model is deployed. The MLOps pipeline (Hugging Face -> Jenkins -> Production) is a high-value target for lateral movement.
+Security starts before model deployment. The MLOps pipeline (Hugging Face -> Jenkins -> Production) is a high-value target for lateral movement.
 
 <p align="center">
   <img src="assets/Ch41_Flow_SupplyChain.png" width="512" alt="Secure MLOps Supply Chain">
@@ -414,7 +414,7 @@ if __name__ == "__main__":
 
 ### 41.5.1 Token-Bucket Rate Limiting
 
-Rate limiting by "Requests Per Minute" is useless in AI. One request can be 10 tokens or 10,000 tokens. You must limit by **Compute Cost** (Tokens).
+Rate limiting by "Requests Per Minute" is useless in AI. One request can be 10 tokens or 10,000 tokens. You need to limit by **Compute Cost** (Tokens).
 
 - **Implementation Note:** Use Redis to store a token bucket for each `user_id`. Subtract `len(prompt_tokens) + len(completion_tokens)` from their bucket on every request.
 
@@ -546,9 +546,9 @@ During UAT, the Red Team discovered they could bypass the "No PII" instruction b
 
 **The Fix (Best Practice):**
 
-1.  **Input:** Added `TextDefenseLayer` to strip hidden formatting.
-2.  **Output:** Implemented `PIIFilter` on code blocks, not just plain text.
-3.  **Process:** Deployment was deferred by 2 weeks to implement `ModelSupplyChainValidator` after finding a developer had downloaded a "fine-tuned" model from a personal Hugging Face repo.
+1. **Input:** Added `TextDefenseLayer` to strip hidden formatting.
+2. **Output:** Implemented `PIIFilter` on code blocks, not just plain text.
+3. **Process:** Deployment was deferred by 2 weeks to implement `ModelSupplyChainValidator` after finding a developer had downloaded a "fine-tuned" model from a personal Hugging Face repo.
 
 **Result:** The application launched with zero PII leaks in the first 6 months of operation.
 
@@ -567,7 +567,7 @@ During UAT, the Red Team discovered they could bypass the "No PII" instruction b
 
 ## 41.9 Ethical & Legal Considerations
 
-Implementing these defenses requires navigating a complex legal landscape.
+Implementing these defenses means navigating a complex legal landscape.
 
 - **Duty of Care:** You have a legal obligation to prevent your AI from causing foreseeable harm. Failing to implement "Output Guardrails" could be considered negligence.
 - **EU AI Act:** Categorizes "High Risk" AI (like biometric ID or critical infrastructure). These systems _must_ have rigorous risk management and human oversight (HITL).
@@ -600,7 +600,7 @@ Best practices in AI security are about **assuming breach**. The model is untrus
 - [ ] **Sanitization:** Is NFKC normalization applied before keyword filtering?
 - [ ] **Supply Chain:** Are model weights cryptographically verified against a trusted manifest?
 - [ ] **Monitoring:** Are "Safety Violation Rates" tracked in real-time on the SOC dashboard?
-- [ ] **Serialization:** Is `pickle` disabled or strictly reached in favor of `safetensors`?
+- [ ] **Serialization:** Is `pickle` disabled or strictly restricted in favor of `safetensors`?
 - [ ] **Rate Limiting:** Is limiting calculated based on tokens processed?
 
 ### Post-Incident Checklist
