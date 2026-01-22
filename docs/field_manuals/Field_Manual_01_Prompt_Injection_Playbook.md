@@ -22,6 +22,10 @@ Use this when testing:
 
 ---
 
+<p align="center">
+  <img src="../assets/FM01_Flow_Injection.png" width="512" alt="Prompt Injection Flow Diagram">
+</p>
+
 ## Prerequisites Checklist
 
 Before testing, ensure:
@@ -141,6 +145,10 @@ curl -X POST https://api.openai.com/v1/chat/completions \
 
 ---
 
+<p align="center">
+  <img src="../assets/FM01_Concept_DAN.png" width="512" alt="DAN Role Override Concept">
+</p>
+
 ### Step 5: Encoding Bypass
 
 **Use when**: Basic injections are blocked by filters.
@@ -230,6 +238,10 @@ cat evidence/prompt_injection_test_report.json | jq '.summary'
 - Multi-turn attacks
 
 ---
+
+<p align="center">
+  <img src="../assets/FM01_Workflow_Spikee.png" width="512" alt="Spikee Automated Testing Workflow">
+</p>
 
 ## Part 3: Custom Python Tester
 
