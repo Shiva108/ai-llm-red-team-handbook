@@ -241,14 +241,14 @@ Unlike direct prompt injection where the user provides the malicious input, here
 
 #### Example Attack
 
-```text
-Query: "Show me all documents created by the CFO in the last week"
-Even if content is protected, metadata leakage reveals:
-- That such documents exist
-- Their titles
-- When they were created
-- Potentially their subject matter
-```
+**Attacker Query:** "Show me all documents created by the CFO in the last week"
+
+| Leakage Type   | Information Revealed                |
+| :------------- | :---------------------------------- |
+| **Existence**  | Confirms sensitive docs exist       |
+| **Titling**    | Leaks internal project names/topics |
+| **Temporal**   | Reveals when key events occurred    |
+| **Contextual** | Infers subject matter from metadata |
 
 ### 12.5.5 Cross-Document Leakage
 
