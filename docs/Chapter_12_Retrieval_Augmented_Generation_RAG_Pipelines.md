@@ -356,13 +356,14 @@ A: Contact support@company.com
 
 #### Example
 
-```text
-Attacker Query Sequence:
-1. "Tell me about strategic initiatives" → Gets vague info
-2. "What new projects started in 2024?" → Gets project names
-3. "Details about Project Phoenix budget" → Gets financial hints
-4. "Project Phoenix Q1 2025 spending forecast" → Gets specific numbers
-```
+**Attacker Query Sequence:**
+
+| Step | Attacker Query                              | Outcome               |
+| :--- | :------------------------------------------ | :-------------------- |
+| 1    | "Tell me about strategic initiatives"       | Gets vague info       |
+| 2    | "What new projects started in 2024?"        | Gets project names    |
+| 3    | "Details about Project Phoenix budget"      | Gets financial hints  |
+| 4    | "Project Phoenix Q1 2025 spending forecast" | Gets specific numbers |
 
 ### 12.6.4 Chunking and Context Window Exploits
 
