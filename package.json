@@ -23,8 +23,5 @@
   "homepage": "https://github.com/Shiva108/ai-llm-red-team-handbook#readme",
   "devDependencies": {
     "gitbook-plugin-mermaid-newface": "^4.1.0"
-  },
-  "dependencies": {
-    "gitbook-cli": "^2.3.2"
   }
 }

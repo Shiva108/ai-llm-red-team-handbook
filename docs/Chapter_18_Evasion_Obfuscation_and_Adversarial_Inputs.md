@@ -61,7 +61,7 @@ Evasion in LLM security refers to techniques that manipulate inputs to bypass sa
 
 LLMs are trained to be helpful and understand context, but this same capability makes them vulnerable. An LLM that can understand "leet speak" (h4ck) to help users is also vulnerable to attackers using it to bypass filters. The more capable the LLM, the more sophisticated evasion techniques become possible.
 
-```text
+```mermaid
 Normal Attack Flow:
 User Input → Content Filter → [BLOCKED] ✗
 "How to hack a database"
