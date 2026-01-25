@@ -1,0 +1,82 @@
+# Prompt Injection Tester Configuration
+# Copy this file and customize for your target
+
+# Target Configuration
+target:
+  name: "Example LLM API"
+  url: "https://api.example.com/v1/chat/completions"
+  api_type: "openai"  # openai, anthropic, or custom
+  auth_token: "${OPENAI_API_KEY}"  # Use environment variable
+  timeout: 30  # Request timeout in seconds
+  rate_limit: 1.0  # Requests per second
+  headers:
+    X-Custom-Header: "value"
+
+# Attack Configuration
+attack:
+  # Specific patterns to test (leave empty for all)
+  patterns:
+    - "direct_instruction_override"
+    - "direct_system_prompt_override"
+    - "direct_role_authority"
+    - "indirect_rag_poisoning"
+    - "advanced_multi_turn"
+
+  # Maximum concurrent tests
+  max_concurrent: 5
+
+  # Timeout per individual test
+  timeout_per_test: 60
+
+  # Rate limiting
+  rate_limit: 1.0
+
+  # Retry configuration
+  retry_count: 3
+  retry_delay: 1.0
+
+  # Encoding variants to test
+  encoding_variants:
+    - "plain"
+    - "base64"
+    - "leetspeak_basic"
+
+  # Language variants
+  language_variants:
+    - "en"
+    - "es"
+    - "zh"
+
+  # Multi-turn settings
+  multi_turn_enabled: true
+  max_turns: 10
+
+  # Stop testing a category on first success
+  stop_on_success: false
+
+# Detection Configuration
+detection:
+  # Confidence threshold for success (0.0 - 1.0)
+  confidence_threshold: 0.5
+
+  # False positive reduction threshold
+  false_positive_threshold: 0.3
+
+  # Custom success indicators
+  custom_indicators:
+    - "INJECTION_SUCCESS"
+    - "OVERRIDE_CONFIRMED"
+
+# Reporting Configuration
+reporting:
+  format: "html"  # json, yaml, html
+  include_cvss: true
+  include_evidence: true
+  output_directory: "./reports"
+
+# Authorization (for audit trail)
+authorization:
+  authorized_by: "Security Team"
+  authorization_date: "2024-01-15"
+  scope: "Penetration testing engagement"
+  reference: "SOW-2024-001"
