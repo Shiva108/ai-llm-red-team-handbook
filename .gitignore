@@ -64,3 +64,5 @@ tools/prompt_injection_tester/.coverage
 tools/prompt_injection_tester/CLI_SPECIFICATION.md
 tools/prompt_injection_tester/CLI_ARCHITECTURE.md
 tools/prompt_injection_tester/PHASE1_COMPLETE.md
+tools/prompt_injection_tester/SPECIFICATION.md
+tools/prompt_injection_tester/ARCHITECTURE.md
