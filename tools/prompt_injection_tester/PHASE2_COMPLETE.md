@@ -20,6 +20,7 @@ Phase 2 has been successfully completed. The new sequential pipeline architectur
 - Returns discovered injection points as `InjectionPoint` objects
 
 **Key Changes**:
+
 - Uses `InjectionTester._initialize_client()` for proper client setup
 - Discovers injection points through intelligent probing
 - Includes proper cleanup with `tester.close()`
@@ -34,6 +35,7 @@ Phase 2 has been successfully completed. The new sequential pipeline architectur
 - Returns actual `TestResult` objects with detection data
 
 **Key Changes**:
+
 - Loads patterns from `pattern_registry` with automatic built-in pattern discovery
 - Creates `InjectionTester` instance for each attack with proper auth
 - Generates payloads from pattern instances
@@ -48,6 +50,7 @@ Phase 2 has been successfully completed. The new sequential pipeline architectur
 - Formats verified results with structured data for reporting
 
 **Key Changes**:
+
 - No longer uses mock verification - relies on real detection results
 - Preserves all detection metadata (methods, evidence, confidence)
 - Returns structured verification data compatible with reporting phase
@@ -63,6 +66,7 @@ Created comprehensive reporting module with multiple formatters:
 - **HTMLFormatter**: Professional HTML reports with embedded CSS and responsive design
 
 **Features**:
+
 - Template-based HTML generation using Jinja2
 - Auto-detection of output format from file extension
 - Severity-based color coding in HTML reports
@@ -88,6 +92,7 @@ Added `run_pipeline_workflow()` method:
 - Handles interrupts and errors gracefully
 
 **Key Architecture**:
+
 ```python
 # SEQUENTIAL execution - each phase waits for previous
 pipeline = await create_default_pipeline()
@@ -107,6 +112,7 @@ Created `_run_pipeline_scan()` function:
 - Proper cleanup on exit
 
 **Updated Scan Command**:
+
 - Auto mode (`--auto`) now uses sequential pipeline architecture
 - Maintains backward compatibility with existing workflows
 - Improved error handling and user feedback
@@ -123,6 +129,7 @@ Created comprehensive test suite:
 - **test_config_schema()**: Validates configuration schemas
 
 **Test Coverage**:
+
 - Sequential phase execution verification
 - Context data flow between phases
 - Formatter functionality
@@ -268,6 +275,7 @@ except Exception as e:
 ### 4. Professional Reporting
 
 HTML reports include:
+
 - Responsive design
 - Severity-based color coding
 - Summary statistics

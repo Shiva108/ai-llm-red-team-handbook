@@ -72,7 +72,7 @@ class MyPattern(BaseAttackPattern):
 
 ### Pattern Lifecycle
 
-```
+```yaml
 1. Pattern Registration
    ├─ load_builtin_patterns()
    └─ registry.register(PatternClass)
@@ -293,6 +293,7 @@ def generate_payloads(self) -> list[AttackPayload]:
 ```
 
 Supported encodings:
+
 - `plain`: No encoding
 - `base64`: Base64 encoding
 - `rot13`: ROT13 encoding

@@ -92,6 +92,7 @@ tools/prompt_injection_tester/results.html
 tools/prompt_injection_tester/results.yaml
 tools/prompt_injection_tester/config.yaml
 tools/prompt_injection_tester/IMPLEMENTATION_COMPLETE.md
+tools/prompt_injection_tester/PHASE2_COMPLETE.md
 
 # Legacy/Archive files
 tools/prompt_injection_tester/docs/reports/archive/CODE_REVIEW_2026_01_26.md
