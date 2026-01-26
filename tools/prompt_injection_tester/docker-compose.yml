@@ -1,0 +1,87 @@
+version: '3.8'
+
+services:
+  # Prompt Injection Tester
+  pit:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: pit:2.0.0
+    container_name: pit-scanner
+    volumes:
+      - ./reports:/reports
+      - ./config:/config:ro
+    environment:
+      - PIT_OUTPUT_DIR=/reports
+      - PYTHONUNBUFFERED=1
+    # Command examples (uncomment one to use):
+    # command: scan http://ollama:11434/api/chat --auto --output /reports/report.html
+    command: --help
+    networks:
+      - pit-network
+    depends_on:
+      - ollama
+
+  # Ollama LLM service (for testing)
+  ollama:
+    image: ollama/ollama:latest
+    container_name: pit-ollama
+    volumes:
+      - ollama-data:/root/.ollama
+    ports:
+      - "11434:11434"
+    networks:
+      - pit-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:11434/api/tags"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  # Optional: Web UI for viewing HTML reports
+  nginx:
+    image: nginx:alpine
+    container_name: pit-reports-viewer
+    volumes:
+      - ./reports:/usr/share/nginx/html:ro
+    ports:
+      - "8080:80"
+    networks:
+      - pit-network
+    profiles:
+      - ui
+
+networks:
+  pit-network:
+    driver: bridge
+
+volumes:
+  ollama-data:
+    driver: local
+
+# Usage Examples:
+#
+# 1. Start services:
+#    docker-compose up -d
+#
+# 2. Pull Ollama model:
+#    docker-compose exec ollama ollama pull llama3:latest
+#
+# 3. Run scan (override command):
+#    docker-compose run --rm pit scan http://ollama:11434/api/chat --auto --model llama3:latest
+#
+# 4. View reports:
+#    docker-compose --profile ui up -d nginx
+#    Open http://localhost:8080 in browser
+#
+# 5. Run with custom config:
+#    docker-compose run --rm pit scan http://ollama:11434/api/chat --config /config/config.yaml
+#
+# 6. Quick test:
+#    docker-compose run --rm pit scan http://ollama:11434/api/chat --patterns direct_instruction_override
+#
+# 7. Generate all report formats:
+#    docker-compose run --rm pit scan http://ollama:11434/api/chat --auto --output /reports/report.json
+#    docker-compose run --rm pit scan http://ollama:11434/api/chat --auto --output /reports/report.yaml
+#    docker-compose run --rm pit scan http://ollama:11434/api/chat --auto --output /reports/report.html

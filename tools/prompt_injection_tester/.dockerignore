@@ -1,0 +1,85 @@
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+.venvs/
+*.egg
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# IDEs
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# Documentation (build artifacts, not source)
+docs/_build/
+docs/.doctrees/
+
+# Reports (generated files)
+pit_report_*.json
+pit_report_*.yaml
+pit_report_*.html
+test_report_*.json
+test_report_*.yaml
+test_report_*.html
+report.json
+report.yaml
+report.html
+interrupted_*.json
+*.log
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+.travis.yml
+
+# Docker
+Dockerfile
+docker-compose*.yml
+.dockerignore
+
+# Development files
+*.md.backup
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# Legacy/Archive
+docs/reports/archive/
+docs/specs/*_legacy.md
+
+# Keep these files
+!README.md
+!USER_GUIDE.md
+!PATTERN_DEVELOPMENT.md
+!ARCHITECTURE.md
+!SPECIFICATION.md
+!CHANGELOG.md
+!RELEASE.md
+!IMPLEMENTATION_COMPLETE.md
+!PHASE2_COMPLETE.md

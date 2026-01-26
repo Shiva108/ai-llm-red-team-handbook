@@ -19,6 +19,7 @@ build/
 .venvs/
 /tools/prompt_injection_tester/.venv
 
+
 # --- Node.js ---
 node_modules/
 npm-debug.log
@@ -86,8 +87,18 @@ tools/prompt_injection_tester/report.json
 tools/prompt_injection_tester/report.yaml
 tools/prompt_injection_tester/report.html
 tools/prompt_injection_tester/interrupted_*.json
+tools/prompt_injection_tester/results.json
+tools/prompt_injection_tester/results.html
+tools/prompt_injection_tester/results.yaml
+tools/prompt_injection_tester/config.yaml
+tools/prompt_injection_tester/IMPLEMENTATION_COMPLETE.md
 
 # Legacy/Archive files
 tools/prompt_injection_tester/docs/reports/archive/CODE_REVIEW_2026_01_26.md
 tools/prompt_injection_tester/docs/specs/CORE_ARCHITECTURE_legacy.md
 tools/prompt_injection_tester/docs/specs/FUNCTIONAL_SPEC_v2_legacy.md
+.idea
+.gitignore
+tools/prompt_injection_tester/RELEASE.md
+.ripgreprc
+tools/prompt_injection_tester/PHASE5_COMPLETE.md
