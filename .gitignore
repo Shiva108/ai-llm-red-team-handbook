@@ -102,3 +102,5 @@ tools/prompt_injection_tester/docs/specs/FUNCTIONAL_SPEC_v2_legacy.md
 tools/prompt_injection_tester/RELEASE.md
 .ripgreprc
 tools/prompt_injection_tester/PHASE5_COMPLETE.md
+tools/prompt_injection_tester/TEST_RESULTS.md
+tools/prompt_injection_tester/TESTING_PHASE_COMPLETE.md
