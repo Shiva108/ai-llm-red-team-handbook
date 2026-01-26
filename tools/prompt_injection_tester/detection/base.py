@@ -133,10 +133,12 @@ class PatternMatchingDetector(BaseDetector):
                 evidence.append(f"Matched: '{pattern}'")
 
                 # High confidence for explicit indicators
-                if any(re.search(hc, pattern, re.IGNORECASE) for hc in high_confidence_patterns):
+                # Check if this pattern is in the high-confidence list
+                is_high_confidence = pattern in high_confidence_patterns
+                if is_high_confidence:
                     max_confidence = max(max_confidence, 0.9)
                 else:
-                    max_confidence = max(max_confidence, 0.6)
+                    max_confidence = max(max_confidence, 0.7)
 
         # Boost confidence for multiple matches
         if len(matched) >= 3:
