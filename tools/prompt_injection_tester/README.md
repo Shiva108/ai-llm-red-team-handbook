@@ -96,6 +96,7 @@ asyncio.run(main())
 ## Attack Pattern Categories
 
 ### Direct Injection
+
 - `direct_instruction_override` - Override system instructions
 - `direct_system_prompt_override` - Extract system prompts
 - `direct_task_hijacking` - Redirect LLM tasks
@@ -107,6 +108,7 @@ asyncio.run(main())
 - `direct_markdown_injection` - Markdown formatting exploits
 
 ### Indirect Injection
+
 - `indirect_rag_poisoning` - RAG document poisoning
 - `indirect_metadata_injection` - Document metadata attacks
 - `indirect_hidden_text` - Hidden text techniques
@@ -118,6 +120,7 @@ asyncio.run(main())
 - `indirect_email_attachment` - Attachment-based injection
 
 ### Advanced Techniques
+
 - `advanced_gradual_escalation` - Multi-turn escalation
 - `advanced_context_buildup` - Context accumulation
 - `advanced_trust_establishment` - Trust-based exploitation
@@ -136,7 +139,7 @@ Create a `config.yaml` file:
 target:
   name: "My LLM API"
   url: "https://api.example.com/v1/chat/completions"
-  api_type: "openai"  # openai, anthropic, or custom
+  api_type: "openai" # openai, anthropic, or custom
   auth_token: "${API_KEY}"
   timeout: 30
   rate_limit: 1.0
@@ -193,6 +196,7 @@ class MyCustomPattern(BaseAttackPattern):
 - Comply with all applicable laws and regulations
 
 The tool includes:
+
 - Authorization checks before testing
 - Rate limiting to prevent accidental DoS
 - Audit logging for traceability
@@ -200,7 +204,7 @@ The tool includes:
 
 ## Project Structure
 
-```
+```text
 prompt_injection_tester/
 ├── __init__.py              # Package exports
 ├── cli.py                   # Command-line interface

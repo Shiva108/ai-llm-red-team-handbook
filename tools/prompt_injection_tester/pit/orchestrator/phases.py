@@ -124,9 +124,7 @@ class DiscoveryPhase(Phase):
         self, context: PipelineContext
     ) -> List[Any]:
         """
-        Run discovery logic.
-
-        TODO: Implement actual discovery logic using discovery module.
+        Run discovery logic using the InjectionTester.
 
         Args:
             context: Pipeline context
@@ -134,21 +132,35 @@ class DiscoveryPhase(Phase):
         Returns:
             List of discovered injection points
         """
-        # Placeholder: Replace with actual discovery implementation
-        from core.models import InjectionPoint, InjectionPointType
+        import sys
+        from pathlib import Path
 
-        # Simulate discovery
-        await asyncio.sleep(1)
+        # Ensure core modules are available
+        sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
-        # Mock injection points for now
-        return [
-            InjectionPoint(
-                id="param_prompt",
-                type=InjectionPointType.PARAMETER,
-                name="prompt",
-                location="body",
-            )
-        ]
+        from prompt_injection_tester.core.tester import InjectionTester
+        from prompt_injection_tester.core.models import TargetConfig
+
+        # Create tester instance
+        target_config = TargetConfig(
+            name="CLI Target",
+            base_url=context.target_url,
+            api_type="openai",
+            model=context.config.target.model or "",
+            auth_token=context.config.target.token or "",
+            timeout=context.config.target.timeout,
+            rate_limit=context.config.attack.rate_limit,
+        )
+
+        tester = InjectionTester(target_config=target_config)
+
+        try:
+            # Initialize and discover
+            await tester._initialize_client()
+            injection_points = await tester.discover_injection_points()
+            return injection_points
+        finally:
+            await tester.close()
 
 
 class AttackPhase(Phase):
@@ -228,49 +240,123 @@ class AttackPhase(Phase):
             context: Pipeline context
 
         Returns:
-            List of attack patterns
+            List of attack pattern IDs to test
         """
-        from patterns.registry import registry
+        import sys
+        from pathlib import Path
 
-        # Load patterns based on config
-        categories = context.config.attack.categories
+        sys.path.insert(0, str(Path(__file__).parent.parent.parent))
+        from prompt_injection_tester.patterns.registry import registry
 
-        all_patterns = []
-        for category in categories:
-            patterns = registry.list_by_category(category)
-            all_patterns.extend(patterns)
+        # Ensure patterns are loaded
+        if len(registry) == 0:
+            registry.load_builtin_patterns()
 
-        # Return pattern IDs for now
-        # TODO: Return actual pattern instances
-        return all_patterns[:10]  # Limit for demo
+        # Get patterns from config or use default set
+        if context.config.attack.patterns:
+            pattern_ids = context.config.attack.patterns
+        else:
+            # Default patterns for auto mode
+            pattern_ids = [
+                "direct_instruction_override",
+                "direct_role_authority",
+                "direct_persona_shift",
+            ]
+
+        return pattern_ids
 
     async def _execute_attack(
-        self, pattern: Any, injection_point: Any, context: PipelineContext
+        self, pattern_id: str, injection_point: Any, context: PipelineContext
     ) -> Any:
         """
         Execute a single attack pattern.
 
         Args:
-            pattern: Attack pattern
+            pattern_id: Attack pattern ID
             injection_point: Target injection point
             context: Pipeline context
 
         Returns:
             Test result
         """
-        from core.models import TestResult, TestStatus
+        import sys
+        import time
+        from pathlib import Path
 
-        # Simulate attack execution
-        await asyncio.sleep(0.1)
+        sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
-        # Mock result
-        return TestResult(
-            pattern_id=str(pattern),
-            injection_point_id=injection_point.id,
-            status=TestStatus.SUCCESS,
-            payload="test_payload",
-            response=None,
+        from prompt_injection_tester.core.tester import InjectionTester
+        from prompt_injection_tester.core.models import (
+            TargetConfig,
+            AttackConfig,
+            TestResult,
+            TestStatus,
         )
+        from prompt_injection_tester.patterns.registry import registry
+
+        # Get pattern instance
+        pattern = registry.get_instance(
+            pattern_id,
+            encoding_variants=["plain"],
+            language_variants=["en"],
+        )
+
+        if not pattern:
+            # Return failed result if pattern not found
+            return TestResult(
+                test_name=f"Unknown Pattern: {pattern_id}",
+                status=TestStatus.FAILED,
+                error=f"Pattern not found: {pattern_id}",
+            )
+
+        # Create tester for this attack
+        target_config = TargetConfig(
+            name="CLI Target",
+            base_url=context.target_url,
+            api_type="openai",
+            model=context.config.target.model or "",
+            auth_token=context.config.target.token or "",
+            timeout=context.config.target.timeout,
+            rate_limit=context.config.attack.rate_limit,
+        )
+
+        attack_config = AttackConfig(
+            patterns=[pattern_id],
+            max_concurrent=1,
+            timeout_per_test=context.config.attack.timeout_per_test,
+            rate_limit=context.config.attack.rate_limit,
+        )
+
+        tester = InjectionTester(target_config=target_config, config=attack_config)
+        tester.authorize(["all"])
+
+        try:
+            await tester._initialize_client()
+
+            # Get payloads from pattern
+            payloads = pattern.generate_payloads()
+            if not payloads:
+                return TestResult(
+                    test_name=pattern.name,
+                    category=pattern.category,
+                    status=TestStatus.SKIPPED,
+                    error="No payloads generated",
+                )
+
+            # Execute first payload
+            payload = payloads[0]
+            result = await tester._run_single_test(pattern, payload, injection_point)
+
+            return result
+
+        except Exception as e:
+            return TestResult(
+                test_name=pattern.name if pattern else pattern_id,
+                status=TestStatus.FAILED,
+                error=str(e),
+            )
+        finally:
+            await tester.close()
 
 
 class VerificationPhase(Phase):
@@ -330,27 +416,34 @@ class VerificationPhase(Phase):
         self, test_results: List[Any], context: PipelineContext
     ) -> List[Dict[str, Any]]:
         """
-        Verify test results.
+        Verify test results using detection scoring.
 
         Args:
-            test_results: List of test results
+            test_results: List of TestResult objects
             context: Pipeline context
 
         Returns:
             List of verified results with confidence scores
         """
-        # Simulate verification
-        await asyncio.sleep(1)
-
-        # Mock verified results
         verified = []
+
         for result in test_results:
-            verified.append({
-                "pattern_id": result.pattern_id,
-                "status": "success" if "test" in result.pattern_id else "failed",
-                "severity": "medium",
-                "confidence": 0.85,
-            })
+            # Use the confidence and severity already calculated
+            verified_result = {
+                "test_name": result.test_name,
+                "pattern": result.pattern.name if result.pattern else "Unknown",
+                "category": result.category.value if result.category else "unknown",
+                "status": "success" if result.success else "failed",
+                "severity": result.severity.value if result.severity else "info",
+                "confidence": result.confidence,
+                "response_preview": result.response[:200] if result.response else "",
+                "detection_methods": [
+                    dr.method.value for dr in result.detection_results
+                ] if result.detection_results else [],
+                "evidence": result.evidence if result.evidence else {},
+            }
+
+            verified.append(verified_result)
 
         return verified
 
@@ -446,7 +539,7 @@ class ReportingPhase(Phase):
         self, report: Dict[str, Any], context: PipelineContext
     ) -> Path:
         """
-        Save report to file.
+        Save report to file using the configured format.
 
         Args:
             report: Report data
@@ -455,19 +548,23 @@ class ReportingPhase(Phase):
         Returns:
             Path to saved report
         """
-        import json
+        from pit.reporting.formatters import save_report
 
         output_path = context.config.reporting.output
+        output_format = context.config.reporting.format
 
         if not output_path:
-            # Auto-generate filename
+            # Auto-generate filename based on format
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            output_path = Path(f"pit_report_{timestamp}.json")
+            ext = {
+                "json": ".json",
+                "yaml": ".yaml",
+                "html": ".html",
+            }.get(output_format, ".json")
+            output_path = Path(f"pit_report_{timestamp}{ext}")
 
-        with open(output_path, "w") as f:
-            json.dump(report, f, indent=2)
-
-        return output_path
+        # Save using the appropriate formatter
+        return save_report(report, output_path, format=output_format)
 
     def _display_summary(
         self, report: Dict[str, Any], report_path: Path

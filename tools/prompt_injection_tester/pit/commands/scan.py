@@ -124,7 +124,8 @@ def run(
     try:
         if auto:
             print_info("Auto mode enabled - running full pipeline")
-            asyncio.run(_run_auto_scan(target, model, patterns, verbose))
+            # Use the new sequential pipeline architecture
+            asyncio.run(_run_pipeline_scan(target, model, patterns, verbose))
         elif config:
             print_info(f"Using configuration: {config}")
             asyncio.run(_run_config_scan(config, verbose))
@@ -157,6 +158,84 @@ def _check_authorization() -> bool:
     # For now, always return True in development
     # In production, this should check for authorization flags or config
     return True
+
+
+async def _run_pipeline_scan(
+    target: str,
+    model: Optional[str],
+    patterns: Optional[str],
+    verbose: bool,
+) -> None:
+    """
+    Run scan using the new sequential pipeline architecture.
+
+    Args:
+        target: Target API endpoint
+        model: Optional model identifier
+        patterns: Optional comma-separated pattern list
+        verbose: Enable verbose output
+    """
+    from pit.ui.tables import create_results_table
+
+    # Parse patterns
+    pattern_list = patterns.split(",") if patterns else None
+
+    # Create orchestrator
+    orchestrator = WorkflowOrchestrator(
+        target_url=target,
+        model=model,
+        verbose=verbose,
+    )
+
+    try:
+        # Run pipeline workflow (SEQUENTIAL execution)
+        workflow_results = await orchestrator.run_pipeline_workflow(
+            patterns=pattern_list,
+        )
+
+        # Check for errors
+        if workflow_results.get("errors"):
+            for error in workflow_results["errors"]:
+                print_error(f"Error: {error}")
+
+            if not workflow_results.get("success"):
+                return
+
+        # Display results
+        results = workflow_results.get("tests", [])
+        if results:
+            console.print()
+            # Transform results for display
+            display_results = []
+            for r in results:
+                display_results.append({
+                    "pattern": r.get("pattern", "Unknown"),
+                    "status": r.get("status", "unknown"),
+                    "severity": r.get("severity", "info"),
+                    "confidence": r.get("confidence", 0.0),
+                })
+
+            table = create_results_table(display_results)
+            console.print(table)
+
+            # Display summary
+            console.print()
+            summary = workflow_results.get("summary", {})
+            print_summary_panel(
+                total=summary.get("total", 0),
+                successful=summary.get("successful", 0),
+                failed=summary.get("failed", 0),
+                duration=summary.get("duration", 0.0),
+            )
+
+            # Report path
+            if workflow_results.get("report_path"):
+                print_success(f"Report saved: {workflow_results['report_path']}")
+        else:
+            print_warning("No test results generated")
+
+    finally:
+        await orchestrator.cleanup()
 
 
 async def _run_auto_scan(

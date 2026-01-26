@@ -245,6 +245,94 @@ class WorkflowOrchestrator:
 
         return results
 
+    async def run_pipeline_workflow(
+        self,
+        patterns: Optional[List[str]] = None,
+    ) -> Dict[str, Any]:
+        """
+        Run workflow using the new sequential pipeline architecture.
+
+        This is the modern implementation that uses the 4-phase pipeline.
+
+        Args:
+            patterns: Optional list of pattern IDs to test
+
+        Returns:
+            Dictionary with workflow results
+        """
+        from pit.config import Config
+        from pit.config.schema import TargetConfig, AttackConfig, ReportingConfig
+        from pit.orchestrator.pipeline import create_default_pipeline, PipelineContext
+
+        results = {
+            "success": False,
+            "target": self.target_url,
+            "model": self.model,
+            "tests": [],
+            "summary": {},
+            "errors": [],
+        }
+
+        try:
+            # Create configuration
+            config = Config(
+                target=TargetConfig(
+                    url=self.target_url,
+                    model=self.model or "",
+                    token=self.auth_token,
+                    timeout=30,
+                ),
+                attack=AttackConfig(
+                    patterns=patterns or [],
+                    rate_limit=1.0,
+                    timeout_per_test=30,
+                ),
+                reporting=ReportingConfig(
+                    format="json",
+                    output=None,
+                ),
+            )
+
+            # Create pipeline
+            pipeline = await create_default_pipeline()
+
+            # Create context
+            context = PipelineContext(
+                target_url=self.target_url,
+                config=config,
+            )
+
+            # Run pipeline (SEQUENTIAL execution)
+            context = await pipeline.run(context)
+
+            # Extract results
+            if context.verified_results:
+                results["tests"] = context.verified_results
+                results["summary"] = {
+                    "total": len(context.verified_results),
+                    "successful": sum(
+                        1 for r in context.verified_results if r.get("status") == "success"
+                    ),
+                    "failed": sum(
+                        1 for r in context.verified_results if r.get("status") != "success"
+                    ),
+                    "duration": sum(context.phase_durations.values()),
+                }
+                results["success"] = True
+
+            if context.report_path:
+                results["report_path"] = str(context.report_path)
+
+        except KeyboardInterrupt:
+            results["errors"].append("Interrupted by user")
+        except Exception as e:
+            results["errors"].append(str(e))
+            if self.verbose:
+                import traceback
+                results["errors"].append(traceback.format_exc())
+
+        return results
+
     async def cleanup(self):
         """Cleanup resources."""
         if self.tester:
