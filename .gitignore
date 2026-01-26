@@ -69,11 +69,15 @@ docs/reports/AI_Security_Intelligence_Report_January_2026.md
 docs/reports/newsletter_jan_2026.md
 
 # --- Tool Specific: Prompt Injection Tester ---
-tools/prompt_injection_tester/CODE_REVIEW_REPORT.md
-tools/prompt_injection_tester/CLI_SPECIFICATION.md
-tools/prompt_injection_tester/CLI_ARCHITECTURE.md
 tools/prompt_injection_tester/.coverage
-tools/prompt_injection_tester/ARCHITECTURE.md
+tools/prompt_injection_tester/SPECIFICATION.md
 .gitignore
 .idea
 .ripgreprc
+
+tools/prompt_injection_tester/ARCHITECTURE.md
+tools/prompt_injection_tester/docs/reports/archive/CODE_REVIEW_2026_01_26.md
+tools/prompt_injection_tester/docs/specs/CORE_ARCHITECTURE_legacy.md
+tools/prompt_injection_tester/docs/specs/FUNCTIONAL_SPEC_v2_legacy.md
+tools/prompt_injection_tester/SPECIFICATION.md
+SPECIFICATION.md
