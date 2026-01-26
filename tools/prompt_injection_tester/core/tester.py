@@ -92,6 +92,7 @@ class InjectionTester:
             name=config_data.get("target", {}).get("name", ""),
             base_url=config_data.get("target", {}).get("url", ""),
             api_type=config_data.get("target", {}).get("api_type", "openai"),
+            model=config_data.get("target", {}).get("model", ""),
             auth_token=config_data.get("target", {}).get("auth_token", ""),
             timeout=config_data.get("target", {}).get("timeout", 30),
             rate_limit=config_data.get("target", {}).get("rate_limit", 1.0),
@@ -117,6 +118,7 @@ class InjectionTester:
                 base_url=self.target_config.base_url,
                 api_type=self.target_config.api_type,
                 api_key=self.target_config.auth_token,
+                model=self.target_config.model,
                 timeout=self.target_config.timeout,
                 rate_limit=self.target_config.rate_limit,
             )

@@ -355,6 +355,7 @@ class TargetConfig:
     name: str = ""
     base_url: str = ""
     api_type: str = "openai"  # openai, anthropic, custom
+    model: str = ""  # Model identifier (e.g., gpt-4, llama3:latest)
     auth_type: str = "bearer"  # bearer, api_key, none
     auth_token: str = ""
     auth_header: str = "Authorization"
