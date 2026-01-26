@@ -50,3 +50,14 @@ docs/reports/AI_Security_Intelligence_Report_January_2026.md
 docs/reports/newsletter_jan_2026.md
 tools/prompt_injection_tester/CODE_REVIEW_REPORT.md
 tools/prompt_injection_tester/.coverage
+.bash_profile
+.bashrc
+.idea
+.mcp.json
+.profile
+.ripgreprc
+.zprofile
+.zshrc
+.claude/agents
+.claude/commands
+.claude/settings.json
