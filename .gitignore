@@ -63,3 +63,4 @@ tools/prompt_injection_tester/.coverage
 .claude/settings.json
 tools/prompt_injection_tester/CLI_SPECIFICATION.md
 tools/prompt_injection_tester/CLI_ARCHITECTURE.md
+tools/prompt_injection_tester/PHASE1_COMPLETE.md
