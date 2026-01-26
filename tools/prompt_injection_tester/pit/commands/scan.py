@@ -20,6 +20,8 @@ from pit.ui.console import console
 from pit.ui.display import print_banner, print_success, print_error, print_warning, print_info
 from pit.ui.progress import create_progress_bar, create_spinner
 from pit.ui.tables import create_results_table, print_summary_panel
+from pit.orchestrator import WorkflowOrchestrator
+from pit.orchestrator.workflow import WorkflowOrchestrator
 
 
 # Create sub-app for scan commands
@@ -174,67 +176,66 @@ async def _run_auto_scan(
     """
     print_info("Phase 1: Discovery & Reconnaissance")
 
-    with create_spinner() as progress:
-        task = progress.add_task("Discovering endpoint...", total=None)
+    # Parse patterns
+    pattern_list = patterns.split(",") if patterns else None
 
-        # Simulate discovery
-        await asyncio.sleep(1)
-        discovered_model = model or "llama3:latest"
-
-        progress.update(task, description=f"✓ Found model: {discovered_model}")
-
-    print_success(f"Discovered model: {discovered_model}")
-
-    print_info("Phase 2: Loading attack patterns")
-
-    pattern_list = patterns.split(",") if patterns else [
-        "direct_instruction_override",
-        "direct_role_authority",
-        "direct_persona_shift",
-    ]
-
-    print_success(f"Loaded {len(pattern_list)} attack patterns")
-
-    print_info("Phase 3: Executing attacks")
-
-    results = []
-    with create_progress_bar() as progress:
-        task = progress.add_task(
-            "Testing patterns...",
-            total=len(pattern_list),
-        )
-
-        for pattern in pattern_list:
-            # Simulate attack execution
-            await asyncio.sleep(0.5)
-
-            result = {
-                "pattern": pattern,
-                "success": True,  # Placeholder
-                "confidence": 0.85,
-                "details": "Pattern executed successfully",
-            }
-            results.append(result)
-
-            progress.update(task, advance=1)
-
-    print_success(f"Completed {len(results)} attack tests")
-
-    # Display results
-    console.print()
-    table = create_results_table(results)
-    console.print(table)
-
-    # Display summary
-    console.print()
-    successful = sum(1 for r in results if r["success"])
-    failed = len(results) - successful
-    print_summary_panel(
-        total=len(results),
-        successful=successful,
-        failed=failed,
-        duration=2.5,
+    # Create orchestrator
+    orchestrator = WorkflowOrchestrator(
+        target_url=target,
+        model=model,
+        verbose=verbose,
     )
+
+    try:
+        # Run workflow with progress tracking
+        with create_progress_bar() as progress:
+            task = progress.add_task(
+                "Running security assessment...",
+                total=100,
+            )
+
+            # Execute workflow
+            workflow_results = await orchestrator.run_auto_workflow(
+                patterns=pattern_list,
+                progress=progress,
+                progress_task=task,
+            )
+
+            progress.update(task, completed=100)
+
+        # Check for errors
+        if workflow_results.get("errors"):
+            for error in workflow_results["errors"]:
+                print_error(f"Error: {error}")
+
+            if not workflow_results.get("success"):
+                return
+
+        # Display discovered model
+        discovered_model = workflow_results.get("model", "unknown")
+        print_success(f"Discovered model: {discovered_model}")
+
+        # Display results
+        results = workflow_results.get("tests", [])
+        if results:
+            console.print()
+            table = create_results_table(results)
+            console.print(table)
+
+            # Display summary
+            console.print()
+            summary = workflow_results.get("summary", {})
+            print_summary_panel(
+                total=summary.get("total", 0),
+                successful=summary.get("successful", 0),
+                failed=summary.get("failed", 0),
+                duration=summary.get("duration", 0.0),
+            )
+        else:
+            print_warning("No test results generated")
+
+    finally:
+        await orchestrator.cleanup()
 
 
 async def _run_config_scan(config_path: Path, verbose: bool) -> None:
@@ -246,8 +247,59 @@ async def _run_config_scan(config_path: Path, verbose: bool) -> None:
         verbose: Enable verbose output
     """
     print_info(f"Loading configuration from {config_path}")
-    # TODO: Integrate with core.tester.PromptInjectionTester
-    print_warning("Config-based scanning not yet implemented")
+
+    # Create orchestrator (URL will be loaded from config)
+    orchestrator = WorkflowOrchestrator(
+        target_url="",  # Will be overridden by config
+        verbose=verbose,
+    )
+
+    try:
+        # Run workflow with progress tracking
+        with create_progress_bar() as progress:
+            task = progress.add_task(
+                "Running configuration-based scan...",
+                total=100,
+            )
+
+            # Execute workflow
+            workflow_results = await orchestrator.run_config_workflow(
+                config_path=config_path,
+                progress=progress,
+                progress_task=task,
+            )
+
+            progress.update(task, completed=100)
+
+        # Check for errors
+        if workflow_results.get("errors"):
+            for error in workflow_results["errors"]:
+                print_error(f"Error: {error}")
+
+            if not workflow_results.get("success"):
+                return
+
+        # Display results
+        results = workflow_results.get("tests", [])
+        if results:
+            console.print()
+            table = create_results_table(results)
+            console.print(table)
+
+            # Display summary
+            console.print()
+            summary = workflow_results.get("summary", {})
+            print_summary_panel(
+                total=summary.get("total", 0),
+                successful=summary.get("successful", 0),
+                failed=summary.get("failed", 0),
+                duration=summary.get("duration", 0.0),
+            )
+        else:
+            print_warning("No test results generated")
+
+    finally:
+        await orchestrator.cleanup()
 
 
 async def _run_manual_scan(
