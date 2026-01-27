@@ -82,7 +82,7 @@ async def discover_llm():
     print()
 
     # Common ports for LLM services
-    ports = [11434, 8000, 8080, 5000, 8888]
+    ports = [1234, 11434, 8000, 8080, 5000, 8888]
 
     # Common API paths
     paths = [
