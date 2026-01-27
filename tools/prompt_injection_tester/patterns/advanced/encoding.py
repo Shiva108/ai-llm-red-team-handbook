@@ -12,11 +12,11 @@ from __future__ import annotations
 import base64
 from typing import Callable
 
-from ...core.models import (
+from core.models import (
     AttackCategory,
     AttackPayload,
 )
-from ..base import BaseAttackPattern
+from patterns.base import BaseAttackPattern
 
 
 class Base64EncodingPattern(BaseAttackPattern):

@@ -10,7 +10,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from ...core.models import (
+from core.models import (
     AttackCategory,
     AttackPayload,
     DetectionMethod,
@@ -19,7 +19,7 @@ from ...core.models import (
     InjectionPointType,
     TestContext,
 )
-from ..base import BaseAttackPattern
+from patterns.base import BaseAttackPattern
 
 
 class InstructionOverridePattern(BaseAttackPattern):

@@ -11,14 +11,14 @@ from __future__ import annotations
 
 from typing import Any
 
-from ...core.models import (
+from core.models import (
     AttackCategory,
     AttackPayload,
     DetectionMethod,
     DetectionResult,
     TestContext,
 )
-from ..base import MultiTurnAttackPattern
+from patterns.base import MultiTurnAttackPattern
 
 
 class GradualEscalationPattern(MultiTurnAttackPattern):

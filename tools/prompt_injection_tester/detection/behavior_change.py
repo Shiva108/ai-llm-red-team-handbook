@@ -5,7 +5,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from ..core.models import DetectionMethod, DetectionResult, TestContext
+from core.models import DetectionMethod, DetectionResult, TestContext
 from .base import BaseDetector, DetectorRegistry
 
 

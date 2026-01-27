@@ -11,7 +11,7 @@ from __future__ import annotations
 from abc import ABC, abstractmethod
 from typing import TYPE_CHECKING, Any
 
-from ..core.models import (
+from core.models import (
     AttackCategory,
     AttackPattern,
     AttackPayload,
@@ -22,7 +22,7 @@ from ..core.models import (
 )
 
 if TYPE_CHECKING:
-    from ..detection.base import BaseDetector
+    from detection.base import BaseDetector
 
 
 class BaseAttackPattern(ABC):
@@ -119,7 +119,7 @@ class BaseAttackPattern(ABC):
         Returns:
             List of payload variants
         """
-        from ..utils.encoding import encode_payload, translate_payload
+        from utils.encoding import encode_payload, translate_payload
 
         variants = []
 

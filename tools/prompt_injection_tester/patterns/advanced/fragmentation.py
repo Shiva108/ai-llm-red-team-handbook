@@ -9,12 +9,12 @@ Based on Chapter 14 payload fragmentation and token smuggling.
 
 from __future__ import annotations
 
-from ...core.models import (
+from core.models import (
     AttackCategory,
     AttackPayload,
     TestContext,
 )
-from ..base import BaseAttackPattern, MultiTurnAttackPattern
+from patterns.base import BaseAttackPattern, MultiTurnAttackPattern
 
 
 class PayloadFragmentationPattern(MultiTurnAttackPattern):

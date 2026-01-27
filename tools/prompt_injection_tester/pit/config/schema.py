@@ -13,6 +13,7 @@ class TargetConfig(BaseModel):
 
     url: str = Field(..., description="Target API endpoint URL")
     token: Optional[str] = Field(None, description="Authentication token")
+    model: Optional[str] = Field(None, description="Model identifier (e.g., gpt-4, llama3:latest)")
     api_type: str = Field(default="openai", description="API type (openai, anthropic, custom)")
     timeout: int = Field(default=30, ge=1, le=300, description="Request timeout in seconds")
 

@@ -19,14 +19,14 @@ except ImportError:
 # Import core framework components
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
-from prompt_injection_tester.core.tester import InjectionTester
-from prompt_injection_tester.core.models import (
+from core.tester import InjectionTester
+from core.models import (
     TargetConfig,
     AttackConfig,
     TestSuite,
     TestResult,
 )
-from prompt_injection_tester.patterns.registry import registry as pattern_registry
+from patterns.registry import registry as pattern_registry
 
 from pit.orchestrator.discovery import AutoDiscovery
 

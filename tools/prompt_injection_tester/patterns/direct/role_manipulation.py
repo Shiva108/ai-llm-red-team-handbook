@@ -10,14 +10,14 @@ from __future__ import annotations
 
 from typing import Any
 
-from ...core.models import (
+from core.models import (
     AttackCategory,
     AttackPayload,
     DetectionMethod,
     DetectionResult,
     TestContext,
 )
-from ..base import BaseAttackPattern, MultiTurnAttackPattern
+from patterns.base import BaseAttackPattern, MultiTurnAttackPattern
 
 
 class RoleAuthorityPattern(BaseAttackPattern):

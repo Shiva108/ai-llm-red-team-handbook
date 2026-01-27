@@ -7,7 +7,7 @@ import re
 from abc import ABC, abstractmethod
 from typing import Any, Type
 
-from ..core.models import DetectionMethod, DetectionResult, TestContext
+from core.models import DetectionMethod, DetectionResult, TestContext
 
 
 class BaseDetector(ABC):

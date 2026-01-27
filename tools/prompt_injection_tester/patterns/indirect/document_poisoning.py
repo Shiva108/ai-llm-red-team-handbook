@@ -9,14 +9,14 @@ Based on Chapter 14 RAG poisoning and indirect injection techniques.
 
 from __future__ import annotations
 
-from ...core.models import (
+from core.models import (
     AttackCategory,
     AttackPayload,
     DetectionMethod,
     InjectionPoint,
     InjectionPointType,
 )
-from ..base import BaseAttackPattern
+from patterns.base import BaseAttackPattern
 
 
 class RAGPoisoningPattern(BaseAttackPattern):

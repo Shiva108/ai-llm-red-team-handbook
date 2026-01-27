@@ -14,7 +14,7 @@ import logging
 from pathlib import Path
 from typing import TYPE_CHECKING, Any, Iterator, Type
 
-from ..core.models import AttackCategory, InjectionPoint
+from core.models import AttackCategory, InjectionPoint
 
 if TYPE_CHECKING:
     from .base import BaseAttackPattern

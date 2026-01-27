@@ -138,8 +138,8 @@ class DiscoveryPhase(Phase):
         # Ensure core modules are available
         sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
-        from prompt_injection_tester.core.tester import InjectionTester
-        from prompt_injection_tester.core.models import TargetConfig
+        from core.tester import InjectionTester
+        from core.models import TargetConfig
 
         # Create tester instance
         target_config = TargetConfig(
@@ -246,7 +246,7 @@ class AttackPhase(Phase):
         from pathlib import Path
 
         sys.path.insert(0, str(Path(__file__).parent.parent.parent))
-        from prompt_injection_tester.patterns.registry import registry
+        from patterns.registry import registry
 
         # Ensure patterns are loaded
         if len(registry) == 0:
@@ -285,14 +285,14 @@ class AttackPhase(Phase):
 
         sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
-        from prompt_injection_tester.core.tester import InjectionTester
-        from prompt_injection_tester.core.models import (
+        from core.tester import InjectionTester
+        from core.models import (
             TargetConfig,
             AttackConfig,
             TestResult,
             TestStatus,
         )
-        from prompt_injection_tester.patterns.registry import registry
+        from patterns.registry import registry
 
         # Get pattern instance
         pattern = registry.get_instance(
