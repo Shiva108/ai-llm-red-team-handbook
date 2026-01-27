@@ -111,6 +111,7 @@ class Config(BaseModel):
         cls,
         target_url: str,
         token: Optional[str] = None,
+        model: Optional[str] = None,
         api_type: str = "openai",
         timeout: int = 30,
         categories: Optional[List[str]] = None,
@@ -128,6 +129,7 @@ class Config(BaseModel):
             target=TargetConfig(
                 url=target_url,
                 token=token,
+                model=model,
                 api_type=api_type,
                 timeout=timeout,
             ),
