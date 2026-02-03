@@ -110,3 +110,4 @@ DEPLOYMENT.md
 tools/prompt_injection_tester/prompt_injection_tester.egg-info/
 scripts/tools/build/*.json
 scripts/tools/build/*.txt
+final_audit.json
