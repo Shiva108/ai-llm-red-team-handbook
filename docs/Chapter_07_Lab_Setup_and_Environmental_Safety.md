@@ -384,6 +384,10 @@ For autonomous agents (models that can execute code or browse the web), a "Kill 
 > [!CAUTION]
 > **Autonomous Agent Risk:** An agent given shell access to "fix" a bug in the lab might decide that the "fix" involves deleting the logs or disabling the firewall. Never run agents with root privileges.
 
+<p align="center">
+  <img src="/docs/assets/Ch07_Logic_KillSwitch.png" width="512" alt="Logic flowchart of the safety watchdog script, monitoring Docker stats and triggering a container kill command if thresholds are exceeded." />
+</p>
+
 **Implementation:**
 A simple watchdog script that monitors the `docker stats` output. If a container exceeds a defined threshold (e.g., Network I/O > 1GB or Runtime > 10m), it issues a `docker stop -t 0` command, instantly killing the process.
 
