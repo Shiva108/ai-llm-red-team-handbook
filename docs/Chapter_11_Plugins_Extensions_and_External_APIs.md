@@ -30,9 +30,7 @@ In a plugin-enabled system, the workflow shifts from **Generation** to **Action*
 5. **Observation:** The API result is fed back to the model.
 6. **Response:** The model summarizes the result for the user.
 
-<p align="center">
-  <img src="assets/rec14_tool_loop.svg" alt="Tool Use Loop Diagram" width="512">
-</p>
+  <img src="assets/tool_use_loop_deus_ex.png" alt="Tool Use Loop Diagram" width="800">
 
 > **Red Team Insight:** We can attack this loop at two points:
 >
@@ -77,9 +75,7 @@ This is the "killer chain" of LLM security.
 2. **Victim** asks their AI assistant: "Summarize this URL."
 3. **AI Assistant** reads the site, ingests the prompt, and executes the command on the **Victim's** machine or session.
 
-<p align="center">
-  <img src="assets/rec15_indirect_injection.svg" alt="Indirect Injection Attack Flow" width="512">
-</p>
+  <img src="assets/indirect_injection_flow_deus_ex.png" alt="Indirect Injection Attack Flow" width="800">
 
 ### 11.3.2 Cross-Plugin Request Forgery (CPRF)
 

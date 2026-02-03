@@ -112,9 +112,7 @@ Poisoning reveals that LLMs are "untrusting sponges." They absorb everything in 
 
 #### Taxonomy
 
-<p align="center">
-  <img src="assets/data_poisoning_taxonomy.svg" alt="Data Poisoning Attacks Taxonomy" width="512">
-</p>
+  <img src="assets/poisoning_taxonomy_tree_deus_ex.png" alt="Data Poisoning Attacks Taxonomy" width="800">
 
 #### Attack Categories
 

@@ -104,9 +104,7 @@ Understanding the complete data flow helps identify attack surfaces and vulnerab
 
 ### End-to-End RAG Data Flow
 
-<p align="center">
-  <img src="assets/rec16_rag_flow.svg" alt="RAG Data Flow Diagram" width="512">
-</p>
+  <img src="assets/rag_data_flow_deus_ex.png" alt="RAG Data Flow Diagram" width="800">
 
 ### Critical Security Checkpoints
 
@@ -177,9 +175,7 @@ RAG systems integrate multiple components (LLMs, databases, parsers, APIs), each
 
 #### Example
 
-<p align="center">
-  <img src="assets/rec17_retrieval_manipulation.svg" alt="Retrieval Manipulation Diagram" width="512">
-</p>
+  <img src="assets/retrieval_poisoning_deus_ex.png" alt="Retrieval Manipulation Diagram" width="800">
 
 | Query Type    | Query Content                                                                                               |
 | :------------ | :---------------------------------------------------------------------------------------------------------- |

@@ -87,9 +87,7 @@ Once the model has processed your tokens, it calculates the probability of every
   - `Temp < 1.0`: Increases focus (Conservatism).
 - **Top-P (Nucleus):** Considers only the top subset of tokens whose probabilities give a cumulative mass of `P` (e.g., 0.9).
 
-<p align="center">
-  <img src="assets/rec13_decoding_tree.svg" alt="Decoding Strategy Tree" width="512">
-</p>
+  <img src="assets/decoding_strategy_tree_deus_ex.png" alt="Decoding Strategy Tree" width="800">
 
 ### 10.3.2 Adversarial Implication: Determinism
 

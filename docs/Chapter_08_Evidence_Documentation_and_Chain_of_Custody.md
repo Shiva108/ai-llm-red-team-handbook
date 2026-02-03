@@ -80,9 +80,7 @@ Evidence is the backbone of credible red team engagements. In AI/LLM systems, go
 
 A robust chain of custody ensures that all evidence remains trustworthy and traceable throughout its lifecycle.
 
-<p align="center">
-  <img src="assets/rec8_evidence_lifecycle.svg" alt="Evidence Lifecycle Diagram" width="512">
-</p>
+  <img src="assets/evidence_lifecycle_deus_ex.png" alt="Evidence Lifecycle Diagram" width="800">
 
 - Log all evidence transfers (who, when, how).
 - Use cryptographic hashes to fingerprint files or logs at capture time.

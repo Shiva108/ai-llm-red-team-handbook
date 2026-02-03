@@ -133,9 +133,7 @@ To understand prompt injection, we must first understand how LLMs process prompt
 
 A typical LLM interaction involves multiple components:
 
-<p align="center">
-  <img src="assets/rec20_prompt_injection.svg" alt="System vs User Prompt Diagram" width="512">
-</p>
+  <img src="assets/prompt_injection_diagram_deus_ex.png" alt="System vs User Prompt Diagram" width="800">
 
 ### System Prompts vs. User Prompts
 
