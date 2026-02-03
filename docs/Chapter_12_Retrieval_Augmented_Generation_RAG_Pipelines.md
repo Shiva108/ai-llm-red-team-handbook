@@ -930,6 +930,8 @@ log_entry = {
 
 #### Example Secure Ingestion Flow
 
+<div align="center" style="width: 512px; margin: 0 auto;">
+
 ```mermaid
 %%{
   init: {
@@ -963,6 +965,8 @@ graph TD
 
     linkStyle default stroke:#d4af37,stroke-width:2px,fill:none;
 ```
+
+</div>
 
 ### Regular Security Audits
 
