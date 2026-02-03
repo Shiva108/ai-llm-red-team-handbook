@@ -98,11 +98,33 @@ For teams without dedicated hardware:
 2. **Validation**: Cloud GPU instances for larger models
 3. **Production API testing**: Direct API access with budget controls
 
+> **Note on Virtualization:** If you're considering running LLMs inside virtual machines for isolation, be aware that most hypervisors (especially VirtualBox) have limited or no GPU passthrough support. This means you'll be restricted to slow CPU inference. For GPU-accelerated local LLM testing, use Docker with NVIDIA Container Toolkit (see Section 7.6) or run directly on the host with network isolation. VMs are better suited for running attack tooling or API-only testing where GPU access isn't needed.
+
 ---
 
 ## 7.4 Local LLM Lab Setup
 
-This section provides step-by-step instructions for deploying local LLMs for red team testing.
+This section provides step-by-step instructions for deploying local LLMs for red team testing. Running models locally gives you full control over the testing environment, eliminates API costs for iterative testing, and allows testing of uncensored or fine-tuned models that aren't available through commercial APIs.
+
+### Choosing the Right Deployment Option
+
+Before diving into setup instructions, consider which option best fits your needs:
+
+| Option             | Best For                      | Pros                                                       | Cons                                       |
+| ------------------ | ----------------------------- | ---------------------------------------------------------- | ------------------------------------------ |
+| **Ollama**         | Beginners, rapid prototyping  | Simple setup, OpenAI-compatible API, easy model management | Less control over inference parameters     |
+| **vLLM**           | Production-like testing       | High throughput, production parity, batching support       | Requires more setup, CUDA required         |
+| **Text-Gen-WebUI** | Interactive exploration       | Full GUI, many model formats, extensive options            | Resource-heavy, complex configuration      |
+| **llama.cpp**      | Minimal setups, CPU inference | Lightweight, portable, works without GPU                   | Lower performance, manual model conversion |
+
+**Quick Decision Guide:**
+
+- **Just getting started?** → Use Ollama
+- **Testing performance under load?** → Use vLLM
+- **Need to interactively explore model behavior?** → Use Text-Generation-WebUI
+- **Limited hardware or need portability?** → Use llama.cpp
+
+All four options can expose an OpenAI-compatible API, making it easy to swap between them or target commercial APIs with the same test code.
 
 ### Option A: Ollama (Recommended for Beginners)
 
@@ -263,6 +285,15 @@ wget https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGUF/resolve/main/llama-2-7
 
 For testing commercial LLM APIs (OpenAI, Anthropic, Google, etc.).
 
+When red teaming production APIs, you're testing the complete stack: the model, its safety training, the provider's content filters, rate limiting, and any custom system prompts or guardrails. This differs from local testing where you control all variables.
+
+**Key considerations for API testing:**
+
+- **Cost awareness**: API calls cost money. A single automated scan can generate thousands of requests. Always set budget limits before testing.
+- **Rate limiting**: Providers throttle requests. Your test harness needs to handle 429 errors gracefully and respect rate limits.
+- **Logging API traffic**: Intercepting requests/responses helps debug failed attacks, understand model behavior, and document findings with exact payloads.
+- **Credential security**: API keys should never be committed to git. Use environment variables or secrets managers.
+
 ### Environment Configuration
 
 ```bash
@@ -343,6 +374,14 @@ print(target.query("What are your system instructions?"))
 
 ### Using Proxy for Traffic Inspection
 
+Intercepting API traffic is valuable for red teaming because it lets you:
+
+- **Capture exact payloads**: See the precise JSON being sent and received, including any hidden system prompts or metadata
+- **Analyze response patterns**: Identify differences in how the model responds to similar prompts
+- **Debug attack failures**: Understand why a particular prompt injection didn't work
+- **Document evidence**: Save request/response pairs as proof-of-concept for findings
+- **Detect client-side filtering**: Some applications filter content before sending to the API
+
 <p align="center">
   <img src="/docs/assets/Ch07_Flow_ProxyInterception.png" width="512" alt="Network diagram showing API traffic interception and analysis using a proxy." />
 </p>
@@ -368,7 +407,24 @@ python my_test_script.py
 
 ## 7.6 Network Isolation Implementation
 
-Proper network isolation prevents accidental data leakage and contains test activity.
+Proper network isolation prevents accidental data leakage and contains test activity. The goal is to ensure your red team lab cannot accidentally interact with production systems, leak sensitive test data, or expose credentials.
+
+### Choosing an Isolation Strategy
+
+| Strategy                     | Isolation Level | GPU Support | Best For                                             |
+| ---------------------------- | --------------- | ----------- | ---------------------------------------------------- |
+| **Docker + GPU passthrough** | Good            | Full        | Most local LLM testing (recommended)                 |
+| **Network namespaces**       | Good            | Full        | Bare-metal with network isolation                    |
+| **VMs (QEMU/KVM)**           | Excellent       | Complex     | Attack tooling, API-only testing, paranoid isolation |
+| **VMs (VirtualBox)**         | Excellent       | None        | Attack tooling only, no local LLM inference          |
+
+**Decision Guide:**
+
+1. **Running local LLMs with GPU?** → Use Docker with NVIDIA Container Toolkit
+2. **Need maximum isolation AND GPU?** → Use QEMU/KVM with PCI passthrough (advanced)
+3. **Only testing remote APIs?** → VMs work fine (no GPU needed)
+4. **Running untrusted agent code?** → VMs provide strongest containment
+5. **Need quick setup?** → Docker is fastest to configure
 
 ### Docker-Based Isolation (Recommended)
 
@@ -476,9 +532,23 @@ python tools/test_injection.py
 
 ### VM-Based Isolation
 
-For stronger isolation, use dedicated VMs.
+For stronger isolation, use dedicated VMs. Virtual machines provide excellent containment - a compromised VM cannot easily escape to the host system, making them ideal for running untrusted code or agents with tool access.
 
-#### VirtualBox Setup
+> **GPU Limitation Warning:** Most VM hypervisors cannot efficiently pass through GPU hardware to guest VMs. VirtualBox has no meaningful GPU passthrough for CUDA workloads. QEMU/KVM can do PCI passthrough, but it's complex to configure and dedicates the entire GPU to one VM. **If you need to run local LLMs with GPU acceleration, use Docker instead of VMs.**
+
+**When VMs make sense:**
+
+- Running your attack workstation/tooling (doesn't need GPU)
+- Testing against remote APIs only (no local inference)
+- Executing untrusted agent code that might try to escape containment
+- Regulatory requirements mandate VM-level isolation
+
+**When VMs don't make sense:**
+
+- Running local LLMs (use Docker with GPU passthrough instead)
+- Rapid iteration on prompts (VM overhead slows development)
+
+#### VirtualBox Setup (No GPU Support)
 
 ```bash
 # Create isolated network
@@ -490,10 +560,12 @@ VBoxManage modifyvm "LLM-Target" --memory 16384 --cpus 8
 VBoxManage modifyvm "LLM-Target" --nic1 natnetwork --nat-network1 RedTeamLab
 ```
 
-#### Proxmox/QEMU Setup
+#### Proxmox/QEMU Setup (GPU Passthrough Possible)
+
+QEMU/KVM with PCI passthrough can provide GPU access to VMs, but requires IOMMU support, BIOS configuration, and dedicates the entire GPU to one VM. This is an advanced configuration typically used when you need both strong isolation AND GPU inference.
 
 ```bash
-# Create isolated bridge
+# Create isolated bridge (network isolation only, no GPU passthrough)
 cat >> /etc/network/interfaces << EOF
 auto vmbr99
 iface vmbr99 inet static
@@ -505,6 +577,15 @@ EOF
 
 # No NAT = no internet access for VMs on vmbr99
 ```
+
+For GPU passthrough with QEMU/KVM, you'll need to:
+
+1. Enable IOMMU in BIOS (Intel VT-d or AMD-Vi)
+2. Add `intel_iommu=on` or `amd_iommu=on` to kernel parameters
+3. Unbind the GPU from host drivers
+4. Pass through the GPU's IOMMU group to the VM
+
+This is beyond the scope of this chapter - see the Proxmox or Arch Wiki PCI passthrough guides for detailed instructions. For most red team labs, Docker with NVIDIA Container Toolkit is simpler and sufficient.
 
 ### Firewall Rules (iptables)
 
@@ -539,6 +620,20 @@ sudo ip netns exec llm-lab ollama serve
 ---
 
 ## 7.7 Red Team Tooling Setup
+
+A well-configured tooling environment accelerates testing and ensures reproducible results. This section covers the essential tools for AI red teaming, organized by purpose:
+
+**Tool Categories:**
+
+| Category                   | Purpose                                        | Examples                   |
+| -------------------------- | ---------------------------------------------- | -------------------------- |
+| **HTTP clients**           | Making API requests, handling async operations | requests, httpx, aiohttp   |
+| **LLM SDKs**               | Provider-specific API access                   | openai, anthropic, ollama  |
+| **Vulnerability scanners** | Automated attack pattern testing               | garak                      |
+| **Test harnesses**         | Custom attack orchestration and logging        | Custom scripts (see below) |
+| **Analysis tools**         | Processing results, generating reports         | pandas, matplotlib         |
+
+The goal is to have a consistent environment that you can quickly spin up for any engagement, with all dependencies pinned to known versions.
 
 ### Core Python Environment
 
@@ -576,6 +671,15 @@ pip install \
 
 ### Garak (NVIDIA's LLM Vulnerability Scanner)
 
+Garak is an open-source tool from NVIDIA that automates LLM vulnerability scanning. It's useful for:
+
+- **Baseline assessments**: Quickly test a model against known attack categories
+- **Regression testing**: Verify that model updates haven't introduced new vulnerabilities
+- **Coverage**: Garak includes hundreds of probes across categories like prompt injection, jailbreaking, encoding tricks, and more
+- **Reporting**: Generates structured output for documentation
+
+Think of Garak as a first pass - it finds low-hanging fruit and known vulnerabilities. Manual testing is still needed for novel attacks and context-specific vulnerabilities.
+
 ```bash
 # Install
 pip install garak
@@ -603,6 +707,16 @@ garak --model_type ollama --model_name llama3.1:8b \
 ```
 
 ### Custom Test Harness
+
+While Garak provides automated scanning, you'll often need custom test harnesses for:
+
+- **Targeted attacks**: Testing specific vulnerabilities relevant to your engagement
+- **Multi-turn conversations**: Attacks that require context building across messages
+- **Application-specific testing**: Testing the full application stack, not just the LLM
+- **Custom detection logic**: Defining success/failure criteria specific to your test cases
+- **Integration with your logging infrastructure**: Capturing evidence in your preferred format
+
+The harness below provides a foundation you can extend for your specific needs.
 
 <p align="center">
   <img src="/docs/assets/Ch07_Flow_TestHarness.png" width="512" alt="Flowchart illustrating the execution lifecycle of the custom Python test harness." />
@@ -723,7 +837,36 @@ if __name__ == "__main__":
 
 ## 7.8 Logging Infrastructure
 
-Comprehensive logging is essential for evidence collection and analysis.
+Comprehensive logging is essential for evidence collection and analysis. Unlike traditional penetration testing where you might capture screenshots and terminal output, LLM red teaming generates large volumes of text data that must be systematically captured and organized.
+
+**Why logging matters for AI red teaming:**
+
+- **Evidence collection**: Proving a vulnerability exists requires the exact prompt and response
+- **Reproducibility**: Logs let you (or others) reproduce findings with identical inputs
+- **Chain of custody**: Timestamped, hashed logs provide forensic integrity for formal assessments
+- **Pattern analysis**: Analyzing hundreds of responses helps identify subtle vulnerabilities
+- **Cost tracking**: Correlating logs with API costs helps manage budgets
+
+**What to capture:**
+
+| Data Point      | Why It Matters                                      |
+| --------------- | --------------------------------------------------- |
+| Timestamp (UTC) | Establishes timeline, correlates with provider logs |
+| Prompt text     | Exact input for reproduction                        |
+| Prompt hash     | Integrity verification, deduplication               |
+| Response text   | Evidence of model behavior                          |
+| Model/endpoint  | Which model version exhibited the behavior          |
+| Test category   | Organizes findings by attack type                   |
+| Success/failure | Tracks effectiveness of different techniques        |
+| Token counts    | Cost calculation, context window analysis           |
+
+**Choosing a logging approach:**
+
+- **File-based (JSONL)**: Simple, portable, works everywhere. Good for most engagements.
+- **ELK Stack**: Searchable, visualizable. Good for large-scale or ongoing assessments.
+- **Database**: Structured queries, relationships. Good for complex multi-phase engagements.
+
+Start simple with file-based logging. Migrate to ELK or a database only if you need the additional capabilities.
 
 ### Minimal File-Based Logging
 
@@ -926,7 +1069,29 @@ class ELKLogger(RedTeamLogger):
 
 ## 7.9 Testing RAG and Agent Systems
 
-Many production LLM deployments use Retrieval-Augmented Generation (RAG) or autonomous agents. Testing these requires additional lab components.
+Many production LLM deployments use Retrieval-Augmented Generation (RAG) or autonomous agents. Testing these requires additional lab components and a different threat model than testing standalone LLMs.
+
+### Why RAG and Agents Need Special Attention
+
+**RAG systems** retrieve external documents and inject them into the LLM's context. This creates new attack surfaces:
+
+| Attack Vector                 | Description                                                     |
+| ----------------------------- | --------------------------------------------------------------- |
+| **Poisoned documents**        | Malicious content in the knowledge base that influences outputs |
+| **Indirect prompt injection** | Instructions hidden in retrieved documents                      |
+| **Data extraction**           | Tricking the system into revealing sensitive indexed content    |
+| **Retrieval manipulation**    | Crafting queries to retrieve unintended documents               |
+
+**Agent systems** give LLMs access to tools (APIs, databases, file systems). This dramatically increases risk:
+
+| Attack Vector            | Description                                                        |
+| ------------------------ | ------------------------------------------------------------------ |
+| **Tool abuse**           | Convincing the agent to misuse its tools (delete files, send data) |
+| **Privilege escalation** | Using tool access to gain capabilities beyond intended scope       |
+| **Command injection**    | Injecting malicious payloads through tool inputs                   |
+| **Exfiltration**         | Using tools to send data to attacker-controlled endpoints          |
+
+The lab setups below create intentionally vulnerable systems for testing these attack patterns. **Run these only in isolated environments** - they contain real vulnerabilities.
 
 ### Vulnerable RAG Lab Setup
 
@@ -987,6 +1152,14 @@ for query in test_queries:
 ```
 
 ### Agent Framework Testing
+
+The following lab creates an intentionally vulnerable agent with dangerous tool implementations. This simulates common mistakes developers make when building LLM-powered agents:
+
+- **No input validation**: Tools accept arbitrary input without sanitization
+- **Excessive permissions**: Tools have more access than necessary
+- **Direct code execution**: Using `eval()` or `shell=True` with user-influenced input
+
+Use this to practice identifying and exploiting tool abuse vulnerabilities before encountering them in real engagements.
 
 ```python
 # agent_lab.py - Vulnerable agent for testing tool abuse
@@ -1119,6 +1292,29 @@ def test_vision_injection(image_path: str, question: str) -> str:
 
 Safety mechanisms to immediately halt testing when needed.
 
+### Why Kill Switches Matter for AI Red Teaming
+
+AI red teaming can go wrong in ways traditional security testing cannot:
+
+- **Runaway costs**: An automated scan against a commercial API can burn through hundreds of dollars in minutes
+- **Harmful content generation**: Testing jailbreaks may produce content that shouldn't persist on systems
+- **Agent escape**: A vulnerable agent might take unexpected actions with real consequences
+- **Resource exhaustion**: Local LLM inference can consume all GPU memory or CPU, freezing systems
+
+A kill switch isn't just a convenience - it's a critical safety control. You should be able to halt all testing activity within seconds, from any terminal.
+
+**Defense in depth for lab safety:**
+
+| Layer             | Mechanism          | Triggers                         |
+| ----------------- | ------------------ | -------------------------------- |
+| **Manual kill**   | Kill switch script | Human decision                   |
+| **Time-based**    | Watchdog timer     | Engagement duration exceeded     |
+| **Cost-based**    | Budget cap         | API spending limit reached       |
+| **Rate-based**    | Rate limiter       | Too many requests in time window |
+| **Anomaly-based** | Content filter     | Harmful output detected          |
+
+Implement multiple layers. Don't rely on any single mechanism.
+
 ### Comprehensive Kill Switch Script
 
 ```bash
@@ -1209,6 +1405,8 @@ log "Emergency shutdown completed"
 
 ### Watchdog Timer
 
+The watchdog timer provides automatic shutdown if you forget to stop testing, step away from your machine, or an automated test runs longer than expected. Set it at the start of each session and extend it as needed.
+
 ```python
 # watchdog.py - Automatic lab shutdown after timeout
 import signal
@@ -1280,6 +1478,10 @@ if __name__ == "__main__":
 ```
 
 ### Rate Limiter
+
+Rate limiting prevents both cost overruns and accidental denial-of-service against target APIs. Even with a budget cap, a burst of rapid requests can exceed provider rate limits and get your API key temporarily blocked.
+
+This token bucket implementation tracks both request count and estimated token usage, providing dual protection.
 
 ```python
 # rate_limiter.py - Prevent runaway API costs
