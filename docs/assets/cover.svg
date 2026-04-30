@@ -1,0 +1,129 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#000000"/>
+      <stop offset="50%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </linearGradient>
+
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f7c948"/>
+      <stop offset="50%" stop-color="#ffdc73"/>
+      <stop offset="100%" stop-color="#d4a239"/>
+    </linearGradient>
+
+    <radialGradient id="goldGlow">
+      <stop offset="0%" stop-color="#f7c948" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#f7c948" stop-opacity="0"/>
+    </radialGradient>
+
+    <pattern id="hexPattern" patternUnits="userSpaceOnUse" width="50" height="43.3">
+      <path d="M25 0 L50 14.43 L50 28.87 L25 43.3 L0 28.87 L0 14.43 Z"
+            fill="none"
+            stroke="#f7c948"
+            stroke-width="0.5"
+            opacity="0.15"/>
+    </pattern>
+
+    <pattern id="circuits" patternUnits="userSpaceOnUse" width="120" height="120">
+      <path d="M0,24 L36,24 L36,60 L78,60" stroke="#f7c948" stroke-width="1" opacity="0.1" fill="none"/>
+      <path d="M48,0 L48,36 L84,36 L84,78" stroke="#f7c948" stroke-width="1" opacity="0.1" fill="none"/>
+      <circle cx="36" cy="24" r="2" fill="#f7c948" opacity="0.2"/>
+      <circle cx="36" cy="60" r="2" fill="#f7c948" opacity="0.2"/>
+      <circle cx="78" cy="60" r="2" fill="#f7c948" opacity="0.2"/>
+    </pattern>
+  </defs>
+
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <rect width="1280" height="720" fill="url(#hexPattern)"/>
+  <rect width="1280" height="720" fill="url(#circuits)" opacity="0.3"/>
+
+  <rect x="0" y="0" width="10" height="720" fill="url(#gold)" opacity="0.82"/>
+  <rect x="10" y="0" width="3" height="720" fill="url(#gold)" opacity="0.4"/>
+
+  <g opacity="0.14">
+    <polygon points="900,20 1100,110 1005,235 815,140" fill="url(#gold)"/>
+    <polygon points="1025,210 1245,310 1145,460 930,360" fill="url(#gold)"/>
+    <polygon points="1125,430 1280,505 1280,720 990,720 1040,565" fill="url(#gold)"/>
+    <polygon points="1100,0 1280,0 1280,145 1185,88" fill="url(#gold)"/>
+    <polygon points="775,135 835,170 802,232 742,197" fill="url(#gold)" opacity="0.8"/>
+    <polygon points="875,510 935,545 902,607 842,572" fill="url(#gold)" opacity="0.8"/>
+  </g>
+
+  <g stroke="url(#gold)" stroke-width="2" fill="none" opacity="0.6">
+    <polygon points="130,118 168,140 168,182 130,204 92,182 92,140"/>
+    <polygon points="130,514 168,536 168,578 130,600 92,578 92,536"/>
+  </g>
+
+  <ellipse cx="470" cy="355" rx="430" ry="150" fill="url(#goldGlow)"/>
+
+  <text x="80" y="268"
+        font-family="'Arial Black', 'Arial Bold', sans-serif"
+        font-weight="900"
+        font-size="84"
+        fill="url(#gold)"
+        letter-spacing="4">
+    AI / LLM
+  </text>
+
+  <text x="80" y="370"
+        font-family="'Arial Black', 'Arial Bold', sans-serif"
+        font-weight="900"
+        font-size="86"
+        fill="url(#gold)"
+        letter-spacing="3">
+    RED TEAM
+  </text>
+
+  <text x="80" y="465"
+        font-family="'Arial', sans-serif"
+        font-weight="300"
+        font-size="66"
+        fill="url(#gold)"
+        letter-spacing="7"
+        opacity="0.95">
+    HANDBOOK
+  </text>
+
+  <rect x="80" y="495" width="640" height="4" fill="url(#gold)" opacity="0.92"/>
+  <rect x="80" y="505" width="360" height="1.5" fill="url(#gold)" opacity="0.6"/>
+
+  <text x="82" y="552"
+        font-family="'Courier New', monospace"
+        font-size="20"
+        fill="#f7c948"
+        letter-spacing="2"
+        opacity="0.72">
+    PRACTICAL AI SECURITY TESTING // AUTHORIZED USE ONLY
+  </text>
+
+  <g opacity="0.42">
+    <polygon points="1165,155 1188,168 1188,194 1165,207 1142,194 1142,168"
+             fill="none" stroke="url(#gold)" stroke-width="2"/>
+    <polygon points="1199,178 1222,191 1222,217 1199,230 1176,217 1176,191"
+             fill="none" stroke="url(#gold)" stroke-width="2"/>
+    <polygon points="1233,155 1256,168 1256,194 1233,207 1210,194 1210,168"
+             fill="none" stroke="url(#gold)" stroke-width="2"/>
+    <polygon points="1188,241 1197,246 1197,257 1188,262 1179,257 1179,246" fill="url(#gold)"/>
+    <polygon points="1222,258 1231,263 1231,274 1222,279 1213,274 1213,263" fill="url(#gold)"/>
+  </g>
+
+  <g stroke="url(#gold)" stroke-width="2" fill="none" opacity="0.5">
+    <path d="M 24,24 L 24,62 M 24,24 L 62,24"/>
+    <path d="M 24,696 L 24,658 M 24,696 L 62,696"/>
+    <path d="M 1256,24 L 1256,62 M 1256,24 L 1218,24"/>
+    <path d="M 1256,696 L 1256,658 M 1256,696 L 1218,696"/>
+  </g>
+
+  <rect width="1280" height="1" y="146" fill="#f7c948" opacity="0.05"/>
+  <rect width="1280" height="1" y="244" fill="#f7c948" opacity="0.05"/>
+  <rect width="1280" height="1" y="342" fill="#f7c948" opacity="0.05"/>
+  <rect width="1280" height="1" y="440" fill="#f7c948" opacity="0.05"/>
+  <rect width="1280" height="1" y="538" fill="#f7c948" opacity="0.05"/>
+
+  <g opacity="0.3">
+    <rect x="734" y="520" width="5" height="40" fill="#f7c948"/>
+    <rect x="744" y="520" width="5" height="40" fill="none"/>
+    <rect x="754" y="520" width="5" height="40" fill="#f7c948"/>
+  </g>
+</svg>
